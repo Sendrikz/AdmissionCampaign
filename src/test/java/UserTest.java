@@ -6,7 +6,7 @@ import static junit.framework.TestCase.assertEquals;
 public class UserTest {
 
   User user = new User("Petrenko", "Petro", "Petrovych",
-          "1998-02-12", "Kyiv", 2);
+          "1998-02-12", "Kyiv", "petr@gmail.com", "123", 2);
 
     @Test
     public void getLastNameTest() {
@@ -81,25 +81,36 @@ public class UserTest {
     }
 
     @Test
+    public void setEmailTest() {
+        user.setEmail("petrovych@gmail.com");
+        assertEquals("petrovych@gmail.com", user.getEmail());
+    }
+
+    @Test
+    public void setPasswordTest() {
+        user.setPassword("321");
+        assertEquals("321", user.getPassword());
+    }
+
+    @Test
     public void equalsTest() {
         User userCopy = new User("Petrenko", "Petro", "Petrovych",
-                "1998-02-12", "Kyiv", 2);
+                "1998-02-12", "Kyiv", "petr@gmail.com", "123", 2);
         assertEquals(true, user.equals(userCopy));
     }
 
     @Test
     public void hashCodeTest() {
         User userCopy = new User("Petrenko", "Petro", "Petrovych",
-                "1998-02-12", "Kyiv", 2);
+                "1998-02-12", "Kyiv", "petr@gmail.com", "123", 2);
         assertEquals(user.hashCode(), userCopy.hashCode());
     }
 
     @Test
     public void notEqualsTest() {
         User userCopy = new User("Petrenko", "Petro", "Petrovych",
-                "1998-02-12", "Kyiv", 1);
+                "1998-02-12", "Kyiv", "petr@gmail.com", "123", 1);
         assertEquals(false, user.equals(userCopy));
     }
-
 
 }
