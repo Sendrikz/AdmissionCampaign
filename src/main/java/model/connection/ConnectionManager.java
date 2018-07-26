@@ -9,17 +9,14 @@ import java.util.Properties;
 
 public class ConnectionManager {
 
-    FileInputStream fis;
-    Properties property;
-    Connection connection;
-    String pathToFile = "src/main/resources/config.properties";
-    String URL = "jdbc:mysql://localhost:3306/admission_сampaign" +
-            "?autoReconnect=true&useSSL=false";
+    private Properties property;
+    private Connection connection;
 
     public ConnectionManager() {
         property = new Properties();
+        String pathToFile = "src/main/resources/config.properties";
         try {
-            fis = new FileInputStream(pathToFile);
+            FileInputStream fis = new FileInputStream(pathToFile);
             property.load(fis);
         } catch (IOException e) {
             e.printStackTrace();
@@ -28,6 +25,8 @@ public class ConnectionManager {
 
     public Connection getConnection() {
         try {
+            String URL = "jdbc:mysql://localhost:3306/admission_сampaign" +
+                    "?autoReconnect=true&useSSL=false";
             connection = DriverManager.getConnection(URL, property.getProperty("db.login"),
                     property.getProperty("db.password"));
 

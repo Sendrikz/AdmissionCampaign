@@ -157,7 +157,6 @@ public class UserJdbcDao implements UserDao {
             PreparedStatement ps = con.prepareStatement(property.getProperty("sql.deleteUserById"))) {
 
             ps.setInt(1, id);
-
             ps.executeUpdate();
 
         } catch (SQLException e) {

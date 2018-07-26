@@ -1,3 +1,5 @@
+package connection;
+
 import model.connection.ConnectionManager;
 import org.junit.Test;
 

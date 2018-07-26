@@ -80,6 +80,12 @@ public class UserJdbcDaoTest {
 
     @Test
     public void clearAllUsersTest() {
+        User user = new User("Petrenko", "Petro", "Petrovych",
+                "1998-02-12", "Kyiv", "petr@gmail.com", "123", 2);
+        User user2 = new User("Wilson", "Mary", "Johnson",
+                "1987-02-12", "London", "mary@gmail.com", "333", 2);
+        userDao.add(user);
+        userDao.add(user2);
         userDao.clearAllUsers();
         assertEquals(0, userDao.getAll().size());
     }
