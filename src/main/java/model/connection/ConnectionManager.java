@@ -1,6 +1,5 @@
 package model.connection;
 
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -13,27 +12,28 @@ public class ConnectionManager {
     FileInputStream fis;
     Properties property;
     Connection connection;
+    String pathToFile = "src/main/resources/config.properties";
+    String URL = "jdbc:mysql://localhost:3306/admission_сampaign" +
+            "?autoReconnect=true&useSSL=false";
 
     public ConnectionManager() {
         property = new Properties();
         try {
-            fis = new FileInputStream("src/main/resources/config.properties");
+            fis = new FileInputStream(pathToFile);
             property.load(fis);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
-    public void getConnection() {
+    public Connection getConnection() {
         try {
-            connection = DriverManager.getConnection(property.getProperty("db.URL"),
-                    property.getProperty("db.login"), property.getProperty("db.password"));
+            connection = DriverManager.getConnection(URL, property.getProperty("db.login"),
+                    property.getProperty("db.password"));
 
-            if (!connection.isClosed()) {
-                System.out.println("Підключено до бази");
-            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return connection;
     }
 }
