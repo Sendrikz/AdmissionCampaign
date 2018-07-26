@@ -24,8 +24,8 @@ public class ConnectionManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
+
     public Connection getConnection() {
         try {
             connection = DriverManager.getConnection(URL, property.getProperty("db.login"),

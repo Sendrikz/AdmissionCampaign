@@ -2,21 +2,19 @@ package model.dao;
 
 import model.enteties.User;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public interface UserDao {
 
-    List<User> getAll();
+    ArrayList<User> getAll();
 
     void add(User user);
 
     User findById(int id);
 
-    // UPDATE
-    // void update(int id, String content);
+    void update(int id, String content);
 
-    // DELETE
-    // void deleteById(int id);
-    // void clearAllTasks();
+    void deleteById(int id);
+    void clearAllTasks();
 
 }
