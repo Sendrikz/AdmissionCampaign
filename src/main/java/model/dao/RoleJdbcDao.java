@@ -3,6 +3,7 @@ package model.dao;
 import model.connection.ConnectionManager;
 import model.enteties.Role;
 
+import javax.rmi.PortableRemoteObject;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.*;
@@ -69,6 +70,20 @@ public class RoleJdbcDao implements RoleDao {
                 }
             }
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void update(int id, String value) {
+        try (Connection con = connectionManager.getConnection();
+             PreparedStatement ps = con.prepareStatement(property.getProperty("sql.updateNameRole"))) {
+
+            ps.setString(1, value);
+            ps.setInt(2, id);
+            ps.executeUpdate();
+            
         } catch (SQLException e) {
             e.printStackTrace();
         }
