@@ -11,15 +11,19 @@ public class User {
     private  String patronymic;
     private LocalDate birthday;
     private String city;
+    private String email;
+    private String password;
     private int role;
 
     public User(String lastName, String firstName, String patronymic,
-                String birthday, String city, int role) {
+                String birthday, String city, String email, String password, int role) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.patronymic = patronymic;
         this.birthday = LocalDate.parse(birthday);
         this.city = city;
+        this.email = email;
+        this.password = password;
         this.role = role;
     }
 
@@ -63,6 +67,22 @@ public class User {
         this.city = city;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public int getId() {
         return id;
     }
@@ -94,13 +114,14 @@ public class User {
         return id == user.id && firstName.equals(user.firstName) &&
                 lastName.equals(user.lastName) && patronymic.equals(user.patronymic) &&
                 birthday.isEqual(user.birthday) && city.equals(user.city) &&
+                email.equals(user.email) && password.equals(user.password) &&
                 role == user.role;
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(lastName, firstName, patronymic,
-                birthday, city, role);
+                birthday, city, email, password, role);
     }
 
 }
