@@ -122,6 +122,27 @@ public class UserJdbcDao implements UserDao {
     }
 
     @Override
+    public void update(int id, String lastName, String firstName, String patronymic, String birthday,
+                       String city, int role) {
+        try (Connection con = connectionManager.getConnection();
+            PreparedStatement ps = con.prepareStatement(property.getProperty("sql.updateAFullUser"))) {
+
+            ps.setString(1, lastName);
+            ps.setString(2, firstName);
+            ps.setString(3, patronymic);
+            ps.setString(4, birthday);
+            ps.setString(5, city);
+            ps.setInt(6, role);
+            ps.setInt(7, id);
+
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public void updateEmail(int id, String value) {
         try (Connection con = connectionManager.getConnection();
             PreparedStatement ps = con.prepareStatement(property.getProperty("sql.updateUserEmail"))) {

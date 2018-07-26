@@ -106,4 +106,14 @@ public class UserJdbcDaoTest {
         assertEquals(1, userDao.getAll().size());
     }
 
+    @Test
+    public void updateTest() {
+        User user = new User("Petrenko", "Petro", "Petrovych",
+                "1998-02-12", "Kyiv", "petr@gmail.com", "123", role.getId());
+        userDao.add(user);
+        userDao.update(user.getId(), "Smith", user.getFirstName(), user.getPatronymic(),
+                user.getBirthday(), "USA", user.getRole());
+        assertNotEquals(user, userDao.findById(user.getId()));
+    }
+
 }
