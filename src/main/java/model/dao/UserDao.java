@@ -12,9 +12,10 @@ public interface UserDao {
 
     User findById(int id);
 
-    void update(int id, String content);
+    void updateEmail(int id, String value);
+    void updatePassword(int id, String value);
 
     void deleteById(int id);
-    void clearAllTasks();
+    void clearAllUsers();
 
 }

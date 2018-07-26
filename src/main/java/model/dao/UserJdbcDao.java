@@ -114,6 +114,7 @@ public class UserJdbcDao implements UserDao {
                         password, role);
                 user.setId(userId);
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -121,17 +122,57 @@ public class UserJdbcDao implements UserDao {
     }
 
     @Override
-    public void update(int id, String content) {
+    public void updateEmail(int id, String value) {
+        try (Connection con = connectionManager.getConnection();
+            PreparedStatement ps = con.prepareStatement(property.getProperty("sql.updateUserEmail"))) {
 
+            ps.setString(1, value);
+            ps.setInt(2, id);
+
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void updatePassword(int id, String value) {
+        try (Connection con = connectionManager.getConnection();
+             PreparedStatement ps = con.prepareStatement(property.getProperty("sql.updateUserPassword"))) {
+
+            ps.setString(1, value);
+            ps.setInt(2, id);
+
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void deleteById(int id) {
+        try (Connection con = connectionManager.getConnection();
+            PreparedStatement ps = con.prepareStatement(property.getProperty("sql.deleteUserById"))) {
 
+            ps.setInt(1, id);
+
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
-    public void clearAllTasks() {
+    public void clearAllUsers() {
+        try (Statement statement = connectionManager.getConnection().createStatement()) {
 
+            statement.executeUpdate(property.getProperty("sql.deleteAllUsers"));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
