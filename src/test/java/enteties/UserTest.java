@@ -1,3 +1,5 @@
+package enteties;
+
 import model.enteties.User;
 import org.junit.Test;
 

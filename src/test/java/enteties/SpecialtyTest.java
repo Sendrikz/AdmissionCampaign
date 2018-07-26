@@ -1,3 +1,4 @@
+package enteties;
 
 import model.enteties.Specialty;
 import org.junit.Test;

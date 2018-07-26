@@ -1,3 +1,5 @@
+package enteties;
+
 import model.enteties.Faculty;
 import org.junit.Test;
 

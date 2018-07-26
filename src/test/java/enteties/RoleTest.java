@@ -1,3 +1,5 @@
+package enteties;
+
 import model.enteties.Role;
 import org.junit.Test;
 

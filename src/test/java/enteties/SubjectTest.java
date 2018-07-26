@@ -1,3 +1,5 @@
+package enteties;
+
 import model.enteties.Subject;
 import org.junit.Test;
 
