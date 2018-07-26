@@ -1,6 +1,7 @@
 package model.dao;
 
 import model.enteties.Role;
+import model.enteties.User;
 
 import java.util.ArrayList;
 
@@ -17,4 +18,5 @@ public interface RoleDao {
     void deleteById(int id);
     void clearAllRoles();
 
+    ArrayList<User> getAllUsersByRole(int roleId);
 }

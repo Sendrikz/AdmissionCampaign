@@ -2,8 +2,8 @@ package model.dao;
 
 import model.connection.ConnectionManager;
 import model.enteties.Role;
+import model.enteties.User;
 
-import javax.rmi.PortableRemoteObject;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.*;
@@ -83,7 +83,7 @@ public class RoleJdbcDao implements RoleDao {
             ps.setString(1, value);
             ps.setInt(2, id);
             ps.executeUpdate();
-            
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -133,5 +133,36 @@ public class RoleJdbcDao implements RoleDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public ArrayList<User> getAllUsersByRole(int roleId) {
+        ArrayList<User> listOfUsersByRole = new ArrayList<>();
+        try (Connection con = connectionManager.getConnection();
+             PreparedStatement ps = con.prepareStatement(property.getProperty("sql.allUsersByRole"))) {
+
+            ps.setInt(1, roleId);
+
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                int userId = resultSet.getInt(1);
+                String lastName = resultSet.getString(2);
+                String firstName = resultSet.getString(3);
+                String patronymic = resultSet.getString(4);
+                String birthday = resultSet.getString(5);
+                String city = resultSet.getString(6);
+                String email = resultSet.getString(7);
+                String password = resultSet.getString(8);
+                User user = new User(lastName, firstName, patronymic, birthday, city, email,
+                        password, roleId);
+                user.setId(userId);
+
+                listOfUsersByRole.add(user);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listOfUsersByRole;
     }
 }

@@ -1,8 +1,11 @@
 package dao;
 
 import model.connection.ConnectionManager;
+import model.dao.RoleDao;
+import model.dao.RoleJdbcDao;
 import model.dao.UserDao;
 import model.dao.UserJdbcDao;
+import model.enteties.Role;
 import model.enteties.User;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,17 +17,21 @@ import static org.junit.Assert.assertNull;
 public class UserJdbcDaoTest {
 
     private UserDao userDao;
+    private Role role;
 
     @Before
     public void setUp() {
         ConnectionManager connectionManager = new ConnectionManager();
         userDao = new UserJdbcDao(connectionManager);
+        RoleDao roleDao = new RoleJdbcDao(connectionManager);
+        role = new Role("Student");
+        roleDao.add(role);
     }
 
     @Test
     public void addTest() {
         User user = new User("Petrenko", "Petro", "Petrovych",
-                "1998-02-12", "Kyiv", "petr@gmail.com", "123", 2);
+                "1998-02-12", "Kyiv", "petr@gmail.com", "123", role.getId());
         int originUserId = user.getId();
         userDao.add(user);
         assertNotEquals(originUserId, user.getId());
@@ -33,7 +40,7 @@ public class UserJdbcDaoTest {
     @Test
     public void findById() {
         User user = new User("Wilson", "Mary", "Johnson",
-                "1987-02-12", "London", "mary@gmail.com", "333", 2);
+                "1987-02-12", "London", "mary@gmail.com", "333", role.getId());
         userDao.add(user);
         User foundUser = userDao.findById(user.getId());
         assertEquals(user, foundUser);
@@ -94,7 +101,7 @@ public class UserJdbcDaoTest {
     @Test
     public void getAll() {
         User user = new User("Petrenko", "Petro", "Petrovych",
-                "1998-02-12", "Kyiv", "petr@gmail.com", "123", 2);
+                "1998-02-12", "Kyiv", "petr@gmail.com", "123", role.getId());
         userDao.add(user);
         assertEquals(1, userDao.getAll().size());
     }
