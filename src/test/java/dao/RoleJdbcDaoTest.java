@@ -7,8 +7,12 @@ import model.dao.UserDao;
 import model.dao.UserJdbcDao;
 import model.enteties.Role;
 import model.enteties.User;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.sql.Connection;
+import java.sql.SQLException;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNull;
@@ -20,16 +24,25 @@ public class RoleJdbcDaoTest {
 
     private RoleDao roleDao;
     private UserDao userDao;
+    private Connection con;
 
     @Before
     public void setUp() {
         ConnectionManager connectionManager = new ConnectionManager();
-        roleDao = new RoleJdbcDao(connectionManager.getConnectionToTestBD());
-        userDao = new UserJdbcDao(connectionManager.getConnectionToTestBD());
+        con = connectionManager.getConnectionToTestBD();
+        roleDao = new RoleJdbcDao(con);
+        userDao = new UserJdbcDao(con);
         roleDao.clearAllRoles();
     }
 
-    // TODO @After to close connection
+    @After
+    public void tearDown() {
+        try {
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Test
     public void addTest() {
@@ -109,6 +122,4 @@ public class RoleJdbcDaoTest {
         assertTrue(userDao.getAll().contains(user2));
         assertFalse(roleDao.getAll().contains(user3));
     }
-
-
 }

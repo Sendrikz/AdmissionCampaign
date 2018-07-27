@@ -7,8 +7,12 @@ import model.dao.UserDao;
 import model.dao.UserJdbcDao;
 import model.enteties.Role;
 import model.enteties.User;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.sql.Connection;
+import java.sql.SQLException;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -18,15 +22,27 @@ public class UserJdbcDaoTest {
 
     private UserDao userDao;
     private Role role;
+    private Connection con;
 
     @Before
     public void setUp() {
         ConnectionManager connectionManager = new ConnectionManager();
-        userDao = new UserJdbcDao(connectionManager.getConnectionToTestBD());
-        RoleDao roleDao = new RoleJdbcDao(connectionManager.getConnectionToTestBD());
+        RoleDao roleDao = null;
+        con = connectionManager.getConnectionToTestBD();
+        userDao = new UserJdbcDao(con);
+        roleDao = new RoleJdbcDao(con);
         userDao.clearAllUsers();
         role = new Role("Student");
         roleDao.add(role);
+    }
+
+    @After
+    public void tearDown() {
+        try {
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
@@ -88,14 +104,14 @@ public class UserJdbcDaoTest {
 
     @Test
     public void clearAllUsersTest() {
+        userDao.clearAllUsers();
         User user = new User("Petrenko", "Petro", "Petrovych",
                 "1998-02-12", "Kyiv", "petr@gmail.com", "123", role.getId());
         User user2 = new User("Wilson", "Mary", "Johnson",
                 "1987-02-12", "London", "mary@gmail.com", "333", role.getId());
         userDao.add(user);
         userDao.add(user2);
-        userDao.clearAllUsers();
-        assertEquals(0, userDao.getAll().size());
+        assertEquals(2, userDao.getAll().size());
     }
 
     // TODO Think about how realise getAll()

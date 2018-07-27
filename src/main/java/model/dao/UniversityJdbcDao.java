@@ -82,6 +82,7 @@ public class UniversityJdbcDao implements UniversityDao {
 
             ps.setString(1, name);
             ps.setString(2, address);
+            ps.setInt(3, id);
             ps.executeUpdate();
 
         } catch (SQLException e) {
