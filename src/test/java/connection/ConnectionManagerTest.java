@@ -18,4 +18,13 @@ public class ConnectionManagerTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void getConnectionToTestBDTest() {
+        try (Connection connection = new ConnectionManager().getConnectionToTestBD()) {
+                assertFalse(connection.isClosed());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
