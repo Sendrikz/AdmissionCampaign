@@ -23,8 +23,8 @@ public class UniversityTest {
 
     @Test
     public void setAdressTest() {
-        uni.setAdress("Peremogu, 37");
-        assertEquals("Peremogu, 37", uni.getAdress());
+        uni.setAddress("Peremogu, 37");
+        assertEquals("Peremogu, 37", uni.getAddress());
     }
 
     @Test

@@ -29,6 +29,8 @@ public class RoleJdbcDaoTest {
         roleDao.clearAllRoles();
     }
 
+    // TODO @After to close connection
+
     @Test
     public void addTest() {
         Role role = new Role("Administrator");

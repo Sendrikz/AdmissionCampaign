@@ -6,11 +6,11 @@ public class University {
 
     private int id;
     private String name;
-    private String adress;
+    private String address;
 
     public University (String name, String adress) {
         this.name = name;
-        this.adress = adress;
+        this.address = adress;
     }
 
     public int getId() {
@@ -29,12 +29,12 @@ public class University {
         this.name = name;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override
@@ -52,12 +52,12 @@ public class University {
         University uni = (University) obj;
 
         return this.id == uni.id && this.name.equals(uni.name) &&
-                this.adress.equals(uni.adress);
+                this.address.equals(uni.address);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, adress);
+        return Objects.hash(id, name, address);
     }
 
 }

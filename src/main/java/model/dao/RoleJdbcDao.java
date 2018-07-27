@@ -62,8 +62,7 @@ public class RoleJdbcDao implements RoleDao {
             try (ResultSet generatedKeys = ps.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
                     role.setId(generatedKeys.getInt(1));
-                }
-                else {
+                } else {
                     throw new SQLException("Creating user failed, no ID obtained.");
                 }
             }
