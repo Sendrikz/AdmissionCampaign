@@ -1,6 +1,5 @@
 package model.dao;
 
-import model.connection.ConnectionManager;
 import model.enteties.User;
 
 import java.io.FileInputStream;
@@ -12,10 +11,10 @@ import java.util.Properties;
 public class UserJdbcDao implements UserDao {
 
     private Properties property;
-    private ConnectionManager connectionManager;
+    private Connection connection;
 
-    public UserJdbcDao(ConnectionManager connectionManager) {
-        this.connectionManager = connectionManager;
+    public UserJdbcDao(Connection connection) {
+        this.connection = connection;
         property = new Properties();
         try {
             String pathToFile = "src/main/resources/sql.properties";
@@ -30,7 +29,7 @@ public class UserJdbcDao implements UserDao {
     public ArrayList<User> getAll() {
         ArrayList<User> listOfUsers = new ArrayList<>();
 
-        try (Statement statement = connectionManager.getConnection().createStatement();
+        try (Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(property.getProperty("sql.findAllUsers"))) {
 
             while (resultSet.next()) {
@@ -57,8 +56,7 @@ public class UserJdbcDao implements UserDao {
 
     @Override
     public void add(User user) {
-        try (Connection con = connectionManager.getConnection();
-             PreparedStatement ps = con.prepareStatement(property.getProperty("sql.addUser"),
+        try (PreparedStatement ps = connection.prepareStatement(property.getProperty("sql.addUser"),
                      Statement.RETURN_GENERATED_KEYS)) {
 
             ps.setString(1, user.getLastName());
@@ -93,8 +91,8 @@ public class UserJdbcDao implements UserDao {
     @Override
     public User findById(int id) {
         User user = null;
-        try (Connection con = connectionManager.getConnection();
-             PreparedStatement ps = con.prepareStatement(property.getProperty("sql.findUserById"))) {
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.findUserById"))) {
 
             ps.setInt(1, id);
 
@@ -124,8 +122,8 @@ public class UserJdbcDao implements UserDao {
     @Override
     public void update(int id, String lastName, String firstName, String patronymic, String birthday,
                        String city, int role) {
-        try (Connection con = connectionManager.getConnection();
-            PreparedStatement ps = con.prepareStatement(property.getProperty("sql.updateAFullUser"))) {
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.updateAFullUser"))) {
 
             ps.setString(1, lastName);
             ps.setString(2, firstName);
@@ -144,8 +142,8 @@ public class UserJdbcDao implements UserDao {
 
     @Override
     public void updateEmail(int id, String value) {
-        try (Connection con = connectionManager.getConnection();
-            PreparedStatement ps = con.prepareStatement(property.getProperty("sql.updateUserEmail"))) {
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.updateUserEmail"))) {
 
             ps.setString(1, value);
             ps.setInt(2, id);
@@ -159,8 +157,8 @@ public class UserJdbcDao implements UserDao {
 
     @Override
     public void updatePassword(int id, String value) {
-        try (Connection con = connectionManager.getConnection();
-             PreparedStatement ps = con.prepareStatement(property.getProperty("sql.updateUserPassword"))) {
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.updateUserPassword"))) {
 
             ps.setString(1, value);
             ps.setInt(2, id);
@@ -174,8 +172,8 @@ public class UserJdbcDao implements UserDao {
 
     @Override
     public void deleteById(int id) {
-        try (Connection con = connectionManager.getConnection();
-            PreparedStatement ps = con.prepareStatement(property.getProperty("sql.deleteUserById"))) {
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.deleteUserById"))) {
 
             ps.setInt(1, id);
             ps.executeUpdate();
@@ -187,7 +185,7 @@ public class UserJdbcDao implements UserDao {
 
     @Override
     public void clearAllUsers() {
-        try (Statement statement = connectionManager.getConnection().createStatement()) {
+        try (Statement statement = connection.createStatement()) {
 
             statement.executeUpdate(property.getProperty("sql.deleteAllUsers"));
 

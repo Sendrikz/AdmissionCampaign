@@ -35,4 +35,16 @@ public class ConnectionManager {
         }
         return connection;
     }
+
+    public Connection getConnectionToTestBD() {
+        String URL = "jdbc:mysql://localhost:3306/admission_campaign_test" +
+                "?autoReconnect=true&useSSL=false";
+        try {
+            connection = DriverManager.getConnection(URL, property.getProperty("db.login"),
+                    property.getProperty("db.password"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return connection;
+    }
 }

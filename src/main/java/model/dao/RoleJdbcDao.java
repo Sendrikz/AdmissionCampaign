@@ -1,6 +1,5 @@
 package model.dao;
 
-import model.connection.ConnectionManager;
 import model.enteties.Role;
 import model.enteties.User;
 
@@ -12,11 +11,11 @@ import java.util.Properties;
 
 public class RoleJdbcDao implements RoleDao {
 
-    private ConnectionManager connectionManager;
+    private Connection connection;
     private Properties property;
 
-    public RoleJdbcDao(ConnectionManager connectionManager) {
-        this.connectionManager = connectionManager;
+    public RoleJdbcDao(Connection connection) {
+        this.connection = connection;
         property = new Properties();
         String filePath = "src/main/resources/sql.properties";
         try {
@@ -31,7 +30,7 @@ public class RoleJdbcDao implements RoleDao {
     public ArrayList<Role> getAll() {
         ArrayList<Role> listOfRoles = new ArrayList<>();
 
-        try (Statement statement = connectionManager.getConnection().createStatement();
+        try (Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(property.getProperty("sql.findAllRoles"))) {
 
             while (resultSet.next()) {
@@ -49,8 +48,7 @@ public class RoleJdbcDao implements RoleDao {
 
     @Override
     public void add(Role role) {
-        try (Connection con = connectionManager.getConnection();
-             PreparedStatement ps = con.prepareStatement(property.getProperty("sql.addRole"),
+        try (PreparedStatement ps = connection.prepareStatement(property.getProperty("sql.addRole"),
                      Statement.RETURN_GENERATED_KEYS)) {
 
 
@@ -77,8 +75,8 @@ public class RoleJdbcDao implements RoleDao {
 
     @Override
     public void update(int id, String value) {
-        try (Connection con = connectionManager.getConnection();
-             PreparedStatement ps = con.prepareStatement(property.getProperty("sql.updateNameRole"))) {
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.updateNameRole"))) {
 
             ps.setString(1, value);
             ps.setInt(2, id);
@@ -92,8 +90,8 @@ public class RoleJdbcDao implements RoleDao {
     @Override
     public Role findById(int id) {
         Role role = null;
-        try (Connection con = connectionManager.getConnection();
-        PreparedStatement ps = con.prepareStatement(property.getProperty("sql.findByIdRole"))) {
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.findByIdRole"))) {
 
             ps.setInt(1, id);
 
@@ -112,8 +110,8 @@ public class RoleJdbcDao implements RoleDao {
 
     @Override
     public void deleteById(int id) {
-        try (Connection con = connectionManager.getConnection();
-        PreparedStatement ps = con.prepareStatement(property.getProperty("sql.deleteByIdRole"))) {
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.deleteByIdRole"))) {
 
             ps.setInt(1, id);
             ps.executeUpdate();
@@ -126,7 +124,7 @@ public class RoleJdbcDao implements RoleDao {
 
     @Override
     public void clearAllRoles() {
-        try (Statement statement = connectionManager.getConnection().createStatement()) {
+        try (Statement statement = connection.createStatement()) {
 
             statement.executeUpdate(property.getProperty("sql.deleteAllRoles"));
 
@@ -138,8 +136,8 @@ public class RoleJdbcDao implements RoleDao {
     @Override
     public ArrayList<User> getAllUsersByRole(int roleId) {
         ArrayList<User> listOfUsersByRole = new ArrayList<>();
-        try (Connection con = connectionManager.getConnection();
-             PreparedStatement ps = con.prepareStatement(property.getProperty("sql.allUsersByRole"))) {
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.allUsersByRole"))) {
 
             ps.setInt(1, roleId);
 

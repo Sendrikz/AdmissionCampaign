@@ -24,8 +24,9 @@ public class RoleJdbcDaoTest {
     @Before
     public void setUp() {
         ConnectionManager connectionManager = new ConnectionManager();
-        roleDao = new RoleJdbcDao(connectionManager);
-        userDao = new UserJdbcDao(connectionManager);
+        roleDao = new RoleJdbcDao(connectionManager.getConnectionToTestBD());
+        userDao = new UserJdbcDao(connectionManager.getConnectionToTestBD());
+        roleDao.clearAllRoles();
     }
 
     @Test

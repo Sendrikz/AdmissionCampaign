@@ -22,8 +22,9 @@ public class UserJdbcDaoTest {
     @Before
     public void setUp() {
         ConnectionManager connectionManager = new ConnectionManager();
-        userDao = new UserJdbcDao(connectionManager);
-        RoleDao roleDao = new RoleJdbcDao(connectionManager);
+        userDao = new UserJdbcDao(connectionManager.getConnectionToTestBD());
+        RoleDao roleDao = new RoleJdbcDao(connectionManager.getConnectionToTestBD());
+        userDao.clearAllUsers();
         role = new Role("Student");
         roleDao.add(role);
     }
@@ -50,7 +51,7 @@ public class UserJdbcDaoTest {
     public void updateEmailTest() {
         // TODO Generate different users
         User user = new User("Wilson", "Mary", "Johnson",
-                "1987-02-12", "London", "mary@gmail.com", "333", 2);
+                "1987-02-12", "London", "mary@gmail.com", "333", role.getId());
        // User user = userDao.findById(5);
         userDao.add(user);
         userDao.updateEmail(user.getId(),"ok@gmail.com");
@@ -62,7 +63,7 @@ public class UserJdbcDaoTest {
     public void updatePasswordTest() {
         // TODO Generate different users
         User user = new User("Wilson", "Mary", "Johnson",
-                 "1987-02-12", "London", "mary@gmail.com", "333", 2);
+                 "1987-02-12", "London", "mary@gmail.com", "333", role.getId());
         //User user = userDao.findById(5);
         userDao.add(user);
         userDao.updatePassword(user.getId(),"5555");
@@ -79,7 +80,7 @@ public class UserJdbcDaoTest {
     public void deleteByIdTest() {
         // TODO Generate different users
          User user = new User("Wilson", "Mary", "Johnson",
-                 "1987-02-12", "London", "mary@gmail.com", "333", 2);
+                 "1987-02-12", "London", "mary@gmail.com", "333", role.getId());
          userDao.add(user);
         userDao.deleteById(user.getId());
         assertNull(userDao.findById(user.getId()));
@@ -88,9 +89,9 @@ public class UserJdbcDaoTest {
     @Test
     public void clearAllUsersTest() {
         User user = new User("Petrenko", "Petro", "Petrovych",
-                "1998-02-12", "Kyiv", "petr@gmail.com", "123", 2);
+                "1998-02-12", "Kyiv", "petr@gmail.com", "123", role.getId());
         User user2 = new User("Wilson", "Mary", "Johnson",
-                "1987-02-12", "London", "mary@gmail.com", "333", 2);
+                "1987-02-12", "London", "mary@gmail.com", "333", role.getId());
         userDao.add(user);
         userDao.add(user2);
         userDao.clearAllUsers();
@@ -100,6 +101,7 @@ public class UserJdbcDaoTest {
     // TODO Think about how realise getAll()
     @Test
     public void getAll() {
+        userDao.clearAllUsers();
         User user = new User("Petrenko", "Petro", "Petrovych",
                 "1998-02-12", "Kyiv", "petr@gmail.com", "123", role.getId());
         userDao.add(user);
