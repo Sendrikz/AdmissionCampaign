@@ -116,10 +116,11 @@ public class RoleJdbcDaoTest {
         userDao.clearAllUsers();
         userDao.add(user);
         userDao.add(user2);
-        System.out.println(roleDao.getAllUsersByRole(role.getId()).toString());
         assertEquals(2, roleDao.getAllUsersByRole(role.getId()).size());
         assertTrue(userDao.getAll().contains(user));
         assertTrue(userDao.getAll().contains(user2));
         assertFalse(roleDao.getAll().contains(user3));
+        userDao.deleteById(user.getId());
+        userDao.deleteById(user2.getId());
     }
 }

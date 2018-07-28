@@ -77,7 +77,7 @@ public class FacultyJdbcDaoTest {
         facultyDao.update(faculty.getId(), "Economy");
         assertNotEquals(faculty, facultyDao.findById(faculty.getId()));
     }
-    
+
     @Test
     public void deleteById() {
         Faculty faculty = new Faculty("Economy");
