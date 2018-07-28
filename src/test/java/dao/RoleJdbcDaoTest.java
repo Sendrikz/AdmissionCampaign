@@ -22,6 +22,8 @@ import static org.junit.Assert.assertNotEquals;
 
 public class RoleJdbcDaoTest {
 
+    // TODO не должно быть повторов в бвзе, для этого или проверка или сделать уникальным поле
+    // TODO и транзакции сделать иначе оно просто не исполняет и не кидает ошибку
     private RoleDao roleDao;
     private UserDao userDao;
     private Connection con;
