@@ -175,4 +175,5 @@ public class SpecialtyJdbcDaoTest {
         specialtyDao.updateSpecialtyToSubject(specialty.getId(), language.getId(), new BigDecimal(0.3));
         assertNotEquals(new BigDecimal(0.2), specialtyDao.getAllSubjectsOfSpecialty(specialty.getId()).get(language));
     }
+
 }

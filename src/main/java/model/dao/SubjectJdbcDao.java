@@ -1,11 +1,14 @@
 package model.dao;
 
+import model.enteties.Specialty;
 import model.enteties.Subject;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Properties;
 
 public class SubjectJdbcDao implements SubjectDao {
@@ -75,6 +78,21 @@ public class SubjectJdbcDao implements SubjectDao {
     }
 
     @Override
+    public void addSubjectToSpecialty(Subject subject, Specialty specialty, BigDecimal coef) {
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.addSpecialtyToSubject"))) {
+
+            ps.setInt(2, subject.getId());
+            ps.setInt(1, specialty.getId());
+            ps.setBigDecimal(3, coef);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public void update(int id, String name, int duration) {
         try (PreparedStatement ps = connection.prepareStatement(
                 property.getProperty("sql.updateSubject"))) {
@@ -82,6 +100,21 @@ public class SubjectJdbcDao implements SubjectDao {
             ps.setString(1, name);
             ps.setInt(2, duration);
             ps.setInt(3, id);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void updateSubjectToSpecialty(int subjectId, int specialtyId, BigDecimal coef) {
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.updateSpecialtyToSubject"))) {
+
+            ps.setBigDecimal(1, coef);
+            ps.setInt(3, subjectId);
+            ps.setInt(2, specialtyId);
             ps.executeUpdate();
 
         } catch (SQLException e) {
@@ -132,5 +165,32 @@ public class SubjectJdbcDao implements SubjectDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public ArrayList<Specialty> getAllSpecialtiesBySubject(int subjectId) {
+        ArrayList<Specialty> listOfSpecialties = new ArrayList<>();
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.getAllSpecialtiesBySubject"))) {
+
+            ps.setInt(1, subjectId);
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                PreparedStatement preparedStatement = connection.prepareStatement(
+                            property.getProperty("sql.findByIdSpecialty"));
+                preparedStatement.setInt(1, resultSet.getInt(1));
+                ResultSet rs = preparedStatement.executeQuery();
+                while (rs.next()) {
+                    Specialty specialty = new Specialty(rs.getString(2),
+                            rs.getInt(3), rs.getInt(4));
+                    specialty.setId(rs.getInt(1));
+                    listOfSpecialties.add(specialty);
+                }
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listOfSpecialties;
     }
 }
