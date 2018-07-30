@@ -168,8 +168,8 @@ public class SubjectJdbcDao implements SubjectDao {
     }
 
     @Override
-    public ArrayList<Specialty> getAllSpecialtiesBySubject(int subjectId) {
-        ArrayList<Specialty> listOfSpecialties = new ArrayList<>();
+    public HashMap<Specialty, BigDecimal> getAllSpecialtiesBySubject(int subjectId) {
+        HashMap<Specialty, BigDecimal> listOfSpecialties = new HashMap<>();
         try (PreparedStatement ps = connection.prepareStatement(
                 property.getProperty("sql.getAllSpecialtiesBySubject"))) {
 
@@ -184,7 +184,7 @@ public class SubjectJdbcDao implements SubjectDao {
                     Specialty specialty = new Specialty(rs.getString(2),
                             rs.getInt(3), rs.getInt(4));
                     specialty.setId(rs.getInt(1));
-                    listOfSpecialties.add(specialty);
+                    listOfSpecialties.put(specialty, resultSet.getBigDecimal(2));
                 }
 
             }

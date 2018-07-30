@@ -84,17 +84,9 @@ public class RoleJdbcDaoTest {
         Role roleAdmin = new Role("Administrator");
         roleDao.add(role);
         roleDao.add(roleAdmin);
+        userDao.clearAllUsers();
         roleDao.clearAllRoles();
         assertEquals(0, roleDao.getAll().size());
-    }
-
-    @Test
-    public void getAllTest() {
-        Role role = new Role("Student");
-        Role roleAdmin = new Role("Administrator");
-        roleDao.add(role);
-        roleDao.add(roleAdmin);
-        assertEquals(2, roleDao.getAll().size());
     }
 
     @Test

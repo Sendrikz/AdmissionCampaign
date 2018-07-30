@@ -22,5 +22,5 @@ public interface SubjectDao {
     void deleteById(int id);
     void clearAllSubjects();
 
-    ArrayList<Specialty> getAllSpecialtiesBySubject(int subjectId);
+    HashMap<Specialty, BigDecimal> getAllSpecialtiesBySubject(int subjectId);
 }

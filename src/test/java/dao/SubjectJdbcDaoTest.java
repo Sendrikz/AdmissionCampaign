@@ -100,7 +100,7 @@ public class SubjectJdbcDaoTest {
         subjectDao.addSubjectToSpecialty(math, specialtyComp, new BigDecimal(0.5));
         assertEquals(2, subjectDao.getAllSpecialtiesBySubject(math.getId()).size());
         subjectDao.updateSubjectToSpecialty(math.getId(), specialty.getId(), new BigDecimal(0.6));
-        assertNotEquals(math, specialtyDao.getAllSubjectsOfSpecialty(specialty.getId()).get(math));
+        assertNotEquals(0.5, subjectDao.getAllSpecialtiesBySubject(math.getId()).get(specialty));
     }
 
 //    @Test
