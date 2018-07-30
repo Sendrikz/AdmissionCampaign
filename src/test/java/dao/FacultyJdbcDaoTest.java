@@ -3,6 +3,8 @@ package dao;
 import model.connection.ConnectionManager;
 import model.dao.FacultyDao;
 import model.dao.FacultyJdbcDao;
+import model.dao.SpecialtyDao;
+import model.dao.SpecialtyJdbcDao;
 import model.enteties.Faculty;
 import org.junit.After;
 import org.junit.Before;
@@ -18,12 +20,14 @@ import static org.junit.Assert.assertNotEquals;
 public class FacultyJdbcDaoTest {
 
     private FacultyDao facultyDao;
+    private SpecialtyDao specialtyDao;
     private Connection connection;
 
     @Before
     public void setUp() {
         connection = new ConnectionManager().getConnectionToTestBD();
         facultyDao = new FacultyJdbcDao(connection);
+        specialtyDao = new SpecialtyJdbcDao(connection);
     }
 
     @After
@@ -49,6 +53,7 @@ public class FacultyJdbcDaoTest {
         Faculty facultyIT = new Faculty("Information technologies");
         facultyDao.add(facultyEconomy);
         facultyDao.add(facultyIT);
+        specialtyDao.clearAllSpecialties();
         facultyDao.clearAllFaculties();
         assertEquals(0, facultyDao.getAll().size());
     }

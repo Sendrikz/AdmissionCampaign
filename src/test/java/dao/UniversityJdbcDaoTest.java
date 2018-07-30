@@ -92,7 +92,7 @@ public class UniversityJdbcDaoTest {
     }
 
     @Test
-    public void addUniversityToSpecialty() {
+    public void addUniversityToSpecialtyTest() {
         universityDao.clearAllUniversities();
         University NAUKMA = new University("Kyiv-Mohyla Academy", "Hryhoria Skovorodu, 2");
         universityDao.add(NAUKMA);
