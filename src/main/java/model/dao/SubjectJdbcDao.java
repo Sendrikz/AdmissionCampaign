@@ -60,7 +60,6 @@ public class SubjectJdbcDao implements SubjectDao {
             }
 
             try (ResultSet generatedKeys = ps.getGeneratedKeys()) {
-
                 if (generatedKeys.next()) {
                     subject.setId(generatedKeys.getInt(1));
                 } else {
