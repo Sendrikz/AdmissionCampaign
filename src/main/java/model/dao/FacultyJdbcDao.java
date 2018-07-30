@@ -1,6 +1,7 @@
 package model.dao;
 
 import model.enteties.Faculty;
+import model.enteties.Specialty;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -121,5 +122,27 @@ public class FacultyJdbcDao implements FacultyDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public ArrayList<Specialty> getAllSpecialtiesByFaculty(int id) {
+        ArrayList<Specialty> listOfSpecialties = new ArrayList<>();
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.getAllSpecialtiesByFaculty"))) {
+            ps.setInt(1, id);
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                int specialtyId = resultSet.getInt(1);
+                String name = resultSet.getString(2);
+                int quantityOfStudents = resultSet.getInt(3);
+                Specialty specialty = new Specialty(name, quantityOfStudents, id);
+                specialty.setId(specialtyId);
+                listOfSpecialties.add(specialty);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listOfSpecialties;
     }
 }

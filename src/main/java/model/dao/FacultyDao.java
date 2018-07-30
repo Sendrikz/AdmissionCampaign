@@ -1,6 +1,7 @@
 package model.dao;
 
 import model.enteties.Faculty;
+import model.enteties.Specialty;
 
 import java.util.ArrayList;
 
@@ -16,4 +17,6 @@ public interface FacultyDao {
 
     void deleteById(int id);
     void clearAllFaculties();
+
+    ArrayList<Specialty> getAllSpecialtiesByFaculty(int id);
 }

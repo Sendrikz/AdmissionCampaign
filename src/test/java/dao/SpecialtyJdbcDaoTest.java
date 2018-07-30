@@ -17,6 +17,7 @@ import java.sql.SQLException;
 import static junit.framework.TestCase.assertNull;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 
 public class SpecialtyJdbcDaoTest {
@@ -113,6 +114,28 @@ public class SpecialtyJdbcDaoTest {
         assertEquals(2, specialtyDao.getAll().size());
         assertTrue(specialtyDao.getAll().contains(specialty));
         assertTrue(specialtyDao.getAll().contains(specialtyComp));
+    }
+
+    @Test
+    public void getAllSpecialtiesByFaculty() {
+        specialtyDao.clearAllSpecialties();
+        Faculty faculty = new Faculty("Information technologies");
+        facultyDao.add(faculty);
+        Faculty facultyBio = new Faculty("Biology");
+        facultyDao.add(facultyBio);
+        Specialty specialty = new Specialty("Program engineering", 80,
+                faculty.getId());
+        specialtyDao.add(specialty);
+        Specialty specialtyComp = new Specialty("Computer science", 60,
+                faculty.getId());
+        specialtyDao.add(specialtyComp);
+        Specialty biology = new Specialty("Biology", 40,
+                facultyBio.getId());
+        specialtyDao.add(biology);
+        assertEquals(2, facultyDao.getAllSpecialtiesByFaculty(faculty.getId()).size());
+        assertTrue(facultyDao.getAllSpecialtiesByFaculty(faculty.getId()).contains(specialty));
+        assertTrue(facultyDao.getAllSpecialtiesByFaculty(faculty.getId()).contains(specialtyComp));
+        assertFalse(facultyDao.getAllSpecialtiesByFaculty(faculty.getId()).contains(biology));
     }
 
 }
