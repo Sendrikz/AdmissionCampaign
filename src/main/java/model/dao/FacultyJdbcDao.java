@@ -125,7 +125,7 @@ public class FacultyJdbcDao implements FacultyDao {
     }
 
     @Override
-    public ArrayList<Specialty> getAllSpecialtiesByFaculty(int id) {
+    public ArrayList<Specialty> getAllSpecialtiesOfFaculty(int id) {
         ArrayList<Specialty> listOfSpecialties = new ArrayList<>();
         try (PreparedStatement ps = connection.prepareStatement(
                 property.getProperty("sql.getAllSpecialtiesByFaculty"))) {

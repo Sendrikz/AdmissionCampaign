@@ -1,6 +1,7 @@
 package model.dao;
 
 import model.enteties.Specialty;
+import model.enteties.University;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -76,6 +77,20 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
     }
 
     @Override
+    public void addSpecialtyToUniversity(Specialty specialty, University university) {
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.addSpecialtyToUniversity"))) {
+
+            ps.setInt(1, specialty.getId());
+            ps.setInt(2, university.getId());
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public void update(int id, String name, int quantityOfStudents, int facultyId) {
         try (PreparedStatement ps = connection.prepareStatement(
                 property.getProperty("sql.updateSpecialty"))) {
@@ -134,5 +149,32 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public ArrayList<University> getAllUniversitiesBySpecialty(int id) {
+        ArrayList<University> listOfUni = new ArrayList<>();
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.getAllUniversitiesBySpecialty"))) {
+
+            ps.setInt(1, id);
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                PreparedStatement preparedStatement = connection.prepareStatement(
+                        property.getProperty("sql.findByIdUniversity"));
+                preparedStatement.setInt(1, resultSet.getInt(1));
+                ResultSet rs = preparedStatement.executeQuery();
+                while (rs.next()) {
+                    int uniId = rs.getInt(1);
+                    University uni = new University(rs.getString(2), rs.getString(3));
+                    uni.setId(uniId);
+                    listOfUni.add(uni);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listOfUni;
     }
 }

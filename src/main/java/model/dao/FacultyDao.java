@@ -18,5 +18,5 @@ public interface FacultyDao {
     void deleteById(int id);
     void clearAllFaculties();
 
-    ArrayList<Specialty> getAllSpecialtiesByFaculty(int id);
+    ArrayList<Specialty> getAllSpecialtiesOfFaculty(int id);
 }

@@ -60,4 +60,12 @@ public class University {
         return Objects.hash(id, name, address);
     }
 
+    @Override
+    public String toString() {
+        return "University{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }

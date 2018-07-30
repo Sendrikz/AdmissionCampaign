@@ -1,12 +1,10 @@
 package dao;
 
 import model.connection.ConnectionManager;
-import model.dao.FacultyDao;
-import model.dao.FacultyJdbcDao;
-import model.dao.SpecialtyDao;
-import model.dao.SpecialtyJdbcDao;
+import model.dao.*;
 import model.enteties.Faculty;
 import model.enteties.Specialty;
+import model.enteties.University;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,12 +23,14 @@ public class SpecialtyJdbcDaoTest {
     private SpecialtyDao specialtyDao;
     private FacultyDao facultyDao;
     private Connection connection;
+    private UniversityDao universityDao;
 
     @Before
     public void setUp() {
         connection = new ConnectionManager().getConnectionToTestBD();
         specialtyDao = new SpecialtyJdbcDao(connection);
         facultyDao = new FacultyJdbcDao(connection);
+        universityDao = new UniversityJdbcDao(connection);
     }
 
     @After
@@ -132,10 +132,26 @@ public class SpecialtyJdbcDaoTest {
         Specialty biology = new Specialty("Biology", 40,
                 facultyBio.getId());
         specialtyDao.add(biology);
-        assertEquals(2, facultyDao.getAllSpecialtiesByFaculty(faculty.getId()).size());
-        assertTrue(facultyDao.getAllSpecialtiesByFaculty(faculty.getId()).contains(specialty));
-        assertTrue(facultyDao.getAllSpecialtiesByFaculty(faculty.getId()).contains(specialtyComp));
-        assertFalse(facultyDao.getAllSpecialtiesByFaculty(faculty.getId()).contains(biology));
+        assertEquals(2, facultyDao.getAllSpecialtiesOfFaculty(faculty.getId()).size());
+        assertTrue(facultyDao.getAllSpecialtiesOfFaculty(faculty.getId()).contains(specialty));
+        assertTrue(facultyDao.getAllSpecialtiesOfFaculty(faculty.getId()).contains(specialtyComp));
+        assertFalse(facultyDao.getAllSpecialtiesOfFaculty(faculty.getId()).contains(biology));
+    }
+
+    @Test
+    public void addSpecialtyToUniversity() {
+        University NAUKMA = new University("Kyiv-Mohyla Academy", "Hryhoria Skovorodu, 2");
+        University university = new University("KPI", "Peremogu, 37");
+        universityDao.add(NAUKMA);
+        universityDao.add(university);
+        Faculty faculty = new Faculty("Information technologies");
+        facultyDao.add(faculty);
+        Specialty specialty = new Specialty("Program engineering", 80,
+                faculty.getId());
+        specialtyDao.add(specialty);
+        specialtyDao.addSpecialtyToUniversity(specialty, NAUKMA);
+        specialtyDao.addSpecialtyToUniversity(specialty, university);
+        assertEquals(2, specialtyDao.getAllUniversitiesBySpecialty(specialty.getId()).size());
     }
 
 }

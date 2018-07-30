@@ -1,5 +1,6 @@
 package model.dao;
 
+import model.enteties.Subject;
 import model.enteties.User;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ public interface UserDao {
     ArrayList<User> getAll();
 
     void add(User user);
+  //  void addUserToSubject(User user, Subject subject);
 
     User findById(int id);
 
@@ -19,5 +21,7 @@ public interface UserDao {
 
     void deleteById(int id);
     void clearAllUsers();
+
+   // ArrayList<Subject> getAllSubjectsOfUser(int id);
 
 }
