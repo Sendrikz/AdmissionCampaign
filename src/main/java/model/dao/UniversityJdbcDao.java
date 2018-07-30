@@ -1,8 +1,11 @@
 package model.dao;
 
 import java.sql.*;
+
+import model.enteties.Specialty;
 import model.enteties.University;
 
+import javax.print.attribute.standard.PresentationDirection;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -76,6 +79,20 @@ public class UniversityJdbcDao implements UniversityDao {
     }
 
     @Override
+    public void addUniversityToSpecialty(University university, Specialty specialty) {
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.addSpecialtyToUniversity"))) {
+
+            ps.setInt(2, university.getId());
+            ps.setInt(1, specialty.getId());
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public void update(int id, String name, String address) {
         try (PreparedStatement ps = connection.prepareStatement(
                 property.getProperty("sql.updateUniversity"))) {
@@ -132,5 +149,33 @@ public class UniversityJdbcDao implements UniversityDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public ArrayList<Specialty> getAllSpecialtiesOfUniversity(int universityId) {
+        ArrayList<Specialty> listOfSpecialties = new ArrayList<>();
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.getAllSpecialtiesOfUniversity"))) {
+
+            ps.setInt(1, universityId);
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                PreparedStatement preparedStatement = connection.prepareStatement(
+                        property.getProperty("sql.findByIdSpecialty"));
+                preparedStatement.setInt(1, resultSet.getInt(1));
+                ResultSet rs = preparedStatement.executeQuery();
+                while (rs.next()) {
+                    String name = rs.getString(2);
+                    int quantityOfStudents = rs.getInt(3);
+                    int facultyId = rs.getInt(4);
+                    Specialty specialty = new Specialty(name, quantityOfStudents, facultyId);
+                    specialty.setId(rs.getInt(1));
+                    listOfSpecialties.add(specialty);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listOfSpecialties;
     }
 }

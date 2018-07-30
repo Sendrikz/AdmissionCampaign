@@ -1,8 +1,9 @@
 package dao;
 
 import model.connection.ConnectionManager;
-import model.dao.UniversityDao;
-import model.dao.UniversityJdbcDao;
+import model.dao.*;
+import model.enteties.Faculty;
+import model.enteties.Specialty;
 import model.enteties.University;
 import org.junit.After;
 import org.junit.Before;
@@ -10,6 +11,7 @@ import org.junit.Test;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.NavigableMap;
 
 import static junit.framework.TestCase.assertNull;
 import static org.junit.Assert.assertNotEquals;
@@ -18,12 +20,16 @@ import static junit.framework.TestCase.assertEquals;
 public class UniversityJdbcDaoTest {
 
     private UniversityDao universityDao;
+    private FacultyDao facultyDao;
+    private SpecialtyDao specialtyDao;
     private Connection con;
 
     @Before
     public void setUp() {
         con = new ConnectionManager().getConnectionToTestBD();
         universityDao = new UniversityJdbcDao(con);
+        facultyDao = new FacultyJdbcDao(con);
+        specialtyDao = new SpecialtyJdbcDao(con);
     }
 
     @After
@@ -85,6 +91,22 @@ public class UniversityJdbcDaoTest {
         assertEquals(2, universityDao.getAll().size());
     }
 
-
+    @Test
+    public void addUniversityToSpecialty() {
+        universityDao.clearAllUniversities();
+        University NAUKMA = new University("Kyiv-Mohyla Academy", "Hryhoria Skovorodu, 2");
+        universityDao.add(NAUKMA);
+        Faculty faculty = new Faculty("Information technologies");
+        facultyDao.add(faculty);
+        Specialty specialty = new Specialty("Program engineering", 80,
+                faculty.getId());
+        specialtyDao.add(specialty);
+        Specialty specialtyComp = new Specialty("Computer science", 60,
+                faculty.getId());
+        specialtyDao.add(specialtyComp);
+        universityDao.addUniversityToSpecialty(NAUKMA, specialty);
+        universityDao.addUniversityToSpecialty(NAUKMA, specialtyComp);
+        assertEquals(2, universityDao.getAllSpecialtiesOfUniversity(NAUKMA.getId()).size());
+    }
 
 }

@@ -3,6 +3,7 @@ package model.dao;
 import model.enteties.Subject;
 import model.enteties.User;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public interface UserDao {
@@ -10,7 +11,7 @@ public interface UserDao {
     ArrayList<User> getAll();
 
     void add(User user);
-  //  void addUserToSubject(User user, Subject subject);
+    //void addUserToSubject(User user, Subject subject, boolean checked, BigDecimal grade);
 
     User findById(int id);
 
@@ -18,10 +19,11 @@ public interface UserDao {
                 String birthday, String city, int role);
     void updateEmail(int id, String value);
     void updatePassword(int id, String value);
+   // void updateUserToSubject(int userId, int subjectId, boolean checked, BigDecimal grade);
 
     void deleteById(int id);
     void clearAllUsers();
 
-   // ArrayList<Subject> getAllSubjectsOfUser(int id);
+    //ArrayList<Subject> getAllSubjectsOfUser(int id);
 
 }
