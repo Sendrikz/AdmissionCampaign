@@ -275,17 +275,6 @@ public class UserJdbcDao implements UserDao {
                 Subject subject = new Subject(resultSet.getString(2), resultSet.getInt(3));
                 subject.setId(resultSet.getInt(1));
                 listOfSubjects.put(subject, resultSet.getBigDecimal(4));
-//                PreparedStatement preparedStatement = connection.prepareStatement(
-//                        property.getProperty("sql.findByIdSubject"));
-//
-//                preparedStatement.setInt(1, resultSet.getInt(1));
-//                ResultSet rs = preparedStatement.executeQuery();
-//
-//                while (rs.next()) {
-//                    Subject subject = new Subject(rs.getString(2), rs.getInt(3));
-//                    subject.setId(rs.getInt(1));
-//                    listOfSubjects.put(subject, resultSet.getBigDecimal(2));
-//                }
             }
 
         } catch (SQLException e) {

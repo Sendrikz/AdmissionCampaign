@@ -209,17 +209,10 @@ public class SubjectJdbcDao implements SubjectDao {
             ps.setInt(1, subjectId);
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
-                PreparedStatement preparedStatement = connection.prepareStatement(
-                            property.getProperty("sql.findByIdSpecialty"));
-                preparedStatement.setInt(1, resultSet.getInt(1));
-                ResultSet rs = preparedStatement.executeQuery();
-                while (rs.next()) {
-                    Specialty specialty = new Specialty(rs.getString(2),
-                            rs.getInt(3), rs.getInt(4));
-                    specialty.setId(rs.getInt(1));
-                    listOfSpecialties.put(specialty, resultSet.getBigDecimal(2));
-                }
-
+                    Specialty specialty = new Specialty(resultSet.getString(2),
+                            resultSet.getInt(3), resultSet.getInt(4));
+                    specialty.setId(resultSet.getInt(1));
+                    listOfSpecialties.put(specialty, resultSet.getBigDecimal(5));
             }
         } catch (SQLException e) {
             e.printStackTrace();

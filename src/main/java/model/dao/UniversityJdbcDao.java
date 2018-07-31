@@ -160,18 +160,12 @@ public class UniversityJdbcDao implements UniversityDao {
             ps.setInt(1, universityId);
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
-                PreparedStatement preparedStatement = connection.prepareStatement(
-                        property.getProperty("sql.findByIdSpecialty"));
-                preparedStatement.setInt(1, resultSet.getInt(1));
-                ResultSet rs = preparedStatement.executeQuery();
-                while (rs.next()) {
-                    String name = rs.getString(2);
-                    int quantityOfStudents = rs.getInt(3);
-                    int facultyId = rs.getInt(4);
+                    String name = resultSet.getString(2);
+                    int quantityOfStudents = resultSet.getInt(3);
+                    int facultyId = resultSet.getInt(4);
                     Specialty specialty = new Specialty(name, quantityOfStudents, facultyId);
-                    specialty.setId(rs.getInt(1));
+                    specialty.setId(resultSet.getInt(1));
                     listOfSpecialties.add(specialty);
-                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
