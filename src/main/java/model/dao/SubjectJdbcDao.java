@@ -2,6 +2,7 @@ package model.dao;
 
 import model.enteties.Specialty;
 import model.enteties.Subject;
+import model.enteties.User;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -93,6 +94,22 @@ public class SubjectJdbcDao implements SubjectDao {
     }
 
     @Override
+    public void addSubjectToUser(Subject subject, User user, boolean checked, BigDecimal grade) {
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.addUserToSubject"))) {
+
+            ps.setInt(2, subject.getId());
+            ps.setInt(1, user.getId());
+            ps.setBoolean(3, checked);
+            ps.setBigDecimal(4, grade);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public void update(int id, String name, int duration) {
         try (PreparedStatement ps = connection.prepareStatement(
                 property.getProperty("sql.updateSubject"))) {
@@ -115,6 +132,22 @@ public class SubjectJdbcDao implements SubjectDao {
             ps.setBigDecimal(1, coef);
             ps.setInt(3, subjectId);
             ps.setInt(2, specialtyId);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void updateSubjectToUser(int subjectId, int userId, boolean checked, BigDecimal grade) {
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.updateUserToSubject"))) {
+
+            ps.setBoolean(1, checked);
+            ps.setBigDecimal(2, grade);
+            ps.setInt(4, subjectId);
+            ps.setInt(3, userId);
             ps.executeUpdate();
 
         } catch (SQLException e) {
@@ -192,5 +225,98 @@ public class SubjectJdbcDao implements SubjectDao {
             e.printStackTrace();
         }
         return listOfSpecialties;
+    }
+
+    @Override
+    public HashMap<User, BigDecimal> getAllUsersWithCheckedSubjects(int id) {
+        HashMap<User, BigDecimal> listOfUsers = new HashMap<>();
+
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.getAllUsersWithCheckedSubjects"))) {
+
+            ps.setInt(1, id);
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                int userId = resultSet.getInt(1);
+                String lastName = resultSet.getString(2);
+                String firstName = resultSet.getString(3);
+                String patronymic = resultSet.getString(4);
+                String birthday = resultSet.getString(5);
+                String city = resultSet.getString(6);
+                String email = resultSet.getString(7);
+                String password = resultSet.getString(8);
+                int role = resultSet.getInt(9);
+                User user = new User(lastName, firstName, patronymic, birthday, city, email,
+                        password, role);
+                user.setId(userId);
+                listOfUsers.put(user, resultSet.getBigDecimal(10));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listOfUsers;
+    }
+
+    @Override
+    public ArrayList<User> getAllUsersBySubject(int id) {
+        ArrayList<User> listOfUsers = new ArrayList<>();
+
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.getAllUsersBySubject"))) {
+
+            ps.setInt(1, id);
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                String lastName = resultSet.getString(2);
+                String firstName = resultSet.getString(3);
+                String patronymic = resultSet.getString(4);
+                String birthday = resultSet.getString(5);
+                String city = resultSet.getString(6);
+                String email = resultSet.getString(7);
+                String password = resultSet.getString(8);
+                int role = resultSet.getInt(9);
+                User user = new User(lastName, firstName, patronymic, birthday, city, email,
+                        password, role);
+                user.setId(resultSet.getInt(1));
+                listOfUsers.add(user);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listOfUsers;
+    }
+
+    @Override
+    public ArrayList<User> getAllUsersWithUncheckedSubject(int id) {
+        ArrayList<User> listOfUsers = new ArrayList<>();
+
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.getAllUsersWithUncheckedSubject"))) {
+
+            ps.setInt(1, id);
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                String lastName = resultSet.getString(2);
+                String firstName = resultSet.getString(3);
+                String patronymic = resultSet.getString(4);
+                String birthday = resultSet.getString(5);
+                String city = resultSet.getString(6);
+                String email = resultSet.getString(7);
+                String password = resultSet.getString(8);
+                User user = new User(lastName, firstName, patronymic, birthday, city, email,
+                        password, resultSet.getInt(9));
+                user.setId(resultSet.getInt(1));
+                listOfUsers.add(user);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listOfUsers;
     }
 }

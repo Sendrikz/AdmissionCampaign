@@ -12,9 +12,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 import static junit.framework.TestCase.assertNull;
-import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 
 public class SpecialtyJdbcDaoTest {
@@ -26,6 +24,7 @@ public class SpecialtyJdbcDaoTest {
     private RoleDao roleDao;
     private Connection connection;
     private UniversityDao universityDao;
+    private Faculty faculty;
 
     @Before
     public void setUp() {
@@ -36,6 +35,8 @@ public class SpecialtyJdbcDaoTest {
         subjectDao = new SubjectJdbcDao(connection);
         userDao = new UserJdbcDao(connection);
         roleDao = new RoleJdbcDao(connection);
+        faculty = new Faculty("Факультет інформатики");
+        facultyDao.add(faculty);
     }
 
     @After
@@ -47,12 +48,19 @@ public class SpecialtyJdbcDaoTest {
         }
     }
 
+    private Specialty setUpNewEngineeringSpecialty() {
+        return new Specialty("Інженерія програмного забезпечення", 60,
+                faculty.getId());
+    }
+
+    private Specialty setUpNewCompSpecialty() {
+        return new Specialty("Комп'ютерні науки", 50,
+                faculty.getId());
+    }
+
     @Test
     public void addTest() {
-        Faculty faculty = new Faculty("Information technologies");
-        facultyDao.add(faculty);
-        Specialty specialty = new Specialty("Program engineering", 60,
-                faculty.getId());
+        Specialty specialty = setUpNewEngineeringSpecialty();
         int originId = specialty.getId();
         specialtyDao.add(specialty);
         assertNotEquals(originId, specialty.getId());
@@ -60,10 +68,7 @@ public class SpecialtyJdbcDaoTest {
 
     @Test
     public void updateTest() {
-        Faculty faculty = new Faculty("Information technologies");
-        facultyDao.add(faculty);
-        Specialty specialty = new Specialty("Program engineering", 60,
-                faculty.getId());
+        Specialty specialty = setUpNewEngineeringSpecialty();
         specialtyDao.add(specialty);
         specialtyDao.update(specialty.getId(), specialty.getName(), 80,
                 specialty.getFacultyId());
@@ -71,103 +76,46 @@ public class SpecialtyJdbcDaoTest {
     }
 
     @Test
-    public void findByIdTest() {
-        Faculty faculty = new Faculty("Information technologies");
-        facultyDao.add(faculty);
-        Specialty specialty = new Specialty("Program engineering", 60,
-                faculty.getId());
-        specialtyDao.add(specialty);
-        assertEquals(specialty, specialtyDao.findById(specialty.getId()));
-    }
-
-    @Test
     public void deleteByIdTest() {
-        Faculty faculty = new Faculty("Information technologies");
-        facultyDao.add(faculty);
-        Specialty specialty = new Specialty("Program engineering", 60,
-                faculty.getId());
+        Specialty specialty = setUpNewEngineeringSpecialty();
         specialtyDao.add(specialty);
         specialtyDao.deleteById(specialty.getId());
         assertNull(specialtyDao.findById(specialty.getId()));
     }
 
     @Test
-    public void clearAllSubjectsTest() {
-        Faculty faculty = new Faculty("Information technologies");
-        facultyDao.add(faculty);
-        Specialty specialty = new Specialty("Program engineering", 80,
-                faculty.getId());
+    public void clearAllSpecialtiesTest() {
+        Specialty specialty = setUpNewEngineeringSpecialty();
         specialtyDao.add(specialty);
-        Specialty specialtyComp = new Specialty("Computer science", 60,
-                faculty.getId());
+        Specialty specialtyComp = setUpNewCompSpecialty();
         specialtyDao.add(specialtyComp);
+        userDao.clearAllUsers();
         specialtyDao.clearAllSpecialties();
         assertEquals(0, specialtyDao.getAll().size());
     }
 
     @Test
-    public void getAllTest() {
-        specialtyDao.clearAllSpecialties();
-        Faculty faculty = new Faculty("Information technologies");
-        facultyDao.add(faculty);
-        Specialty specialty = new Specialty("Program engineering", 80,
-                faculty.getId());
-        specialtyDao.add(specialty);
-        Specialty specialtyComp = new Specialty("Computer science", 60,
-                faculty.getId());
-        specialtyDao.add(specialtyComp);
-        assertEquals(2, specialtyDao.getAll().size());
-        assertTrue(specialtyDao.getAll().contains(specialty));
-        assertTrue(specialtyDao.getAll().contains(specialtyComp));
-    }
-
-    @Test
-    public void getAllSpecialtiesByFacultyTest() {
-        specialtyDao.clearAllSpecialties();
-        Faculty faculty = new Faculty("Information technologies");
-        facultyDao.add(faculty);
-        Faculty facultyBio = new Faculty("Biology");
-        facultyDao.add(facultyBio);
-        Specialty specialty = new Specialty("Program engineering", 80,
-                faculty.getId());
-        specialtyDao.add(specialty);
-        Specialty specialtyComp = new Specialty("Computer science", 60,
-                faculty.getId());
-        specialtyDao.add(specialtyComp);
-        Specialty biology = new Specialty("Biology", 40,
-                facultyBio.getId());
-        specialtyDao.add(biology);
-        assertEquals(2, facultyDao.getAllSpecialtiesOfFaculty(faculty.getId()).size());
-        assertTrue(facultyDao.getAllSpecialtiesOfFaculty(faculty.getId()).contains(specialty));
-        assertTrue(facultyDao.getAllSpecialtiesOfFaculty(faculty.getId()).contains(specialtyComp));
-        assertFalse(facultyDao.getAllSpecialtiesOfFaculty(faculty.getId()).contains(biology));
-    }
-
-    @Test
     public void addSpecialtyToUniversityTest() {
-        University NAUKMA = new University("Kyiv-Mohyla Academy", "Hryhoria Skovorodu, 2");
-        University university = new University("KPI", "Peremogu, 37");
-        universityDao.add(NAUKMA);
+        University NaUKMA = new University("Національний університет «Києво-Могилянська академія»",
+                "Григорія Сковороди, 2");
+        University university = new University("Національний технічний університет України " +
+                "«Київський політехнічний інститут імені Ігоря Сікорського»",
+                "просп. Перемоги, 37");
+        universityDao.add(NaUKMA);
         universityDao.add(university);
-        Faculty faculty = new Faculty("Information technologies");
-        facultyDao.add(faculty);
-        Specialty specialty = new Specialty("Program engineering", 80,
-                faculty.getId());
+        Specialty specialty = setUpNewEngineeringSpecialty();
         specialtyDao.add(specialty);
-        specialtyDao.addSpecialtyToUniversity(specialty, NAUKMA);
+        specialtyDao.addSpecialtyToUniversity(specialty, NaUKMA);
         specialtyDao.addSpecialtyToUniversity(specialty, university);
         assertEquals(2, specialtyDao.getAllUniversitiesBySpecialty(specialty.getId()).size());
     }
 
     @Test
     public void addSpecialtyToSubjectTest() {
-        Faculty faculty = new Faculty("Information technologies");
-        facultyDao.add(faculty);
-        Specialty specialty = new Specialty("Program engineering", 80,
-                faculty.getId());
+        Specialty specialty = setUpNewEngineeringSpecialty();
         specialtyDao.add(specialty);
-        Subject math = new Subject("Math", 120);
-        Subject language = new Subject("Ukrainian language", 80);
+        Subject math = new Subject("Математика", 120);
+        Subject language = new Subject("Українська мова", 80);
         subjectDao.add(math);
         subjectDao.add(language);
         specialtyDao.addSpecialtyToSubject(specialty, math, new BigDecimal(0.5));
@@ -179,18 +127,15 @@ public class SpecialtyJdbcDaoTest {
 
     @Test
     public void addSpecialtyToUser() {
-        Role role = new Role("Student");
+        Role role = new Role("Студент");
         roleDao.add(role);
-        User user = new User("Petrenko", "Petro", "Petrovych",
-                "1998-02-12", "Kyiv", "petr@gmail.com", "123", role.getId());
-        User user2 = new User("Wilson", "Mary", "Johnson",
-                "1987-02-12", "London", "mary@gmail.com", "333", role.getId());
+        User user = new User("Бойко", "Андрій", "Петрович",
+                "1998-02-12", "Київ", "andriy@gmail.com", "123", role.getId());
+        User user2 = new User("Гринчук", "Костянтин", "Вікторович",
+                "1997-02-12", "Львів", "kost@gmail.com", "333", role.getId());
         userDao.add(user);
         userDao.add(user2);
-        Faculty faculty = new Faculty("Information technologies");
-        facultyDao.add(faculty);
-        Specialty specialty = new Specialty("Program engineering", 80,
-                faculty.getId());
+        Specialty specialty = setUpNewEngineeringSpecialty();
         specialtyDao.add(specialty);
 
         specialtyDao.addSpecialtyToUser(specialty, user, false);
@@ -198,7 +143,6 @@ public class SpecialtyJdbcDaoTest {
         assertEquals(2, specialtyDao.getAllUsersOfSpecialty(specialty.getId()).size());
         specialtyDao.updateSpecialtyToUser(specialty.getId(), user.getId(), true);
         assertEquals(true, specialtyDao.getAllUsersOfSpecialty(specialty.getId()).get(user));
-
     }
 
 }

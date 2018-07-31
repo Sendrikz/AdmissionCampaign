@@ -22,8 +22,6 @@ import static org.junit.Assert.assertNotEquals;
 
 public class RoleJdbcDaoTest {
 
-    // TODO не должно быть повторов в бвзе, для этого или проверка или сделать уникальным поле
-    // TODO и транзакции сделать иначе оно просто не исполняет и не кидает ошибку
     private RoleDao roleDao;
     private UserDao userDao;
     private Connection con;
@@ -46,33 +44,33 @@ public class RoleJdbcDaoTest {
         }
     }
 
+    private Role setUpNewAdminRole() {
+        return new Role("Адміністратор");
+    }
+
+    private Role setUpNewStudentRole() {
+        return new Role("Студент");
+    }
+
     @Test
     public void addTest() {
-        Role role = new Role("Administrator");
+        Role role = setUpNewAdminRole();
         int initialId = role.getId();
         roleDao.add(role);
         assertNotEquals(initialId, role.getId());
     }
 
     @Test
-    public void findByIdTest() {
-        Role role = new Role("Administrator");
-        roleDao.add(role);
-        Role roleTwoTest = roleDao.findById(role.getId());
-        assertEquals(role, roleTwoTest);
-    }
-
-    @Test
     public void updateTest() {
-        Role role = new Role("Student");
+        Role role = setUpNewStudentRole();
         roleDao.add(role);
-        roleDao.update(role.getId(), "Administrator");
+        roleDao.update(role.getId(), "Адміністратор");
         assertNotEquals(role, roleDao.findById(role.getId()));
     }
 
     @Test
     public void deleteById() {
-        Role role = new Role("Student");
+        Role role = setUpNewStudentRole();
         roleDao.add(role);
         roleDao.deleteById(role.getId());
         assertNull(roleDao.findById(role.getId()));
@@ -80,8 +78,8 @@ public class RoleJdbcDaoTest {
 
     @Test
     public void clearAllRolesTest() {
-        Role role = new Role("Student");
-        Role roleAdmin = new Role("Administrator");
+        Role role = setUpNewStudentRole();
+        Role roleAdmin = setUpNewAdminRole();
         roleDao.add(role);
         roleDao.add(roleAdmin);
         userDao.clearAllUsers();
@@ -91,7 +89,7 @@ public class RoleJdbcDaoTest {
 
     @Test
     public void categoryIdIsReturnedCorrectly() {
-        Role role = new Role("Student");
+        Role role = setUpNewStudentRole();
         int originalId = role.getId();
         roleDao.add(role);
         assertNotEquals(originalId, roleDao.findById(role.getId()).getId());
@@ -99,14 +97,14 @@ public class RoleJdbcDaoTest {
 
     @Test
     public void getAllUsersByRoleTest() {
-        Role role = new Role("Student");
+        Role role = setUpNewStudentRole();
         roleDao.add(role);
-        User user = new User("Petrenko", "Petro", "Petrovych",
-                "1998-02-12", "Kyiv", "petr@gmail.com", "123", role.getId());
-        User user2 = new User("Wilson", "Mary", "Johnson",
-                "1987-02-12", "London", "mary@gmail.com", "333", role.getId());
-        User user3 = new User("Holmes", "Cherlock", "Johnson",
-                "1977-02-12", "London", "holmes@gmail.com", "9876", role.getId());
+        User user = new User("Бойко", "Андрій", "Петрович",
+                "1998-02-12", "Київ", "andriy@gmail.com", "123", role.getId());
+        User user2 = new User("Гринчук", "Костянтин", "Вікторович",
+                "1997-02-12", "Львів", "kost@gmail.com", "333", role.getId());
+        User user3 = new User("Левченко", "Михайло", "Олегович",
+                "1987-02-12", "Ніжин", "mych@gmail.com", "9876", role.getId());
         userDao.clearAllUsers();
         userDao.add(user);
         userDao.add(user2);
@@ -114,7 +112,5 @@ public class RoleJdbcDaoTest {
         assertTrue(userDao.getAll().contains(user));
         assertTrue(userDao.getAll().contains(user2));
         assertFalse(roleDao.getAll().contains(user3));
-        userDao.deleteById(user.getId());
-        userDao.deleteById(user2.getId());
     }
 }

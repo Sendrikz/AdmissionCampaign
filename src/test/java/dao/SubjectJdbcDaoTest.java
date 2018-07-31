@@ -2,9 +2,7 @@ package dao;
 
 import model.connection.ConnectionManager;
 import model.dao.*;
-import model.enteties.Faculty;
-import model.enteties.Specialty;
-import model.enteties.Subject;
+import model.enteties.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,6 +20,8 @@ public class SubjectJdbcDaoTest {
     private SubjectDao subjectDao;
     private SpecialtyDao specialtyDao;
     private FacultyDao facultyDao;
+    private UserDao userDao;
+    private RoleDao roleDao;
     private Connection connection;
 
     @Before
@@ -30,6 +30,8 @@ public class SubjectJdbcDaoTest {
         connection = connectionManager.getConnectionToTestBD();
         subjectDao = new SubjectJdbcDao(connection);
         specialtyDao = new SpecialtyJdbcDao(connection);
+        userDao = new UserJdbcDao(connection);
+        roleDao = new RoleJdbcDao(connection);
         facultyDao = new FacultyJdbcDao(connection);
     }
 
@@ -42,9 +44,17 @@ public class SubjectJdbcDaoTest {
         }
     }
 
+    private Subject setUpNewMathSubject() {
+        return new Subject("Математика", 120);
+    }
+
+    private Subject setUpNewLanguageSubject() {
+        return new Subject("Українська мова", 80);
+    }
+
     @Test
     public void addTest() {
-        Subject subject = new Subject("Java programming", 120);
+        Subject subject = setUpNewMathSubject();
         int originId = subject.getId();
         subjectDao.add(subject);
         assertNotEquals(originId, subject.getId());
@@ -52,22 +62,15 @@ public class SubjectJdbcDaoTest {
 
     @Test
     public void updateTest() {
-        Subject subject = new Subject("Java programming", 120);
+        Subject subject = setUpNewMathSubject();
         subjectDao.add(subject);
         subjectDao.update(subject.getId(), subject.getName(), 240);
         assertNotEquals(subject, subjectDao.findById(subject.getId()));
     }
 
     @Test
-    public void findByIdTest() {
-        Subject subject = new Subject("Java programming", 120);
-        subjectDao.add(subject);
-        assertEquals(subject, subjectDao.findById(subject.getId()));
-    }
-
-    @Test
     public void deleteByIdTest() {
-        Subject subject = new Subject("Java programming", 120);
+        Subject subject = setUpNewMathSubject();
         subjectDao.add(subject);
         subjectDao.deleteById(subject.getId());
         assertNull(subjectDao.findById(subject.getId()));
@@ -75,10 +78,11 @@ public class SubjectJdbcDaoTest {
 
     @Test
     public void clearAllSubjectsTest() {
-        Subject subjectJava = new Subject("Java programming", 120);
-        subjectDao.add(subjectJava);
-        Subject subjectC = new Subject("C++", 120);
-        subjectDao.add(subjectC);
+        Subject subjectMath = setUpNewMathSubject();
+        subjectDao.add(subjectMath);
+        Subject subjectLanguage = setUpNewLanguageSubject();
+        subjectDao.add(subjectLanguage);
+        userDao.clearAllUsers();
         specialtyDao.clearAllSpecialties();
         subjectDao.clearAllSubjects();
         assertEquals(0, subjectDao.getAll().size());
@@ -86,14 +90,14 @@ public class SubjectJdbcDaoTest {
 
     @Test
     public void addSubjectToSpecialtyTest() {
-        Subject math = new Subject("Math", 120);
+        Subject math = setUpNewMathSubject();
         subjectDao.add(math);
-        Faculty faculty = new Faculty("Information technologies");
+        Faculty faculty = new Faculty("Факультет інформатики");
         facultyDao.add(faculty);
-        Specialty specialty = new Specialty("Program engineering", 80,
-                faculty.getId());
+        Specialty specialty = new Specialty("Інженерія програмного забезпечення",
+                60, faculty.getId());
         specialtyDao.add(specialty);
-        Specialty specialtyComp = new Specialty("Computer science", 60,
+        Specialty specialtyComp = new Specialty("Комп'ютерні науки", 50,
                 faculty.getId());
         specialtyDao.add(specialtyComp);
         subjectDao.addSubjectToSpecialty(math, specialty, new BigDecimal(0.5));
@@ -103,16 +107,24 @@ public class SubjectJdbcDaoTest {
         assertNotEquals(0.5, subjectDao.getAllSpecialtiesBySubject(math.getId()).get(specialty));
     }
 
-//    @Test
-//    public void getAllTest() {
-//        subjectDao.clearAllSubjects();
-//        Subject subject = new Subject("Java programming", 120);
-//        subjectDao.add(subject);
-//        Subject subjectC = new Subject("C++", 120);
-//        subjectDao.add(subjectC);
-//        assertEquals(2, subjectDao.getAll().size());
-//        assertTrue(subjectDao.getAll().contains(subject));
-//        assertTrue(subjectDao.getAll().contains(subjectC));
-//    }
+    @Test
+    public void addSubjectToUserTest() {
+        Subject math = setUpNewMathSubject();
+        subjectDao.add(math);
+        Role role = new Role("Студент");
+        roleDao.add(role);
+        User user = new User("Бойко", "Андрій", "Петрович",
+                "1998-02-12", "Київ", "andriy@gmail.com", "123", role.getId());
+        User user2 = new User("Гринчук", "Костянтин", "Вікторович",
+                "1997-02-12", "Львів", "kost@gmail.com", "333", role.getId());
+        userDao.add(user);
+        userDao.add(user2);
+        subjectDao.addSubjectToUser(math, user, false, new BigDecimal(0));
+        subjectDao.addSubjectToUser(math, user2, false, new BigDecimal(0));
+        assertEquals(2, subjectDao.getAllUsersBySubject(math.getId()).size());
+        subjectDao.updateSubjectToUser(math.getId(), user.getId(), true, new BigDecimal(87));
+        assertEquals(1, subjectDao.getAllUsersWithCheckedSubjects(math.getId()).size());
+        assertEquals(1, subjectDao.getAllUsersWithUncheckedSubject(math.getId()).size());
+    }
 
 }
