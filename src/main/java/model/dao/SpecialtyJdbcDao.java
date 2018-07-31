@@ -3,6 +3,7 @@ package model.dao;
 import model.enteties.Specialty;
 import model.enteties.Subject;
 import model.enteties.University;
+import model.enteties.User;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -109,6 +110,22 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
     }
 
     @Override
+    public void addSpecialtyToUser(Specialty specialty, User user, boolean passed) {
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.addUserToSpecialty"))) {
+
+            ps.setInt(2, specialty.getId());
+            ps.setInt(1, user.getId());
+            ps.setBoolean(3, passed);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
     public void update(int id, String name, int quantityOfStudents, int facultyId) {
         try (PreparedStatement ps = connection.prepareStatement(
                 property.getProperty("sql.updateSpecialty"))) {
@@ -132,6 +149,21 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
             ps.setBigDecimal(1, coef);
             ps.setInt(2, specialtyId);
             ps.setInt(3, subjectId);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void updateSpecialtyToUser(int specialtyId, int userId, boolean passed) {
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.updateUserToSpecialty"))) {
+
+            ps.setBoolean(1, passed);
+            ps.setInt(3, specialtyId);
+            ps.setInt(2, userId);
             ps.executeUpdate();
 
         } catch (SQLException e) {
@@ -194,16 +226,11 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
             ResultSet resultSet = ps.executeQuery();
 
             while (resultSet.next()) {
-                PreparedStatement preparedStatement = connection.prepareStatement(
-                        property.getProperty("sql.findByIdUniversity"));
-                preparedStatement.setInt(1, resultSet.getInt(1));
-                ResultSet rs = preparedStatement.executeQuery();
-                while (rs.next()) {
-                    int uniId = rs.getInt(1);
-                    University uni = new University(rs.getString(2), rs.getString(3));
+                    int uniId = resultSet.getInt(1);
+                    University uni = new University(resultSet.getString(2),
+                            resultSet.getString(3));
                     uni.setId(uniId);
                     listOfUni.add(uni);
-                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -221,22 +248,48 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
             ResultSet resultSet = ps.executeQuery();
 
             while (resultSet.next()) {
-                PreparedStatement preparedStatement = connection.prepareStatement(
-                        property.getProperty("sql.findByIdSubject"));
-                preparedStatement.setInt(1, resultSet.getInt(1));
-                ResultSet rs = preparedStatement.executeQuery();
-                while (rs.next()) {
-                    String name = rs.getString(2);
-                    int duration = rs.getInt(3);
+                    String name = resultSet.getString(2);
+                    int duration = resultSet.getInt(3);
                     Subject subject = new Subject(name, duration);
-                    subject.setId(rs.getInt(1));
-                    listOfSubject.put(subject, resultSet.getBigDecimal(2));
+                    subject.setId(resultSet.getInt(1));
+                    listOfSubject.put(subject, resultSet.getBigDecimal(4));
                 }
-            }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return listOfSubject;
+    }
+
+    @Override
+    public HashMap<User, Boolean> getAllUsersOfSpecialty(int id) {
+        HashMap<User, Boolean> listOfUsers = new HashMap<>();
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.getAllUsersOfSpecialty"))) {
+
+            ps.setInt(1, id);
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                int userId = resultSet.getInt(1);
+                String lastName = resultSet.getString(2);
+                String firstName = resultSet.getString(3);
+                String patronymic = resultSet.getString(4);
+                String birthday = resultSet.getString(5);
+                String city = resultSet.getString(6);
+                String email = resultSet.getString(7);
+                String password = resultSet.getString(8);
+                int role = resultSet.getInt(9);
+                User user = new User(lastName, firstName, patronymic, birthday, city, email,
+                        password, role);
+                user.setId(userId);
+                listOfUsers.put(user, resultSet.getBoolean(10));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listOfUsers;
     }
 }

@@ -2,10 +2,7 @@ package dao;
 
 import model.connection.ConnectionManager;
 import model.dao.*;
-import model.enteties.Faculty;
-import model.enteties.Specialty;
-import model.enteties.Subject;
-import model.enteties.University;
+import model.enteties.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,6 +22,8 @@ public class SpecialtyJdbcDaoTest {
     private SpecialtyDao specialtyDao;
     private FacultyDao facultyDao;
     private SubjectDao subjectDao;
+    private UserDao userDao;
+    private RoleDao roleDao;
     private Connection connection;
     private UniversityDao universityDao;
 
@@ -35,6 +34,8 @@ public class SpecialtyJdbcDaoTest {
         facultyDao = new FacultyJdbcDao(connection);
         universityDao = new UniversityJdbcDao(connection);
         subjectDao = new SubjectJdbcDao(connection);
+        userDao = new UserJdbcDao(connection);
+        roleDao = new RoleJdbcDao(connection);
     }
 
     @After
@@ -174,6 +175,30 @@ public class SpecialtyJdbcDaoTest {
         assertEquals(2, specialtyDao.getAllSubjectsOfSpecialty(specialty.getId()).size());
         specialtyDao.updateSpecialtyToSubject(specialty.getId(), language.getId(), new BigDecimal(0.3));
         assertNotEquals(new BigDecimal(0.2), specialtyDao.getAllSubjectsOfSpecialty(specialty.getId()).get(language));
+    }
+
+    @Test
+    public void addSpecialtyToUser() {
+        Role role = new Role("Student");
+        roleDao.add(role);
+        User user = new User("Petrenko", "Petro", "Petrovych",
+                "1998-02-12", "Kyiv", "petr@gmail.com", "123", role.getId());
+        User user2 = new User("Wilson", "Mary", "Johnson",
+                "1987-02-12", "London", "mary@gmail.com", "333", role.getId());
+        userDao.add(user);
+        userDao.add(user2);
+        Faculty faculty = new Faculty("Information technologies");
+        facultyDao.add(faculty);
+        Specialty specialty = new Specialty("Program engineering", 80,
+                faculty.getId());
+        specialtyDao.add(specialty);
+
+        specialtyDao.addSpecialtyToUser(specialty, user, false);
+        specialtyDao.addSpecialtyToUser(specialty, user2, false);
+        assertEquals(2, specialtyDao.getAllUsersOfSpecialty(specialty.getId()).size());
+        specialtyDao.updateSpecialtyToUser(specialty.getId(), user.getId(), true);
+        assertEquals(true, specialtyDao.getAllUsersOfSpecialty(specialty.getId()).get(user));
+
     }
 
 }

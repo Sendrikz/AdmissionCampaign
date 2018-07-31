@@ -3,6 +3,7 @@ package model.dao;
 import model.enteties.Specialty;
 import model.enteties.Subject;
 import model.enteties.University;
+import model.enteties.User;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -15,9 +16,11 @@ public interface SpecialtyDao {
     void add(Specialty specialty);
     void addSpecialtyToUniversity(Specialty specialty, University university);
     void addSpecialtyToSubject(Specialty specialty, Subject subject, BigDecimal coef);
+    void addSpecialtyToUser(Specialty specialty, User user, boolean passed);
 
     void update(int id, String name, int quantityOfStudents, int facultyId);
     void updateSpecialtyToSubject(int specialtyId, int subjectId, BigDecimal coef);
+    void updateSpecialtyToUser(int specialtyId, int userId, boolean passed);
 
     Specialty findById(int id);
 
@@ -26,4 +29,5 @@ public interface SpecialtyDao {
 
     ArrayList<University> getAllUniversitiesBySpecialty(int id);
     HashMap<Subject, BigDecimal> getAllSubjectsOfSpecialty(int id);
+    HashMap<User, Boolean> getAllUsersOfSpecialty(int id);
 }
