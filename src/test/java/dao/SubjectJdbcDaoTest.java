@@ -1,5 +1,6 @@
 package dao;
 
+import enums.*;
 import model.connection.ConnectionManager;
 import model.dao.*;
 import model.enteties.*;
@@ -45,11 +46,11 @@ public class SubjectJdbcDaoTest {
     }
 
     private Subject setUpNewMathSubject() {
-        return new Subject("Математика", 120);
+        return new Subject(Subjects.MATH.getName(), Subjects.MATH.getDuration());
     }
 
     private Subject setUpNewLanguageSubject() {
-        return new Subject("Українська мова", 80);
+        return new Subject(Subjects.UA_LANGUAGE.getName(), Subjects.UA_LANGUAGE.getDuration());
     }
 
     @Test
@@ -92,13 +93,13 @@ public class SubjectJdbcDaoTest {
     public void addSubjectToSpecialtyTest() {
         Subject math = setUpNewMathSubject();
         subjectDao.add(math);
-        Faculty faculty = new Faculty("Факультет інформатики");
+        Faculty faculty = new Faculty(Faculties.IT.getName());
         facultyDao.add(faculty);
-        Specialty specialty = new Specialty("Інженерія програмного забезпечення",
-                60, faculty.getId());
+        Specialty specialty = new Specialty(Specialties.ENGINEERING.getName(),
+                Specialties.ENGINEERING.getQuantityOfStudents(), faculty.getId());
         specialtyDao.add(specialty);
-        Specialty specialtyComp = new Specialty("Комп'ютерні науки", 50,
-                faculty.getId());
+        Specialty specialtyComp = new Specialty(Specialties.COMPUTER_SCIENCE.getName(),
+                Specialties.COMPUTER_SCIENCE.getQuantityOfStudents(), faculty.getId());
         specialtyDao.add(specialtyComp);
         subjectDao.addSubjectToSpecialty(math, specialty, new BigDecimal(0.5));
         subjectDao.addSubjectToSpecialty(math, specialtyComp, new BigDecimal(0.5));
@@ -111,12 +112,14 @@ public class SubjectJdbcDaoTest {
     public void addSubjectToUserTest() {
         Subject math = setUpNewMathSubject();
         subjectDao.add(math);
-        Role role = new Role("Студент");
+        Role role = new Role(Roles.STUDENT.getName());
         roleDao.add(role);
-        User user = new User("Бойко", "Андрій", "Петрович",
-                "1998-02-12", "Київ", "andriy@gmail.com", "123", role.getId());
-        User user2 = new User("Гринчук", "Костянтин", "Вікторович",
-                "1997-02-12", "Львів", "kost@gmail.com", "333", role.getId());
+        User user = new User(Users.ANDRIY.getLastName(), Users.ANDRIY.getFirstName(),
+                Users.ANDRIY.getPatronymic(), Users.ANDRIY.getBirthday(), Users.ANDRIY.getCity(),
+                Users.ANDRIY.getEmail(), Users.ANDRIY.getPassword(), role.getId());
+        User user2 = new User(Users.KOSTYA.getLastName(), Users.KOSTYA.getFirstName(),
+                Users.KOSTYA.getPatronymic(), Users.KOSTYA.getBirthday(), Users.KOSTYA.getCity(),
+                Users.KOSTYA.getEmail(), Users.KOSTYA.getPassword(), role.getId());
         userDao.add(user);
         userDao.add(user2);
         subjectDao.addSubjectToUser(math, user, false, new BigDecimal(0));

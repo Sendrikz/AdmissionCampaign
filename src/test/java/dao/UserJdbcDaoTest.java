@@ -1,5 +1,6 @@
 package dao;
 
+import enums.*;
 import model.connection.ConnectionManager;
 import model.dao.*;
 import model.enteties.*;
@@ -28,14 +29,14 @@ public class UserJdbcDaoTest {
     @Before
     public void setUp() {
         ConnectionManager connectionManager = new ConnectionManager();
-        RoleDao roleDao = null;
+        RoleDao roleDao;
         con = connectionManager.getConnectionToTestBD();
         userDao = new UserJdbcDao(con);
         roleDao = new RoleJdbcDao(con);
         subjectDao = new SubjectJdbcDao(con);
         facultyDao = new FacultyJdbcDao(con);
         specialtyDao = new SpecialtyJdbcDao(con);
-        role = new Role("Student");
+        role = new Role(Roles.STUDENT.getName());
         roleDao.add(role);
     }
 
@@ -48,10 +49,21 @@ public class UserJdbcDaoTest {
         }
     }
 
+    private User setUpNewAndriy() {
+        return new User(Users.ANDRIY.getLastName(), Users.ANDRIY.getFirstName(),
+                Users.ANDRIY.getPatronymic(), Users.ANDRIY.getBirthday(), Users.ANDRIY.getCity(),
+                Users.ANDRIY.getEmail(), Users.ANDRIY.getPassword(), role.getId());
+    }
+
+    private User setUpNewKostya() {
+        return new User(Users.KOSTYA.getLastName(), Users.KOSTYA.getFirstName(),
+                Users.KOSTYA.getPatronymic(), Users.KOSTYA.getBirthday(), Users.KOSTYA.getCity(),
+                Users.KOSTYA.getEmail(), Users.KOSTYA.getPassword(), role.getId());
+    }
+
     @Test
     public void addTest() {
-        User user = new User("Petrenko", "Petro", "Petrovych",
-                "1998-02-12", "Kyiv", "petr@gmail.com", "123", role.getId());
+        User user = setUpNewAndriy();
         int originUserId = user.getId();
         userDao.add(user);
         assertNotEquals(originUserId, user.getId());
@@ -59,8 +71,7 @@ public class UserJdbcDaoTest {
 
     @Test
     public void findById() {
-        User user = new User("Wilson", "Mary", "Johnson",
-                "1987-02-12", "London", "mary@gmail.com", "333", role.getId());
+        User user = setUpNewKostya();
         userDao.add(user);
         User foundUser = userDao.findById(user.getId());
         assertEquals(user, foundUser);
@@ -69,8 +80,7 @@ public class UserJdbcDaoTest {
     @Test
     public void updateEmailTest() {
         // TODO Generate different users
-        User user = new User("Wilson", "Mary", "Johnson",
-                "1987-02-12", "London", "mary@gmail.com", "333", role.getId());
+        User user = setUpNewKostya();
        // User user = userDao.findById(5);
         userDao.add(user);
         userDao.updateEmail(user.getId(),"ok@gmail.com");
@@ -81,8 +91,7 @@ public class UserJdbcDaoTest {
     @Test
     public void updatePasswordTest() {
         // TODO Generate different users
-        User user = new User("Wilson", "Mary", "Johnson",
-                 "1987-02-12", "London", "mary@gmail.com", "333", role.getId());
+        User user = setUpNewKostya();
         //User user = userDao.findById(5);
         userDao.add(user);
         userDao.updatePassword(user.getId(),"5555");
@@ -92,14 +101,13 @@ public class UserJdbcDaoTest {
 
     @Test
     public void NoSuchUserTest() {
-        assertEquals(null, userDao.findById(0));
+        assertNull(userDao.findById(0));
     }
 
     @Test
     public void deleteByIdTest() {
         // TODO Generate different users
-         User user = new User("Wilson", "Mary", "Johnson",
-                 "1987-02-12", "London", "mary@gmail.com", "333", role.getId());
+         User user = setUpNewAndriy();
          userDao.add(user);
         userDao.deleteById(user.getId());
         assertNull(userDao.findById(user.getId()));
@@ -108,10 +116,8 @@ public class UserJdbcDaoTest {
     @Test
     public void clearAllUsersTest() {
         userDao.clearAllUsers();
-        User user = new User("Petrenko", "Petro", "Petrovych",
-                "1998-02-12", "Kyiv", "petr@gmail.com", "123", role.getId());
-        User user2 = new User("Wilson", "Mary", "Johnson",
-                "1987-02-12", "London", "mary@gmail.com", "333", role.getId());
+        User user = setUpNewAndriy();
+        User user2 = setUpNewKostya();
         userDao.add(user);
         userDao.add(user2);
         assertEquals(2, userDao.getAll().size());
@@ -119,44 +125,42 @@ public class UserJdbcDaoTest {
 
     @Test
     public void updateTest() {
-        User user = new User("Petrenko", "Petro", "Petrovych",
-                "1998-02-12", "Kyiv", "petr@gmail.com", "123", role.getId());
+        User user = setUpNewKostya();
         userDao.add(user);
-        userDao.update(user.getId(), "Smith", user.getFirstName(), user.getPatronymic(),
-                user.getBirthday(), "USA", user.getRole());
+        userDao.update(user.getId(), Users.MUHAYLO.getFirstName(), user.getFirstName(),
+                user.getPatronymic(), user.getBirthday(), Users.MUHAYLO.getCity(), user.getRole());
         assertNotEquals(user, userDao.findById(user.getId()));
     }
 
     @Test
     public void addUserToSubjectTest() {
-        User user = new User("Petrenko", "Petro", "Petrovych",
-                "1998-02-12", "Kyiv", "petr@gmail.com", "123", role.getId());
+        User user = setUpNewAndriy();;
         userDao.add(user);
-        Subject subjectJava = new Subject("Java programming", 120);
-        subjectDao.add(subjectJava);
-        Subject subjectC = new Subject("C++", 120);
-        subjectDao.add(subjectC);
-        userDao.addUserToSubject(user, subjectC, false, new BigDecimal(0));
-        userDao.addUserToSubject(user, subjectJava, false, new BigDecimal(0));
+        Subject subjectMath = new Subject(Subjects.MATH.getName(), Subjects.MATH.getDuration());
+        subjectDao.add(subjectMath);
+        Subject subjectUA = new Subject(Subjects.UA_LANGUAGE.getName(),
+                Subjects.UA_LANGUAGE.getDuration());
+        subjectDao.add(subjectUA);
+        userDao.addUserToSubject(user, subjectUA, false, new BigDecimal(0));
+        userDao.addUserToSubject(user, subjectMath, false, new BigDecimal(0));
         assertEquals(2, userDao.getAllSubjectsByUser(user.getId()).size());
         BigDecimal grade = new BigDecimal(90.8);
-        userDao.updateUserToSubject(user.getId(), subjectC.getId(), true, grade);
-        assertTrue(userDao.getAllCheckedSubjectsByUser(user.getId()).containsKey(subjectC));
+        userDao.updateUserToSubject(user.getId(), subjectUA.getId(), true, grade);
+        assertTrue(userDao.getAllCheckedSubjectsByUser(user.getId()).containsKey(subjectUA));
         assertEquals(1, userDao.getAllUncheckedSubjectsByUser(user.getId()).size());
     }
 
     @Test
     public void addUserToSpecialtyTest() {
-        User user = new User("Petrenko", "Petro", "Petrovych",
-                "1998-02-12", "Kyiv", "petr@gmail.com", "123", role.getId());
+        User user = setUpNewKostya();;
         userDao.add(user);
-        Faculty faculty = new Faculty("Information technologies");
+        Faculty faculty = new Faculty(Faculties.IT.getName());
         facultyDao.add(faculty);
-        Specialty specialty = new Specialty("Program engineering", 80,
-                faculty.getId());
+        Specialty specialty = new Specialty(Specialties.ENGINEERING.getName(),
+                Specialties.ENGINEERING.getQuantityOfStudents(), faculty.getId());
         specialtyDao.add(specialty);
-        Specialty specialtyComp = new Specialty("Computer science", 60,
-                faculty.getId());
+        Specialty specialtyComp = new Specialty(Specialties.COMPUTER_SCIENCE.getName(),
+                Specialties.COMPUTER_SCIENCE.getQuantityOfStudents(), faculty.getId());
         specialtyDao.add(specialtyComp);
         userDao.addUserToSpecialty(user, specialty, false);
         userDao.addUserToSpecialty(user, specialtyComp, false);

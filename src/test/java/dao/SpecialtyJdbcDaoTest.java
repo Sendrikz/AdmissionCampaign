@@ -1,5 +1,6 @@
 package dao;
 
+import enums.*;
 import model.connection.ConnectionManager;
 import model.dao.*;
 import model.enteties.*;
@@ -35,7 +36,7 @@ public class SpecialtyJdbcDaoTest {
         subjectDao = new SubjectJdbcDao(connection);
         userDao = new UserJdbcDao(connection);
         roleDao = new RoleJdbcDao(connection);
-        faculty = new Faculty("Факультет інформатики");
+        faculty = new Faculty(Faculties.IT.getName());
         facultyDao.add(faculty);
     }
 
@@ -49,13 +50,13 @@ public class SpecialtyJdbcDaoTest {
     }
 
     private Specialty setUpNewEngineeringSpecialty() {
-        return new Specialty("Інженерія програмного забезпечення", 60,
-                faculty.getId());
+        return new Specialty(Specialties.ENGINEERING.getName(),
+                Specialties.ENGINEERING.getQuantityOfStudents(), faculty.getId());
     }
 
     private Specialty setUpNewCompSpecialty() {
-        return new Specialty("Комп'ютерні науки", 50,
-                faculty.getId());
+        return new Specialty(Specialties.COMPUTER_SCIENCE.getName(),
+                Specialties.COMPUTER_SCIENCE.getQuantityOfStudents(), faculty.getId());
     }
 
     @Test
@@ -70,7 +71,7 @@ public class SpecialtyJdbcDaoTest {
     public void updateTest() {
         Specialty specialty = setUpNewEngineeringSpecialty();
         specialtyDao.add(specialty);
-        specialtyDao.update(specialty.getId(), specialty.getName(), 80,
+        specialtyDao.update(specialty.getId(), specialty.getName(), 90,
                 specialty.getFacultyId());
         assertNotEquals(specialty, specialtyDao.findById(specialty.getId()));
     }
@@ -96,11 +97,10 @@ public class SpecialtyJdbcDaoTest {
 
     @Test
     public void addSpecialtyToUniversityTest() {
-        University NaUKMA = new University("Національний університет «Києво-Могилянська академія»",
-                "Григорія Сковороди, 2");
-        University university = new University("Національний технічний університет України " +
-                "«Київський політехнічний інститут імені Ігоря Сікорського»",
-                "просп. Перемоги, 37");
+        University NaUKMA = new University(Universities.NaUKMA.getName(),
+                Universities.NaUKMA.getAddress());
+        University university = new University(Universities.KPI.getName(),
+                Universities.KPI.getAddress());
         universityDao.add(NaUKMA);
         universityDao.add(university);
         Specialty specialty = setUpNewEngineeringSpecialty();
@@ -114,25 +114,30 @@ public class SpecialtyJdbcDaoTest {
     public void addSpecialtyToSubjectTest() {
         Specialty specialty = setUpNewEngineeringSpecialty();
         specialtyDao.add(specialty);
-        Subject math = new Subject("Математика", 120);
-        Subject language = new Subject("Українська мова", 80);
+        Subject math = new Subject(Subjects.MATH.getName(), Subjects.MATH.getDuration());
+        Subject language = new Subject(Subjects.UA_LANGUAGE.getName(),
+                Subjects.UA_LANGUAGE.getDuration());
         subjectDao.add(math);
         subjectDao.add(language);
         specialtyDao.addSpecialtyToSubject(specialty, math, new BigDecimal(0.5));
         specialtyDao.addSpecialtyToSubject(specialty, language, new BigDecimal(0.2));
         assertEquals(2, specialtyDao.getAllSubjectsOfSpecialty(specialty.getId()).size());
-        specialtyDao.updateSpecialtyToSubject(specialty.getId(), language.getId(), new BigDecimal(0.3));
-        assertNotEquals(new BigDecimal(0.2), specialtyDao.getAllSubjectsOfSpecialty(specialty.getId()).get(language));
+        specialtyDao.updateSpecialtyToSubject(specialty.getId(), language.getId(),
+                new BigDecimal(0.3));
+        assertNotEquals(new BigDecimal(0.2),
+                specialtyDao.getAllSubjectsOfSpecialty(specialty.getId()).get(language));
     }
 
     @Test
     public void addSpecialtyToUser() {
-        Role role = new Role("Студент");
+        Role role = new Role(Roles.STUDENT.getName());
         roleDao.add(role);
-        User user = new User("Бойко", "Андрій", "Петрович",
-                "1998-02-12", "Київ", "andriy@gmail.com", "123", role.getId());
-        User user2 = new User("Гринчук", "Костянтин", "Вікторович",
-                "1997-02-12", "Львів", "kost@gmail.com", "333", role.getId());
+        User user = new User(Users.ANDRIY.getLastName(), Users.ANDRIY.getFirstName(),
+                Users.ANDRIY.getPatronymic(), Users.ANDRIY.getBirthday(), Users.ANDRIY.getCity(),
+                Users.ANDRIY.getEmail(), Users.ANDRIY.getPassword(), role.getId());
+        User user2 = new User(Users.KOSTYA.getLastName(), Users.KOSTYA.getFirstName(),
+                Users.KOSTYA.getPatronymic(), Users.KOSTYA.getBirthday(), Users.KOSTYA.getCity(),
+                Users.KOSTYA.getEmail(), Users.KOSTYA.getPassword(), role.getId());
         userDao.add(user);
         userDao.add(user2);
         Specialty specialty = setUpNewEngineeringSpecialty();

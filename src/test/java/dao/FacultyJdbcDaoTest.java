@@ -1,5 +1,7 @@
 package dao;
 
+import enums.Faculties;
+import enums.Specialties;
 import model.connection.ConnectionManager;
 import model.dao.FacultyDao;
 import model.dao.FacultyJdbcDao;
@@ -44,11 +46,11 @@ public class FacultyJdbcDaoTest {
     }
 
     private Faculty setUpNewITFaculty() {
-        return new Faculty("Факультет інформатики");
+        return new Faculty(Faculties.IT.getName());
     }
 
     private Faculty setUpNewEconomicFaculty() {
-        return new Faculty("Факультет економічних наук");
+        return new Faculty(Faculties.ECONOMIC.getName());
     }
 
     @Test
@@ -74,7 +76,7 @@ public class FacultyJdbcDaoTest {
     public void updateTest() {
         Faculty faculty = setUpNewITFaculty();
         facultyDao.add(faculty);
-        facultyDao.update(faculty.getId(), "Факультет природничих наук");
+        facultyDao.update(faculty.getId(), Faculties.BIOLOGY.getName());
         assertNotEquals(faculty, facultyDao.findById(faculty.getId()));
     }
 
@@ -93,15 +95,14 @@ public class FacultyJdbcDaoTest {
         facultyDao.add(faculty);
         Faculty facultyEconomy = setUpNewEconomicFaculty();
         facultyDao.add(facultyEconomy);
-        Specialty specialty = new Specialty("Інженерія програмного забезпечення",
-                80,
-                faculty.getId());
+        Specialty specialty = new Specialty(Specialties.ENGINEERING.getName(),
+                Specialties.ENGINEERING.getQuantityOfStudents(), faculty.getId());
         specialtyDao.add(specialty);
-        Specialty specialtyComp = new Specialty("Комп'ютерні науки", 60,
-                faculty.getId());
+        Specialty specialtyComp = new Specialty(Specialties.COMPUTER_SCIENCE.getName(),
+                Specialties.COMPUTER_SCIENCE.getQuantityOfStudents(), faculty.getId());
         specialtyDao.add(specialtyComp);
-        Specialty market = new Specialty("Маркетинг", 40,
-                facultyEconomy.getId());
+        Specialty market = new Specialty(Specialties.MARKETING.getName(),
+                Specialties.MARKETING.getQuantityOfStudents(), facultyEconomy.getId());
         specialtyDao.add(market);
         Assert.assertEquals(2, facultyDao.getAllSpecialtiesOfFaculty(faculty.getId()).size());
         assertTrue(facultyDao.getAllSpecialtiesOfFaculty(faculty.getId()).contains(specialty));

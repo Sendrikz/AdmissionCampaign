@@ -1,73 +1,51 @@
 package enteties;
 
+import enums.Users;
 import model.enteties.User;
+import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
 
 public class UserTest {
 
-  User user = new User("Petrenko", "Petro", "Petrovych",
-          "1998-02-12", "Kyiv", "petr@gmail.com", "123", 2);
+    private User user;
 
-    @Test
-    public void getLastNameTest() {
-        assertEquals("Petrenko", user.getLastName());
-    }
-
-    @Test
-    public void getFirstNameTest() {
-        assertEquals("Petro", user.getFirstName());
-    }
-
-    @Test
-    public void getPatronymicTest() {
-        assertEquals("Petrovych", user.getPatronymic());
-    }
-
-    @Test
-    public void getBirthdayTest() {
-        assertEquals("1998-02-12", user.getBirthday());
-    }
-
-    @Test
-    public void getCityTest() {
-        assertEquals("Kyiv", user.getCity());
-    }
-
-    @Test
-    public void getRoleTest() {
-        assertEquals(2, user.getRole());
+    @Before
+    public void setUp() {
+        user = new User(Users.KOSTYA.getLastName(), Users.KOSTYA.getFirstName(),
+                Users.KOSTYA.getPatronymic(), Users.KOSTYA.getBirthday(), Users.KOSTYA.getCity(),
+                Users.KOSTYA.getEmail(), Users.KOSTYA.getPassword(), 2);
     }
 
     @Test
     public void setLastNameTest() {
-        user.setLastName("Smith");
-        assertEquals("Smith", user.getLastName());
+        user.setLastName(Users.MUHAYLO.getLastName());
+        assertEquals(Users.MUHAYLO.getLastName(), user.getLastName());
     }
 
     @Test
     public void setFirstNameTest() {
-        user.setFirstName("Eric");
-        assertEquals("Eric", user.getFirstName());
+        user.setFirstName(Users.MUHAYLO.getFirstName());
+        assertEquals(Users.MUHAYLO.getFirstName(), user.getFirstName());
     }
 
     @Test
     public void setPatronymicTest() {
-        user.setPatronymic("Rouse");
-        assertEquals("Rouse", user.getPatronymic());
+        user.setPatronymic(Users.MUHAYLO.getPatronymic());
+        assertEquals(Users.MUHAYLO.getPatronymic(), user.getPatronymic());
     }
 
     @Test
     public void setBirthdayTest() {
-        user.setBirthday("1993-03-16");
-        assertEquals("1993-03-16", user.getBirthday());
+        user.setBirthday(Users.MUHAYLO.getBirthday());
+        assertEquals(Users.MUHAYLO.getBirthday(), user.getBirthday());
     }
 
     @Test
     public void setCityTest() {
-        user.setCity("Lviv");
-        assertEquals("Lviv", user.getCity());
+        user.setCity(Users.MUHAYLO.getCity());
+        assertEquals(Users.MUHAYLO.getCity(), user.getCity());
     }
 
     @Test
@@ -84,35 +62,52 @@ public class UserTest {
 
     @Test
     public void setEmailTest() {
-        user.setEmail("petrovych@gmail.com");
-        assertEquals("petrovych@gmail.com", user.getEmail());
+        user.setEmail(Users.MUHAYLO.getEmail());
+        assertEquals(Users.MUHAYLO.getEmail(), user.getEmail());
     }
 
     @Test
     public void setPasswordTest() {
-        user.setPassword("321");
-        assertEquals("321", user.getPassword());
+        user.setPassword(Users.MUHAYLO.getPassword());
+        assertEquals(Users.MUHAYLO.getPassword(), user.getPassword());
     }
 
     @Test
     public void equalsTest() {
-        User userCopy = new User("Petrenko", "Petro", "Petrovych",
-                "1998-02-12", "Kyiv", "petr@gmail.com", "123", 2);
+        User userCopy = new User(Users.KOSTYA.getLastName(), Users.KOSTYA.getFirstName(),
+                Users.KOSTYA.getPatronymic(), Users.KOSTYA.getBirthday(), Users.KOSTYA.getCity(),
+                Users.KOSTYA.getEmail(), Users.KOSTYA.getPassword(), 2);
         assertEquals(true, user.equals(userCopy));
     }
 
     @Test
     public void hashCodeTest() {
-        User userCopy = new User("Petrenko", "Petro", "Petrovych",
-                "1998-02-12", "Kyiv", "petr@gmail.com", "123", 2);
+        User userCopy = new User(Users.KOSTYA.getLastName(), Users.KOSTYA.getFirstName(),
+                Users.KOSTYA.getPatronymic(), Users.KOSTYA.getBirthday(), Users.KOSTYA.getCity(),
+                Users.KOSTYA.getEmail(), Users.KOSTYA.getPassword(), 2);
         assertEquals(user.hashCode(), userCopy.hashCode());
     }
 
     @Test
     public void notEqualsTest() {
-        User userCopy = new User("Petrenko", "Petro", "Petrovych",
-                "1998-02-12", "Kyiv", "petr@gmail.com", "123", 1);
+        User userCopy = new User(Users.ANDRIY.getLastName(), Users.ANDRIY.getFirstName(),
+                Users.ANDRIY.getPatronymic(), Users.ANDRIY.getBirthday(), Users.ANDRIY.getCity(),
+                Users.ANDRIY.getEmail(), Users.ANDRIY.getPassword(), 1);
         assertEquals(false, user.equals(userCopy));
     }
 
+    @Test
+    public void getString() {
+        assertEquals("User{" +
+                "id=" + user.getId() +
+                ", lastName='" + user.getLastName() + '\'' +
+                ", firstName='" + user.getFirstName() + '\'' +
+                ", patronymic='" + user.getPatronymic() + '\'' +
+                ", birthday=" + user.getBirthday() +
+                ", city='" + user.getCity() + '\'' +
+                ", email='" + user.getEmail() + '\'' +
+                ", password='" + user.getPassword() + '\'' +
+                ", role=" + user.getRole() +
+                '}', user.toString());
+    }
 }

@@ -1,13 +1,20 @@
 package enteties;
 
+import enums.Universities;
 import model.enteties.University;
+import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
 
 public class UniversityTest {
 
-    University uni = new University("Kyiv-Mohyla Academy", "Hryhoria Skovorodu, 2");
+    private University uni;
+
+    @Before
+    public void setUp() {
+        uni = new University(Universities.NaUKMA.getName(), Universities.NaUKMA.getAddress());
+    }
 
     @Test
     public void setIdTest() {
@@ -17,31 +24,43 @@ public class UniversityTest {
 
     @Test
     public void setNameTest() {
-        uni.setName("KPI");
-        assertEquals("KPI", uni.getName());
+        uni.setName(Universities.KPI.getName());
+        assertEquals(Universities.KPI.getName(), uni.getName());
     }
 
     @Test
     public void setAdressTest() {
-        uni.setAddress("Peremogu, 37");
-        assertEquals("Peremogu, 37", uni.getAddress());
+        uni.setAddress(Universities.KPI.getAddress());
+        assertEquals(Universities.KPI.getAddress(), uni.getAddress());
     }
 
     @Test
     public void hashCodeTest() {
-        University uniTest = new University("Kyiv-Mohyla Academy", "Hryhoria Skovorodu, 2");
+        University uniTest = new University(Universities.NaUKMA.getName(),
+                Universities.NaUKMA.getAddress());
         assertEquals(uniTest.hashCode(), uni.hashCode());
     }
 
     @Test
     public void equalsTest() {
-        University uniTest = new University("Kyiv-Mohyla Academy", "Hryhoria Skovorodu, 2");
+        University uniTest = new University(Universities.NaUKMA.getName(),
+                Universities.NaUKMA.getAddress());
         assertEquals(true, uni.equals(uniTest));
     }
 
     @Test
     public void notEqualsTest() {
-        University uniTest = new University("KPI", "Peremogu, 37");
+        University uniTest = new University(Universities.KPI.getName(),
+                Universities.KPI.getAddress());
         assertEquals(false, uni.equals(uniTest));
+    }
+
+    @Test
+    public void getString() {
+        assertEquals("University{" +
+                "id=" + uni.getId() +
+                ", name='" + uni.getName() + '\'' +
+                ", address='" + uni.getAddress() + '\'' +
+                '}', uni.toString());
     }
 }

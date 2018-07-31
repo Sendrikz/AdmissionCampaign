@@ -1,5 +1,8 @@
 package dao;
 
+import enums.Faculties;
+import enums.Specialties;
+import enums.Universities;
 import model.connection.ConnectionManager;
 import model.dao.*;
 import model.enteties.Faculty;
@@ -41,9 +44,17 @@ public class UniversityJdbcDaoTest {
         }
     }
 
+    private University setUpNewNaUKMA() {
+        return new University(Universities.NaUKMA.getName(), Universities.NaUKMA.getAddress());
+    }
+
+    private University setUpNewKPI() {
+        return new University(Universities.KPI.getName(), Universities.KPI.getAddress());
+    }
+
     @Test
     public void addTest() {
-        University university = new University("Kyiv-Mohyla Academy", "Hryhoria Skovorodu, 2");
+        University university = setUpNewNaUKMA();
         int originId = university.getId();
         universityDao.add(university);
         assertNotEquals(originId, university.getId());
@@ -51,7 +62,7 @@ public class UniversityJdbcDaoTest {
 
     @Test
     public void findByIdTest() {
-        University academy = new University("Kyiv-Mohyla Academy", "Hryhoria Skovorodu, 2");
+        University academy = setUpNewNaUKMA();
         universityDao.add(academy);
         University uniTest = universityDao.findById(academy.getId());
         assertEquals(uniTest, academy);
@@ -59,15 +70,15 @@ public class UniversityJdbcDaoTest {
 
     @Test
     public void updateTest() {
-        University academy = new University("Kyiv-Mohyla Academy", "Hryhoria Skovorodu, 2");
+        University academy = setUpNewNaUKMA();
         universityDao.add(academy);
-        universityDao.update(academy.getId(), academy.getName(), "Hryhoria Skovorodu, 4");
+        universityDao.update(academy.getId(), academy.getName(), Universities.KPI.getAddress());
         assertNotEquals(academy, universityDao.findById(academy.getId()));
     }
 
     @Test
     public void deleteByIdTest() {
-        University academy = new University("Kyiv-Mohyla Academy", "Hryhoria Skovorodu, 2");
+        University academy = setUpNewNaUKMA();
         universityDao.add(academy);
         universityDao.deleteById(academy.getId());
         assertNull(universityDao.findById(academy.getId()));
@@ -75,38 +86,28 @@ public class UniversityJdbcDaoTest {
 
     @Test
     public void clearAllUniversities() {
-        University academy = new University("Kyiv-Mohyla Academy", "Hryhoria Skovorodu, 2");
-        University university = new University("KPI", "Peremogu, 37");
+        University academy = setUpNewNaUKMA();
+        University university = setUpNewKPI();
         universityDao.clearAllUniversities();
         assertEquals(0, universityDao.getAll().size());
     }
 
     @Test
-    public void getAllTest() {
-        universityDao.clearAllUniversities();
-        University academy = new University("Kyiv-Mohyla Academy", "Hryhoria Skovorodu, 2");
-        University university = new University("KPI", "Peremogu, 37");
-        universityDao.add(academy);
-        universityDao.add(university);
-        assertEquals(2, universityDao.getAll().size());
-    }
-
-    @Test
     public void addUniversityToSpecialtyTest() {
         universityDao.clearAllUniversities();
-        University NAUKMA = new University("Kyiv-Mohyla Academy", "Hryhoria Skovorodu, 2");
-        universityDao.add(NAUKMA);
-        Faculty faculty = new Faculty("Information technologies");
+        University NaUKMA = setUpNewNaUKMA();
+        universityDao.add(NaUKMA);
+        Faculty faculty = new Faculty(Faculties.IT.getName());
         facultyDao.add(faculty);
-        Specialty specialty = new Specialty("Program engineering", 80,
-                faculty.getId());
+        Specialty specialty = new Specialty(Specialties.ENGINEERING.getName(),
+                Specialties.ENGINEERING.getQuantityOfStudents(), faculty.getId());
         specialtyDao.add(specialty);
-        Specialty specialtyComp = new Specialty("Computer science", 60,
-                faculty.getId());
+        Specialty specialtyComp = new Specialty(Specialties.COMPUTER_SCIENCE.getName(),
+                Specialties.COMPUTER_SCIENCE.getQuantityOfStudents(), faculty.getId());
         specialtyDao.add(specialtyComp);
-        universityDao.addUniversityToSpecialty(NAUKMA, specialty);
-        universityDao.addUniversityToSpecialty(NAUKMA, specialtyComp);
-        assertEquals(2, universityDao.getAllSpecialtiesOfUniversity(NAUKMA.getId()).size());
+        universityDao.addUniversityToSpecialty(NaUKMA, specialty);
+        universityDao.addUniversityToSpecialty(NaUKMA, specialtyComp);
+        assertEquals(2, universityDao.getAllSpecialtiesOfUniversity(NaUKMA.getId()).size());
     }
 
 }

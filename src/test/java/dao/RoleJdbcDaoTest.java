@@ -1,5 +1,7 @@
 package dao;
 
+import enums.Roles;
+import enums.Users;
 import model.connection.ConnectionManager;
 import model.dao.RoleDao;
 import model.dao.RoleJdbcDao;
@@ -32,7 +34,6 @@ public class RoleJdbcDaoTest {
         con = connectionManager.getConnectionToTestBD();
         roleDao = new RoleJdbcDao(con);
         userDao = new UserJdbcDao(con);
-        roleDao.clearAllRoles();
     }
 
     @After
@@ -45,11 +46,11 @@ public class RoleJdbcDaoTest {
     }
 
     private Role setUpNewAdminRole() {
-        return new Role("Адміністратор");
+        return new Role(Roles.ADMINISTRATOR.getName());
     }
 
     private Role setUpNewStudentRole() {
-        return new Role("Студент");
+        return new Role(Roles.STUDENT.getName());
     }
 
     @Test
@@ -64,7 +65,7 @@ public class RoleJdbcDaoTest {
     public void updateTest() {
         Role role = setUpNewStudentRole();
         roleDao.add(role);
-        roleDao.update(role.getId(), "Адміністратор");
+        roleDao.update(role.getId(), Roles.ADMINISTRATOR.getName());
         assertNotEquals(role, roleDao.findById(role.getId()));
     }
 
@@ -99,12 +100,15 @@ public class RoleJdbcDaoTest {
     public void getAllUsersByRoleTest() {
         Role role = setUpNewStudentRole();
         roleDao.add(role);
-        User user = new User("Бойко", "Андрій", "Петрович",
-                "1998-02-12", "Київ", "andriy@gmail.com", "123", role.getId());
-        User user2 = new User("Гринчук", "Костянтин", "Вікторович",
-                "1997-02-12", "Львів", "kost@gmail.com", "333", role.getId());
-        User user3 = new User("Левченко", "Михайло", "Олегович",
-                "1987-02-12", "Ніжин", "mych@gmail.com", "9876", role.getId());
+        User user = new User(Users.ANDRIY.getLastName(), Users.ANDRIY.getFirstName(),
+                Users.ANDRIY.getPatronymic(), Users.ANDRIY.getBirthday(), Users.ANDRIY.getCity(),
+                Users.ANDRIY.getEmail(), Users.ANDRIY.getPassword(), role.getId());
+        User user2 = new User(Users.KOSTYA.getLastName(), Users.KOSTYA.getFirstName(),
+                Users.KOSTYA.getPatronymic(), Users.KOSTYA.getBirthday(), Users.KOSTYA.getCity(),
+                Users.KOSTYA.getEmail(), Users.KOSTYA.getPassword(), role.getId());
+        User user3 = new User(Users.MUHAYLO.getLastName(), Users.MUHAYLO.getFirstName(),
+                Users.MUHAYLO.getPatronymic(), Users.MUHAYLO.getBirthday(), Users.MUHAYLO.getCity(),
+                Users.MUHAYLO.getEmail(), Users.MUHAYLO.getPassword(), role.getId());
         userDao.clearAllUsers();
         userDao.add(user);
         userDao.add(user2);
