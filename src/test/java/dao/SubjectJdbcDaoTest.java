@@ -27,8 +27,7 @@ public class SubjectJdbcDaoTest {
 
     @Before
     public void setUp() {
-        ConnectionManager connectionManager = new ConnectionManager();
-        connection = connectionManager.getConnectionToTestBD();
+        connection = ConnectionManager.getInstance().getConnectionToTestBD();
         subjectDao = new SubjectJdbcDao(connection);
         specialtyDao = new SpecialtyJdbcDao(connection);
         userDao = new UserJdbcDao(connection);

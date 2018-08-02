@@ -1,47 +1,45 @@
 package model.connection;
 
-import java.io.FileInputStream;
-import java.io.IOException;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
 
 public class ConnectionManager {
 
-    private Properties property;
-    private Connection connection;
+    private ConnectionManager() {}
 
-    public ConnectionManager() {
-        property = new Properties();
-        String pathToFile = "src/main/resources/config.properties";
-        try {
-            FileInputStream fis = new FileInputStream(pathToFile);
-            property.load(fis);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private static class ConnectionPoolInstance {
+        private final static ConnectionManager instance = new ConnectionManager();
+    }
+
+    public static ConnectionManager getInstance() {
+        return ConnectionPoolInstance.instance;
     }
 
     public Connection getConnection() {
+        Connection connection = null;
+        Context ctx;
         try {
-            String URL = "jdbc:mysql://localhost:3306/admission_сampaign" +
-                    "?autoReconnect=true&useSSL=false";
-            connection = DriverManager.getConnection(URL, property.getProperty("db.login"),
-                    property.getProperty("db.password"));
-
-        } catch (SQLException e) {
+            ctx = new InitialContext();
+            DataSource ds = (DataSource)ctx.lookup("java:comp/env/jdbc/mydatabase");
+            connection = ds.getConnection();
+        } catch (SQLException | NamingException e) {
             e.printStackTrace();
         }
         return connection;
     }
 
     public Connection getConnectionToTestBD() {
-        String URL = "jdbc:mysql://localhost:3306/admission_campaign_test" +
-                "?autoReconnect=true&useSSL=false";
+        Connection connection = null;
         try {
-            connection = DriverManager.getConnection(URL, property.getProperty("db.login"),
-                    property.getProperty("db.password"));
+            String URL = "jdbc:mysql://localhost:3306/admission_campaign_test" +
+                    "?autoReconnect=true&useSSL=false";
+            connection = DriverManager.getConnection(URL, "root", "root");
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

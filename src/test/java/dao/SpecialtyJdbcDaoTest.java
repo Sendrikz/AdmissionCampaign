@@ -29,13 +29,14 @@ public class SpecialtyJdbcDaoTest {
 
     @Before
     public void setUp() {
-        connection = new ConnectionManager().getConnectionToTestBD();
+        connection = ConnectionManager.getInstance().getConnectionToTestBD();
         specialtyDao = new SpecialtyJdbcDao(connection);
         facultyDao = new FacultyJdbcDao(connection);
-        universityDao = new UniversityJdbcDao(connection);
         subjectDao = new SubjectJdbcDao(connection);
         userDao = new UserJdbcDao(connection);
         roleDao = new RoleJdbcDao(connection);
+        universityDao = new UniversityJdbcDao(connection);
+        universityDao.setTestPath();
         faculty = new Faculty(Faculties.IT.getName());
         facultyDao.add(faculty);
     }

@@ -1,5 +1,7 @@
 package model.dao;
 
+import java.io.File;
+import java.io.InputStream;
 import java.sql.*;
 
 import model.enteties.Specialty;
@@ -22,6 +24,18 @@ public class UniversityJdbcDao implements UniversityDao {
 
     public UniversityJdbcDao(Connection connection) {
         this.connection = connection;
+    }
+
+    public void setPath(InputStream path) {
+        property = new Properties();
+        try {
+            property.load(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setTestPath() {
         property = new Properties();
         String pathToFile = "src/main/resources/sql.properties";
         try {

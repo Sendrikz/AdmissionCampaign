@@ -28,9 +28,8 @@ public class UserJdbcDaoTest {
 
     @Before
     public void setUp() {
-        ConnectionManager connectionManager = new ConnectionManager();
         RoleDao roleDao;
-        con = connectionManager.getConnectionToTestBD();
+        con = ConnectionManager.getInstance().getConnectionToTestBD();
         userDao = new UserJdbcDao(con);
         roleDao = new RoleJdbcDao(con);
         subjectDao = new SubjectJdbcDao(con);

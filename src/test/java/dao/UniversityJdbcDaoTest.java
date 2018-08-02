@@ -14,7 +14,6 @@ import org.junit.Test;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.NavigableMap;
 
 import static junit.framework.TestCase.assertNull;
 import static org.junit.Assert.assertNotEquals;
@@ -29,8 +28,9 @@ public class UniversityJdbcDaoTest {
 
     @Before
     public void setUp() {
-        con = new ConnectionManager().getConnectionToTestBD();
+        con = ConnectionManager.getInstance().getConnectionToTestBD();
         universityDao = new UniversityJdbcDao(con);
+        universityDao.setTestPath();
         facultyDao = new FacultyJdbcDao(con);
         specialtyDao = new SpecialtyJdbcDao(con);
     }

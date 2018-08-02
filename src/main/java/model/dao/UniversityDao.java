@@ -3,6 +3,7 @@ package model.dao;
 import model.enteties.Specialty;
 import model.enteties.University;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public interface UniversityDao {
@@ -20,4 +21,7 @@ public interface UniversityDao {
     void clearAllUniversities();
 
     ArrayList<Specialty> getAllSpecialtiesOfUniversity(int universityId);
+
+    void setPath(InputStream input);
+    void setTestPath();
 }
