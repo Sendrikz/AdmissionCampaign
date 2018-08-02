@@ -1,5 +1,6 @@
-package model.dao;
+package model.dao.dao_implementations;
 
+import model.dao.dao_interfaces.RoleDao;
 import model.enteties.Role;
 import model.enteties.User;
 

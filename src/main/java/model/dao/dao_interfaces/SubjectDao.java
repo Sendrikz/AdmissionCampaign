@@ -1,11 +1,10 @@
-package model.dao;
+package model.dao.dao_interfaces;
 
 import model.enteties.Specialty;
 import model.enteties.Subject;
 import model.enteties.User;
 
 import java.math.BigDecimal;
-import java.text.Bidi;
 import java.util.ArrayList;
 import java.util.HashMap;
 

@@ -1,10 +1,10 @@
-package model.dao;
+package model.dao.dao_implementations;
 
+import model.dao.dao_interfaces.UserDao;
 import model.enteties.Specialty;
 import model.enteties.Subject;
 import model.enteties.User;
 
-import javax.print.attribute.standard.PresentationDirection;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.math.BigDecimal;

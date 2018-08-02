@@ -2,7 +2,8 @@ package dao;
 
 import enums.*;
 import model.connection.ConnectionManager;
-import model.dao.*;
+import model.dao.dao_implementations.*;
+import model.dao.dao_interfaces.*;
 import model.enteties.*;
 import org.junit.After;
 import org.junit.Before;

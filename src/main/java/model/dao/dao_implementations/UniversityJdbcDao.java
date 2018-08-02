@@ -1,13 +1,12 @@
-package model.dao;
+package model.dao.dao_implementations;
 
-import java.io.File;
 import java.io.InputStream;
 import java.sql.*;
 
+import model.dao.dao_interfaces.UniversityDao;
 import model.enteties.Specialty;
 import model.enteties.University;
 
-import javax.print.attribute.standard.PresentationDirection;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;

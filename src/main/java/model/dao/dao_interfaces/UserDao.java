@@ -1,6 +1,5 @@
-package model.dao;
+package model.dao.dao_interfaces;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import model.enteties.Specialty;
 import model.enteties.Subject;
 import model.enteties.User;

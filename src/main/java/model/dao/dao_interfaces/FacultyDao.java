@@ -1,4 +1,4 @@
-package model.dao;
+package model.dao.dao_interfaces;
 
 import model.enteties.Faculty;
 import model.enteties.Specialty;
