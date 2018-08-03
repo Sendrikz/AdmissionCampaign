@@ -37,7 +37,6 @@ public class SpecialtyJdbcDaoTest {
         userDao = new UserJdbcDao(connection);
         roleDao = new RoleJdbcDao(connection);
         universityDao = new UniversityJdbcDao(connection);
-        universityDao.setTestPath();
         faculty = new Faculty(Faculties.IT.getName());
         facultyDao.add(faculty);
     }

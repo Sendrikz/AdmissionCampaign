@@ -1,6 +1,5 @@
-package model.dao;
+package model.dao.dao_implementations;
 
-import model.dao.dao_implementations.*;
 import model.dao.dao_interfaces.*;
 
 import java.sql.Connection;

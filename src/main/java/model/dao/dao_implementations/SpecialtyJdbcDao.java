@@ -8,6 +8,7 @@ import model.enteties.User;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
@@ -21,11 +22,9 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
 
     public SpecialtyJdbcDao(Connection connection) {
         this.connection = connection;
-        property = new Properties();
-        String pathToFile = "src/main/resources/sql.properties";
-        try {
-            FileInputStream fis = new FileInputStream(pathToFile);
-            property.load(fis);
+        this.property = new Properties();
+        try (InputStream is = this.getClass().getClassLoader().getResourceAsStream("sql.properties")){
+            property.load(is);
         } catch (IOException e) {
             e.printStackTrace();
         }

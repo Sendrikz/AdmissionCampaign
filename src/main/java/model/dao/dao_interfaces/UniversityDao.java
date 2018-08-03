@@ -21,7 +21,4 @@ public interface UniversityDao {
     void clearAllUniversities();
 
     ArrayList<Specialty> getAllSpecialtiesOfUniversity(int universityId);
-
-    void setPath(InputStream input);
-    void setTestPath();
 }

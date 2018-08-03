@@ -23,6 +23,12 @@ public class UniversityJdbcDao implements UniversityDao {
 
     public UniversityJdbcDao(Connection connection) {
         this.connection = connection;
+        this.property = new Properties();
+        try (InputStream is = this.getClass().getClassLoader().getResourceAsStream("sql.properties")){
+            property.load(is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void setPath(InputStream path) {

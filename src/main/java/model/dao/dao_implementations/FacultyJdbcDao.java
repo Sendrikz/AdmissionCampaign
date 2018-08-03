@@ -6,6 +6,7 @@ import model.enteties.Specialty;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Properties;
@@ -17,11 +18,9 @@ public class FacultyJdbcDao implements FacultyDao {
 
     public FacultyJdbcDao(Connection connection) {
         this.connection = connection;
-        property = new Properties();
-        String pathToFile = "src/main/resources/sql.properties";
-        try {
-            FileInputStream fis = new FileInputStream(pathToFile);
-            property.load(fis);
+        this.property = new Properties();
+        try (InputStream is = this.getClass().getClassLoader().getResourceAsStream("sql.properties")){
+            property.load(is);
         } catch (IOException e) {
             e.printStackTrace();
         }
