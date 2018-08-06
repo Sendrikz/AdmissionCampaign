@@ -1,6 +1,6 @@
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html>
+<head><title>Index</title></head>
 <body>
-<h2>Hello World!</h2>
-</body>
-</html>
+<jsp:forward page="/WEB-INF/view/login.jsp"/>
+</body></html>

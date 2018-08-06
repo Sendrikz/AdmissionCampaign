@@ -1,6 +1,6 @@
 package enteties;
 
-import enums.Subjects;
+import model.enums.Subjects;
 import model.enteties.Subject;
 import org.junit.Before;
 import org.junit.Test;

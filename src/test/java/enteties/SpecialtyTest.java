@@ -1,6 +1,6 @@
 package enteties;
 
-import enums.Specialties;
+import model.enums.Specialties;
 import model.enteties.Specialty;
 import org.junit.Before;
 import org.junit.Test;

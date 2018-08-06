@@ -1,6 +1,6 @@
 package dao;
 
-import enums.*;
+import model.enums.*;
 import model.connection.ConnectionManager;
 import model.dao.dao_implementations.*;
 import model.dao.dao_interfaces.*;

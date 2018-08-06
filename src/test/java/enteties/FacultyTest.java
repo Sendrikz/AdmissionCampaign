@@ -1,6 +1,6 @@
 package enteties;
 
-import enums.Faculties;
+import model.enums.Faculties;
 import model.enteties.Faculty;
 import org.junit.Before;
 import org.junit.Test;
