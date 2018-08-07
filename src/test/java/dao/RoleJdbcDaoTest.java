@@ -1,7 +1,7 @@
 package dao;
 
-import model.enums.Roles;
-import model.enums.Users;
+import model.enteties_enum.Roles;
+import model.enteties_enum.Users;
 import model.connection.ConnectionManager;
 import model.dao.dao_interfaces.RoleDao;
 import model.dao.dao_implementations.RoleJdbcDao;

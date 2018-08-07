@@ -9,7 +9,7 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>Admission_сampaign Maven Webapp</name>
+  <name>AdmissionCampaign Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -32,7 +32,6 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.44</version>
     </dependency>
-
       <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
       <dependency>
           <groupId>org.apache.maven.plugins</groupId>
@@ -45,10 +44,23 @@
           <artifactId>maven-site-plugin</artifactId>
           <version>3.3</version>
       </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.17</version>
+    </dependency>
+      <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+          <version>3.0.1</version>
+          <scope>provided</scope>
+      </dependency>
+
   </dependencies>
 
   <build>
-    <finalName>Admission_сampaign</finalName>
+    <finalName>AdmissionCampaign</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>

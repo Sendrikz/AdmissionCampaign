@@ -4,12 +4,17 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  <servlet>
-          <servlet-name>HelloServlet</servlet-name>
-          <servlet-class>controller.Controller</servlet-class>
-  </servlet>
-    <servlet-mapping>
-        <servlet-name>HelloServlet</servlet-name>
-        <url-pattern>/hello</url-pattern>
-    </servlet-mapping>
+  <!--<servlet>-->
+    <!--<servlet-name>Controller</servlet-name>-->
+    <!--<servlet-class>controller.Controller</servlet-class>-->
+    <!--<init-param>-->
+      <!--<param-name>logfile</param-name>-->
+      <!--<param-value>WEB-INF/log4j.properties</param-value>-->
+    <!--</init-param>-->
+    <!--<load-on-startup>1</load-on-startup>-->
+  <!--</servlet>-->
+  <!--<servlet-mapping>-->
+    <!--<servlet-name>Controller</servlet-name>-->
+    <!--<url-pattern>/controller</url-pattern>-->
+  <!--</servlet-mapping>-->
 </web-app>

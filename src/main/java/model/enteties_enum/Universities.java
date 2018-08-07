@@ -1,4 +1,4 @@
-package model.enums;
+package model.enteties_enum;
 
 public enum Universities {
     NaUKMA("Національний університет «Києво-Могилянська академія»",

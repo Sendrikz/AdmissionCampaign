@@ -1,0 +1,170 @@
+/* Reset start */
+*{
+    box-sizing: border-box;
+}
+*:focus {
+    outline: none;
+}
+input {
+    border: none;
+    outline: none;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+a:hover, a:active{
+    text-decoration: none;
+}
+button {
+    cursor: pointer;
+    padding: 0;
+}
+input,
+textarea,
+button {
+    outline: none;
+    border: none;
+}
+button.close {
+    color: white;
+    opacity: 1;
+    border: none;
+}
+/* Reset end */
+
+/* Default start */
+.custom-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-weight: 400;
+}
+.custom-btn.btn-green {
+    background-color: #76ae36;
+    color: #ffffff;
+}
+.text-bold {
+    font-weight: bold;
+}
+.text-white {
+    color: #ffffff;
+}
+.text-center {
+    text-align: center;
+}
+/* Default end */
+
+/* Login-form start */
+.inner {
+    background-color: #8bc34a;
+    height: 100vh;
+    text-align: center;
+}
+.inner::before {
+    content: '';
+    display: inline-block;
+    height: 100vh;
+    vertical-align: middle;
+    margin-left: -4px;
+}
+.login-content {
+    display: inline-block;
+    vertical-align: middle;
+    width: 400px;
+}
+.login-title {
+    font-size: 48px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+}
+.login-content [name="login-form"] {
+    max-width: 400px;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.login-form-group {
+    position: relative;
+}
+.login-form-group + .login-form-group {
+    margin-top: 8px;
+}
+.login-form-group i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    color: #ffffff;
+}
+.login-content label {
+    color: #5e5e5e;
+    font-size: small;
+    float: left;
+}
+.login-form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #ffffff;
+}
+.login-form-control::-moz-placeholder { /* Firefox 19+ */
+    color: #ffffff;
+}
+.login-form-control:-ms-input-placeholder { /* IE 10+ */
+    color: #ffffff;
+}
+.login-form-control:-moz-placeholder { /* Firefox 18- */
+    color: #ffffff;
+}
+.login-form-control {
+    height: 43px;
+    width: 100%;
+    background-color: #76ae36;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 40px;
+}
+.login-btn-group {
+    margin-top: 19px;
+}
+.custom-btn + .custom-btn {
+    margin-left: 10px;
+}
+.custom-btn.btn-sm {
+    width: 140px;
+}
+.custom-btn.btn-lg {
+    width: 215px;
+}
+/* Login-form end */
+
+/* Registration modal start */
+#registrationModal .modal-body {
+    margin-top: 20px;
+}
+#registrationModal .modal-dialog {
+    max-width: 730px;
+}
+#registrationModal .modal-content {
+    background-color: #313f47;
+    border-radius: 0;
+    border: none;
+}
+#registrationModal .modal-body label {
+    margin-left: 80px;
+}
+#registrationModal .registration-form-control {
+    width: 400px;
+    height: 30px;
+}
+#registrationModal .registration-form-group + .registration-form-group {
+    margin-top: 20px;
+}
+.registration-form-control {
+    background-color: #4b5860;
+    color: #ffffff;
+}
+
+/* Registration modal end */

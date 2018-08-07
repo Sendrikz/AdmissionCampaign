@@ -1,6 +1,6 @@
 package enteties;
 
-import model.enums.Roles;
+import model.enteties_enum.Roles;
 import model.enteties.Role;
 import org.junit.Before;
 import org.junit.Test;

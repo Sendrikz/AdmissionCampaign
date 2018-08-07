@@ -1,6 +1,6 @@
 package enteties;
 
-import model.enums.Users;
+import model.enteties_enum.Users;
 import model.enteties.User;
 import org.junit.Before;
 import org.junit.Test;

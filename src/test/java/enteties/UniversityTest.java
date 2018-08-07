@@ -1,6 +1,6 @@
 package enteties;
 
-import model.enums.Universities;
+import model.enteties_enum.Universities;
 import model.enteties.University;
 import org.junit.Before;
 import org.junit.Test;

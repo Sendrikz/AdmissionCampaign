@@ -1,9 +1,11 @@
 package controller.commands;
 
-import controller.helpers.SessionRequestContent;
+
+import javax.servlet.http.HttpServletRequest;
+
 
 public interface ActionCommand {
 
-    public String execute(SessionRequestContent sqc);
+    String execute(HttpServletRequest request);
 
 }

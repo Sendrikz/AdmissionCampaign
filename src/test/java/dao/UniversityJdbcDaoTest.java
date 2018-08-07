@@ -1,8 +1,8 @@
 package dao;
 
-import model.enums.Faculties;
-import model.enums.Specialties;
-import model.enums.Universities;
+import model.enteties_enum.Faculties;
+import model.enteties_enum.Specialties;
+import model.enteties_enum.Universities;
 import model.connection.ConnectionManager;
 import model.dao.dao_implementations.FacultyJdbcDao;
 import model.dao.dao_implementations.SpecialtyJdbcDao;

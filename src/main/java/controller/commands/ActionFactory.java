@@ -1,14 +1,12 @@
 package controller.commands;
 
-import controller.helpers.SessionRequestContent;
-
-import java.util.Arrays;
+import javax.servlet.http.HttpServletRequest;
 
 public class ActionFactory {
 
-    public ActionCommand defineCommand(SessionRequestContent src) {
+    public ActionCommand defineCommand(HttpServletRequest request) {
         ActionCommand currentCommand = new EmptyCommand();
-        String action = Arrays.toString(src.getParameter("command"));
+        String action = request.getParameter("command");
         if (action.isEmpty()) {
             return currentCommand;
         }
