@@ -4,14 +4,18 @@ import org.apache.log4j.Logger;
 import services.LoginService;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 public class LoginCommand implements ActionCommand {
 
     private static final Logger log = Logger.getLogger(String.valueOf(LoginCommand.class));
+    private Properties property;
 
     @Override
     public String execute(HttpServletRequest request) {
-        String page = null;
+        String page;
         log.info("start class LoginCommand execute()");
         String login = request.getParameter("login");
         log.debug("Login: " + login);
@@ -20,12 +24,25 @@ public class LoginCommand implements ActionCommand {
         if (LoginService.checkLogin(login, password)) {
             log.info("Successfully login");
             request.setAttribute("user", login);
-            page = "/WEB-INF/view/main.jsp";
+            request.setAttribute("name", "НаУКМА");
+            property = new Properties();
+            try (InputStream is = this.getClass().getClassLoader().
+                    getResourceAsStream("config.properties")){
+                property.load(is);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            page = property.getProperty("path.page.main");
         } else {
             log.info("Login fail");
-            request.setAttribute("errorLoginPassMessage",
-                    "Invalid login or password");
-            page = "/WEB-INF/view/error.jsp";
+            page = "login_fail";
+
+//            resp.getWriter().write("<script>");
+//            resp.getWriter().write("alert('Hello! I am an alert box!!');");
+//            resp.getWriter().write("</script>");
+//            page = property.getProperty("path.page.login");
+//            RequestDispatcher requestDispatcher = req.getRequestDispatcher(page);
+//            requestDispatcher.include(req, resp);
         }
         return page;
     }

@@ -11,9 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 @WebServlet("/controller")
 public class Controller extends HttpServlet {
+
+
+    private Properties property;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,7 +31,7 @@ public class Controller extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String page = null;
+        String page;
         ActionFactory actionFactory = new ActionFactory();
         ActionCommand command = actionFactory.defineCommand(req);
         page = command.execute(req);
@@ -34,10 +39,15 @@ public class Controller extends HttpServlet {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
             dispatcher.forward(req, resp);
         } else {
-            page = "/WEB-INF/view/index.jsp";
-            req.getSession().setAttribute("nullPage",
-                    "Null");
-            resp.sendRedirect(req.getContextPath() + page);
+            property = new Properties();
+            try (InputStream is = this.getClass().getClassLoader().
+                    getResourceAsStream("config.properties")){
+                property.load(is);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            page = property.getProperty("path.page.login");
+            resp.sendRedirect(page);
         }
     }
 }
