@@ -1,10 +1,12 @@
 <!doctype html>
 <%@ page pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ page isELIgnored ="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<fmt:setLocale value="ru_RU" scope="session" />
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="language" value="${not empty param.language ? param.language : 'en_US'}" scope="session"/>
+<fmt:setLocale value="${language}" />
 <fmt:bundle basename="pagecontent" prefix = "label." >
-<html lang="en">
+    <html lang="${language}">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -20,6 +22,12 @@
 
 </head>
 <body>
+<form name="select-language">
+    <select id="language" name="language" onchange="submit()">
+        <option value="en_US" ${language == 'en_US' ? 'selected' : ''}>English</option>
+        <option value="uk_UA" ${language == 'uk_UA' ? 'selected' : ''}>Ukrainian</option>
+    </select>
+</form>
 <div class="inner">
     <div class="login-content">
         <h4 class="login-title text-center"><fmt:message key="title"/></h4>

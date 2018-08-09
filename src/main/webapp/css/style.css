@@ -54,6 +54,13 @@ button.close {
 .text-center {
     text-align: center;
 }
+.select-language #language {
+    overflow: hidden;
+    position: fixed;
+    right: 20px;
+    top: 10px;
+    z-index: 999;
+}
 /* Default end */
 
 /* Login-form start */
