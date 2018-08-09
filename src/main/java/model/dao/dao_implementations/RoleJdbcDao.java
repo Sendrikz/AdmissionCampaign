@@ -108,6 +108,23 @@ public class RoleJdbcDao implements RoleDao {
     }
 
     @Override
+    public int findIdByRoleName(String name) {
+        int id = 0;
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.findIdByRoleName"))) {
+
+            ps.setString(1, name);
+            ResultSet resultSet = ps.executeQuery();
+            if (resultSet.next()) {
+                id = resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return id;
+    }
+
+    @Override
     public void deleteById(int id) {
         try (PreparedStatement ps = connection.prepareStatement(
                 property.getProperty("sql.deleteByIdRole"))) {

@@ -23,6 +23,7 @@ public class LoginCommand implements ActionCommand {
         log.debug("Password: " + password);
         if (LoginService.checkLogin(login, password)) {
             log.info("Successfully login");
+            request.getSession(false).setAttribute("admin", true);
             request.setAttribute("user", login);
             request.setAttribute("name", "НаУКМА");
             property = new Properties();
@@ -35,14 +36,7 @@ public class LoginCommand implements ActionCommand {
             page = property.getProperty("path.page.main");
         } else {
             log.info("Login fail");
-            page = "login_fail";
-
-//            resp.getWriter().write("<script>");
-//            resp.getWriter().write("alert('Hello! I am an alert box!!');");
-//            resp.getWriter().write("</script>");
-//            page = property.getProperty("path.page.login");
-//            RequestDispatcher requestDispatcher = req.getRequestDispatcher(page);
-//            requestDispatcher.include(req, resp);
+            page = "loginFail";
         }
         return page;
     }

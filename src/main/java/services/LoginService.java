@@ -3,6 +3,7 @@ package services;
 import controller.commands.LoginCommand;
 import model.connection.ConnectionManager;
 import model.dao.dao_implementations.DaoFactory;
+import model.dao.dao_interfaces.RoleDao;
 import model.dao.dao_interfaces.UserDao;
 import model.enteties.User;
 import org.apache.log4j.Logger;
@@ -38,5 +39,25 @@ public class LoginService {
         }
         log.info("No such user");
         return false;
+    }
+
+    public static void addUser(String lastName, String firstName, String patronymic,
+                               String birthday, String city, String email, String password) {
+        log.info("Start class LoginLogic addUser()");
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        RoleDao roleDao = DaoFactory.getRoleDao(connection);
+        User user = new User(lastName, firstName, patronymic, birthday, city, email, password,
+                roleDao.findIdByRoleName("Student"));
+        UserDao userDao = DaoFactory.getUserDao(connection);
+        try {
+            connection.setAutoCommit(false);
+            log.info("Start transaction");
+            userDao.add(user);
+            connection.commit();
+            log.info("End transaction");
+        } catch (SQLException e) {
+            log.info("Transaction fail");
+            e.printStackTrace();
+        }
     }
 }

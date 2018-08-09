@@ -9,9 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(dispatcherTypes = {
-        DispatcherType.INCLUDE
-}, urlPatterns = { "/WEB-INF/view/*" },
+@WebFilter(urlPatterns = { "/WEB-INF/view/*" },
         initParams = { @WebInitParam(name = "INDEX_PATH", value = "/index.jsp") })
 public class RedirectSecurityFilter implements Filter {
 

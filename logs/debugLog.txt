@@ -1,0 +1,202 @@
+09/08/2018 2:33 [http-nio-8081-exec-4] INFO - <start class LoginCommand execute()>
+09/08/2018 2:33 [http-nio-8081-exec-4] DEBUG - <Login: andriy@gmail.com>
+09/08/2018 2:33 [http-nio-8081-exec-4] DEBUG - <Password: Password1>
+09/08/2018 2:33 [http-nio-8081-exec-4] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 2:33 [http-nio-8081-exec-4] INFO - <Start transaction>
+09/08/2018 2:33 [http-nio-8081-exec-4] INFO - <End transaction>
+09/08/2018 2:33 [http-nio-8081-exec-4] INFO - <Find user>
+09/08/2018 2:33 [http-nio-8081-exec-4] INFO - <Successfully login>
+09/08/2018 2:33 [http-nio-8081-exec-9] INFO - <start class LoginCommand execute()>
+09/08/2018 2:33 [http-nio-8081-exec-9] DEBUG - <Login: andriy@gmail.com>
+09/08/2018 2:33 [http-nio-8081-exec-9] DEBUG - <Password: sdasdaD32>
+09/08/2018 2:33 [http-nio-8081-exec-9] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 2:33 [http-nio-8081-exec-9] INFO - <Start transaction>
+09/08/2018 2:33 [http-nio-8081-exec-9] INFO - <End transaction>
+09/08/2018 2:33 [http-nio-8081-exec-9] INFO - <No such user>
+09/08/2018 2:33 [http-nio-8081-exec-9] INFO - <Login fail>
+09/08/2018 2:34 [http-nio-8081-exec-5] INFO - <start class RegistrationCommand execute()>
+09/08/2018 2:34 [http-nio-8081-exec-5] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 2:34 [http-nio-8081-exec-5] INFO - <Start transaction>
+09/08/2018 2:34 [http-nio-8081-exec-5] INFO - <End transaction>
+09/08/2018 2:34 [http-nio-8081-exec-5] INFO - <No such user>
+09/08/2018 2:34 [http-nio-8081-exec-5] INFO - <Start class LoginLogic addUser()>
+09/08/2018 2:34 [http-nio-8081-exec-5] INFO - <Start transaction>
+09/08/2018 2:34 [http-nio-8081-exec-5] INFO - <End transaction>
+09/08/2018 2:39 [http-nio-8081-exec-9] INFO - <start class RegistrationCommand execute()>
+09/08/2018 2:39 [http-nio-8081-exec-9] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 2:39 [http-nio-8081-exec-9] INFO - <Start transaction>
+09/08/2018 2:39 [http-nio-8081-exec-9] INFO - <End transaction>
+09/08/2018 2:39 [http-nio-8081-exec-9] INFO - <No such user>
+09/08/2018 2:39 [http-nio-8081-exec-9] INFO - <Start class LoginLogic addUser()>
+09/08/2018 2:39 [http-nio-8081-exec-9] INFO - <Start transaction>
+09/08/2018 2:39 [http-nio-8081-exec-9] INFO - <End transaction>
+09/08/2018 2:39 [http-nio-8081-exec-3] INFO - <start class LoginCommand execute()>
+09/08/2018 2:39 [http-nio-8081-exec-3] DEBUG - <Login: rokotun1999@gmail.com>
+09/08/2018 2:39 [http-nio-8081-exec-3] DEBUG - <Password: okayLocal81>
+09/08/2018 2:39 [http-nio-8081-exec-3] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 2:39 [http-nio-8081-exec-3] INFO - <Start transaction>
+09/08/2018 2:39 [http-nio-8081-exec-3] INFO - <End transaction>
+09/08/2018 2:39 [http-nio-8081-exec-3] INFO - <Find user>
+09/08/2018 2:39 [http-nio-8081-exec-3] INFO - <Successfully login>
+09/08/2018 2:40 [http-nio-8081-exec-2] INFO - <start class RegistrationCommand execute()>
+09/08/2018 2:40 [http-nio-8081-exec-2] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 2:40 [http-nio-8081-exec-2] INFO - <Start transaction>
+09/08/2018 2:40 [http-nio-8081-exec-2] INFO - <End transaction>
+09/08/2018 2:40 [http-nio-8081-exec-2] INFO - <No such user>
+09/08/2018 2:40 [http-nio-8081-exec-2] INFO - <Start class LoginLogic addUser()>
+09/08/2018 2:40 [http-nio-8081-exec-2] INFO - <Start transaction>
+09/08/2018 2:40 [http-nio-8081-exec-2] INFO - <End transaction>
+09/08/2018 2:47 [http-nio-8081-exec-8] INFO - <start class LoginCommand execute()>
+09/08/2018 2:47 [http-nio-8081-exec-8] DEBUG - <Login: andriy@gmail.com>
+09/08/2018 2:47 [http-nio-8081-exec-8] DEBUG - <Password: Password1>
+09/08/2018 2:47 [http-nio-8081-exec-8] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 2:47 [http-nio-8081-exec-8] INFO - <Start transaction>
+09/08/2018 2:47 [http-nio-8081-exec-8] INFO - <End transaction>
+09/08/2018 2:47 [http-nio-8081-exec-8] INFO - <Find user>
+09/08/2018 2:47 [http-nio-8081-exec-8] INFO - <Successfully login>
+09/08/2018 2:47 [http-nio-8081-exec-3] INFO - <start class RegistrationCommand execute()>
+09/08/2018 2:47 [http-nio-8081-exec-3] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 2:47 [http-nio-8081-exec-3] INFO - <Start transaction>
+09/08/2018 2:47 [http-nio-8081-exec-3] INFO - <End transaction>
+09/08/2018 2:47 [http-nio-8081-exec-3] INFO - <Find user>
+09/08/2018 2:48 [http-nio-8081-exec-7] INFO - <start class RegistrationCommand execute()>
+09/08/2018 2:48 [http-nio-8081-exec-7] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 2:48 [http-nio-8081-exec-7] INFO - <Start transaction>
+09/08/2018 2:48 [http-nio-8081-exec-7] INFO - <End transaction>
+09/08/2018 2:48 [http-nio-8081-exec-7] INFO - <No such user>
+09/08/2018 2:48 [http-nio-8081-exec-7] INFO - <Start class LoginLogic addUser()>
+09/08/2018 2:48 [http-nio-8081-exec-7] INFO - <Start transaction>
+09/08/2018 2:48 [http-nio-8081-exec-7] INFO - <End transaction>
+09/08/2018 2:48 [http-nio-8081-exec-5] INFO - <start class RegistrationCommand execute()>
+09/08/2018 2:48 [http-nio-8081-exec-5] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 2:48 [http-nio-8081-exec-5] INFO - <Start transaction>
+09/08/2018 2:48 [http-nio-8081-exec-5] INFO - <End transaction>
+09/08/2018 2:48 [http-nio-8081-exec-5] INFO - <Find user>
+09/08/2018 2:48 [http-nio-8081-exec-6] INFO - <start class LoginCommand execute()>
+09/08/2018 2:48 [http-nio-8081-exec-6] DEBUG - <Login: rokotun1999@gmail.com>
+09/08/2018 2:48 [http-nio-8081-exec-6] DEBUG - <Password: okayLocal80>
+09/08/2018 2:48 [http-nio-8081-exec-6] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 2:48 [http-nio-8081-exec-6] INFO - <Start transaction>
+09/08/2018 2:48 [http-nio-8081-exec-6] INFO - <End transaction>
+09/08/2018 2:48 [http-nio-8081-exec-6] INFO - <Find user>
+09/08/2018 2:48 [http-nio-8081-exec-6] INFO - <Successfully login>
+09/08/2018 6:14 [http-nio-8081-exec-9] INFO - <start class LoginCommand execute()>
+09/08/2018 6:14 [http-nio-8081-exec-9] DEBUG - <Login: andriy@gmail.com>
+09/08/2018 6:14 [http-nio-8081-exec-9] DEBUG - <Password: Password1>
+09/08/2018 6:14 [http-nio-8081-exec-9] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 6:15 [http-nio-8081-exec-9] INFO - <Start transaction>
+09/08/2018 6:15 [http-nio-8081-exec-9] INFO - <End transaction>
+09/08/2018 6:15 [http-nio-8081-exec-9] INFO - <Find user>
+09/08/2018 6:15 [http-nio-8081-exec-9] INFO - <Successfully login>
+09/08/2018 6:16 [http-nio-8081-exec-4] INFO - <start class LoginCommand execute()>
+09/08/2018 6:16 [http-nio-8081-exec-4] DEBUG - <Login: andriy@gmail.com>
+09/08/2018 6:16 [http-nio-8081-exec-4] DEBUG - <Password: Password1>
+09/08/2018 6:16 [http-nio-8081-exec-4] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 6:16 [http-nio-8081-exec-4] INFO - <Start transaction>
+09/08/2018 6:16 [http-nio-8081-exec-4] INFO - <End transaction>
+09/08/2018 6:16 [http-nio-8081-exec-4] INFO - <Find user>
+09/08/2018 6:16 [http-nio-8081-exec-4] INFO - <Successfully login>
+09/08/2018 6:30 [http-nio-8081-exec-9] INFO - <start class LoginCommand execute()>
+09/08/2018 6:30 [http-nio-8081-exec-9] DEBUG - <Login: andriy@gmail.com>
+09/08/2018 6:30 [http-nio-8081-exec-9] DEBUG - <Password: Password1>
+09/08/2018 6:30 [http-nio-8081-exec-9] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 6:30 [http-nio-8081-exec-9] INFO - <Start transaction>
+09/08/2018 6:30 [http-nio-8081-exec-9] INFO - <End transaction>
+09/08/2018 6:30 [http-nio-8081-exec-9] INFO - <Find user>
+09/08/2018 6:30 [http-nio-8081-exec-9] INFO - <Successfully login>
+09/08/2018 6:33 [http-nio-8081-exec-4] INFO - <start class LoginCommand execute()>
+09/08/2018 6:33 [http-nio-8081-exec-4] DEBUG - <Login: andriy@gmail.com>
+09/08/2018 6:33 [http-nio-8081-exec-4] DEBUG - <Password: Password1>
+09/08/2018 6:33 [http-nio-8081-exec-4] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 6:33 [http-nio-8081-exec-4] INFO - <Start transaction>
+09/08/2018 6:33 [http-nio-8081-exec-4] INFO - <End transaction>
+09/08/2018 6:33 [http-nio-8081-exec-4] INFO - <Find user>
+09/08/2018 6:33 [http-nio-8081-exec-4] INFO - <Successfully login>
+09/08/2018 6:37 [http-nio-8081-exec-9] INFO - <start class LoginCommand execute()>
+09/08/2018 6:37 [http-nio-8081-exec-9] DEBUG - <Login: andriy@gmail.com>
+09/08/2018 6:37 [http-nio-8081-exec-9] DEBUG - <Password: Password1>
+09/08/2018 6:37 [http-nio-8081-exec-9] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 6:37 [http-nio-8081-exec-9] INFO - <Start transaction>
+09/08/2018 6:37 [http-nio-8081-exec-9] INFO - <End transaction>
+09/08/2018 6:37 [http-nio-8081-exec-9] INFO - <Find user>
+09/08/2018 6:37 [http-nio-8081-exec-9] INFO - <Successfully login>
+09/08/2018 6:40 [http-nio-8081-exec-8] INFO - <start class LoginCommand execute()>
+09/08/2018 6:40 [http-nio-8081-exec-8] DEBUG - <Login: andriy@gmail.com>
+09/08/2018 6:40 [http-nio-8081-exec-8] DEBUG - <Password: Password1>
+09/08/2018 6:40 [http-nio-8081-exec-8] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 6:40 [http-nio-8081-exec-8] INFO - <Start transaction>
+09/08/2018 6:40 [http-nio-8081-exec-8] INFO - <End transaction>
+09/08/2018 6:40 [http-nio-8081-exec-8] INFO - <Find user>
+09/08/2018 6:40 [http-nio-8081-exec-8] INFO - <Successfully login>
+09/08/2018 6:43 [http-nio-8081-exec-4] INFO - <start class LoginCommand execute()>
+09/08/2018 6:43 [http-nio-8081-exec-4] DEBUG - <Login: andriy@gmail.com>
+09/08/2018 6:43 [http-nio-8081-exec-4] DEBUG - <Password: Password1>
+09/08/2018 6:43 [http-nio-8081-exec-4] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 6:43 [http-nio-8081-exec-4] INFO - <Start transaction>
+09/08/2018 6:43 [http-nio-8081-exec-4] INFO - <End transaction>
+09/08/2018 6:43 [http-nio-8081-exec-4] INFO - <Find user>
+09/08/2018 6:43 [http-nio-8081-exec-4] INFO - <Successfully login>
+09/08/2018 6:46 [http-nio-8081-exec-4] INFO - <start class LoginCommand execute()>
+09/08/2018 6:46 [http-nio-8081-exec-4] DEBUG - <Login: andriy@gmail.com>
+09/08/2018 6:46 [http-nio-8081-exec-4] DEBUG - <Password: Password1>
+09/08/2018 6:46 [http-nio-8081-exec-4] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 6:46 [http-nio-8081-exec-4] INFO - <Start transaction>
+09/08/2018 6:46 [http-nio-8081-exec-4] INFO - <End transaction>
+09/08/2018 6:46 [http-nio-8081-exec-4] INFO - <Find user>
+09/08/2018 6:46 [http-nio-8081-exec-4] INFO - <Successfully login>
+09/08/2018 6:49 [http-nio-8081-exec-4] INFO - <start class LoginCommand execute()>
+09/08/2018 6:49 [http-nio-8081-exec-4] DEBUG - <Login: andriy@gmail.com>
+09/08/2018 6:49 [http-nio-8081-exec-4] DEBUG - <Password: Password1>
+09/08/2018 6:49 [http-nio-8081-exec-4] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 6:49 [http-nio-8081-exec-4] INFO - <Start transaction>
+09/08/2018 6:49 [http-nio-8081-exec-4] INFO - <End transaction>
+09/08/2018 6:49 [http-nio-8081-exec-4] INFO - <Find user>
+09/08/2018 6:49 [http-nio-8081-exec-4] INFO - <Successfully login>
+09/08/2018 6:54 [http-nio-8081-exec-4] INFO - <start class LoginCommand execute()>
+09/08/2018 6:54 [http-nio-8081-exec-4] DEBUG - <Login: andriy@gmail.com>
+09/08/2018 6:54 [http-nio-8081-exec-4] DEBUG - <Password: Password1>
+09/08/2018 6:54 [http-nio-8081-exec-4] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 6:54 [http-nio-8081-exec-4] INFO - <Start transaction>
+09/08/2018 6:54 [http-nio-8081-exec-4] INFO - <End transaction>
+09/08/2018 6:54 [http-nio-8081-exec-4] INFO - <Find user>
+09/08/2018 6:54 [http-nio-8081-exec-4] INFO - <Successfully login>
+09/08/2018 6:55 [http-nio-8081-exec-5] INFO - <start class LoginCommand execute()>
+09/08/2018 6:55 [http-nio-8081-exec-5] DEBUG - <Login: andriy@gmail.com>
+09/08/2018 6:55 [http-nio-8081-exec-5] DEBUG - <Password: Message1>
+09/08/2018 6:55 [http-nio-8081-exec-5] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 6:55 [http-nio-8081-exec-5] INFO - <Start transaction>
+09/08/2018 6:55 [http-nio-8081-exec-5] INFO - <End transaction>
+09/08/2018 6:55 [http-nio-8081-exec-5] INFO - <No such user>
+09/08/2018 6:55 [http-nio-8081-exec-5] INFO - <Login fail>
+09/08/2018 6:55 [http-nio-8081-exec-6] INFO - <start class LoginCommand execute()>
+09/08/2018 6:55 [http-nio-8081-exec-6] DEBUG - <Login: andriy@gmail.com>
+09/08/2018 6:55 [http-nio-8081-exec-6] DEBUG - <Password: Password1>
+09/08/2018 6:55 [http-nio-8081-exec-6] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 6:55 [http-nio-8081-exec-6] INFO - <Start transaction>
+09/08/2018 6:55 [http-nio-8081-exec-6] INFO - <End transaction>
+09/08/2018 6:55 [http-nio-8081-exec-6] INFO - <Find user>
+09/08/2018 6:55 [http-nio-8081-exec-6] INFO - <Successfully login>
+09/08/2018 6:58 [http-nio-8081-exec-4] INFO - <start class LoginCommand execute()>
+09/08/2018 6:58 [http-nio-8081-exec-4] DEBUG - <Login: andriy@gmail.com>
+09/08/2018 6:58 [http-nio-8081-exec-4] DEBUG - <Password: Password1>
+09/08/2018 6:58 [http-nio-8081-exec-4] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 6:58 [http-nio-8081-exec-4] INFO - <Start transaction>
+09/08/2018 6:58 [http-nio-8081-exec-4] INFO - <End transaction>
+09/08/2018 6:58 [http-nio-8081-exec-4] INFO - <Find user>
+09/08/2018 6:58 [http-nio-8081-exec-4] INFO - <Successfully login>
+09/08/2018 7:11 [http-nio-8081-exec-5] INFO - <start class LoginCommand execute()>
+09/08/2018 7:11 [http-nio-8081-exec-5] DEBUG - <Login: andriy@gmail.com>
+09/08/2018 7:11 [http-nio-8081-exec-5] DEBUG - <Password: Password1>
+09/08/2018 7:11 [http-nio-8081-exec-5] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 7:11 [http-nio-8081-exec-5] INFO - <Start transaction>
+09/08/2018 7:11 [http-nio-8081-exec-5] INFO - <End transaction>
+09/08/2018 7:11 [http-nio-8081-exec-5] INFO - <Find user>
+09/08/2018 7:11 [http-nio-8081-exec-5] INFO - <Successfully login>
+09/08/2018 7:26 [http-nio-8081-exec-10] INFO - <start class LoginCommand execute()>
+09/08/2018 7:26 [http-nio-8081-exec-10] DEBUG - <Login: andriy@gmail.com>
+09/08/2018 7:26 [http-nio-8081-exec-10] DEBUG - <Password: Password1>
+09/08/2018 7:26 [http-nio-8081-exec-10] INFO - <Start class LoginLogic checkLogin()>
+09/08/2018 7:26 [http-nio-8081-exec-10] INFO - <Start transaction>
+09/08/2018 7:26 [http-nio-8081-exec-10] INFO - <End transaction>
+09/08/2018 7:26 [http-nio-8081-exec-10] INFO - <Find user>
+09/08/2018 7:26 [http-nio-8081-exec-10] INFO - <Successfully login>
