@@ -20,14 +20,25 @@
     <!-- Font-awesome -->
     <link rel="stylesheet" href="../../css/font-awesome.min.css">
 
+    <style type="text/css">
+        .select-language {
+            overflow: hidden;
+            position: fixed;
+            right: 20px;
+            top: 10px;
+            z-index: 999;
+        }
+    </style>
 </head>
 <body>
-<form name="select-language">
-    <select id="language" name="language" onchange="submit()">
-        <option value="en_US" ${language == 'en_US' ? 'selected' : ''}>English</option>
-        <option value="uk_UA" ${language == 'uk_UA' ? 'selected' : ''}>Ukrainian</option>
-    </select>
-</form>
+<div class="select-language">
+    <form>
+        <select id="language" name="language" onchange="submit()">
+            <option value="en_US" ${language == 'en_US' ? 'selected' : ''}>English</option>
+            <option value="uk_UA" ${language == 'uk_UA' ? 'selected' : ''}>Ukrainian</option>
+        </select>
+    </form>
+</div>
 <div class="inner">
     <div class="login-content">
         <h4 class="login-title text-center"><fmt:message key="title"/></h4>
