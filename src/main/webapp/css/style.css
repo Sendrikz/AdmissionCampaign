@@ -54,7 +54,7 @@ button.close {
 .text-center {
     text-align: center;
 }
-.select-language #language {
+.select-language {
     overflow: hidden;
     position: fixed;
     right: 20px;
