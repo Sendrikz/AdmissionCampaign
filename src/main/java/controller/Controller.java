@@ -17,9 +17,7 @@ import java.util.Properties;
 
 @WebServlet("/controller")
 public class Controller extends HttpServlet {
-
-
-    private Properties property;
+    
     private static final Logger log = Logger.getLogger(String.valueOf(LoginCommand.class));
 
     @Override
@@ -39,47 +37,40 @@ public class Controller extends HttpServlet {
         ActionCommand command = actionFactory.defineCommand(req);
         page = command.execute(req);
         log.debug("Page = " + page);
+
         if (page.equals("loginFail") || page.equals("RegistrationFail")) {
-            resp.getWriter().write("<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>");
-            resp.getWriter().write("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>");
-            resp.getWriter().write("<script>");
-            resp.getWriter().write("$(document).ready(function() {");
-            resp.getWriter().write("swal('Try again!', 'There is no such user or such user already" +
-                    " created', 'error');");
-            resp.getWriter().write("});");
-            resp.getWriter().write("</script>");
+
+            resp = getAlert(resp, "swal('Try again!', 'There is no such user or such user already created', 'error')");
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/view/login.jsp");
             requestDispatcher.include(req, resp);
+
         } else if (page.contains(":RegistrationSubmit")) {
+
             log.info("Page contains :RegistrationSubmit");
             page = page.substring(0, page.indexOf(":"));
             log.debug("Page after substring: " + page);
-            resp.getWriter().write("<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>");
-            resp.getWriter().write("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>");
-            resp.getWriter().write("<script>");
-            resp.getWriter().write("$(document).ready(function() {");
-            resp.getWriter().write("swal('Good!', 'Your profile is created. Login to start', 'success');");
-            resp.getWriter().write("});");
-            resp.getWriter().write("</script>");
+            resp = getAlert(resp, "swal('Good!', 'Your profile is created. Login to start', 'success');");
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/view/login.jsp");
             requestDispatcher.include(req, resp);
+
         } else {
+
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
             dispatcher.forward(req, resp);
+
         }
-//        }else if (page != null) {
-//            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
-//            dispatcher.forward(req, resp);
-//        } else {
-//            property = new Properties();
-//            try (InputStream is = this.getClass().getClassLoader().
-//                    getResourceAsStream("config.properties")){
-//                property.load(is);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            page = property.getProperty("path.page.login");
-//            resp.sendRedirect(page);
-//        }
+    }
+
+    private HttpServletResponse getAlert(HttpServletResponse resp, String message) throws IOException {
+
+        resp.getWriter().write("<script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>");
+        resp.getWriter().write("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>");
+        resp.getWriter().write("<script>");
+        resp.getWriter().write("$(document).ready(function() {");
+        resp.getWriter().write(message);
+        resp.getWriter().write("});");
+        resp.getWriter().write("</script>");
+
+        return resp;
     }
 }
