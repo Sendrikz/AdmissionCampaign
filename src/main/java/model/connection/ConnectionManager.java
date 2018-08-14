@@ -10,24 +10,23 @@ import java.sql.SQLException;
 
 public class ConnectionManager {
 
-    private ConnectionManager() {}
-
-    private static class ConnectionPoolInstance {
-        private final static ConnectionManager instance = new ConnectionManager();
-    }
-
-    public static ConnectionManager getInstance() {
-        return ConnectionPoolInstance.instance;
-    }
+//    private ConnectionManager() {}
+//
+//    private static class ConnectionPoolInstance {
+//        private final static ConnectionManager instance = new ConnectionManager();
+//    }
+//    public static ConnectionManager getInstance() {
+//        return ConnectionPoolInstance.instance;
+//    }
 
     public Connection getConnection() {
+        Context envCtx;
         Connection connection = null;
-        Context ctx;
         try {
-            ctx = new InitialContext();
-            DataSource ds = (DataSource)ctx.lookup("java:comp/env/jdbc/mydatabase");
+            envCtx = (Context) (new InitialContext().lookup("java:comp/env"));
+            DataSource ds = (DataSource) envCtx.lookup("jdbc/mydatabase");
             connection = ds.getConnection();
-        } catch (SQLException | NamingException e) {
+        } catch (NamingException | SQLException e) {
             e.printStackTrace();
         }
         return connection;
@@ -44,5 +43,13 @@ public class ConnectionManager {
             e.printStackTrace();
         }
         return connection;
+    }
+
+    public void close(Connection connection) {
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

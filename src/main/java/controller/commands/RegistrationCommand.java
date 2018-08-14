@@ -21,7 +21,7 @@ public class RegistrationCommand implements ActionCommand {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        if (!LoginService.checkLogin (email, password)) {
+        if (LoginService.checkLogin (email, password) == null) {
             LoginService.addUser(firstName, lastName, patronymic, birthday, city, email, password);
             request.getSession().setAttribute("admin", false);
             page = "/WEB-INF/view/login.jsp:RegistrationSubmit";

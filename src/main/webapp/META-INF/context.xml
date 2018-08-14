@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context>
-    <!-- Specify a JDBC datasource -->
-    <Resource name="jdbc/mydatabase"
-    auth="Container"
-    type="javax.sql.DataSource"
-    username="root"
-    password="root"
-    driverClassName="com.mysql.jdbc.Driver"
-    url="jdbc:mysql://localhost:3306/admission_сampaign?autoReconnect=true"
-    validationQuery="select 1"
-    maxActive="10"
-    maxIdle="4"/>
-
+<Context antiJARLocking="true" path="/FirstJspServletJsp">
+<Resource
+        name="jdbc/mydatabase"
+        author="Container"
+        type="javax.sql.DataSource"
+        maxActive="32"
+        maxIdle="8"
+        maxWait="10000"
+        username="root"
+        password="root"
+        driverClassName="com.mysql.jdbc.Driver"
+        url="jdbc:mysql://localhost:3306/admission_сampaign?autoReconnect=true"
+/>
 </Context>

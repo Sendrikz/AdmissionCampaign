@@ -30,7 +30,7 @@ public class UserJdbcDaoTest {
     @Before
     public void setUp() {
         RoleDao roleDao;
-        con = ConnectionManager.getInstance().getConnectionToTestBD();
+        con = new ConnectionManager().getConnectionToTestBD();
         userDao = new UserJdbcDao(con);
         roleDao = new RoleJdbcDao(con);
         subjectDao = new SubjectJdbcDao(con);

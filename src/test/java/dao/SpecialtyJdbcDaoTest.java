@@ -30,7 +30,7 @@ public class SpecialtyJdbcDaoTest {
 
     @Before
     public void setUp() {
-        connection = ConnectionManager.getInstance().getConnectionToTestBD();
+        connection = new ConnectionManager().getConnectionToTestBD();
         specialtyDao = new SpecialtyJdbcDao(connection);
         facultyDao = new FacultyJdbcDao(connection);
         subjectDao = new SubjectJdbcDao(connection);

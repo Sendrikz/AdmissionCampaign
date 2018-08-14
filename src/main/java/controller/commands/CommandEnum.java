@@ -11,6 +11,11 @@ public enum CommandEnum {
         {
             this.command = new RegistrationCommand();
         }
+    },
+    REGISTRATEONSUBJECT {
+        {
+            this.command = new RegistrationForSubjectCommand();
+        }
     };
 
     ActionCommand command;
