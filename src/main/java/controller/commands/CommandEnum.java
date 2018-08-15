@@ -16,6 +16,11 @@ public enum CommandEnum {
         {
             this.command = new RegistrationForSubjectCommand();
         }
+    },
+    GENERATEUNIVERSITIESBYCITY {
+        {
+            this.command = new GenerateUniversitiesByCityCommand();
+        }
     };
 
     ActionCommand command;

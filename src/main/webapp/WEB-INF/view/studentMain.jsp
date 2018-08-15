@@ -1,6 +1,7 @@
 <%@ page pageEncoding="UTF-8" %>
 <%@ page isELIgnored ="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <fmt:setLocale value="${sessionScope.language}" />
 <fmt:bundle basename="pagecontent" prefix = "label." >
@@ -35,16 +36,29 @@
         <%--Click the button!--%>
     <%--</div>--%>
     <table id="myDIV" style="display: none">
-        <tr>
-            <td>
-                Kyiv
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Lviv
-            </td>
-        </tr>
+        <jsp:useBean id="citiesList" scope="session" type="java.util.List"/>
+        <c:forEach var="city" items=" ${ citiesList }" varStatus="status">
+            <tr>
+                <td>
+                    <c:choose>
+                        <c:when test="${fn:contains(city, '[')}" >
+                            <c:set var="correctCity" value="${fn:substringAfter(city, '[')}"/>
+                        </c:when>
+                        <c:when test="${fn:contains(city, ']')}" >
+                            <c:set var="correctCity" value="${fn:substringBefore(city, ']')}"/>
+                        </c:when>
+                        <c:otherwise>
+                            <c:set var="correctCity" value="${city}"/>
+                        </c:otherwise>
+                    </c:choose>
+                    <form name="citiesForm" method="GET" action="controller">
+                        <input type="hidden" name="command" value="generateUniversitiesByCity"/>
+                        <input type="hidden" name="city" value=" ${ correctCity }"/>
+                        <button class="custom-btn btn-light btn-sm text-bold" type="submit">${ correctCity }</button>
+                    </form>
+                </td>
+            </tr>
+        </c:forEach>
     </table>
     <script>
         function myFunction() {

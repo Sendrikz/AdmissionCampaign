@@ -4,11 +4,13 @@ import model.enteties.Subject;
 import model.enteties.User;
 import org.apache.log4j.Logger;
 import services.LoginService;
+import services.UniversityService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Properties;
 
 public class LoginCommand implements ActionCommand {
@@ -48,6 +50,9 @@ public class LoginCommand implements ActionCommand {
                 ArrayList<Subject> listOfSubjects = LoginService.getAllSubjects();
                 log.info("List of subjects to display: " + listOfSubjects);
                 request.getSession().setAttribute("subjectsList", listOfSubjects);
+                ArrayList<String> listOfCities = new ArrayList<>(UniversityService.getAllCities());
+                log.info("List of cities to display: " + listOfCities);
+                request.getSession().setAttribute("citiesList", listOfCities);
                 page = "/WEB-INF/view/studentMain.jsp";
             }
             request.getSession().setAttribute("loginedUser", loginedUser);

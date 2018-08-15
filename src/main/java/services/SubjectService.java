@@ -37,7 +37,7 @@ public class SubjectService {
                 return sub;
             }
         }
-        log.debug("Subject didnt found: " + null);
+        log.debug("Subject didn`t found: " + null);
         return null;
     }
 }
