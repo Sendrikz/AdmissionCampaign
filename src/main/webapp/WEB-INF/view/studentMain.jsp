@@ -19,14 +19,42 @@
     <hr/>
 
     <h3><fmt:message key="subjects"/></h3>
-        <jsp:useBean id="subjectsList" scope="session" type="java.util.List"/>
-        <c:forEach var="elem" items="${ subjectsList }" varStatus="status">
-                <form name="subjectForm" method="GET" action="controller">
-                    <input type="hidden" name="command" value="registrateOnSubject" />
-                    <input type="hidden" name="subject" value="${ elem.name }" />
-                    <c:out value="${ elem.name }" />
-                    <button class="custom-btn btn-light btn-sm text-bold" type="submit"><fmt:message key="submit"/></button>
-                </form>
-        </c:forEach>
+    <jsp:useBean id="subjectsList" scope="session" type="java.util.List"/>
+    <c:forEach var="elem" items="${ subjectsList }" varStatus="status">
+        <form name="subjectForm" method="GET" action="controller">
+            <input type="hidden" name="command" value="registrateOnSubject" />
+            <input type="hidden" name="subject" value="${ elem.name }" />
+            <c:out value="${ elem.name }" />
+            <button class="custom-btn btn-light btn-sm text-bold" type="submit"><fmt:message key="submit"/></button>
+        </form>
+    </c:forEach>
+
+    <h3><fmt:message key="universities"/></h3>
+    <button class="custom-btn btn-light btn-sm text-bold" type="submit" onclick="myFunction()"><fmt:message key="city"/></button>
+    <%--<div id="myDIV" style="display: block;">--%>
+        <%--Click the button!--%>
+    <%--</div>--%>
+    <table id="myDIV" style="display: none">
+        <tr>
+            <td>
+                Kyiv
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Lviv
+            </td>
+        </tr>
+    </table>
+    <script>
+        function myFunction() {
+            var x = document.getElementById('myDIV');
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+    </script>
     </body></html>
 </fmt:bundle>

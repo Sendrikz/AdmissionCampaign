@@ -61,7 +61,8 @@ public class UniversityJdbcDao implements UniversityDao {
                 int id = resultSet.getInt(1);
                 String name = resultSet.getString(2);
                 String address = resultSet.getString(3);
-                University uni = new University(name, address);
+                String city = resultSet.getString(4);
+                University uni = new University(name, address, city);
                 uni.setId(id);
                 listOfUniversities.add(uni);
             }
@@ -78,6 +79,7 @@ public class UniversityJdbcDao implements UniversityDao {
 
             ps.setString(1, university.getName());
             ps.setString(2, university.getAddress());
+            ps.setString(3, university.getCity());
 
             int affectedRows = ps.executeUpdate();
 
@@ -112,13 +114,14 @@ public class UniversityJdbcDao implements UniversityDao {
     }
 
     @Override
-    public void update(int id, String name, String address) {
+    public void update(int id, String name, String address, String city) {
         try (PreparedStatement ps = connection.prepareStatement(
                 property.getProperty("sql.updateUniversity"))) {
 
             ps.setString(1, name);
             ps.setString(2, address);
-            ps.setInt(3, id);
+            ps.setString(3, city);
+            ps.setInt(4, id);
             ps.executeUpdate();
 
         } catch (SQLException e) {
@@ -137,7 +140,8 @@ public class UniversityJdbcDao implements UniversityDao {
             while (resultSet.next()) {
                 String name = resultSet.getString(2);
                 String address = resultSet.getString(3);
-                uni = new University(name, address);
+                String city = resultSet.getString(4);
+                uni = new University(name, address, city);
                 uni.setId(id);
             }
         } catch (SQLException e) {

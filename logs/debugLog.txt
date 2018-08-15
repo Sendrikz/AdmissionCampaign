@@ -781,3 +781,143 @@
 14/08/2018 8:44 [http-nio-8082-exec-9] DEBUG - <Page = /WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
 14/08/2018 8:44 [http-nio-8082-exec-9] INFO - <Page contains :AlreadyRegistrated>
 14/08/2018 8:44 [http-nio-8082-exec-9] DEBUG - <Page after substring: /WEB-INF/view/studentMain.jsp>
+14/08/2018 10:27 [http-nio-8082-exec-1] INFO - <Start class Controller processRequest()>
+14/08/2018 10:27 [http-nio-8082-exec-1] INFO - <start class LoginCommand execute()>
+14/08/2018 10:27 [http-nio-8082-exec-1] DEBUG - <Login: andriy@gmail.com>
+14/08/2018 10:27 [http-nio-8082-exec-1] DEBUG - <Password: Password1>
+14/08/2018 10:27 [http-nio-8082-exec-1] INFO - <Start class LoginLogic checkLogin()>
+14/08/2018 10:27 [http-nio-8082-exec-1] INFO - <Start transaction>
+14/08/2018 10:27 [http-nio-8082-exec-1] INFO - <End transaction>
+14/08/2018 10:27 [http-nio-8082-exec-1] INFO - <Find user>
+14/08/2018 10:27 [http-nio-8082-exec-1] INFO - <Successfully login>
+14/08/2018 10:27 [http-nio-8082-exec-1] INFO - <User is student>
+14/08/2018 10:27 [http-nio-8082-exec-1] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+14/08/2018 10:27 [http-nio-8082-exec-1] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+14/08/2018 10:27 [http-nio-8082-exec-1] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+14/08/2018 10:35 [http-nio-8082-exec-4] INFO - <Start class Controller processRequest()>
+14/08/2018 10:35 [http-nio-8082-exec-2] INFO - <Start class Controller processRequest()>
+14/08/2018 10:35 [http-nio-8082-exec-2] INFO - <Start class RegistrationForSubjectCommand execute()>
+14/08/2018 10:35 [http-nio-8082-exec-2] DEBUG - <Selected subject: English>
+14/08/2018 10:35 [http-nio-8082-exec-2] DEBUG - <Current user: null>
+14/08/2018 10:35 [http-nio-8082-exec-2] INFO - <Start transaction>
+14/08/2018 10:35 [http-nio-8082-exec-2] DEBUG - <List of subjects: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+14/08/2018 10:35 [http-nio-8082-exec-2] INFO - <End transaction>
+14/08/2018 10:35 [http-nio-8082-exec-2] DEBUG - <Find subject: Subject{id=2, name='English', duration=90}>
+14/08/2018 10:35 [http-nio-8082-exec-2] INFO - <Start class UserService method addUserToSubject()>
+14/08/2018 10:35 [http-nio-8082-exec-2] INFO - <allSubjectsByUser()>
+14/08/2018 10:35 [http-nio-8082-exec-2] INFO - <Start transaction>
+14/08/2018 10:35 [http-nio-8083-exec-2] INFO - <Start class Controller processRequest()>
+14/08/2018 10:35 [http-nio-8083-exec-2] INFO - <start class LoginCommand execute()>
+14/08/2018 10:35 [http-nio-8083-exec-2] DEBUG - <Login: andriy@gmail.com>
+14/08/2018 10:35 [http-nio-8083-exec-2] DEBUG - <Password: Password1>
+14/08/2018 10:35 [http-nio-8083-exec-2] INFO - <Start class LoginLogic checkLogin()>
+14/08/2018 10:35 [http-nio-8083-exec-2] INFO - <Start transaction>
+14/08/2018 10:35 [http-nio-8083-exec-2] INFO - <End transaction>
+14/08/2018 10:35 [http-nio-8083-exec-2] INFO - <Find user>
+14/08/2018 10:35 [http-nio-8083-exec-2] INFO - <Successfully login>
+14/08/2018 10:35 [http-nio-8083-exec-2] INFO - <User is student>
+14/08/2018 10:35 [http-nio-8083-exec-2] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+14/08/2018 10:35 [http-nio-8083-exec-2] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+14/08/2018 10:35 [http-nio-8083-exec-2] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+14/08/2018 10:37 [http-nio-8083-exec-10] INFO - <Start class Controller processRequest()>
+14/08/2018 10:37 [http-nio-8083-exec-10] INFO - <start class LoginCommand execute()>
+14/08/2018 10:37 [http-nio-8083-exec-10] DEBUG - <Login: andriy@gmail.com>
+14/08/2018 10:37 [http-nio-8083-exec-10] DEBUG - <Password: Password1>
+14/08/2018 10:37 [http-nio-8083-exec-10] INFO - <Start class LoginLogic checkLogin()>
+14/08/2018 10:37 [http-nio-8083-exec-10] INFO - <Start transaction>
+14/08/2018 10:37 [http-nio-8083-exec-10] INFO - <End transaction>
+14/08/2018 10:37 [http-nio-8083-exec-10] INFO - <Find user>
+14/08/2018 10:37 [http-nio-8083-exec-10] INFO - <Successfully login>
+14/08/2018 10:37 [http-nio-8083-exec-10] INFO - <User is student>
+14/08/2018 10:37 [http-nio-8083-exec-10] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+14/08/2018 10:37 [http-nio-8083-exec-10] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+14/08/2018 10:37 [http-nio-8083-exec-10] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+14/08/2018 10:37 [http-nio-8083-exec-1] INFO - <Start class Controller processRequest()>
+14/08/2018 10:37 [http-nio-8083-exec-1] INFO - <Start class RegistrationForSubjectCommand execute()>
+14/08/2018 10:37 [http-nio-8083-exec-1] DEBUG - <Selected subject: English>
+14/08/2018 10:37 [http-nio-8083-exec-1] DEBUG - <Current user: User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+14/08/2018 10:37 [http-nio-8083-exec-1] INFO - <Start transaction>
+14/08/2018 10:37 [http-nio-8083-exec-1] DEBUG - <List of subjects: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+14/08/2018 10:37 [http-nio-8083-exec-1] INFO - <End transaction>
+14/08/2018 10:37 [http-nio-8083-exec-1] DEBUG - <Find subject: Subject{id=2, name='English', duration=90}>
+14/08/2018 10:37 [http-nio-8083-exec-1] INFO - <Start class UserService method addUserToSubject()>
+14/08/2018 10:37 [http-nio-8083-exec-1] INFO - <allSubjectsByUser()>
+14/08/2018 10:37 [http-nio-8083-exec-1] INFO - <Start transaction>
+14/08/2018 10:37 [http-nio-8083-exec-1] DEBUG - <List of subject by user id: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+14/08/2018 10:37 [http-nio-8083-exec-1] INFO - <End transaction>
+14/08/2018 10:37 [http-nio-8083-exec-1] INFO - <There is user in table User_Subject>
+14/08/2018 10:37 [http-nio-8083-exec-1] DEBUG - </WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+14/08/2018 10:37 [http-nio-8083-exec-1] DEBUG - <Page = /WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+14/08/2018 10:37 [http-nio-8083-exec-1] INFO - <Page contains :AlreadyRegistrated>
+14/08/2018 10:37 [http-nio-8083-exec-1] DEBUG - <Page after substring: /WEB-INF/view/studentMain.jsp>
+15/08/2018 10:16 [http-nio-8083-exec-2] INFO - <Start class Controller processRequest()>
+15/08/2018 10:16 [http-nio-8083-exec-2] INFO - <start class LoginCommand execute()>
+15/08/2018 10:16 [http-nio-8083-exec-2] DEBUG - <Login: andriy@gmail.com>
+15/08/2018 10:16 [http-nio-8083-exec-2] DEBUG - <Password: Password1>
+15/08/2018 10:16 [http-nio-8083-exec-2] INFO - <Start class LoginLogic checkLogin()>
+15/08/2018 10:16 [http-nio-8083-exec-2] INFO - <Start transaction>
+15/08/2018 10:16 [http-nio-8083-exec-2] INFO - <End transaction>
+15/08/2018 10:16 [http-nio-8083-exec-2] INFO - <Find user>
+15/08/2018 10:16 [http-nio-8083-exec-2] INFO - <Successfully login>
+15/08/2018 10:16 [http-nio-8083-exec-2] INFO - <User is student>
+15/08/2018 10:16 [http-nio-8083-exec-2] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+15/08/2018 10:16 [http-nio-8083-exec-2] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+15/08/2018 10:16 [http-nio-8083-exec-2] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+15/08/2018 10:16 [http-nio-8083-exec-3] INFO - <Start class Controller processRequest()>
+15/08/2018 10:16 [http-nio-8083-exec-3] INFO - <Start class RegistrationForSubjectCommand execute()>
+15/08/2018 10:16 [http-nio-8083-exec-3] DEBUG - <Selected subject: Math>
+15/08/2018 10:16 [http-nio-8083-exec-3] DEBUG - <Current user: User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+15/08/2018 10:16 [http-nio-8083-exec-3] INFO - <Start transaction>
+15/08/2018 10:16 [http-nio-8083-exec-3] DEBUG - <List of subjects: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+15/08/2018 10:16 [http-nio-8083-exec-3] INFO - <End transaction>
+15/08/2018 10:16 [http-nio-8083-exec-3] DEBUG - <Find subject: Subject{id=1, name='Math', duration=120}>
+15/08/2018 10:16 [http-nio-8083-exec-3] INFO - <Start class UserService method addUserToSubject()>
+15/08/2018 10:16 [http-nio-8083-exec-3] INFO - <allSubjectsByUser()>
+15/08/2018 10:16 [http-nio-8083-exec-3] INFO - <Start transaction>
+15/08/2018 10:16 [http-nio-8083-exec-3] DEBUG - <List of subject by user id: []>
+15/08/2018 10:16 [http-nio-8083-exec-3] INFO - <End transaction>
+15/08/2018 10:16 [http-nio-8083-exec-3] INFO - <There is no user in table User_Subject>
+15/08/2018 10:16 [http-nio-8083-exec-3] INFO - <Start transaction>
+15/08/2018 10:16 [http-nio-8083-exec-3] INFO - <End transaction>
+15/08/2018 10:16 [http-nio-8083-exec-3] DEBUG - </WEB-INF/view/studentMain.jsp:RegistratedSuccesfully>
+15/08/2018 10:16 [http-nio-8083-exec-3] DEBUG - <Page = /WEB-INF/view/studentMain.jsp:RegistratedSuccesfully>
+15/08/2018 10:16 [http-nio-8083-exec-3] INFO - <Page contains :AlreadyRegistrated>
+15/08/2018 10:16 [http-nio-8083-exec-3] DEBUG - <Page after substring: /WEB-INF/view/studentMain.jsp>
+15/08/2018 10:16 [http-nio-8083-exec-5] INFO - <Start class Controller processRequest()>
+15/08/2018 10:16 [http-nio-8083-exec-5] INFO - <Start class RegistrationForSubjectCommand execute()>
+15/08/2018 10:16 [http-nio-8083-exec-5] DEBUG - <Selected subject: English>
+15/08/2018 10:16 [http-nio-8083-exec-5] DEBUG - <Current user: User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+15/08/2018 10:16 [http-nio-8083-exec-5] INFO - <Start transaction>
+15/08/2018 10:16 [http-nio-8083-exec-5] DEBUG - <List of subjects: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+15/08/2018 10:16 [http-nio-8083-exec-5] INFO - <End transaction>
+15/08/2018 10:16 [http-nio-8083-exec-5] DEBUG - <Find subject: Subject{id=2, name='English', duration=90}>
+15/08/2018 10:16 [http-nio-8083-exec-5] INFO - <Start class UserService method addUserToSubject()>
+15/08/2018 10:16 [http-nio-8083-exec-5] INFO - <allSubjectsByUser()>
+15/08/2018 10:16 [http-nio-8083-exec-5] INFO - <Start transaction>
+15/08/2018 10:16 [http-nio-8083-exec-5] DEBUG - <List of subject by user id: [Subject{id=1, name='Math', duration=120}]>
+15/08/2018 10:16 [http-nio-8083-exec-5] INFO - <End transaction>
+15/08/2018 10:16 [http-nio-8083-exec-5] INFO - <There is no user in table User_Subject>
+15/08/2018 10:16 [http-nio-8083-exec-5] INFO - <Start transaction>
+15/08/2018 10:16 [http-nio-8083-exec-5] INFO - <End transaction>
+15/08/2018 10:16 [http-nio-8083-exec-5] DEBUG - </WEB-INF/view/studentMain.jsp:RegistratedSuccesfully>
+15/08/2018 10:16 [http-nio-8083-exec-5] DEBUG - <Page = /WEB-INF/view/studentMain.jsp:RegistratedSuccesfully>
+15/08/2018 10:16 [http-nio-8083-exec-5] INFO - <Page contains :AlreadyRegistrated>
+15/08/2018 10:16 [http-nio-8083-exec-5] DEBUG - <Page after substring: /WEB-INF/view/studentMain.jsp>
+15/08/2018 10:16 [http-nio-8083-exec-6] INFO - <Start class Controller processRequest()>
+15/08/2018 10:16 [http-nio-8083-exec-6] INFO - <Start class RegistrationForSubjectCommand execute()>
+15/08/2018 10:16 [http-nio-8083-exec-6] DEBUG - <Selected subject: Math>
+15/08/2018 10:16 [http-nio-8083-exec-6] DEBUG - <Current user: User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+15/08/2018 10:16 [http-nio-8083-exec-6] INFO - <Start transaction>
+15/08/2018 10:16 [http-nio-8083-exec-6] DEBUG - <List of subjects: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+15/08/2018 10:16 [http-nio-8083-exec-6] INFO - <End transaction>
+15/08/2018 10:16 [http-nio-8083-exec-6] DEBUG - <Find subject: Subject{id=1, name='Math', duration=120}>
+15/08/2018 10:16 [http-nio-8083-exec-6] INFO - <Start class UserService method addUserToSubject()>
+15/08/2018 10:16 [http-nio-8083-exec-6] INFO - <allSubjectsByUser()>
+15/08/2018 10:16 [http-nio-8083-exec-6] INFO - <Start transaction>
+15/08/2018 10:16 [http-nio-8083-exec-6] DEBUG - <List of subject by user id: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+15/08/2018 10:16 [http-nio-8083-exec-6] INFO - <End transaction>
+15/08/2018 10:16 [http-nio-8083-exec-6] INFO - <There is user in table User_Subject>
+15/08/2018 10:16 [http-nio-8083-exec-6] DEBUG - </WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+15/08/2018 10:16 [http-nio-8083-exec-6] DEBUG - <Page = /WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+15/08/2018 10:16 [http-nio-8083-exec-6] INFO - <Page contains :AlreadyRegistrated>
+15/08/2018 10:16 [http-nio-8083-exec-6] DEBUG - <Page after substring: /WEB-INF/view/studentMain.jsp>

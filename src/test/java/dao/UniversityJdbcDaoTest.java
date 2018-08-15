@@ -49,11 +49,13 @@ public class UniversityJdbcDaoTest {
     }
 
     private University setUpNewNaUKMA() {
-        return new University(Universities.NaUKMA.getName(), Universities.NaUKMA.getAddress());
+        return new University(Universities.NaUKMA.getName(), Universities.NaUKMA.getAddress(),
+                Universities.NaUKMA.getCity());
     }
 
     private University setUpNewKPI() {
-        return new University(Universities.KPI.getName(), Universities.KPI.getAddress());
+        return new University(Universities.KPI.getName(), Universities.KPI.getAddress(),
+                Universities.KPI.getCity());
     }
 
     @Test
@@ -76,7 +78,8 @@ public class UniversityJdbcDaoTest {
     public void updateTest() {
         University academy = setUpNewNaUKMA();
         universityDao.add(academy);
-        universityDao.update(academy.getId(), academy.getName(), Universities.KPI.getAddress());
+        universityDao.update(academy.getId(), academy.getName(), Universities.KPI.getAddress(),
+                Universities.KPI.getCity());
         assertNotEquals(academy, universityDao.findById(academy.getId()));
     }
 

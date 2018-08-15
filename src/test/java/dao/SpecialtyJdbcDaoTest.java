@@ -99,9 +99,9 @@ public class SpecialtyJdbcDaoTest {
     @Test
     public void addSpecialtyToUniversityTest() {
         University NaUKMA = new University(Universities.NaUKMA.getName(),
-                Universities.NaUKMA.getAddress());
+                Universities.NaUKMA.getAddress(), Universities.NaUKMA.getCity());
         University university = new University(Universities.KPI.getName(),
-                Universities.KPI.getAddress());
+                Universities.KPI.getAddress(), Universities.KPI.getCity());
         universityDao.add(NaUKMA);
         universityDao.add(university);
         Specialty specialty = setUpNewEngineeringSpecialty();

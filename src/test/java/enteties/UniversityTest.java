@@ -13,7 +13,8 @@ public class UniversityTest {
 
     @Before
     public void setUp() {
-        uni = new University(Universities.NaUKMA.getName(), Universities.NaUKMA.getAddress());
+        uni = new University(Universities.NaUKMA.getName(), Universities.NaUKMA.getAddress(),
+                Universities.NaUKMA.getCity());
     }
 
     @Test
@@ -37,21 +38,21 @@ public class UniversityTest {
     @Test
     public void hashCodeTest() {
         University uniTest = new University(Universities.NaUKMA.getName(),
-                Universities.NaUKMA.getAddress());
+                Universities.NaUKMA.getAddress(), Universities.NaUKMA.getCity());
         assertEquals(uniTest.hashCode(), uni.hashCode());
     }
 
     @Test
     public void equalsTest() {
         University uniTest = new University(Universities.NaUKMA.getName(),
-                Universities.NaUKMA.getAddress());
+                Universities.NaUKMA.getAddress(), Universities.NaUKMA.getCity());
         assertEquals(true, uni.equals(uniTest));
     }
 
     @Test
     public void notEqualsTest() {
         University uniTest = new University(Universities.KPI.getName(),
-                Universities.KPI.getAddress());
+                Universities.KPI.getAddress(), Universities.KPI.getCity());
         assertEquals(false, uni.equals(uniTest));
     }
 
@@ -61,6 +62,7 @@ public class UniversityTest {
                 "id=" + uni.getId() +
                 ", name='" + uni.getName() + '\'' +
                 ", address='" + uni.getAddress() + '\'' +
+                ", city='" + uni.getCity() + '\'' +
                 '}', uni.toString());
     }
 }

@@ -13,7 +13,7 @@ public interface UniversityDao {
     void add(University university);
     void addUniversityToSpecialty(University university, Specialty specialty);
 
-    void update(int id, String name, String address);
+    void update(int id, String name, String address, String city);
 
     University findById(int id);
 

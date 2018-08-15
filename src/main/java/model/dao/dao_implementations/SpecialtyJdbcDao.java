@@ -228,7 +228,7 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
             while (resultSet.next()) {
                     int uniId = resultSet.getInt(1);
                     University uni = new University(resultSet.getString(2),
-                            resultSet.getString(3));
+                            resultSet.getString(3), resultSet.getString(4));
                     uni.setId(uniId);
                     listOfUni.add(uni);
             }

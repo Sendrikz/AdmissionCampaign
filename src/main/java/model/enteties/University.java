@@ -7,10 +7,12 @@ public class University {
     private int id;
     private String name;
     private String address;
+    private String city;
 
-    public University (String name, String adress) {
+    public University(String name, String address, String city) {
         this.name = name;
-        this.address = adress;
+        this.address = address;
+        this.city = city;
     }
 
     public int getId() {
@@ -37,27 +39,28 @@ public class University {
         this.address = address;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-
-        University uni = (University) obj;
-
-        return this.id == uni.id && this.name.equals(uni.name) &&
-                this.address.equals(uni.address);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        University that = (University) o;
+        return id == that.id &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(address, that.address) &&
+                Objects.equals(city, that.city);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, address);
+        return Objects.hash(id, name, address, city);
     }
 
     @Override
@@ -66,6 +69,7 @@ public class University {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
                 '}';
     }
 }
