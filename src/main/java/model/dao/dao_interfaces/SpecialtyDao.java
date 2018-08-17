@@ -14,7 +14,6 @@ public interface SpecialtyDao {
     ArrayList<Specialty> getAll();
 
     void add(Specialty specialty);
-    void addSpecialtyToUniversity(Specialty specialty, University university);
     void addSpecialtyToSubject(Specialty specialty, Subject subject, BigDecimal coef);
     void addSpecialtyToUser(Specialty specialty, User user, boolean passed);
 
@@ -27,7 +26,7 @@ public interface SpecialtyDao {
     void deleteById(int id);
     void clearAllSpecialties();
 
-    ArrayList<University> getAllUniversitiesBySpecialty(int id);
+
     HashMap<Subject, BigDecimal> getAllSubjectsOfSpecialty(int id);
     HashMap<User, Boolean> getAllUsersOfSpecialty(int id);
 }

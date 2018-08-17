@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.sql.*;
 
 import model.dao.dao_interfaces.UniversityDao;
+import model.enteties.Faculty;
 import model.enteties.Specialty;
 import model.enteties.University;
 
@@ -100,20 +101,6 @@ public class UniversityJdbcDao implements UniversityDao {
     }
 
     @Override
-    public void addUniversityToSpecialty(University university, Specialty specialty) {
-        try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.addSpecialtyToUniversity"))) {
-
-            ps.setInt(2, university.getId());
-            ps.setInt(1, specialty.getId());
-            ps.executeUpdate();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
     public void update(int id, String name, String address, String city) {
         try (PreparedStatement ps = connection.prepareStatement(
                 property.getProperty("sql.updateUniversity"))) {
@@ -175,24 +162,23 @@ public class UniversityJdbcDao implements UniversityDao {
     }
 
     @Override
-    public ArrayList<Specialty> getAllSpecialtiesOfUniversity(int universityId) {
-        ArrayList<Specialty> listOfSpecialties = new ArrayList<>();
+    public ArrayList<Faculty> getAllFacultiesOfUniversity(int uniId) {
+        ArrayList<Faculty> listOfFaculties = new ArrayList<>();
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.getAllSpecialtiesOfUniversity"))) {
+                property.getProperty("sql.getAllFacultiesOfUniversity"))) {
 
-            ps.setInt(1, universityId);
+            ps.setInt(1, uniId);
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
                     String name = resultSet.getString(2);
-                    int quantityOfStudents = resultSet.getInt(3);
-                    int facultyId = resultSet.getInt(4);
-                    Specialty specialty = new Specialty(name, quantityOfStudents, facultyId);
-                    specialty.setId(resultSet.getInt(1));
-                    listOfSpecialties.add(specialty);
+                    int universityId = resultSet.getInt(3);
+                    Faculty faculty = new Faculty(name, universityId);
+                    faculty.setId(resultSet.getInt(1));
+                listOfFaculties.add(faculty);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return listOfSpecialties;
+        return listOfFaculties;
     }
 }

@@ -1,7 +1,5 @@
 package dao;
 
-import model.enteties_enum.Faculties;
-import model.enteties_enum.Specialties;
 import model.enteties_enum.Universities;
 import model.connection.ConnectionManager;
 import model.dao.dao_implementations.FacultyJdbcDao;
@@ -95,26 +93,12 @@ public class UniversityJdbcDaoTest {
     public void clearAllUniversities() {
         University academy = setUpNewNaUKMA();
         University university = setUpNewKPI();
+        specialtyDao.clearAllSpecialties();
+        facultyDao.clearAllFaculties();
         universityDao.clearAllUniversities();
-        assertEquals(0, universityDao.getAll().size());
-    }
-
-    @Test
-    public void addUniversityToSpecialtyTest() {
-        universityDao.clearAllUniversities();
-        University NaUKMA = setUpNewNaUKMA();
-        universityDao.add(NaUKMA);
-        Faculty faculty = new Faculty(Faculties.IT.getName());
-        facultyDao.add(faculty);
-        Specialty specialty = new Specialty(Specialties.ENGINEERING.getName(),
-                Specialties.ENGINEERING.getQuantityOfStudents(), faculty.getId());
-        specialtyDao.add(specialty);
-        Specialty specialtyComp = new Specialty(Specialties.COMPUTER_SCIENCE.getName(),
-                Specialties.COMPUTER_SCIENCE.getQuantityOfStudents(), faculty.getId());
-        specialtyDao.add(specialtyComp);
-        universityDao.addUniversityToSpecialty(NaUKMA, specialty);
-        universityDao.addUniversityToSpecialty(NaUKMA, specialtyComp);
-        assertEquals(2, universityDao.getAllSpecialtiesOfUniversity(NaUKMA.getId()).size());
+        universityDao.add(academy);
+        universityDao.add(university);
+        assertEquals(2, universityDao.getAll().size());
     }
 
 }

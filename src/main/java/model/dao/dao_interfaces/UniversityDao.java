@@ -1,5 +1,6 @@
 package model.dao.dao_interfaces;
 
+import model.enteties.Faculty;
 import model.enteties.Specialty;
 import model.enteties.University;
 
@@ -11,7 +12,6 @@ public interface UniversityDao {
     ArrayList<University> getAll();
 
     void add(University university);
-    void addUniversityToSpecialty(University university, Specialty specialty);
 
     void update(int id, String name, String address, String city);
 
@@ -20,5 +20,5 @@ public interface UniversityDao {
     void deleteById(int id);
     void clearAllUniversities();
 
-    ArrayList<Specialty> getAllSpecialtiesOfUniversity(int universityId);
+    ArrayList<Faculty> getAllFacultiesOfUniversity(int uniId);
 }

@@ -35,7 +35,8 @@ public class FacultyJdbcDao implements FacultyDao {
             while (resultSet.next()) {
                 int id = resultSet.getInt(1);
                 String name = resultSet.getString(2);
-                Faculty faculty = new Faculty(name);
+                int uniId = resultSet.getInt(3);
+                Faculty faculty = new Faculty(name, uniId);
                 faculty.setId(id);
                 listOfFaculties.add(faculty);
             }
@@ -50,6 +51,7 @@ public class FacultyJdbcDao implements FacultyDao {
         try (PreparedStatement ps = connection.prepareStatement(
                 property.getProperty("sql.addFaculty"), Statement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, faculty.getName());
+            ps.setInt(2, faculty.getUniversityId());
 
             int affectedRows = ps.executeUpdate();
 
@@ -70,11 +72,12 @@ public class FacultyJdbcDao implements FacultyDao {
     }
 
     @Override
-    public void update(int id, String name) {
+    public void update(int id, String name, int uniId) {
         try (PreparedStatement ps = connection.prepareStatement(
                 property.getProperty("sql.updateFaculty"))) {
             ps.setString(1, name);
-            ps.setInt(2, id);
+            ps.setInt(2, uniId);
+            ps.setInt(3, id);
             ps.executeUpdate();
 
         } catch (SQLException e) {
@@ -91,7 +94,7 @@ public class FacultyJdbcDao implements FacultyDao {
 
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
-                faculty = new Faculty(resultSet.getString(2));
+                faculty = new Faculty(resultSet.getString(2), resultSet.getInt(3));
                 faculty.setId(id);
             }
         } catch (SQLException e) {

@@ -24,6 +24,7 @@ public class SubjectJdbcDaoTest {
     private FacultyDao facultyDao;
     private UserDao userDao;
     private RoleDao roleDao;
+    private UniversityDao universityDao;
     private Connection connection;
 
     @Before
@@ -34,6 +35,7 @@ public class SubjectJdbcDaoTest {
         userDao = new UserJdbcDao(connection);
         roleDao = new RoleJdbcDao(connection);
         facultyDao = new FacultyJdbcDao(connection);
+        universityDao = new UniversityJdbcDao(connection);
     }
 
     @After
@@ -93,7 +95,10 @@ public class SubjectJdbcDaoTest {
     public void addSubjectToSpecialtyTest() {
         Subject math = setUpNewMathSubject();
         subjectDao.add(math);
-        Faculty faculty = new Faculty(Faculties.IT.getName());
+        University university = new University(Universities.NaUKMA.getName(), Universities.NaUKMA.getAddress(),
+                Universities.NaUKMA.getCity());
+        universityDao.add(university);
+        Faculty faculty = new Faculty(Faculties.IT.getName(), university.getId());
         facultyDao.add(faculty);
         Specialty specialty = new Specialty(Specialties.ENGINEERING.getName(),
                 Specialties.ENGINEERING.getQuantityOfStudents(), faculty.getId());

@@ -20,24 +20,27 @@ import static org.junit.Assert.assertNotEquals;
 public class SpecialtyJdbcDaoTest {
 
     private SpecialtyDao specialtyDao;
-    private FacultyDao facultyDao;
     private SubjectDao subjectDao;
     private UserDao userDao;
     private RoleDao roleDao;
     private Connection connection;
     private UniversityDao universityDao;
     private Faculty faculty;
+    private University university;
 
     @Before
     public void setUp() {
         connection = new ConnectionManager().getConnectionToTestBD();
         specialtyDao = new SpecialtyJdbcDao(connection);
-        facultyDao = new FacultyJdbcDao(connection);
+        FacultyDao facultyDao = new FacultyJdbcDao(connection);
         subjectDao = new SubjectJdbcDao(connection);
         userDao = new UserJdbcDao(connection);
         roleDao = new RoleJdbcDao(connection);
         universityDao = new UniversityJdbcDao(connection);
-        faculty = new Faculty(Faculties.IT.getName());
+        university = new University(Universities.NaUKMA.getName(), Universities.NaUKMA.getAddress(),
+                Universities.NaUKMA.getCity());
+        universityDao.add(university);
+        faculty = new Faculty(Faculties.IT.getName(), university.getId());
         facultyDao.add(faculty);
     }
 
@@ -94,21 +97,6 @@ public class SpecialtyJdbcDaoTest {
         userDao.clearAllUsers();
         specialtyDao.clearAllSpecialties();
         assertEquals(0, specialtyDao.getAll().size());
-    }
-
-    @Test
-    public void addSpecialtyToUniversityTest() {
-        University NaUKMA = new University(Universities.NaUKMA.getName(),
-                Universities.NaUKMA.getAddress(), Universities.NaUKMA.getCity());
-        University university = new University(Universities.KPI.getName(),
-                Universities.KPI.getAddress(), Universities.KPI.getCity());
-        universityDao.add(NaUKMA);
-        universityDao.add(university);
-        Specialty specialty = setUpNewEngineeringSpecialty();
-        specialtyDao.add(specialty);
-        specialtyDao.addSpecialtyToUniversity(specialty, NaUKMA);
-        specialtyDao.addSpecialtyToUniversity(specialty, university);
-        assertEquals(2, specialtyDao.getAllUniversitiesBySpecialty(specialty.getId()).size());
     }
 
     @Test

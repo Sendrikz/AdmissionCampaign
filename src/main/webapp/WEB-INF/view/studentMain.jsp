@@ -22,7 +22,7 @@
     <h3><fmt:message key="subjects"/></h3>
     <jsp:useBean id="subjectsList" scope="session" type="java.util.List"/>
     <c:forEach var="elem" items="${ subjectsList }" varStatus="status">
-        <form name="subjectForm" method="POST" action="controller">
+        <form name="subjectForm" method="GET" action="controller">
             <input type="hidden" name="command" value="registrateOnSubject" />
             <input type="hidden" name="subject" value="${ elem.name }" />
             <c:out value="${ elem.name }" />
@@ -32,9 +32,6 @@
 
     <h3><fmt:message key="universities"/></h3>
     <button class="custom-btn btn-light btn-sm text-bold" type="submit" onclick="myFunction()"><fmt:message key="city"/></button>
-    <%--<div id="myDIV" style="display: block;">--%>
-        <%--Click the button!--%>
-    <%--</div>--%>
     <table id="myCity" style="display: none">
         <jsp:useBean id="citiesList" scope="session" type="java.util.List"/>
         <c:forEach var="city" items=" ${ citiesList }" varStatus="status">

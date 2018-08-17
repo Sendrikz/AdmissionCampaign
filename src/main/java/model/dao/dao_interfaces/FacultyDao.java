@@ -11,7 +11,7 @@ public interface FacultyDao {
 
     void add(Faculty faculty);
 
-    void update(int id, String name);
+    void update(int id, String name, int uniId);
 
     Faculty findById(int id);
 

@@ -25,6 +25,7 @@ public class UserJdbcDaoTest {
     private SubjectDao subjectDao;
     private FacultyDao facultyDao;
     private SpecialtyDao specialtyDao;
+    private UniversityDao universityDao;
     private Connection con;
 
     @Before
@@ -36,6 +37,7 @@ public class UserJdbcDaoTest {
         subjectDao = new SubjectJdbcDao(con);
         facultyDao = new FacultyJdbcDao(con);
         specialtyDao = new SpecialtyJdbcDao(con);
+        universityDao = new UniversityJdbcDao(con);
         role = new Role(Roles.STUDENT.getName());
         roleDao.add(role);
     }
@@ -154,7 +156,10 @@ public class UserJdbcDaoTest {
     public void addUserToSpecialtyTest() {
         User user = setUpNewKostya();;
         userDao.add(user);
-        Faculty faculty = new Faculty(Faculties.IT.getName());
+        University university = new University(Universities.NaUKMA.getName(), Universities.NaUKMA.getAddress(),
+                Universities.NaUKMA.getCity());
+        universityDao.add(university);
+        Faculty faculty = new Faculty(Faculties.IT.getName(), university.getId());
         facultyDao.add(faculty);
         Specialty specialty = new Specialty(Specialties.ENGINEERING.getName(),
                 Specialties.ENGINEERING.getQuantityOfStudents(), faculty.getId());

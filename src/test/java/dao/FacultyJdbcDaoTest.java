@@ -1,5 +1,10 @@
 package dao;
 
+import model.dao.dao_implementations.UniversityJdbcDao;
+import model.dao.dao_implementations.UserJdbcDao;
+import model.dao.dao_interfaces.UniversityDao;
+import model.dao.dao_interfaces.UserDao;
+import model.enteties.University;
 import model.enteties_enum.Faculties;
 import model.enteties_enum.Specialties;
 import model.connection.ConnectionManager;
@@ -9,6 +14,7 @@ import model.dao.dao_interfaces.SpecialtyDao;
 import model.dao.dao_implementations.SpecialtyJdbcDao;
 import model.enteties.Faculty;
 import model.enteties.Specialty;
+import model.enteties_enum.Universities;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -27,13 +33,20 @@ public class FacultyJdbcDaoTest {
 
     private FacultyDao facultyDao;
     private SpecialtyDao specialtyDao;
+    private UserDao userDao;
     private Connection connection;
+    private University university;
 
     @Before
     public void setUp() {
         connection = new ConnectionManager().getConnectionToTestBD();
         facultyDao = new FacultyJdbcDao(connection);
         specialtyDao = new SpecialtyJdbcDao(connection);
+        university = new University(Universities.NaUKMA.getName(),
+                Universities.NaUKMA.getAddress(), Universities.NaUKMA.getCity());
+        UniversityDao universityDao = new UniversityJdbcDao(connection);
+        universityDao.add(university);
+        userDao = new UserJdbcDao(connection);
     }
 
     @After
@@ -46,11 +59,12 @@ public class FacultyJdbcDaoTest {
     }
 
     private Faculty setUpNewITFaculty() {
-        return new Faculty(Faculties.IT.getName());
+        return new Faculty(Faculties.IT.getName(), university.getId());
     }
 
     private Faculty setUpNewEconomicFaculty() {
-        return new Faculty(Faculties.ECONOMIC.getName());
+        return new Faculty(Faculties.ECONOMIC.getName(),
+                university.getId());
     }
 
     @Test
@@ -67,6 +81,7 @@ public class FacultyJdbcDaoTest {
         Faculty facultyIT = setUpNewITFaculty();
         facultyDao.add(facultyEconomy);
         facultyDao.add(facultyIT);
+        userDao.clearAllUsers();
         specialtyDao.clearAllSpecialties();
         facultyDao.clearAllFaculties();
         assertEquals(0, facultyDao.getAll().size());
@@ -76,7 +91,7 @@ public class FacultyJdbcDaoTest {
     public void updateTest() {
         Faculty faculty = setUpNewITFaculty();
         facultyDao.add(faculty);
-        facultyDao.update(faculty.getId(), Faculties.BIOLOGY.getName());
+        facultyDao.update(faculty.getId(), Faculties.BIOLOGY.getName(), university.getId());
         assertNotEquals(faculty, facultyDao.findById(faculty.getId()));
     }
 
