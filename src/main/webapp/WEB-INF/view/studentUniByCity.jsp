@@ -14,7 +14,11 @@
     <c:forEach var="uni" items="${ listOfUni }" varStatus="status">
         <tr>
             <td>
-                <c:out value="${ uni }"/>
+                <form name="uniForm" method="GET" action="controller">
+                    <input type="hidden" name="command" value="generateSpecialtiesByUni"/>
+                    <input type="hidden" name="uniId" value=" ${ uni.id }"/>
+                    <button class="custom-btn btn-light btn-sm text-bold" type="submit">${ uni.name }</button>
+                </form>
             </td>
         </tr>
     </c:forEach>

@@ -21,6 +21,11 @@ public enum CommandEnum {
         {
             this.command = new GenerateUniversitiesByCityCommand();
         }
+    },
+    GENERATESPECIALTIESBYUNI {
+        {
+            this.command = new GenerateSpecialtyByUniCommand();
+        }
     };
 
     ActionCommand command;

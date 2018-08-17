@@ -11,7 +11,7 @@ public class RegistrationCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) {
-        String page = null;
+        String page;
         log.info("start class RegistrationCommand execute()");
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");

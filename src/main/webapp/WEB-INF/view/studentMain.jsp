@@ -22,7 +22,7 @@
     <h3><fmt:message key="subjects"/></h3>
     <jsp:useBean id="subjectsList" scope="session" type="java.util.List"/>
     <c:forEach var="elem" items="${ subjectsList }" varStatus="status">
-        <form name="subjectForm" method="GET" action="controller">
+        <form name="subjectForm" method="POST" action="controller">
             <input type="hidden" name="command" value="registrateOnSubject" />
             <input type="hidden" name="subject" value="${ elem.name }" />
             <c:out value="${ elem.name }" />
@@ -35,7 +35,7 @@
     <%--<div id="myDIV" style="display: block;">--%>
         <%--Click the button!--%>
     <%--</div>--%>
-    <table id="myDIV" style="display: none">
+    <table id="myCity" style="display: none">
         <jsp:useBean id="citiesList" scope="session" type="java.util.List"/>
         <c:forEach var="city" items=" ${ citiesList }" varStatus="status">
             <tr>
@@ -62,7 +62,7 @@
     </table>
     <script>
         function myFunction() {
-            var x = document.getElementById('myDIV');
+            var x = document.getElementById('myCity');
             if (x.style.display === 'none') {
                 x.style.display = 'block';
             } else {

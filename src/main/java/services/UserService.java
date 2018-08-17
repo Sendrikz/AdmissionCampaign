@@ -9,7 +9,6 @@ import org.apache.log4j.Logger;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class UserService {
@@ -23,17 +22,8 @@ public class UserService {
             log.info("There is no user in table User_Subject");
             ConnectionManager connectionManager = new ConnectionManager();
             Connection connection = connectionManager.getConnection();
-            try {
-                connection.setAutoCommit(false);
-                log.info("Start transaction");
-                UserDao userDao = DaoFactory.getUserDao(connection);
-                userDao.addUserToSubject(user, subject, checked, grade);
-                connection.commit();
-                log.info("End transaction");
-            } catch (SQLException e) {
-                log.info("Transaction fail");
-                e.printStackTrace();
-            }
+            UserDao userDao = DaoFactory.getUserDao(connection);
+            userDao.addUserToSubject(user, subject, checked, grade);
             connectionManager.close(connection);
             return true;
         }
@@ -42,22 +32,13 @@ public class UserService {
     }
 
     private static ArrayList<Subject> allSubjectsByUser(User user) {
-        ArrayList<Subject> allSubjectsByUser = null;
+        ArrayList<Subject> allSubjectsByUser;
         log.info("allSubjectsByUser()");
         ConnectionManager connectionManager = new ConnectionManager();
         Connection connection = connectionManager.getConnection();
-        try {
-            connection.setAutoCommit(false);
-            log.info("Start transaction");
-            UserDao userDao = DaoFactory.getUserDao(connection);
-            allSubjectsByUser = userDao.getAllSubjectsByUser(user.getId());
-            log.debug("List of subject by user id: " + allSubjectsByUser);
-            connection.commit();
-            log.info("End transaction");
-        } catch (SQLException e) {
-            log.info("Transaction fail");
-            e.printStackTrace();
-        }
+        UserDao userDao = DaoFactory.getUserDao(connection);
+        allSubjectsByUser = userDao.getAllSubjectsByUser(user.getId());
+        log.debug("List of subject by user id: " + allSubjectsByUser);
         connectionManager.close(connection);
         return allSubjectsByUser;
     }

@@ -209,3 +209,1123 @@
 16/08/2018 1:06 [http-nio-8083-exec-1] DEBUG - <Value of city from array: Kyiv>
 16/08/2018 1:06 [http-nio-8083-exec-1] DEBUG - <List of universities to display: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
 16/08/2018 1:06 [http-nio-8083-exec-1] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+16/08/2018 11:38 [http-nio-8083-exec-3] INFO - <Start class Controller processRequest()>
+16/08/2018 11:38 [http-nio-8083-exec-5] INFO - <Start class Controller processRequest()>
+16/08/2018 11:38 [http-nio-8083-exec-1] INFO - <Start class Controller processRequest()>
+16/08/2018 11:38 [http-nio-8083-exec-1] INFO - <start class LoginCommand execute()>
+16/08/2018 11:38 [http-nio-8083-exec-1] DEBUG - <Login: andriy@gmail.com>
+16/08/2018 11:38 [http-nio-8083-exec-1] DEBUG - <Password: Password1>
+16/08/2018 11:38 [http-nio-8083-exec-1] INFO - <Start class LoginLogic checkLogin()>
+16/08/2018 11:38 [http-nio-8083-exec-1] INFO - <Start transaction>
+16/08/2018 11:38 [http-nio-8083-exec-1] INFO - <End transaction>
+16/08/2018 11:38 [http-nio-8083-exec-1] INFO - <Find user>
+16/08/2018 11:38 [http-nio-8083-exec-1] INFO - <Successfully login>
+16/08/2018 11:38 [http-nio-8083-exec-1] INFO - <User is student>
+16/08/2018 11:38 [http-nio-8083-exec-1] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 11:38 [http-nio-8083-exec-1] INFO - <Start class UniversityService getAllCities()>
+16/08/2018 11:38 [http-nio-8083-exec-1] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 11:38 [http-nio-8083-exec-1] INFO - <Start transaction>
+16/08/2018 11:38 [http-nio-8083-exec-1] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 11:38 [http-nio-8083-exec-1] INFO - <End transaction>
+16/08/2018 11:38 [http-nio-8083-exec-1] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 11:38 [http-nio-8083-exec-1] DEBUG - <[Lviv, Kyiv]>
+16/08/2018 11:38 [http-nio-8083-exec-1] INFO - <List of cities to display: [Lviv, Kyiv]>
+16/08/2018 11:38 [http-nio-8083-exec-1] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 11:38 [http-nio-8083-exec-1] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+16/08/2018 11:38 [http-nio-8083-exec-3] INFO - <Start class Controller processRequest()>
+16/08/2018 11:38 [http-nio-8083-exec-3] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+16/08/2018 11:38 [http-nio-8083-exec-3] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 11:38 [http-nio-8083-exec-3] INFO - <Start transaction>
+16/08/2018 11:38 [http-nio-8083-exec-3] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 11:38 [http-nio-8083-exec-3] INFO - <End transaction>
+16/08/2018 11:38 [http-nio-8083-exec-3] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 11:38 [http-nio-8083-exec-3] DEBUG - <Value of city from request: Lviv>
+16/08/2018 11:38 [http-nio-8083-exec-3] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 11:38 [http-nio-8083-exec-3] DEBUG - <Value of city from request: Lviv>
+16/08/2018 11:38 [http-nio-8083-exec-3] DEBUG - <Value of city from array: Lviv>
+16/08/2018 11:38 [http-nio-8083-exec-3] DEBUG - <Value of city from request: Lviv>
+16/08/2018 11:38 [http-nio-8083-exec-3] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 11:38 [http-nio-8083-exec-3] DEBUG - <List of universities to display: [University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}]>
+16/08/2018 11:38 [http-nio-8083-exec-3] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+16/08/2018 11:49 [http-nio-8083-exec-4] INFO - <Start class Controller processRequest()>
+16/08/2018 11:49 [http-nio-8083-exec-4] INFO - <start class LoginCommand execute()>
+16/08/2018 11:49 [http-nio-8083-exec-4] DEBUG - <Login: andriy@gmail.com>
+16/08/2018 11:49 [http-nio-8083-exec-4] DEBUG - <Password: Password1>
+16/08/2018 11:49 [http-nio-8083-exec-4] INFO - <Start class LoginLogic checkLogin()>
+16/08/2018 11:49 [http-nio-8083-exec-4] INFO - <Start transaction>
+16/08/2018 11:49 [http-nio-8083-exec-4] INFO - <End transaction>
+16/08/2018 11:49 [http-nio-8083-exec-4] INFO - <Find user>
+16/08/2018 11:49 [http-nio-8083-exec-4] INFO - <Successfully login>
+16/08/2018 11:49 [http-nio-8083-exec-4] INFO - <User is student>
+16/08/2018 11:49 [http-nio-8083-exec-4] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 11:49 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllCities()>
+16/08/2018 11:49 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 11:49 [http-nio-8083-exec-4] INFO - <Start transaction>
+16/08/2018 11:49 [http-nio-8083-exec-4] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 11:49 [http-nio-8083-exec-4] INFO - <End transaction>
+16/08/2018 11:49 [http-nio-8083-exec-4] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 11:49 [http-nio-8083-exec-4] DEBUG - <[Lviv, Kyiv]>
+16/08/2018 11:49 [http-nio-8083-exec-4] INFO - <List of cities to display: [Lviv, Kyiv]>
+16/08/2018 11:49 [http-nio-8083-exec-4] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 11:49 [http-nio-8083-exec-4] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+16/08/2018 11:49 [http-nio-8083-exec-5] INFO - <Start class Controller processRequest()>
+16/08/2018 11:49 [http-nio-8083-exec-5] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+16/08/2018 11:49 [http-nio-8083-exec-5] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 11:49 [http-nio-8083-exec-5] INFO - <Start transaction>
+16/08/2018 11:49 [http-nio-8083-exec-5] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 11:49 [http-nio-8083-exec-5] INFO - <End transaction>
+16/08/2018 11:49 [http-nio-8083-exec-5] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 11:49 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Lviv>
+16/08/2018 11:49 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 11:49 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Lviv>
+16/08/2018 11:49 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Lviv>
+16/08/2018 11:49 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Lviv>
+16/08/2018 11:49 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 11:49 [http-nio-8083-exec-5] DEBUG - <List of universities to display: [University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}]>
+16/08/2018 11:49 [http-nio-8083-exec-5] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+16/08/2018 11:59 [http-nio-8083-exec-5] INFO - <Start class Controller processRequest()>
+16/08/2018 11:59 [http-nio-8083-exec-5] INFO - <start class LoginCommand execute()>
+16/08/2018 11:59 [http-nio-8083-exec-5] DEBUG - <Login: andriy@gmail.com>
+16/08/2018 11:59 [http-nio-8083-exec-5] DEBUG - <Password: Password1>
+16/08/2018 11:59 [http-nio-8083-exec-5] INFO - <Start class LoginLogic checkLogin()>
+16/08/2018 11:59 [http-nio-8083-exec-5] INFO - <Start transaction>
+16/08/2018 11:59 [http-nio-8083-exec-5] INFO - <End transaction>
+16/08/2018 11:59 [http-nio-8083-exec-5] INFO - <Find user>
+16/08/2018 11:59 [http-nio-8083-exec-5] INFO - <Successfully login>
+16/08/2018 11:59 [http-nio-8083-exec-5] INFO - <User is student>
+16/08/2018 11:59 [http-nio-8083-exec-5] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 11:59 [http-nio-8083-exec-5] INFO - <Start class UniversityService getAllCities()>
+16/08/2018 11:59 [http-nio-8083-exec-5] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 11:59 [http-nio-8083-exec-5] INFO - <Start transaction>
+16/08/2018 11:59 [http-nio-8083-exec-5] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 11:59 [http-nio-8083-exec-5] INFO - <End transaction>
+16/08/2018 11:59 [http-nio-8083-exec-5] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 11:59 [http-nio-8083-exec-5] DEBUG - <[Lviv, Kyiv]>
+16/08/2018 11:59 [http-nio-8083-exec-5] INFO - <List of cities to display: [Lviv, Kyiv]>
+16/08/2018 11:59 [http-nio-8083-exec-5] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 11:59 [http-nio-8083-exec-5] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+16/08/2018 11:59 [http-nio-8083-exec-6] INFO - <Start class Controller processRequest()>
+16/08/2018 11:59 [http-nio-8083-exec-6] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+16/08/2018 11:59 [http-nio-8083-exec-6] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 11:59 [http-nio-8083-exec-6] INFO - <Start transaction>
+16/08/2018 11:59 [http-nio-8083-exec-6] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 11:59 [http-nio-8083-exec-6] INFO - <End transaction>
+16/08/2018 11:59 [http-nio-8083-exec-6] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 11:59 [http-nio-8083-exec-6] DEBUG - <Value of city from request: Lviv>
+16/08/2018 11:59 [http-nio-8083-exec-6] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 11:59 [http-nio-8083-exec-6] DEBUG - <Value of city from request: Lviv>
+16/08/2018 11:59 [http-nio-8083-exec-6] DEBUG - <Value of city from array: Lviv>
+16/08/2018 11:59 [http-nio-8083-exec-6] DEBUG - <Value of city from request: Lviv>
+16/08/2018 11:59 [http-nio-8083-exec-6] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 11:59 [http-nio-8083-exec-6] DEBUG - <List of universities to display: [University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}]>
+16/08/2018 11:59 [http-nio-8083-exec-6] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+16/08/2018 12:00 [http-nio-8083-exec-5] INFO - <Start class Controller processRequest()>
+16/08/2018 12:00 [http-nio-8083-exec-5] INFO - <start class LoginCommand execute()>
+16/08/2018 12:00 [http-nio-8083-exec-5] DEBUG - <Login: andriy@gmail.com>
+16/08/2018 12:00 [http-nio-8083-exec-5] DEBUG - <Password: Password1>
+16/08/2018 12:00 [http-nio-8083-exec-5] INFO - <Start class LoginLogic checkLogin()>
+16/08/2018 12:00 [http-nio-8083-exec-5] INFO - <Start transaction>
+16/08/2018 12:00 [http-nio-8083-exec-5] INFO - <End transaction>
+16/08/2018 12:00 [http-nio-8083-exec-5] INFO - <Find user>
+16/08/2018 12:00 [http-nio-8083-exec-5] INFO - <Successfully login>
+16/08/2018 12:00 [http-nio-8083-exec-5] INFO - <User is student>
+16/08/2018 12:00 [http-nio-8083-exec-5] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 12:00 [http-nio-8083-exec-5] INFO - <Start class UniversityService getAllCities()>
+16/08/2018 12:00 [http-nio-8083-exec-5] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 12:00 [http-nio-8083-exec-5] INFO - <Start transaction>
+16/08/2018 12:00 [http-nio-8083-exec-5] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:00 [http-nio-8083-exec-5] INFO - <End transaction>
+16/08/2018 12:00 [http-nio-8083-exec-5] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:00 [http-nio-8083-exec-5] DEBUG - <[Lviv, Kyiv]>
+16/08/2018 12:00 [http-nio-8083-exec-5] INFO - <List of cities to display: [Lviv, Kyiv]>
+16/08/2018 12:00 [http-nio-8083-exec-5] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 12:00 [http-nio-8083-exec-5] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+16/08/2018 12:00 [http-nio-8083-exec-6] INFO - <Start class Controller processRequest()>
+16/08/2018 12:00 [http-nio-8083-exec-6] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+16/08/2018 12:00 [http-nio-8083-exec-6] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 12:00 [http-nio-8083-exec-6] INFO - <Start transaction>
+16/08/2018 12:00 [http-nio-8083-exec-6] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:00 [http-nio-8083-exec-6] INFO - <End transaction>
+16/08/2018 12:00 [http-nio-8083-exec-6] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:00 [http-nio-8083-exec-6] DEBUG - <Value of city from request: Lviv>
+16/08/2018 12:00 [http-nio-8083-exec-6] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 12:00 [http-nio-8083-exec-6] DEBUG - <Value of city from request: Lviv>
+16/08/2018 12:00 [http-nio-8083-exec-6] DEBUG - <Value of city from array: Lviv>
+16/08/2018 12:00 [http-nio-8083-exec-6] DEBUG - <Value of city from request: Lviv>
+16/08/2018 12:00 [http-nio-8083-exec-6] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 12:00 [http-nio-8083-exec-6] DEBUG - <List of universities to display: [University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}]>
+16/08/2018 12:00 [http-nio-8083-exec-6] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+16/08/2018 12:01 [http-nio-8083-exec-4] INFO - <Start class Controller processRequest()>
+16/08/2018 12:01 [http-nio-8083-exec-4] INFO - <start class LoginCommand execute()>
+16/08/2018 12:01 [http-nio-8083-exec-4] DEBUG - <Login: andriy@gmail.com>
+16/08/2018 12:01 [http-nio-8083-exec-4] DEBUG - <Password: Password1>
+16/08/2018 12:01 [http-nio-8083-exec-4] INFO - <Start class LoginLogic checkLogin()>
+16/08/2018 12:01 [http-nio-8083-exec-4] INFO - <Start transaction>
+16/08/2018 12:01 [http-nio-8083-exec-4] INFO - <End transaction>
+16/08/2018 12:01 [http-nio-8083-exec-4] INFO - <Find user>
+16/08/2018 12:01 [http-nio-8083-exec-4] INFO - <Successfully login>
+16/08/2018 12:01 [http-nio-8083-exec-4] INFO - <User is student>
+16/08/2018 12:01 [http-nio-8083-exec-4] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 12:01 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllCities()>
+16/08/2018 12:01 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 12:01 [http-nio-8083-exec-4] INFO - <Start transaction>
+16/08/2018 12:01 [http-nio-8083-exec-4] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:01 [http-nio-8083-exec-4] INFO - <End transaction>
+16/08/2018 12:01 [http-nio-8083-exec-4] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:01 [http-nio-8083-exec-4] DEBUG - <[Lviv, Kyiv]>
+16/08/2018 12:01 [http-nio-8083-exec-4] INFO - <List of cities to display: [Lviv, Kyiv]>
+16/08/2018 12:01 [http-nio-8083-exec-4] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 12:01 [http-nio-8083-exec-4] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+16/08/2018 12:01 [http-nio-8083-exec-5] INFO - <Start class Controller processRequest()>
+16/08/2018 12:01 [http-nio-8083-exec-5] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+16/08/2018 12:01 [http-nio-8083-exec-5] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 12:01 [http-nio-8083-exec-5] INFO - <Start transaction>
+16/08/2018 12:01 [http-nio-8083-exec-5] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:01 [http-nio-8083-exec-5] INFO - <End transaction>
+16/08/2018 12:01 [http-nio-8083-exec-5] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:01 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Lviv>
+16/08/2018 12:01 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 12:01 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Lviv>
+16/08/2018 12:01 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Lviv>
+16/08/2018 12:01 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Lviv>
+16/08/2018 12:01 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 12:01 [http-nio-8083-exec-5] DEBUG - <List of universities to display: [University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}]>
+16/08/2018 12:01 [http-nio-8083-exec-5] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+16/08/2018 12:02 [http-nio-8083-exec-4] INFO - <Start class Controller processRequest()>
+16/08/2018 12:02 [http-nio-8083-exec-4] INFO - <start class LoginCommand execute()>
+16/08/2018 12:02 [http-nio-8083-exec-4] DEBUG - <Login: andriy@gmail.com>
+16/08/2018 12:02 [http-nio-8083-exec-4] DEBUG - <Password: Password1>
+16/08/2018 12:02 [http-nio-8083-exec-4] INFO - <Start class LoginLogic checkLogin()>
+16/08/2018 12:02 [http-nio-8083-exec-4] INFO - <Start transaction>
+16/08/2018 12:02 [http-nio-8083-exec-4] INFO - <End transaction>
+16/08/2018 12:02 [http-nio-8083-exec-4] INFO - <Find user>
+16/08/2018 12:02 [http-nio-8083-exec-4] INFO - <Successfully login>
+16/08/2018 12:02 [http-nio-8083-exec-4] INFO - <User is student>
+16/08/2018 12:02 [http-nio-8083-exec-4] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 12:02 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllCities()>
+16/08/2018 12:02 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 12:02 [http-nio-8083-exec-4] INFO - <Start transaction>
+16/08/2018 12:02 [http-nio-8083-exec-4] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:02 [http-nio-8083-exec-4] INFO - <End transaction>
+16/08/2018 12:02 [http-nio-8083-exec-4] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:02 [http-nio-8083-exec-4] DEBUG - <[Lviv, Kyiv]>
+16/08/2018 12:02 [http-nio-8083-exec-4] INFO - <List of cities to display: [Lviv, Kyiv]>
+16/08/2018 12:02 [http-nio-8083-exec-4] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 12:02 [http-nio-8083-exec-4] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+16/08/2018 12:02 [http-nio-8083-exec-5] INFO - <Start class Controller processRequest()>
+16/08/2018 12:02 [http-nio-8083-exec-5] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+16/08/2018 12:02 [http-nio-8083-exec-5] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 12:02 [http-nio-8083-exec-5] INFO - <Start transaction>
+16/08/2018 12:02 [http-nio-8083-exec-5] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:02 [http-nio-8083-exec-5] INFO - <End transaction>
+16/08/2018 12:02 [http-nio-8083-exec-5] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:02 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Lviv>
+16/08/2018 12:02 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 12:02 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Lviv>
+16/08/2018 12:02 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Lviv>
+16/08/2018 12:02 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Lviv>
+16/08/2018 12:02 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 12:02 [http-nio-8083-exec-5] DEBUG - <List of universities to display: [University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}]>
+16/08/2018 12:02 [http-nio-8083-exec-5] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+16/08/2018 12:02 [http-nio-8083-exec-6] INFO - <Start class Controller processRequest()>
+16/08/2018 12:02 [http-nio-8083-exec-6] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+16/08/2018 12:02 [http-nio-8083-exec-6] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 12:02 [http-nio-8083-exec-6] INFO - <Start transaction>
+16/08/2018 12:02 [http-nio-8083-exec-6] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:02 [http-nio-8083-exec-6] INFO - <End transaction>
+16/08/2018 12:02 [http-nio-8083-exec-6] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:02 [http-nio-8083-exec-6] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 12:02 [http-nio-8083-exec-6] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 12:02 [http-nio-8083-exec-6] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 12:02 [http-nio-8083-exec-6] DEBUG - <Value of city from array: Lviv>
+16/08/2018 12:02 [http-nio-8083-exec-6] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 12:02 [http-nio-8083-exec-6] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 12:02 [http-nio-8083-exec-6] DEBUG - <List of universities to display: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:02 [http-nio-8083-exec-6] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+16/08/2018 12:17 [http-nio-8083-exec-4] INFO - <Start class Controller processRequest()>
+16/08/2018 12:17 [http-nio-8083-exec-4] INFO - <start class LoginCommand execute()>
+16/08/2018 12:17 [http-nio-8083-exec-4] DEBUG - <Login: andriy@gmail.com>
+16/08/2018 12:17 [http-nio-8083-exec-4] DEBUG - <Password: Password1>
+16/08/2018 12:17 [http-nio-8083-exec-4] INFO - <Start class LoginLogic checkLogin()>
+16/08/2018 12:17 [http-nio-8083-exec-4] INFO - <Start transaction>
+16/08/2018 12:17 [http-nio-8083-exec-4] INFO - <End transaction>
+16/08/2018 12:17 [http-nio-8083-exec-4] INFO - <Find user>
+16/08/2018 12:17 [http-nio-8083-exec-4] INFO - <Successfully login>
+16/08/2018 12:17 [http-nio-8083-exec-4] INFO - <User is student>
+16/08/2018 12:17 [http-nio-8083-exec-4] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 12:17 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllCities()>
+16/08/2018 12:17 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 12:17 [http-nio-8083-exec-4] INFO - <Start transaction>
+16/08/2018 12:17 [http-nio-8083-exec-4] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:17 [http-nio-8083-exec-4] INFO - <End transaction>
+16/08/2018 12:17 [http-nio-8083-exec-4] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:17 [http-nio-8083-exec-4] DEBUG - <[Lviv, Kyiv]>
+16/08/2018 12:17 [http-nio-8083-exec-4] INFO - <List of cities to display: [Lviv, Kyiv]>
+16/08/2018 12:17 [http-nio-8083-exec-4] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 12:17 [http-nio-8083-exec-4] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+16/08/2018 12:17 [http-nio-8083-exec-8] INFO - <Start class Controller processRequest()>
+16/08/2018 12:17 [http-nio-8083-exec-8] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+16/08/2018 12:17 [http-nio-8083-exec-8] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 12:17 [http-nio-8083-exec-8] INFO - <Start transaction>
+16/08/2018 12:17 [http-nio-8083-exec-8] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:17 [http-nio-8083-exec-8] INFO - <End transaction>
+16/08/2018 12:17 [http-nio-8083-exec-8] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:17 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 12:17 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 12:17 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 12:17 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Lviv>
+16/08/2018 12:17 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 12:17 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 12:17 [http-nio-8083-exec-8] DEBUG - <List of universities to display: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 12:17 [http-nio-8083-exec-8] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+16/08/2018 12:17 [http-nio-8083-exec-9] INFO - <Start class Controller processRequest()>
+16/08/2018 3:09 [http-nio-8083-exec-4] INFO - <Start class Controller processRequest()>
+16/08/2018 3:09 [http-nio-8083-exec-5] INFO - <Start class Controller processRequest()>
+16/08/2018 3:09 [http-nio-8083-exec-4] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+16/08/2018 3:09 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 3:09 [http-nio-8083-exec-4] INFO - <Start transaction>
+16/08/2018 3:09 [http-nio-8083-exec-4] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:09 [http-nio-8083-exec-4] INFO - <End transaction>
+16/08/2018 3:09 [http-nio-8083-exec-4] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:09 [http-nio-8083-exec-4] DEBUG - <Value of city from request: Lviv>
+16/08/2018 3:09 [http-nio-8083-exec-4] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 3:09 [http-nio-8083-exec-4] DEBUG - <Value of city from request: Lviv>
+16/08/2018 3:09 [http-nio-8083-exec-4] DEBUG - <Value of city from array: Lviv>
+16/08/2018 3:09 [http-nio-8083-exec-4] DEBUG - <Value of city from request: Lviv>
+16/08/2018 3:09 [http-nio-8083-exec-4] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 3:09 [http-nio-8083-exec-4] DEBUG - <List of universities to display: [University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}]>
+16/08/2018 3:09 [http-nio-8083-exec-4] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+16/08/2018 3:09 [http-nio-8083-exec-3] INFO - <Start class Controller processRequest()>
+16/08/2018 3:09 [http-nio-8083-exec-3] INFO - <start class LoginCommand execute()>
+16/08/2018 3:09 [http-nio-8083-exec-3] DEBUG - <Login: andriy@gmail.com>
+16/08/2018 3:09 [http-nio-8083-exec-3] DEBUG - <Password: Password1>
+16/08/2018 3:09 [http-nio-8083-exec-3] INFO - <Start class LoginLogic checkLogin()>
+16/08/2018 3:09 [http-nio-8083-exec-3] INFO - <Start transaction>
+16/08/2018 3:09 [http-nio-8083-exec-3] INFO - <End transaction>
+16/08/2018 3:09 [http-nio-8083-exec-3] INFO - <Find user>
+16/08/2018 3:09 [http-nio-8083-exec-3] INFO - <Successfully login>
+16/08/2018 3:09 [http-nio-8083-exec-3] INFO - <User is student>
+16/08/2018 3:09 [http-nio-8083-exec-3] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 3:09 [http-nio-8083-exec-3] INFO - <Start class UniversityService getAllCities()>
+16/08/2018 3:09 [http-nio-8083-exec-3] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 3:09 [http-nio-8083-exec-3] INFO - <Start transaction>
+16/08/2018 3:09 [http-nio-8083-exec-3] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:09 [http-nio-8083-exec-3] INFO - <End transaction>
+16/08/2018 3:09 [http-nio-8083-exec-3] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:09 [http-nio-8083-exec-3] DEBUG - <[Lviv, Kyiv]>
+16/08/2018 3:09 [http-nio-8083-exec-3] INFO - <List of cities to display: [Lviv, Kyiv]>
+16/08/2018 3:09 [http-nio-8083-exec-3] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 3:09 [http-nio-8083-exec-3] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+16/08/2018 3:09 [http-nio-8083-exec-6] INFO - <Start class Controller processRequest()>
+16/08/2018 3:09 [http-nio-8083-exec-6] INFO - <Start class RegistrationForSubjectCommand execute()>
+16/08/2018 3:09 [http-nio-8083-exec-6] DEBUG - <Selected subject: Math>
+16/08/2018 3:09 [http-nio-8083-exec-6] DEBUG - <Current user: User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 3:09 [http-nio-8083-exec-6] INFO - <Start transaction>
+16/08/2018 3:09 [http-nio-8083-exec-6] DEBUG - <List of subjects: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 3:09 [http-nio-8083-exec-6] INFO - <End transaction>
+16/08/2018 3:09 [http-nio-8083-exec-6] DEBUG - <Find subject: Subject{id=1, name='Math', duration=120}>
+16/08/2018 3:09 [http-nio-8083-exec-6] INFO - <Start class UserService method addUserToSubject()>
+16/08/2018 3:09 [http-nio-8083-exec-6] INFO - <allSubjectsByUser()>
+16/08/2018 3:09 [http-nio-8083-exec-6] INFO - <Start transaction>
+16/08/2018 3:09 [http-nio-8083-exec-6] DEBUG - <List of subject by user id: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 3:09 [http-nio-8083-exec-6] INFO - <End transaction>
+16/08/2018 3:09 [http-nio-8083-exec-6] INFO - <There is user in table User_Subject>
+16/08/2018 3:09 [http-nio-8083-exec-6] DEBUG - </WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+16/08/2018 3:09 [http-nio-8083-exec-6] DEBUG - <Page = /WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+16/08/2018 3:09 [http-nio-8083-exec-6] INFO - <Page contains :AlreadyRegistrated>
+16/08/2018 3:09 [http-nio-8083-exec-6] DEBUG - <Page after substring: /WEB-INF/view/studentMain.jsp>
+16/08/2018 3:10 [http-nio-8083-exec-7] INFO - <Start class Controller processRequest()>
+16/08/2018 3:10 [http-nio-8083-exec-7] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+16/08/2018 3:10 [http-nio-8083-exec-7] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 3:10 [http-nio-8083-exec-7] INFO - <Start transaction>
+16/08/2018 3:10 [http-nio-8083-exec-7] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:10 [http-nio-8083-exec-7] INFO - <End transaction>
+16/08/2018 3:10 [http-nio-8083-exec-7] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:10 [http-nio-8083-exec-7] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 3:10 [http-nio-8083-exec-7] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 3:10 [http-nio-8083-exec-7] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 3:10 [http-nio-8083-exec-7] DEBUG - <Value of city from array: Lviv>
+16/08/2018 3:10 [http-nio-8083-exec-7] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 3:10 [http-nio-8083-exec-7] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 3:10 [http-nio-8083-exec-7] DEBUG - <List of universities to display: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:10 [http-nio-8083-exec-7] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+16/08/2018 3:10 [http-nio-8083-exec-4] INFO - <Start class Controller processRequest()>
+16/08/2018 3:10 [http-nio-8083-exec-4] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+16/08/2018 3:10 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 3:10 [http-nio-8083-exec-4] INFO - <Start transaction>
+16/08/2018 3:10 [http-nio-8083-exec-4] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:10 [http-nio-8083-exec-4] INFO - <End transaction>
+16/08/2018 3:10 [http-nio-8083-exec-4] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:10 [http-nio-8083-exec-4] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 3:10 [http-nio-8083-exec-4] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 3:10 [http-nio-8083-exec-4] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 3:10 [http-nio-8083-exec-4] DEBUG - <Value of city from array: Lviv>
+16/08/2018 3:10 [http-nio-8083-exec-4] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 3:10 [http-nio-8083-exec-4] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 3:10 [http-nio-8083-exec-4] DEBUG - <List of universities to display: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:10 [http-nio-8083-exec-4] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+16/08/2018 3:10 [http-nio-8083-exec-8] INFO - <Start class Controller processRequest()>
+16/08/2018 3:10 [http-nio-8083-exec-8] INFO - <Start class RegistrationForSubjectCommand execute()>
+16/08/2018 3:10 [http-nio-8083-exec-8] DEBUG - <Selected subject: Math>
+16/08/2018 3:10 [http-nio-8083-exec-8] DEBUG - <Current user: User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 3:10 [http-nio-8083-exec-8] INFO - <Start transaction>
+16/08/2018 3:10 [http-nio-8083-exec-8] DEBUG - <List of subjects: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 3:10 [http-nio-8083-exec-8] INFO - <End transaction>
+16/08/2018 3:10 [http-nio-8083-exec-8] DEBUG - <Find subject: Subject{id=1, name='Math', duration=120}>
+16/08/2018 3:10 [http-nio-8083-exec-8] INFO - <Start class UserService method addUserToSubject()>
+16/08/2018 3:10 [http-nio-8083-exec-8] INFO - <allSubjectsByUser()>
+16/08/2018 3:10 [http-nio-8083-exec-8] INFO - <Start transaction>
+16/08/2018 3:10 [http-nio-8083-exec-8] DEBUG - <List of subject by user id: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 3:10 [http-nio-8083-exec-8] INFO - <End transaction>
+16/08/2018 3:10 [http-nio-8083-exec-8] INFO - <There is user in table User_Subject>
+16/08/2018 3:10 [http-nio-8083-exec-8] DEBUG - </WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+16/08/2018 3:10 [http-nio-8083-exec-8] DEBUG - <Page = /WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+16/08/2018 3:10 [http-nio-8083-exec-8] INFO - <Page contains :AlreadyRegistrated>
+16/08/2018 3:10 [http-nio-8083-exec-8] DEBUG - <Page after substring: /WEB-INF/view/studentMain.jsp>
+16/08/2018 3:10 [http-nio-8083-exec-2] INFO - <Start class Controller processRequest()>
+16/08/2018 3:10 [http-nio-8083-exec-2] INFO - <Start class RegistrationForSubjectCommand execute()>
+16/08/2018 3:10 [http-nio-8083-exec-2] DEBUG - <Selected subject: Math>
+16/08/2018 3:10 [http-nio-8083-exec-2] DEBUG - <Current user: User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 3:10 [http-nio-8083-exec-2] INFO - <Start transaction>
+16/08/2018 3:10 [http-nio-8083-exec-2] DEBUG - <List of subjects: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 3:10 [http-nio-8083-exec-2] INFO - <End transaction>
+16/08/2018 3:10 [http-nio-8083-exec-2] DEBUG - <Find subject: Subject{id=1, name='Math', duration=120}>
+16/08/2018 3:10 [http-nio-8083-exec-2] INFO - <Start class UserService method addUserToSubject()>
+16/08/2018 3:10 [http-nio-8083-exec-2] INFO - <allSubjectsByUser()>
+16/08/2018 3:10 [http-nio-8083-exec-2] INFO - <Start transaction>
+16/08/2018 3:10 [http-nio-8083-exec-2] DEBUG - <List of subject by user id: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 3:10 [http-nio-8083-exec-2] INFO - <End transaction>
+16/08/2018 3:10 [http-nio-8083-exec-2] INFO - <There is user in table User_Subject>
+16/08/2018 3:10 [http-nio-8083-exec-2] DEBUG - </WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+16/08/2018 3:10 [http-nio-8083-exec-2] DEBUG - <Page = /WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+16/08/2018 3:10 [http-nio-8083-exec-2] INFO - <Page contains :AlreadyRegistrated>
+16/08/2018 3:10 [http-nio-8083-exec-2] DEBUG - <Page after substring: /WEB-INF/view/studentMain.jsp>
+16/08/2018 3:10 [http-nio-8083-exec-1] INFO - <Start class Controller processRequest()>
+16/08/2018 3:10 [http-nio-8083-exec-9] INFO - <Start class Controller processRequest()>
+16/08/2018 3:10 [http-nio-8083-exec-9] INFO - <Start class RegistrationForSubjectCommand execute()>
+16/08/2018 3:10 [http-nio-8083-exec-9] DEBUG - <Selected subject: Math>
+16/08/2018 3:10 [http-nio-8083-exec-9] DEBUG - <Current user: User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 3:10 [http-nio-8083-exec-9] INFO - <Start transaction>
+16/08/2018 3:10 [http-nio-8083-exec-9] DEBUG - <List of subjects: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 3:10 [http-nio-8083-exec-9] INFO - <End transaction>
+16/08/2018 3:10 [http-nio-8083-exec-9] DEBUG - <Find subject: Subject{id=1, name='Math', duration=120}>
+16/08/2018 3:10 [http-nio-8083-exec-9] INFO - <Start class UserService method addUserToSubject()>
+16/08/2018 3:10 [http-nio-8083-exec-9] INFO - <allSubjectsByUser()>
+16/08/2018 3:10 [http-nio-8083-exec-9] INFO - <Start transaction>
+16/08/2018 3:10 [http-nio-8083-exec-9] DEBUG - <List of subject by user id: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 3:10 [http-nio-8083-exec-9] INFO - <End transaction>
+16/08/2018 3:10 [http-nio-8083-exec-9] INFO - <There is user in table User_Subject>
+16/08/2018 3:10 [http-nio-8083-exec-9] DEBUG - </WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+16/08/2018 3:10 [http-nio-8083-exec-9] DEBUG - <Page = /WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+16/08/2018 3:10 [http-nio-8083-exec-9] INFO - <Page contains :AlreadyRegistrated>
+16/08/2018 3:10 [http-nio-8083-exec-9] DEBUG - <Page after substring: /WEB-INF/view/studentMain.jsp>
+16/08/2018 3:10 [http-nio-8083-exec-10] INFO - <Start class Controller processRequest()>
+16/08/2018 3:10 [http-nio-8083-exec-10] INFO - <start class LoginCommand execute()>
+16/08/2018 3:10 [http-nio-8083-exec-10] DEBUG - <Login: andriy@gmail.com>
+16/08/2018 3:10 [http-nio-8083-exec-10] DEBUG - <Password: Password1>
+16/08/2018 3:10 [http-nio-8083-exec-10] INFO - <Start class LoginLogic checkLogin()>
+16/08/2018 3:10 [http-nio-8083-exec-10] INFO - <Start transaction>
+16/08/2018 3:10 [http-nio-8083-exec-10] INFO - <End transaction>
+16/08/2018 3:10 [http-nio-8083-exec-10] INFO - <Find user>
+16/08/2018 3:10 [http-nio-8083-exec-10] INFO - <Successfully login>
+16/08/2018 3:10 [http-nio-8083-exec-10] INFO - <User is student>
+16/08/2018 3:10 [http-nio-8083-exec-10] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 3:10 [http-nio-8083-exec-10] INFO - <Start class UniversityService getAllCities()>
+16/08/2018 3:10 [http-nio-8083-exec-10] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 3:10 [http-nio-8083-exec-10] INFO - <Start transaction>
+16/08/2018 3:10 [http-nio-8083-exec-10] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:10 [http-nio-8083-exec-10] INFO - <End transaction>
+16/08/2018 3:10 [http-nio-8083-exec-10] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:10 [http-nio-8083-exec-10] DEBUG - <[Lviv, Kyiv]>
+16/08/2018 3:10 [http-nio-8083-exec-10] INFO - <List of cities to display: [Lviv, Kyiv]>
+16/08/2018 3:10 [http-nio-8083-exec-10] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 3:10 [http-nio-8083-exec-10] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+16/08/2018 3:10 [http-nio-8083-exec-3] INFO - <Start class Controller processRequest()>
+16/08/2018 3:10 [http-nio-8083-exec-3] INFO - <start class LoginCommand execute()>
+16/08/2018 3:10 [http-nio-8083-exec-3] DEBUG - <Login: andriy@gmail.com>
+16/08/2018 3:10 [http-nio-8083-exec-3] DEBUG - <Password: Password1>
+16/08/2018 3:10 [http-nio-8083-exec-3] INFO - <Start class LoginLogic checkLogin()>
+16/08/2018 3:10 [http-nio-8083-exec-3] INFO - <Start transaction>
+16/08/2018 3:10 [http-nio-8083-exec-3] INFO - <End transaction>
+16/08/2018 3:10 [http-nio-8083-exec-3] INFO - <Find user>
+16/08/2018 3:10 [http-nio-8083-exec-3] INFO - <Successfully login>
+16/08/2018 3:10 [http-nio-8083-exec-3] INFO - <User is student>
+16/08/2018 3:10 [http-nio-8083-exec-3] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 3:10 [http-nio-8083-exec-3] INFO - <Start class UniversityService getAllCities()>
+16/08/2018 3:10 [http-nio-8083-exec-3] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 3:10 [http-nio-8083-exec-3] INFO - <Start transaction>
+16/08/2018 3:10 [http-nio-8083-exec-3] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:10 [http-nio-8083-exec-3] INFO - <End transaction>
+16/08/2018 3:10 [http-nio-8083-exec-3] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:10 [http-nio-8083-exec-3] DEBUG - <[Lviv, Kyiv]>
+16/08/2018 3:10 [http-nio-8083-exec-3] INFO - <List of cities to display: [Lviv, Kyiv]>
+16/08/2018 3:10 [http-nio-8083-exec-3] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 3:10 [http-nio-8083-exec-3] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+16/08/2018 3:10 [http-nio-8083-exec-6] INFO - <Start class Controller processRequest()>
+16/08/2018 3:10 [http-nio-8083-exec-6] INFO - <Start class RegistrationForSubjectCommand execute()>
+16/08/2018 3:10 [http-nio-8083-exec-6] DEBUG - <Selected subject: English>
+16/08/2018 3:10 [http-nio-8083-exec-6] DEBUG - <Current user: User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 3:10 [http-nio-8083-exec-6] INFO - <Start transaction>
+16/08/2018 3:10 [http-nio-8083-exec-6] DEBUG - <List of subjects: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 3:10 [http-nio-8083-exec-6] INFO - <End transaction>
+16/08/2018 3:10 [http-nio-8083-exec-6] DEBUG - <Find subject: Subject{id=2, name='English', duration=90}>
+16/08/2018 3:10 [http-nio-8083-exec-6] INFO - <Start class UserService method addUserToSubject()>
+16/08/2018 3:10 [http-nio-8083-exec-6] INFO - <allSubjectsByUser()>
+16/08/2018 3:10 [http-nio-8083-exec-6] INFO - <Start transaction>
+16/08/2018 3:10 [http-nio-8083-exec-6] DEBUG - <List of subject by user id: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 3:10 [http-nio-8083-exec-6] INFO - <End transaction>
+16/08/2018 3:10 [http-nio-8083-exec-6] INFO - <There is user in table User_Subject>
+16/08/2018 3:10 [http-nio-8083-exec-6] DEBUG - </WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+16/08/2018 3:10 [http-nio-8083-exec-6] DEBUG - <Page = /WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+16/08/2018 3:10 [http-nio-8083-exec-6] INFO - <Page contains :AlreadyRegistrated>
+16/08/2018 3:10 [http-nio-8083-exec-6] DEBUG - <Page after substring: /WEB-INF/view/studentMain.jsp>
+16/08/2018 3:10 [http-nio-8083-exec-5] INFO - <Start class Controller processRequest()>
+16/08/2018 3:10 [http-nio-8083-exec-5] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+16/08/2018 3:10 [http-nio-8083-exec-5] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 3:10 [http-nio-8083-exec-5] INFO - <Start transaction>
+16/08/2018 3:10 [http-nio-8083-exec-5] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:10 [http-nio-8083-exec-5] INFO - <End transaction>
+16/08/2018 3:10 [http-nio-8083-exec-5] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:10 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Lviv>
+16/08/2018 3:10 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 3:10 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Lviv>
+16/08/2018 3:10 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Lviv>
+16/08/2018 3:10 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Lviv>
+16/08/2018 3:10 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 3:10 [http-nio-8083-exec-5] DEBUG - <List of universities to display: [University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}]>
+16/08/2018 3:10 [http-nio-8083-exec-5] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+16/08/2018 3:10 [http-nio-8083-exec-7] INFO - <Start class Controller processRequest()>
+16/08/2018 3:10 [http-nio-8083-exec-7] INFO - <Start class RegistrationForSubjectCommand execute()>
+16/08/2018 3:10 [http-nio-8083-exec-7] DEBUG - <Selected subject: English>
+16/08/2018 3:10 [http-nio-8083-exec-7] DEBUG - <Current user: User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 3:10 [http-nio-8083-exec-7] INFO - <Start transaction>
+16/08/2018 3:10 [http-nio-8083-exec-7] DEBUG - <List of subjects: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 3:10 [http-nio-8083-exec-7] INFO - <End transaction>
+16/08/2018 3:10 [http-nio-8083-exec-7] DEBUG - <Find subject: Subject{id=2, name='English', duration=90}>
+16/08/2018 3:10 [http-nio-8083-exec-7] INFO - <Start class UserService method addUserToSubject()>
+16/08/2018 3:10 [http-nio-8083-exec-7] INFO - <allSubjectsByUser()>
+16/08/2018 3:10 [http-nio-8083-exec-7] INFO - <Start transaction>
+16/08/2018 3:10 [http-nio-8083-exec-7] DEBUG - <List of subject by user id: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 3:10 [http-nio-8083-exec-7] INFO - <End transaction>
+16/08/2018 3:10 [http-nio-8083-exec-7] INFO - <There is user in table User_Subject>
+16/08/2018 3:10 [http-nio-8083-exec-7] DEBUG - </WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+16/08/2018 3:10 [http-nio-8083-exec-7] DEBUG - <Page = /WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+16/08/2018 3:10 [http-nio-8083-exec-7] INFO - <Page contains :AlreadyRegistrated>
+16/08/2018 3:10 [http-nio-8083-exec-7] DEBUG - <Page after substring: /WEB-INF/view/studentMain.jsp>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <Start class Controller processRequest()>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <start class LoginCommand execute()>
+16/08/2018 3:11 [http-nio-8083-exec-8] DEBUG - <Login: andriy@gmail.com>
+16/08/2018 3:11 [http-nio-8083-exec-8] DEBUG - <Password: Password1>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <Start class LoginLogic checkLogin()>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <Start transaction>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <End transaction>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <Find user>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <Successfully login>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <User is student>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <Start class UniversityService getAllCities()>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <Start transaction>
+16/08/2018 3:11 [http-nio-8083-exec-8] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <End transaction>
+16/08/2018 3:11 [http-nio-8083-exec-8] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:11 [http-nio-8083-exec-8] DEBUG - <[Lviv, Kyiv]>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <List of cities to display: [Lviv, Kyiv]>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 3:11 [http-nio-8083-exec-8] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+16/08/2018 3:11 [http-nio-8083-exec-1] INFO - <Start class Controller processRequest()>
+16/08/2018 3:11 [http-nio-8083-exec-1] INFO - <start class LoginCommand execute()>
+16/08/2018 3:11 [http-nio-8083-exec-1] DEBUG - <Login: andriy@gmail.com>
+16/08/2018 3:11 [http-nio-8083-exec-1] DEBUG - <Password: Password1>
+16/08/2018 3:11 [http-nio-8083-exec-1] INFO - <Start class LoginLogic checkLogin()>
+16/08/2018 3:11 [http-nio-8083-exec-1] INFO - <Start transaction>
+16/08/2018 3:11 [http-nio-8083-exec-1] INFO - <End transaction>
+16/08/2018 3:11 [http-nio-8083-exec-1] INFO - <Find user>
+16/08/2018 3:11 [http-nio-8083-exec-1] INFO - <Successfully login>
+16/08/2018 3:11 [http-nio-8083-exec-1] INFO - <User is student>
+16/08/2018 3:11 [http-nio-8083-exec-1] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 3:11 [http-nio-8083-exec-1] INFO - <Start class UniversityService getAllCities()>
+16/08/2018 3:11 [http-nio-8083-exec-1] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 3:11 [http-nio-8083-exec-1] INFO - <Start transaction>
+16/08/2018 3:11 [http-nio-8083-exec-1] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:11 [http-nio-8083-exec-1] INFO - <End transaction>
+16/08/2018 3:11 [http-nio-8083-exec-1] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:11 [http-nio-8083-exec-1] DEBUG - <[Lviv, Kyiv]>
+16/08/2018 3:11 [http-nio-8083-exec-1] INFO - <List of cities to display: [Lviv, Kyiv]>
+16/08/2018 3:11 [http-nio-8083-exec-1] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 3:11 [http-nio-8083-exec-1] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+16/08/2018 3:11 [http-nio-8083-exec-9] INFO - <Start class Controller processRequest()>
+16/08/2018 3:11 [http-nio-8083-exec-9] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+16/08/2018 3:11 [http-nio-8083-exec-9] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 3:11 [http-nio-8083-exec-9] INFO - <Start transaction>
+16/08/2018 3:11 [http-nio-8083-exec-9] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:11 [http-nio-8083-exec-9] INFO - <End transaction>
+16/08/2018 3:11 [http-nio-8083-exec-9] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:11 [http-nio-8083-exec-9] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 3:11 [http-nio-8083-exec-9] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 3:11 [http-nio-8083-exec-9] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 3:11 [http-nio-8083-exec-9] DEBUG - <Value of city from array: Lviv>
+16/08/2018 3:11 [http-nio-8083-exec-9] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 3:11 [http-nio-8083-exec-9] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 3:11 [http-nio-8083-exec-9] DEBUG - <List of universities to display: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:11 [http-nio-8083-exec-9] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+16/08/2018 3:11 [http-nio-8083-exec-3] INFO - <Start class Controller processRequest()>
+16/08/2018 3:11 [http-nio-8083-exec-6] INFO - <Start class Controller processRequest()>
+16/08/2018 3:11 [http-nio-8083-exec-6] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+16/08/2018 3:11 [http-nio-8083-exec-6] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 3:11 [http-nio-8083-exec-6] INFO - <Start transaction>
+16/08/2018 3:11 [http-nio-8083-exec-6] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:11 [http-nio-8083-exec-6] INFO - <End transaction>
+16/08/2018 3:11 [http-nio-8083-exec-6] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:11 [http-nio-8083-exec-6] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 3:11 [http-nio-8083-exec-6] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 3:11 [http-nio-8083-exec-6] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 3:11 [http-nio-8083-exec-6] DEBUG - <Value of city from array: Lviv>
+16/08/2018 3:11 [http-nio-8083-exec-6] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 3:11 [http-nio-8083-exec-6] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 3:11 [http-nio-8083-exec-6] DEBUG - <List of universities to display: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:11 [http-nio-8083-exec-6] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+16/08/2018 3:11 [http-nio-8083-exec-5] INFO - <Start class Controller processRequest()>
+16/08/2018 3:11 [http-nio-8083-exec-7] INFO - <Start class Controller processRequest()>
+16/08/2018 3:11 [http-nio-8083-exec-7] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+16/08/2018 3:11 [http-nio-8083-exec-7] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 3:11 [http-nio-8083-exec-7] INFO - <Start transaction>
+16/08/2018 3:11 [http-nio-8083-exec-7] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:11 [http-nio-8083-exec-7] INFO - <End transaction>
+16/08/2018 3:11 [http-nio-8083-exec-7] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:11 [http-nio-8083-exec-7] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 3:11 [http-nio-8083-exec-7] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 3:11 [http-nio-8083-exec-7] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 3:11 [http-nio-8083-exec-7] DEBUG - <Value of city from array: Lviv>
+16/08/2018 3:11 [http-nio-8083-exec-7] DEBUG - <Value of city from request: Kyiv>
+16/08/2018 3:11 [http-nio-8083-exec-7] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 3:11 [http-nio-8083-exec-7] DEBUG - <List of universities to display: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:11 [http-nio-8083-exec-7] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+16/08/2018 3:11 [http-nio-8083-exec-4] INFO - <Start class Controller processRequest()>
+16/08/2018 3:11 [http-nio-8083-exec-4] INFO - <start class LoginCommand execute()>
+16/08/2018 3:11 [http-nio-8083-exec-4] DEBUG - <Login: andriy@gmail.com>
+16/08/2018 3:11 [http-nio-8083-exec-4] DEBUG - <Password: Password1>
+16/08/2018 3:11 [http-nio-8083-exec-4] INFO - <Start class LoginLogic checkLogin()>
+16/08/2018 3:11 [http-nio-8083-exec-4] INFO - <Start transaction>
+16/08/2018 3:11 [http-nio-8083-exec-4] INFO - <End transaction>
+16/08/2018 3:11 [http-nio-8083-exec-4] INFO - <Find user>
+16/08/2018 3:11 [http-nio-8083-exec-4] INFO - <Successfully login>
+16/08/2018 3:11 [http-nio-8083-exec-4] INFO - <User is student>
+16/08/2018 3:11 [http-nio-8083-exec-4] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+16/08/2018 3:11 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllCities()>
+16/08/2018 3:11 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 3:11 [http-nio-8083-exec-4] INFO - <Start transaction>
+16/08/2018 3:11 [http-nio-8083-exec-4] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:11 [http-nio-8083-exec-4] INFO - <End transaction>
+16/08/2018 3:11 [http-nio-8083-exec-4] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:11 [http-nio-8083-exec-4] DEBUG - <[Lviv, Kyiv]>
+16/08/2018 3:11 [http-nio-8083-exec-4] INFO - <List of cities to display: [Lviv, Kyiv]>
+16/08/2018 3:11 [http-nio-8083-exec-4] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+16/08/2018 3:11 [http-nio-8083-exec-4] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <Start class Controller processRequest()>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <Start class UniversityService getAllUniversities()>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <Start transaction>
+16/08/2018 3:11 [http-nio-8083-exec-8] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <End transaction>
+16/08/2018 3:11 [http-nio-8083-exec-8] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+16/08/2018 3:11 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Lviv>
+16/08/2018 3:11 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 3:11 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Lviv>
+16/08/2018 3:11 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Lviv>
+16/08/2018 3:11 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Lviv>
+16/08/2018 3:11 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Kyiv>
+16/08/2018 3:11 [http-nio-8083-exec-8] DEBUG - <List of universities to display: [University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}]>
+16/08/2018 3:11 [http-nio-8083-exec-8] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+16/08/2018 3:11 [http-nio-8083-exec-2] INFO - <Start class Controller processRequest()>
+17/08/2018 1:37 [http-nio-8083-exec-9] INFO - <Start class Controller processRequest()>
+17/08/2018 1:37 [http-nio-8083-exec-9] INFO - <start class LoginCommand execute()>
+17/08/2018 1:37 [http-nio-8083-exec-9] DEBUG - <Login: andriy@gmail.com>
+17/08/2018 1:37 [http-nio-8083-exec-9] DEBUG - <Password: Password1>
+17/08/2018 1:37 [http-nio-8083-exec-9] INFO - <Start class LoginLogic checkLogin()>
+17/08/2018 1:37 [http-nio-8083-exec-9] INFO - <Start transaction>
+17/08/2018 1:37 [http-nio-8083-exec-9] INFO - <End transaction>
+17/08/2018 1:37 [http-nio-8083-exec-9] INFO - <Find user>
+17/08/2018 1:37 [http-nio-8083-exec-9] INFO - <Successfully login>
+17/08/2018 1:37 [http-nio-8083-exec-9] INFO - <User is student>
+17/08/2018 1:37 [http-nio-8083-exec-9] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+17/08/2018 1:37 [http-nio-8083-exec-9] INFO - <Start class UniversityService getAllCities()>
+17/08/2018 1:37 [http-nio-8083-exec-9] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 1:37 [http-nio-8083-exec-9] INFO - <Start transaction>
+17/08/2018 1:37 [http-nio-8083-exec-9] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:37 [http-nio-8083-exec-9] INFO - <End transaction>
+17/08/2018 1:37 [http-nio-8083-exec-9] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:37 [http-nio-8083-exec-9] DEBUG - <[Lviv, Kyiv]>
+17/08/2018 1:37 [http-nio-8083-exec-9] INFO - <List of cities to display: [Lviv, Kyiv]>
+17/08/2018 1:37 [http-nio-8083-exec-9] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+17/08/2018 1:37 [http-nio-8083-exec-9] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+17/08/2018 1:37 [http-nio-8083-exec-10] INFO - <Start class Controller processRequest()>
+17/08/2018 1:37 [http-nio-8083-exec-10] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+17/08/2018 1:37 [http-nio-8083-exec-10] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 1:37 [http-nio-8083-exec-10] INFO - <Start transaction>
+17/08/2018 1:37 [http-nio-8083-exec-10] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:37 [http-nio-8083-exec-10] INFO - <End transaction>
+17/08/2018 1:37 [http-nio-8083-exec-10] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:37 [http-nio-8083-exec-10] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:37 [http-nio-8083-exec-10] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 1:37 [http-nio-8083-exec-10] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:37 [http-nio-8083-exec-10] DEBUG - <Value of city from array: Lviv>
+17/08/2018 1:37 [http-nio-8083-exec-10] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:37 [http-nio-8083-exec-10] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 1:37 [http-nio-8083-exec-10] DEBUG - <List of universities to display: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:37 [http-nio-8083-exec-10] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+17/08/2018 1:37 [http-nio-8083-exec-1] INFO - <Start class Controller processRequest()>
+17/08/2018 1:39 [http-nio-8083-exec-4] INFO - <Start class Controller processRequest()>
+17/08/2018 1:39 [http-nio-8083-exec-4] INFO - <start class LoginCommand execute()>
+17/08/2018 1:39 [http-nio-8083-exec-4] DEBUG - <Login: andriy@gmail.com>
+17/08/2018 1:39 [http-nio-8083-exec-4] DEBUG - <Password: Password1>
+17/08/2018 1:39 [http-nio-8083-exec-4] INFO - <Start class LoginLogic checkLogin()>
+17/08/2018 1:39 [http-nio-8083-exec-4] INFO - <Start transaction>
+17/08/2018 1:39 [http-nio-8083-exec-4] INFO - <End transaction>
+17/08/2018 1:39 [http-nio-8083-exec-4] INFO - <Find user>
+17/08/2018 1:39 [http-nio-8083-exec-4] INFO - <Successfully login>
+17/08/2018 1:39 [http-nio-8083-exec-4] INFO - <User is student>
+17/08/2018 1:39 [http-nio-8083-exec-4] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+17/08/2018 1:39 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllCities()>
+17/08/2018 1:39 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 1:39 [http-nio-8083-exec-4] INFO - <Start transaction>
+17/08/2018 1:39 [http-nio-8083-exec-4] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:39 [http-nio-8083-exec-4] INFO - <End transaction>
+17/08/2018 1:39 [http-nio-8083-exec-4] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:39 [http-nio-8083-exec-4] DEBUG - <[Lviv, Kyiv]>
+17/08/2018 1:39 [http-nio-8083-exec-4] INFO - <List of cities to display: [Lviv, Kyiv]>
+17/08/2018 1:39 [http-nio-8083-exec-4] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+17/08/2018 1:39 [http-nio-8083-exec-4] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+17/08/2018 1:39 [http-nio-8083-exec-7] INFO - <Start class Controller processRequest()>
+17/08/2018 1:39 [http-nio-8083-exec-7] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+17/08/2018 1:39 [http-nio-8083-exec-7] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 1:39 [http-nio-8083-exec-7] INFO - <Start transaction>
+17/08/2018 1:39 [http-nio-8083-exec-7] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:39 [http-nio-8083-exec-7] INFO - <End transaction>
+17/08/2018 1:39 [http-nio-8083-exec-7] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:39 [http-nio-8083-exec-7] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:39 [http-nio-8083-exec-7] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 1:39 [http-nio-8083-exec-7] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:39 [http-nio-8083-exec-7] DEBUG - <Value of city from array: Lviv>
+17/08/2018 1:39 [http-nio-8083-exec-7] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:39 [http-nio-8083-exec-7] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 1:39 [http-nio-8083-exec-7] DEBUG - <List of universities to display: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:39 [http-nio-8083-exec-7] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+17/08/2018 1:39 [http-nio-8083-exec-8] INFO - <Start class Controller processRequest()>
+17/08/2018 1:39 [http-nio-8083-exec-8] INFO - <Start class FacultyService getAll()>
+17/08/2018 1:39 [http-nio-8083-exec-8] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:39 [http-nio-8083-exec-8] DEBUG - <Faculty_specialty hash map: {Faculty{id=1, name='Інформатики'}=[]}>
+17/08/2018 1:39 [http-nio-8083-exec-8] DEBUG - <Page = /WEB-INF/view/studentSpecialties.jsp>
+17/08/2018 1:42 [http-nio-8083-exec-7] INFO - <Start class Controller processRequest()>
+17/08/2018 1:42 [http-nio-8083-exec-7] INFO - <start class LoginCommand execute()>
+17/08/2018 1:42 [http-nio-8083-exec-7] DEBUG - <Login: andriy@gmail.com>
+17/08/2018 1:42 [http-nio-8083-exec-7] DEBUG - <Password: Password1>
+17/08/2018 1:42 [http-nio-8083-exec-7] INFO - <Start class LoginLogic checkLogin()>
+17/08/2018 1:43 [http-nio-8083-exec-7] INFO - <Start transaction>
+17/08/2018 1:43 [http-nio-8083-exec-7] INFO - <End transaction>
+17/08/2018 1:43 [http-nio-8083-exec-7] INFO - <Find user>
+17/08/2018 1:43 [http-nio-8083-exec-7] INFO - <Successfully login>
+17/08/2018 1:43 [http-nio-8083-exec-7] INFO - <User is student>
+17/08/2018 1:43 [http-nio-8083-exec-7] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+17/08/2018 1:43 [http-nio-8083-exec-7] INFO - <Start class UniversityService getAllCities()>
+17/08/2018 1:43 [http-nio-8083-exec-7] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 1:43 [http-nio-8083-exec-7] INFO - <Start transaction>
+17/08/2018 1:43 [http-nio-8083-exec-7] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:43 [http-nio-8083-exec-7] INFO - <End transaction>
+17/08/2018 1:43 [http-nio-8083-exec-7] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:43 [http-nio-8083-exec-7] DEBUG - <[Lviv, Kyiv]>
+17/08/2018 1:43 [http-nio-8083-exec-7] INFO - <List of cities to display: [Lviv, Kyiv]>
+17/08/2018 1:43 [http-nio-8083-exec-7] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+17/08/2018 1:43 [http-nio-8083-exec-7] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+17/08/2018 1:43 [http-nio-8083-exec-8] INFO - <Start class Controller processRequest()>
+17/08/2018 1:43 [http-nio-8083-exec-8] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+17/08/2018 1:43 [http-nio-8083-exec-8] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 1:43 [http-nio-8083-exec-8] INFO - <Start transaction>
+17/08/2018 1:43 [http-nio-8083-exec-8] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:43 [http-nio-8083-exec-8] INFO - <End transaction>
+17/08/2018 1:43 [http-nio-8083-exec-8] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:43 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:43 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 1:43 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:43 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Lviv>
+17/08/2018 1:43 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:43 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 1:43 [http-nio-8083-exec-8] DEBUG - <List of universities to display: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:43 [http-nio-8083-exec-8] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+17/08/2018 1:43 [http-nio-8083-exec-9] INFO - <Start class Controller processRequest()>
+17/08/2018 1:43 [http-nio-8083-exec-9] INFO - <Start class FacultyService getAll()>
+17/08/2018 1:43 [http-nio-8083-exec-9] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:43 [http-nio-8083-exec-9] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:43 [http-nio-8083-exec-9] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:43 [http-nio-8083-exec-9] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:43 [http-nio-8083-exec-9] DEBUG - <Faculty_specialty hash map: {Faculty{id=1, name='Інформатики'}=[Specialty{id=2, name='Комп'ютерні науки', quantityOfStudents=60, facultyId=1}, Specialty{id=3, name='Программна інженерія', quantityOfStudents=70, facultyId=1}], Faculty{id=4, name='Біології'}=[], Faculty{id=3, name='Права'}=[], Faculty{id=2, name='Економіки'}=[Specialty{id=4, name='Оекономіка підприємства', quantityOfStudents=50, facultyId=2}]}>
+17/08/2018 1:43 [http-nio-8083-exec-9] DEBUG - <Page = /WEB-INF/view/studentSpecialties.jsp>
+17/08/2018 1:44 [http-nio-8083-exec-4] INFO - <Start class Controller processRequest()>
+17/08/2018 1:44 [http-nio-8083-exec-4] INFO - <start class LoginCommand execute()>
+17/08/2018 1:44 [http-nio-8083-exec-4] DEBUG - <Login: andriy@gmail.com>
+17/08/2018 1:44 [http-nio-8083-exec-4] DEBUG - <Password: Password1>
+17/08/2018 1:44 [http-nio-8083-exec-4] INFO - <Start class LoginLogic checkLogin()>
+17/08/2018 1:44 [http-nio-8083-exec-4] INFO - <Start transaction>
+17/08/2018 1:44 [http-nio-8083-exec-4] INFO - <End transaction>
+17/08/2018 1:44 [http-nio-8083-exec-4] INFO - <Find user>
+17/08/2018 1:44 [http-nio-8083-exec-4] INFO - <Successfully login>
+17/08/2018 1:44 [http-nio-8083-exec-4] INFO - <User is student>
+17/08/2018 1:44 [http-nio-8083-exec-4] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+17/08/2018 1:44 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllCities()>
+17/08/2018 1:44 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 1:44 [http-nio-8083-exec-4] INFO - <Start transaction>
+17/08/2018 1:44 [http-nio-8083-exec-4] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:44 [http-nio-8083-exec-4] INFO - <End transaction>
+17/08/2018 1:44 [http-nio-8083-exec-4] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:44 [http-nio-8083-exec-4] DEBUG - <[Lviv, Kyiv]>
+17/08/2018 1:44 [http-nio-8083-exec-4] INFO - <List of cities to display: [Lviv, Kyiv]>
+17/08/2018 1:44 [http-nio-8083-exec-4] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+17/08/2018 1:44 [http-nio-8083-exec-4] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+17/08/2018 1:44 [http-nio-8083-exec-5] INFO - <Start class Controller processRequest()>
+17/08/2018 1:44 [http-nio-8083-exec-5] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+17/08/2018 1:44 [http-nio-8083-exec-5] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 1:44 [http-nio-8083-exec-5] INFO - <Start transaction>
+17/08/2018 1:44 [http-nio-8083-exec-5] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:44 [http-nio-8083-exec-5] INFO - <End transaction>
+17/08/2018 1:44 [http-nio-8083-exec-5] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:44 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:44 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 1:44 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:44 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Lviv>
+17/08/2018 1:44 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:44 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 1:44 [http-nio-8083-exec-5] DEBUG - <List of universities to display: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:44 [http-nio-8083-exec-5] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+17/08/2018 1:44 [http-nio-8083-exec-9] INFO - <Start class Controller processRequest()>
+17/08/2018 1:44 [http-nio-8083-exec-9] INFO - <Start class FacultyService getAll()>
+17/08/2018 1:44 [http-nio-8083-exec-9] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:44 [http-nio-8083-exec-9] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:44 [http-nio-8083-exec-9] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:44 [http-nio-8083-exec-9] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:44 [http-nio-8083-exec-9] DEBUG - <Faculty_specialty hash map: {Faculty{id=1, name='Інформатики'}=[Specialty{id=2, name='Комп'ютерні науки', quantityOfStudents=60, facultyId=1}, Specialty{id=3, name='Программна інженерія', quantityOfStudents=70, facultyId=1}], Faculty{id=4, name='Біології'}=[], Faculty{id=3, name='Права'}=[], Faculty{id=2, name='Економіки'}=[Specialty{id=4, name='Оекономіка підприємства', quantityOfStudents=50, facultyId=2}]}>
+17/08/2018 1:44 [http-nio-8083-exec-9] DEBUG - <Page = /WEB-INF/view/studentSpecialties.jsp>
+17/08/2018 1:46 [http-nio-8083-exec-4] INFO - <Start class Controller processRequest()>
+17/08/2018 1:46 [http-nio-8083-exec-4] INFO - <start class LoginCommand execute()>
+17/08/2018 1:46 [http-nio-8083-exec-4] DEBUG - <Login: andriy@gmail.com>
+17/08/2018 1:46 [http-nio-8083-exec-4] DEBUG - <Password: Password1>
+17/08/2018 1:46 [http-nio-8083-exec-4] INFO - <Start class LoginLogic checkLogin()>
+17/08/2018 1:46 [http-nio-8083-exec-4] INFO - <Start transaction>
+17/08/2018 1:46 [http-nio-8083-exec-4] INFO - <End transaction>
+17/08/2018 1:46 [http-nio-8083-exec-4] INFO - <Find user>
+17/08/2018 1:46 [http-nio-8083-exec-4] INFO - <Successfully login>
+17/08/2018 1:46 [http-nio-8083-exec-4] INFO - <User is student>
+17/08/2018 1:46 [http-nio-8083-exec-4] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+17/08/2018 1:46 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllCities()>
+17/08/2018 1:46 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 1:46 [http-nio-8083-exec-4] INFO - <Start transaction>
+17/08/2018 1:46 [http-nio-8083-exec-4] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:46 [http-nio-8083-exec-4] INFO - <End transaction>
+17/08/2018 1:46 [http-nio-8083-exec-4] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:46 [http-nio-8083-exec-4] DEBUG - <[Lviv, Kyiv]>
+17/08/2018 1:46 [http-nio-8083-exec-4] INFO - <List of cities to display: [Lviv, Kyiv]>
+17/08/2018 1:46 [http-nio-8083-exec-4] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+17/08/2018 1:46 [http-nio-8083-exec-4] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+17/08/2018 1:46 [http-nio-8083-exec-5] INFO - <Start class Controller processRequest()>
+17/08/2018 1:46 [http-nio-8083-exec-5] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+17/08/2018 1:46 [http-nio-8083-exec-5] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 1:46 [http-nio-8083-exec-5] INFO - <Start transaction>
+17/08/2018 1:46 [http-nio-8083-exec-5] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:46 [http-nio-8083-exec-5] INFO - <End transaction>
+17/08/2018 1:46 [http-nio-8083-exec-5] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:46 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:46 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 1:46 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:46 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Lviv>
+17/08/2018 1:46 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:46 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 1:46 [http-nio-8083-exec-5] DEBUG - <List of universities to display: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:46 [http-nio-8083-exec-5] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+17/08/2018 1:46 [http-nio-8083-exec-6] INFO - <Start class Controller processRequest()>
+17/08/2018 1:46 [http-nio-8083-exec-6] INFO - <Start class FacultyService getAll()>
+17/08/2018 1:46 [http-nio-8083-exec-6] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:46 [http-nio-8083-exec-6] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:46 [http-nio-8083-exec-6] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:46 [http-nio-8083-exec-6] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:46 [http-nio-8083-exec-6] DEBUG - <Faculty_specialty hash map: {Faculty{id=1, name='Інформатики'}=[Specialty{id=2, name='Комп'ютерні науки', quantityOfStudents=60, facultyId=1}, Specialty{id=3, name='Программна інженерія', quantityOfStudents=70, facultyId=1}], Faculty{id=4, name='Біології'}=[], Faculty{id=3, name='Права'}=[], Faculty{id=2, name='Економіки'}=[Specialty{id=4, name='Оекономіка підприємства', quantityOfStudents=50, facultyId=2}]}>
+17/08/2018 1:46 [http-nio-8083-exec-6] DEBUG - <Page = /WEB-INF/view/studentSpecialties.jsp>
+17/08/2018 1:48 [http-nio-8083-exec-2] INFO - <Start class Controller processRequest()>
+17/08/2018 1:48 [http-nio-8083-exec-2] INFO - <Start class FacultyService getAll()>
+17/08/2018 1:48 [http-nio-8083-exec-2] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:48 [http-nio-8083-exec-2] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:48 [http-nio-8083-exec-2] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:49 [http-nio-8083-exec-4] INFO - <Start class Controller processRequest()>
+17/08/2018 1:49 [http-nio-8083-exec-4] INFO - <start class LoginCommand execute()>
+17/08/2018 1:49 [http-nio-8083-exec-4] DEBUG - <Login: andriy@gmail.com>
+17/08/2018 1:49 [http-nio-8083-exec-4] DEBUG - <Password: Password1>
+17/08/2018 1:49 [http-nio-8083-exec-4] INFO - <Start class LoginLogic checkLogin()>
+17/08/2018 1:49 [http-nio-8083-exec-4] INFO - <Start transaction>
+17/08/2018 1:49 [http-nio-8083-exec-4] INFO - <End transaction>
+17/08/2018 1:49 [http-nio-8083-exec-4] INFO - <Find user>
+17/08/2018 1:49 [http-nio-8083-exec-4] INFO - <Successfully login>
+17/08/2018 1:49 [http-nio-8083-exec-4] INFO - <User is student>
+17/08/2018 1:49 [http-nio-8083-exec-4] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+17/08/2018 1:49 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllCities()>
+17/08/2018 1:49 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 1:49 [http-nio-8083-exec-4] INFO - <Start transaction>
+17/08/2018 1:49 [http-nio-8083-exec-4] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:49 [http-nio-8083-exec-4] INFO - <End transaction>
+17/08/2018 1:49 [http-nio-8083-exec-4] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:49 [http-nio-8083-exec-4] DEBUG - <[Lviv, Kyiv]>
+17/08/2018 1:49 [http-nio-8083-exec-4] INFO - <List of cities to display: [Lviv, Kyiv]>
+17/08/2018 1:49 [http-nio-8083-exec-4] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+17/08/2018 1:49 [http-nio-8083-exec-4] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+17/08/2018 1:49 [http-nio-8083-exec-5] INFO - <Start class Controller processRequest()>
+17/08/2018 1:49 [http-nio-8083-exec-5] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+17/08/2018 1:49 [http-nio-8083-exec-5] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 1:49 [http-nio-8083-exec-5] INFO - <Start transaction>
+17/08/2018 1:49 [http-nio-8083-exec-5] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:49 [http-nio-8083-exec-5] INFO - <End transaction>
+17/08/2018 1:49 [http-nio-8083-exec-5] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:49 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:49 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 1:49 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:49 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Lviv>
+17/08/2018 1:49 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:49 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 1:49 [http-nio-8083-exec-5] DEBUG - <List of universities to display: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:49 [http-nio-8083-exec-5] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+17/08/2018 1:49 [http-nio-8083-exec-7] INFO - <Start class Controller processRequest()>
+17/08/2018 1:49 [http-nio-8083-exec-7] INFO - <Start class FacultyService getAll()>
+17/08/2018 1:49 [http-nio-8083-exec-7] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:49 [http-nio-8083-exec-7] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:49 [http-nio-8083-exec-7] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:49 [http-nio-8083-exec-7] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:49 [http-nio-8083-exec-7] DEBUG - <Faculty_specialty hash map: {Faculty{id=1, name='Інформатики'}=[Specialty{id=2, name='Комп'ютерні науки', quantityOfStudents=60, facultyId=1}, Specialty{id=3, name='Программна інженерія', quantityOfStudents=70, facultyId=1}], Faculty{id=4, name='Біології'}=[], Faculty{id=3, name='Права'}=[], Faculty{id=2, name='Економіки'}=[Specialty{id=4, name='Оекономіка підприємства', quantityOfStudents=50, facultyId=2}]}>
+17/08/2018 1:49 [http-nio-8083-exec-7] DEBUG - <Page = /WEB-INF/view/studentSpecialties.jsp>
+17/08/2018 1:50 [http-nio-8083-exec-8] INFO - <Start class Controller processRequest()>
+17/08/2018 1:50 [http-nio-8083-exec-8] INFO - <Start class FacultyService getAll()>
+17/08/2018 1:50 [http-nio-8083-exec-8] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:50 [http-nio-8083-exec-8] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:50 [http-nio-8083-exec-8] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:54 [http-nio-8083-exec-5] INFO - <Start class Controller processRequest()>
+17/08/2018 1:54 [http-nio-8083-exec-5] INFO - <start class LoginCommand execute()>
+17/08/2018 1:54 [http-nio-8083-exec-5] DEBUG - <Login: andriy@gmail.com>
+17/08/2018 1:54 [http-nio-8083-exec-5] DEBUG - <Password: Password1>
+17/08/2018 1:54 [http-nio-8083-exec-5] INFO - <Start class LoginLogic checkLogin()>
+17/08/2018 1:54 [http-nio-8083-exec-5] INFO - <Start transaction>
+17/08/2018 1:54 [http-nio-8083-exec-5] INFO - <End transaction>
+17/08/2018 1:54 [http-nio-8083-exec-5] INFO - <Find user>
+17/08/2018 1:54 [http-nio-8083-exec-5] INFO - <Successfully login>
+17/08/2018 1:54 [http-nio-8083-exec-5] INFO - <User is student>
+17/08/2018 1:54 [http-nio-8083-exec-5] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+17/08/2018 1:54 [http-nio-8083-exec-5] INFO - <Start class UniversityService getAllCities()>
+17/08/2018 1:54 [http-nio-8083-exec-5] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 1:54 [http-nio-8083-exec-5] INFO - <Start transaction>
+17/08/2018 1:54 [http-nio-8083-exec-5] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:54 [http-nio-8083-exec-5] INFO - <End transaction>
+17/08/2018 1:54 [http-nio-8083-exec-5] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:54 [http-nio-8083-exec-5] DEBUG - <[Lviv, Kyiv]>
+17/08/2018 1:54 [http-nio-8083-exec-5] INFO - <List of cities to display: [Lviv, Kyiv]>
+17/08/2018 1:54 [http-nio-8083-exec-5] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+17/08/2018 1:54 [http-nio-8083-exec-5] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+17/08/2018 1:54 [http-nio-8083-exec-8] INFO - <Start class Controller processRequest()>
+17/08/2018 1:54 [http-nio-8083-exec-8] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+17/08/2018 1:54 [http-nio-8083-exec-8] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 1:54 [http-nio-8083-exec-8] INFO - <Start transaction>
+17/08/2018 1:54 [http-nio-8083-exec-8] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:54 [http-nio-8083-exec-8] INFO - <End transaction>
+17/08/2018 1:54 [http-nio-8083-exec-8] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:54 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:54 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 1:54 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:54 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Lviv>
+17/08/2018 1:54 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 1:54 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 1:54 [http-nio-8083-exec-8] DEBUG - <List of universities to display: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 1:54 [http-nio-8083-exec-8] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+17/08/2018 1:54 [http-nio-8083-exec-10] INFO - <Start class Controller processRequest()>
+17/08/2018 1:54 [http-nio-8083-exec-10] INFO - <Start class FacultyService getAll()>
+17/08/2018 1:54 [http-nio-8083-exec-10] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:54 [http-nio-8083-exec-10] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:54 [http-nio-8083-exec-10] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:54 [http-nio-8083-exec-10] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:54 [http-nio-8083-exec-10] DEBUG - <Faculty_specialty hash map: {Faculty{id=1, name='Інформатики'}=[Specialty{id=2, name='Комп'ютерні науки', quantityOfStudents=60, facultyId=1}, Specialty{id=3, name='Программна інженерія', quantityOfStudents=70, facultyId=1}], Faculty{id=4, name='Біології'}=[], Faculty{id=3, name='Права'}=[], Faculty{id=2, name='Економіки'}=[Specialty{id=4, name='Оекономіка підприємства', quantityOfStudents=50, facultyId=2}]}>
+17/08/2018 1:54 [http-nio-8083-exec-10] DEBUG - <Page = /WEB-INF/view/studentSpecialties.jsp>
+17/08/2018 1:54 [http-nio-8083-exec-1] INFO - <Start class Controller processRequest()>
+17/08/2018 1:54 [http-nio-8083-exec-1] INFO - <Start class FacultyService getAll()>
+17/08/2018 1:54 [http-nio-8083-exec-1] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:54 [http-nio-8083-exec-1] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:54 [http-nio-8083-exec-1] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:54 [http-nio-8083-exec-1] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 1:54 [http-nio-8083-exec-1] DEBUG - <Faculty_specialty hash map: {Faculty{id=1, name='Інформатики'}=[Specialty{id=2, name='Комп'ютерні науки', quantityOfStudents=60, facultyId=1}, Specialty{id=3, name='Программна інженерія', quantityOfStudents=70, facultyId=1}], Faculty{id=4, name='Біології'}=[], Faculty{id=3, name='Права'}=[], Faculty{id=2, name='Економіки'}=[Specialty{id=4, name='Оекономіка підприємства', quantityOfStudents=50, facultyId=2}]}>
+17/08/2018 1:54 [http-nio-8083-exec-1] DEBUG - <Page = /WEB-INF/view/studentSpecialties.jsp>
+17/08/2018 9:14 [http-nio-8083-exec-7] INFO - <Start class Controller processRequest()>
+17/08/2018 9:14 [http-nio-8083-exec-7] INFO - <start class LoginCommand execute()>
+17/08/2018 9:14 [http-nio-8083-exec-7] DEBUG - <Login: andriy@gmail.com>
+17/08/2018 9:14 [http-nio-8083-exec-7] DEBUG - <Password: Password1>
+17/08/2018 9:14 [http-nio-8083-exec-7] INFO - <Start class LoginLogic checkLogin()>
+17/08/2018 9:14 [http-nio-8083-exec-7] INFO - <Start transaction>
+17/08/2018 9:14 [http-nio-8083-exec-7] INFO - <End transaction>
+17/08/2018 9:14 [http-nio-8083-exec-7] INFO - <Find user>
+17/08/2018 9:14 [http-nio-8083-exec-7] INFO - <Successfully login>
+17/08/2018 9:14 [http-nio-8083-exec-7] INFO - <User is student>
+17/08/2018 9:14 [http-nio-8083-exec-7] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+17/08/2018 9:14 [http-nio-8083-exec-7] INFO - <Start class UniversityService getAllCities()>
+17/08/2018 9:14 [http-nio-8083-exec-7] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 9:14 [http-nio-8083-exec-7] INFO - <Start transaction>
+17/08/2018 9:14 [http-nio-8083-exec-7] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 9:14 [http-nio-8083-exec-7] INFO - <End transaction>
+17/08/2018 9:14 [http-nio-8083-exec-7] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 9:14 [http-nio-8083-exec-7] DEBUG - <[Lviv, Kyiv]>
+17/08/2018 9:14 [http-nio-8083-exec-7] INFO - <List of cities to display: [Lviv, Kyiv]>
+17/08/2018 9:14 [http-nio-8083-exec-7] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+17/08/2018 9:14 [http-nio-8083-exec-7] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+17/08/2018 9:14 [http-nio-8083-exec-8] INFO - <Start class Controller processRequest()>
+17/08/2018 9:14 [http-nio-8083-exec-8] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+17/08/2018 9:14 [http-nio-8083-exec-8] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 9:14 [http-nio-8083-exec-8] INFO - <Start transaction>
+17/08/2018 9:14 [http-nio-8083-exec-8] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 9:14 [http-nio-8083-exec-8] INFO - <End transaction>
+17/08/2018 9:14 [http-nio-8083-exec-8] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 9:14 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Lviv>
+17/08/2018 9:14 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 9:14 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Lviv>
+17/08/2018 9:14 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Lviv>
+17/08/2018 9:14 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Lviv>
+17/08/2018 9:14 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 9:14 [http-nio-8083-exec-8] DEBUG - <List of universities to display: [University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}]>
+17/08/2018 9:14 [http-nio-8083-exec-8] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+17/08/2018 9:14 [http-nio-8083-exec-9] INFO - <Start class Controller processRequest()>
+17/08/2018 9:14 [http-nio-8083-exec-9] INFO - <Start class FacultyService getAll()>
+17/08/2018 9:14 [http-nio-8083-exec-9] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 9:14 [http-nio-8083-exec-9] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 9:14 [http-nio-8083-exec-9] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 9:14 [http-nio-8083-exec-9] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 9:14 [http-nio-8083-exec-9] DEBUG - <Faculty_specialty hash map: {Faculty{id=1, name='Інформатики'}=[Specialty{id=2, name='Комп'ютерні науки', quantityOfStudents=60, facultyId=1}, Specialty{id=3, name='Программна інженерія', quantityOfStudents=70, facultyId=1}], Faculty{id=4, name='Біології'}=[], Faculty{id=3, name='Права'}=[], Faculty{id=2, name='Економіки'}=[Specialty{id=4, name='Оекономіка підприємства', quantityOfStudents=50, facultyId=2}]}>
+17/08/2018 9:14 [http-nio-8083-exec-9] DEBUG - <Page = /WEB-INF/view/studentSpecialties.jsp>
+17/08/2018 9:15 [http-nio-8083-exec-1] INFO - <Start class Controller processRequest()>
+17/08/2018 9:15 [http-nio-8083-exec-1] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+17/08/2018 9:15 [http-nio-8083-exec-1] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 9:15 [http-nio-8083-exec-1] INFO - <Start transaction>
+17/08/2018 9:15 [http-nio-8083-exec-1] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 9:15 [http-nio-8083-exec-1] INFO - <End transaction>
+17/08/2018 9:15 [http-nio-8083-exec-1] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 9:15 [http-nio-8083-exec-1] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 9:15 [http-nio-8083-exec-1] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 9:15 [http-nio-8083-exec-1] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 9:15 [http-nio-8083-exec-1] DEBUG - <Value of city from array: Lviv>
+17/08/2018 9:15 [http-nio-8083-exec-1] DEBUG - <Value of city from request: Kyiv>
+17/08/2018 9:15 [http-nio-8083-exec-1] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 9:15 [http-nio-8083-exec-1] DEBUG - <List of universities to display: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 9:15 [http-nio-8083-exec-1] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+17/08/2018 9:15 [http-nio-8083-exec-2] INFO - <Start class Controller processRequest()>
+17/08/2018 9:15 [http-nio-8083-exec-2] INFO - <Start class FacultyService getAll()>
+17/08/2018 9:15 [http-nio-8083-exec-2] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 9:15 [http-nio-8083-exec-2] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 9:15 [http-nio-8083-exec-2] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 9:15 [http-nio-8083-exec-2] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 9:15 [http-nio-8083-exec-2] DEBUG - <Faculty_specialty hash map: {Faculty{id=1, name='Інформатики'}=[Specialty{id=2, name='Комп'ютерні науки', quantityOfStudents=60, facultyId=1}, Specialty{id=3, name='Программна інженерія', quantityOfStudents=70, facultyId=1}], Faculty{id=4, name='Біології'}=[], Faculty{id=3, name='Права'}=[], Faculty{id=2, name='Економіки'}=[Specialty{id=4, name='Оекономіка підприємства', quantityOfStudents=50, facultyId=2}]}>
+17/08/2018 9:15 [http-nio-8083-exec-2] DEBUG - <Page = /WEB-INF/view/studentSpecialties.jsp>
+17/08/2018 9:16 [http-nio-8083-exec-5] INFO - <Start class Controller processRequest()>
+17/08/2018 9:16 [http-nio-8083-exec-5] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+17/08/2018 9:16 [http-nio-8083-exec-5] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 9:16 [http-nio-8083-exec-5] INFO - <Start transaction>
+17/08/2018 9:16 [http-nio-8083-exec-5] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 9:16 [http-nio-8083-exec-5] INFO - <End transaction>
+17/08/2018 9:16 [http-nio-8083-exec-5] INFO - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 9:16 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Lviv>
+17/08/2018 9:16 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 9:16 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Lviv>
+17/08/2018 9:16 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Lviv>
+17/08/2018 9:16 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Lviv>
+17/08/2018 9:16 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Kyiv>
+17/08/2018 9:16 [http-nio-8083-exec-5] DEBUG - <List of universities to display: [University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}]>
+17/08/2018 9:16 [http-nio-8083-exec-5] DEBUG - <Page = /WEB-INF/view/studentUniByCity.jsp>
+17/08/2018 9:16 [http-nio-8083-exec-4] INFO - <Start class Controller processRequest()>
+17/08/2018 9:16 [http-nio-8083-exec-4] INFO - <Start class FacultyService getAll()>
+17/08/2018 9:16 [http-nio-8083-exec-4] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 9:16 [http-nio-8083-exec-4] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 9:16 [http-nio-8083-exec-4] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 9:16 [http-nio-8083-exec-4] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+17/08/2018 9:16 [http-nio-8083-exec-4] DEBUG - <Faculty_specialty hash map: {Faculty{id=1, name='Інформатики'}=[Specialty{id=2, name='Комп'ютерні науки', quantityOfStudents=60, facultyId=1}, Specialty{id=3, name='Программна інженерія', quantityOfStudents=70, facultyId=1}], Faculty{id=4, name='Біології'}=[], Faculty{id=3, name='Права'}=[], Faculty{id=2, name='Економіки'}=[Specialty{id=4, name='Оекономіка підприємства', quantityOfStudents=50, facultyId=2}]}>
+17/08/2018 9:16 [http-nio-8083-exec-4] DEBUG - <Page = /WEB-INF/view/studentSpecialties.jsp>
+17/08/2018 9:16 [http-nio-8083-exec-7] INFO - <Start class Controller processRequest()>
+17/08/2018 9:16 [http-nio-8083-exec-7] INFO - <Start class RegistrationForSubjectCommand execute()>
+17/08/2018 9:16 [http-nio-8083-exec-7] DEBUG - <Selected subject: Math>
+17/08/2018 9:16 [http-nio-8083-exec-7] DEBUG - <Current user: User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+17/08/2018 9:16 [http-nio-8083-exec-7] INFO - <Start transaction>
+17/08/2018 9:16 [http-nio-8083-exec-7] DEBUG - <List of subjects: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+17/08/2018 9:16 [http-nio-8083-exec-7] INFO - <End transaction>
+17/08/2018 9:16 [http-nio-8083-exec-7] DEBUG - <Find subject: Subject{id=1, name='Math', duration=120}>
+17/08/2018 9:16 [http-nio-8083-exec-7] INFO - <Start class UserService method addUserToSubject()>
+17/08/2018 9:16 [http-nio-8083-exec-7] INFO - <allSubjectsByUser()>
+17/08/2018 9:16 [http-nio-8083-exec-7] DEBUG - <List of subject by user id: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+17/08/2018 9:16 [http-nio-8083-exec-7] INFO - <There is user in table User_Subject>
+17/08/2018 9:16 [http-nio-8083-exec-7] DEBUG - </WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+17/08/2018 9:16 [http-nio-8083-exec-7] DEBUG - <Page = /WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+17/08/2018 9:16 [http-nio-8083-exec-7] INFO - <Page contains :AlreadyRegistrated>
+17/08/2018 9:16 [http-nio-8083-exec-7] DEBUG - <Page after substring: /WEB-INF/view/studentMain.jsp>
+17/08/2018 9:16 [http-nio-8083-exec-8] INFO - <Start class Controller processRequest()>
+17/08/2018 9:16 [http-nio-8083-exec-8] INFO - <Start class RegistrationForSubjectCommand execute()>
+17/08/2018 9:16 [http-nio-8083-exec-8] DEBUG - <Selected subject: Math>
+17/08/2018 9:16 [http-nio-8083-exec-8] DEBUG - <Current user: User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+17/08/2018 9:16 [http-nio-8083-exec-8] INFO - <Start transaction>
+17/08/2018 9:16 [http-nio-8083-exec-8] DEBUG - <List of subjects: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+17/08/2018 9:16 [http-nio-8083-exec-8] INFO - <End transaction>
+17/08/2018 9:16 [http-nio-8083-exec-8] DEBUG - <Find subject: Subject{id=1, name='Math', duration=120}>
+17/08/2018 9:16 [http-nio-8083-exec-8] INFO - <Start class UserService method addUserToSubject()>
+17/08/2018 9:16 [http-nio-8083-exec-8] INFO - <allSubjectsByUser()>
+17/08/2018 9:16 [http-nio-8083-exec-8] DEBUG - <List of subject by user id: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+17/08/2018 9:16 [http-nio-8083-exec-8] INFO - <There is user in table User_Subject>
+17/08/2018 9:16 [http-nio-8083-exec-8] DEBUG - </WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+17/08/2018 9:16 [http-nio-8083-exec-8] DEBUG - <Page = /WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+17/08/2018 9:16 [http-nio-8083-exec-8] INFO - <Page contains :AlreadyRegistrated>
+17/08/2018 9:16 [http-nio-8083-exec-8] DEBUG - <Page after substring: /WEB-INF/view/studentMain.jsp>
+17/08/2018 9:17 [http-nio-8083-exec-4] INFO - <Start class Controller processRequest()>
+17/08/2018 9:17 [http-nio-8083-exec-4] INFO - <start class LoginCommand execute()>
+17/08/2018 9:17 [http-nio-8083-exec-4] DEBUG - <Login: andriy@gmail.com>
+17/08/2018 9:17 [http-nio-8083-exec-4] DEBUG - <Password: Password1>
+17/08/2018 9:17 [http-nio-8083-exec-4] INFO - <Start class LoginLogic checkLogin()>
+17/08/2018 9:17 [http-nio-8083-exec-4] INFO - <Start transaction>
+17/08/2018 9:17 [http-nio-8083-exec-4] INFO - <End transaction>
+17/08/2018 9:17 [http-nio-8083-exec-4] INFO - <Find user>
+17/08/2018 9:17 [http-nio-8083-exec-4] INFO - <Successfully login>
+17/08/2018 9:17 [http-nio-8083-exec-4] INFO - <User is student>
+17/08/2018 9:17 [http-nio-8083-exec-4] INFO - <List of subjects to display: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+17/08/2018 9:17 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllCities()>
+17/08/2018 9:17 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllUniversities()>
+17/08/2018 9:17 [http-nio-8083-exec-4] INFO - <Start transaction>
+17/08/2018 9:17 [http-nio-8083-exec-4] DEBUG - <List of universities: [University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 9:17 [http-nio-8083-exec-4] INFO - <End transaction>
+17/08/2018 9:17 [http-nio-8083-exec-4] DEBUG - <[University{id=10, name='NaUKMA', address='Skovorodu', city='Kyiv'}, University{id=11, name='LvivKPI', address='Starokostyantuniv', city='Lviv'}, University{id=12, name='KPI', address='Polytech', city='Kyiv'}]>
+17/08/2018 9:17 [http-nio-8083-exec-4] DEBUG - <[Lviv, Kyiv]>
+17/08/2018 9:17 [http-nio-8083-exec-4] INFO - <List of cities to display: [Lviv, Kyiv]>
+17/08/2018 9:17 [http-nio-8083-exec-4] INFO - <Logined user is User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+17/08/2018 9:17 [http-nio-8083-exec-4] DEBUG - <Page = /WEB-INF/view/studentMain.jsp>
+17/08/2018 9:17 [http-nio-8083-exec-8] INFO - <Start class Controller processRequest()>
+17/08/2018 9:17 [http-nio-8083-exec-8] INFO - <Start class RegistrationForSubjectCommand execute()>
+17/08/2018 9:17 [http-nio-8083-exec-8] DEBUG - <Selected subject: English>
+17/08/2018 9:17 [http-nio-8083-exec-8] DEBUG - <Current user: User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+17/08/2018 9:17 [http-nio-8083-exec-8] INFO - <Start transaction>
+17/08/2018 9:17 [http-nio-8083-exec-8] DEBUG - <List of subjects: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+17/08/2018 9:17 [http-nio-8083-exec-8] INFO - <End transaction>
+17/08/2018 9:17 [http-nio-8083-exec-8] DEBUG - <Find subject: Subject{id=2, name='English', duration=90}>
+17/08/2018 9:17 [http-nio-8083-exec-8] INFO - <Start class UserService method addUserToSubject()>
+17/08/2018 9:17 [http-nio-8083-exec-8] INFO - <allSubjectsByUser()>
+17/08/2018 9:17 [http-nio-8083-exec-8] DEBUG - <List of subject by user id: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+17/08/2018 9:17 [http-nio-8083-exec-8] INFO - <There is user in table User_Subject>
+17/08/2018 9:17 [http-nio-8083-exec-8] DEBUG - </WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+17/08/2018 9:17 [http-nio-8083-exec-8] DEBUG - <Page = /WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+17/08/2018 9:17 [http-nio-8083-exec-8] INFO - <Page contains :AlreadyRegistrated>
+17/08/2018 9:17 [http-nio-8083-exec-8] DEBUG - <Page after substring: /WEB-INF/view/studentMain.jsp>
+17/08/2018 9:17 [http-nio-8083-exec-9] INFO - <Start class Controller processRequest()>
+17/08/2018 9:17 [http-nio-8083-exec-9] INFO - <Start class RegistrationForSubjectCommand execute()>
+17/08/2018 9:17 [http-nio-8083-exec-9] DEBUG - <Selected subject: English>
+17/08/2018 9:17 [http-nio-8083-exec-9] DEBUG - <Current user: User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}>
+17/08/2018 9:17 [http-nio-8083-exec-9] INFO - <Start transaction>
+17/08/2018 9:17 [http-nio-8083-exec-9] DEBUG - <List of subjects: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+17/08/2018 9:17 [http-nio-8083-exec-9] INFO - <End transaction>
+17/08/2018 9:17 [http-nio-8083-exec-9] DEBUG - <Find subject: Subject{id=2, name='English', duration=90}>
+17/08/2018 9:17 [http-nio-8083-exec-9] INFO - <Start class UserService method addUserToSubject()>
+17/08/2018 9:17 [http-nio-8083-exec-9] INFO - <allSubjectsByUser()>
+17/08/2018 9:17 [http-nio-8083-exec-9] DEBUG - <List of subject by user id: [Subject{id=1, name='Math', duration=120}, Subject{id=2, name='English', duration=90}]>
+17/08/2018 9:17 [http-nio-8083-exec-9] INFO - <There is user in table User_Subject>
+17/08/2018 9:17 [http-nio-8083-exec-9] DEBUG - </WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+17/08/2018 9:17 [http-nio-8083-exec-9] DEBUG - <Page = /WEB-INF/view/studentMain.jsp:AlreadyRegistrated>
+17/08/2018 9:17 [http-nio-8083-exec-9] INFO - <Page contains :AlreadyRegistrated>
+17/08/2018 9:17 [http-nio-8083-exec-9] DEBUG - <Page after substring: /WEB-INF/view/studentMain.jsp>
