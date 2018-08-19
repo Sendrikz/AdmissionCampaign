@@ -3,6 +3,7 @@ package services;
 import model.connection.ConnectionManager;
 import model.dao.dao_implementations.DaoFactory;
 import model.dao.dao_interfaces.UserDao;
+import model.enteties.Specialty;
 import model.enteties.Subject;
 import model.enteties.User;
 import org.apache.log4j.Logger;
@@ -41,5 +42,14 @@ public class UserService {
         log.debug("List of subject by user id: " + allSubjectsByUser);
         connectionManager.close(connection);
         return allSubjectsByUser;
+    }
+
+    public static void addUserToSpecialty(User user, Specialty specialty, boolean checked) {
+        log.info("addUserToSpecialty()");
+        Connection connection = new ConnectionManager().getConnection();
+        UserDao userDao = DaoFactory.getUserDao(connection);
+        log.debug("User to add: " + user);
+        log.debug("Specialty to add: " + specialty);
+        userDao.addUserToSpecialty(user, specialty, checked);
     }
 }

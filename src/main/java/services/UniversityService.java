@@ -3,6 +3,7 @@ package services;
 import model.connection.ConnectionManager;
 import model.dao.dao_implementations.DaoFactory;
 import model.dao.dao_interfaces.UniversityDao;
+import model.enteties.Faculty;
 import model.enteties.University;
 import org.apache.log4j.Logger;
 
@@ -46,5 +47,24 @@ public class UniversityService {
         }
         log.debug(cityHashMap);
         return cityHashMap;
+    }
+
+    public static ArrayList<Faculty> getAllFacultiesOfUniversity(int uniId) {
+        log.info("Start class UniversityService getAllFacultiesOfUniversity()");
+        ConnectionManager connectionManager = new ConnectionManager();
+        Connection connection = connectionManager.getConnection();
+        UniversityDao universityDao = DaoFactory.getUniversityDao(connection);
+        ArrayList<Faculty> facultyArrayList = universityDao.getAllFacultiesOfUniversity(uniId);
+        log.debug("List of all faculties by university: " + facultyArrayList);
+        return facultyArrayList;
+    }
+
+    public static University findById(int id) {
+        log.info("Start class UniversityService getUniversityById()");
+        Connection connection = new ConnectionManager().getConnection();
+        UniversityDao universityDao = DaoFactory.getUniversityDao(connection);
+        University result = universityDao.findById(id);
+        log.debug("Finded university: " + result);
+        return result;
     }
 }

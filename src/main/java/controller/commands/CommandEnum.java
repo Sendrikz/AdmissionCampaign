@@ -26,6 +26,11 @@ public enum CommandEnum {
         {
             this.command = new GenerateSpecialtyByUniCommand();
         }
+    },
+    REGISTRATIONFORSPECIALTY {
+        {
+            this.command = new RegistrationForSpecialtyCommand();
+        }
     };
 
     ActionCommand command;

@@ -64,7 +64,7 @@ public class Controller extends HttpServlet {
 
         } else if (page.contains(":RegistratedSuccesfully")) {
 
-            log.info("Page contains :AlreadyRegistrated");
+            log.info("Page contains :RegistratedSuccesfully");
             page = page.substring(0, page.indexOf(":"));
             log.debug("Page after substring: " + page);
             resp = getAlert(resp,"swal('Success!', 'You are successfully registrated', 'success');");

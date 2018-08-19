@@ -12,11 +12,12 @@
     <body>
     <h3><fmt:message key="account"/></h3>
     <hr/>
-    <fmt:message key="lastName"/>: <%= session.getAttribute("LastName")%>
-    <fmt:message key="firstName"/>: <%= session.getAttribute("FirstName")%>
-    <fmt:message key="patronymic"/>: <%= session.getAttribute("Patronymic")%>
-    <fmt:message key="city"/>: <%= session.getAttribute("City")%>
-    <fmt:message key="email"/>: <%= session.getAttribute("Email")%>
+    <fmt:message key="lastName"/>: ${ sessionScope.loginedUser.lastName }
+    <fmt:message key="firstName"/>: ${ sessionScope.loginedUser.firstName }
+    <fmt:message key="patronymic"/>: ${ sessionScope.loginedUser.patronymic }
+    <fmt:message key="birthday"/>: ${ sessionScope.loginedUser.birthday }
+    <fmt:message key="city"/>: ${ sessionScope.loginedUser.city }
+    <fmt:message key="email"/>: ${ sessionScope.loginedUser.email }
     <hr/>
 
     <h3><fmt:message key="subjects"/></h3>

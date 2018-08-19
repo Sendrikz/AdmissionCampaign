@@ -56,11 +56,6 @@ public class LoginCommand implements ActionCommand {
                 page = "/WEB-INF/view/studentMain.jsp";
             }
             request.getSession().setAttribute("loginedUser", loginedUser);
-            request.getSession().setAttribute("FirstName", loginedUser.getFirstName());
-            request.getSession().setAttribute("LastName", loginedUser.getLastName());
-            request.getSession().setAttribute("Patronymic", loginedUser.getPatronymic());
-            request.getSession().setAttribute("City", loginedUser.getCity());
-            request.getSession().setAttribute("Email", loginedUser.getEmail());
             log.info("Logined user is " + loginedUser);
         } else {
             log.info("Login fail");

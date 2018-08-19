@@ -17,6 +17,9 @@
         </script>
     </head>
     <body>
+        <p> Name: ${ sessionScope.selectedUni.name }</p>
+        <p> Address: ${ sessionScope.selectedUni.address }</p>
+        <p> City: ${ sessionScope.selectedUni.city }</p>
         <jsp:useBean id="facultySpecialtyMap" scope="session" type="java.util.HashMap"/>
         <div id="tabs">
             <ul>
@@ -26,7 +29,15 @@
             </ul>
             <c:forEach var="map" items="${ facultySpecialtyMap }" varStatus="status">
                     <div id="tabs-${ map.key.id }">
-                        <p> ${ map.value }</p>
+                        <c:forEach var="specialtyMap" items="${map.value}" varStatus="status">
+                            <form name="specialtyForm" method="GET" action="controller">
+                                <input type="hidden" name="command" value="registrationForSpecialty"/>
+                                <input type="hidden" name="specialtyToRegistrId" value="${ specialtyMap.id }"/>
+                                <p> Name: ${ specialtyMap.name }</p>
+                                <p> Quantity of students: ${ specialtyMap.quantityOfStudents }</p>
+                                <button><fmt:message key="submit"/></button>
+                            </form>
+                        </c:forEach>
                     </div>
             </c:forEach>
         </div>
