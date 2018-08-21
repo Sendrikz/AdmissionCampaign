@@ -3,7 +3,6 @@ package services;
 import model.connection.ConnectionManager;
 import model.dao.dao_implementations.DaoFactory;
 import model.dao.dao_interfaces.SpecialtyDao;
-import model.dao.dao_interfaces.SubjectDao;
 import model.enteties.Specialty;
 import model.enteties.Subject;
 import org.apache.log4j.Logger;

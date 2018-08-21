@@ -75,7 +75,6 @@ public class Controller extends HttpServlet {
 
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
             dispatcher.forward(req, resp);
-
         }
     }
 

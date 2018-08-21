@@ -7,19 +7,16 @@
     <html><head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>jQuery UI Tabs - Default functionality</title>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
         <script>
             $( function() {
                 $( "#tabs" ).tabs();
             } );
         </script>
-        <%--<script type="text/javascript">--%>
-            <%--function showAlert(){--%>
-                <%--alert("Hi This is Simple alert");--%>
-            <%--}--%>
-        <%--</script>--%>
     </head>
     <body>
         <p> Name: ${ sessionScope.selectedUni.name }</p>
@@ -50,12 +47,21 @@
                                     </c:forEach>
                                 </c:if>
                                 <button><fmt:message key="submit"/></button>
-                                <!--onclick="showAlert()-->
                             </form>
                         </c:forEach>
                     </div>
             </c:forEach>
         </div>
+        <c:if test="${sessionScope.successful == 'yes'}">
+            <script>
+                swal('Success!', 'You are successfully registrated', 'success');
+            </script>
+        </c:if>
+        <c:if test="${sessionScope.successful == 'no'}">
+            <script>
+                swal('Error!', 'You have already registrated', 'error');
+            </script>
+        </c:if>
     </body>
     </html>
 </fmt:bundle>
