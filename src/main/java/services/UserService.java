@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class UserService {
 
@@ -44,12 +45,31 @@ public class UserService {
         return allSubjectsByUser;
     }
 
-    public static void addUserToSpecialty(User user, Specialty specialty, boolean checked) {
+    public static boolean addUserToSpecialty(User user, Specialty specialty, boolean checked) {
         log.info("addUserToSpecialty()");
-        Connection connection = new ConnectionManager().getConnection();
+        ConnectionManager connectionManager = new ConnectionManager();
+        Connection connection = connectionManager.getConnection();
         UserDao userDao = DaoFactory.getUserDao(connection);
         log.debug("User to add: " + user);
         log.debug("Specialty to add: " + specialty);
-        userDao.addUserToSpecialty(user, specialty, checked);
+        if (!getAllSpecialtiesByUser(user).containsKey(specialty)) {
+            log.info("There is no such user in table user_specialty");
+            userDao.addUserToSpecialty(user, specialty, checked);
+            return true;
+        }
+        log.info("There is user in table user_specialty");
+        connectionManager.close(connection);
+        return false;
+    }
+
+    public static HashMap<Specialty, Boolean> getAllSpecialtiesByUser(User user) {
+        ConnectionManager connectionManager = new ConnectionManager();
+        Connection connection = connectionManager.getConnection();
+        UserDao userDao = DaoFactory.getUserDao(connection);
+        HashMap<Specialty, Boolean> specialtybooalenHashMap =
+                userDao.getAllSpecialtiesByUser(user.getId());
+        log.debug("Map of specialties by user: " + specialtybooalenHashMap);
+        connectionManager.close(connection);
+        return specialtybooalenHashMap;
     }
 }

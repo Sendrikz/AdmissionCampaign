@@ -56,15 +56,18 @@ public class UniversityService {
         UniversityDao universityDao = DaoFactory.getUniversityDao(connection);
         ArrayList<Faculty> facultyArrayList = universityDao.getAllFacultiesOfUniversity(uniId);
         log.debug("List of all faculties by university: " + facultyArrayList);
+        connectionManager.close(connection);
         return facultyArrayList;
     }
 
     public static University findById(int id) {
         log.info("Start class UniversityService getUniversityById()");
-        Connection connection = new ConnectionManager().getConnection();
+        ConnectionManager connectionManager = new ConnectionManager();
+        Connection connection = connectionManager.getConnection();
         UniversityDao universityDao = DaoFactory.getUniversityDao(connection);
         University result = universityDao.findById(id);
         log.debug("Finded university: " + result);
+        connectionManager.close(connection);
         return result;
     }
 }

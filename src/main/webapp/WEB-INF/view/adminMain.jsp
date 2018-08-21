@@ -8,14 +8,7 @@
     <body>
     <h3><fmt:message key="account"/></h3>
     <hr/>
-    <fmt:message key="lastName"/>: <%= session.getAttribute("LastName")%>
-    <fmt:message key="firstName"/>: <%= session.getAttribute("FirstName")%>
-    <fmt:message key="patronymic"/>: <%= session.getAttribute("Patronymic")%>
-    <fmt:message key="city"/>: <%= session.getAttribute("City")%>
-    <fmt:message key="email"/>: <%= session.getAttribute("Email")%>
     <hr/>
-
-    <h3><fmt:message key="subjects"/></h3>
 
     </body></html>
 </fmt:bundle>

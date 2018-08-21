@@ -15,12 +15,18 @@
                 $( "#tabs" ).tabs();
             } );
         </script>
+        <%--<script type="text/javascript">--%>
+            <%--function showAlert(){--%>
+                <%--alert("Hi This is Simple alert");--%>
+            <%--}--%>
+        <%--</script>--%>
     </head>
     <body>
         <p> Name: ${ sessionScope.selectedUni.name }</p>
         <p> Address: ${ sessionScope.selectedUni.address }</p>
         <p> City: ${ sessionScope.selectedUni.city }</p>
         <jsp:useBean id="facultySpecialtyMap" scope="session" type="java.util.HashMap"/>
+        <jsp:useBean id="specialtySubjectMap" scope="session" type="java.util.HashMap"/>
         <div id="tabs">
             <ul>
                 <c:forEach var="map" items="${ facultySpecialtyMap }" varStatus="status">
@@ -35,7 +41,16 @@
                                 <input type="hidden" name="specialtyToRegistrId" value="${ specialtyMap.id }"/>
                                 <p> Name: ${ specialtyMap.name }</p>
                                 <p> Quantity of students: ${ specialtyMap.quantityOfStudents }</p>
+                                <c:if test="${specialtySubjectMap.containsKey(specialtyMap)}">
+                                    <p> Subjects: </p>
+                                    <c:forEach var="subjects" items="${specialtySubjectMap.get(specialtyMap)}">
+                                        <p> Name of subject: ${subjects.key.name} </p>
+                                        <p> Duration of test: ${subjects.key.duration}</p>
+                                        <p> Coef: ${subjects.value}</p>
+                                    </c:forEach>
+                                </c:if>
                                 <button><fmt:message key="submit"/></button>
+                                <!--onclick="showAlert()-->
                             </form>
                         </c:forEach>
                     </div>

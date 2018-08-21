@@ -23,17 +23,8 @@ public class LoginService {
         ArrayList<User> listOfAllUsers = null;
         ConnectionManager connectionManager = new ConnectionManager();
         Connection connection = connectionManager.getConnection();
-        try {
-            connection.setAutoCommit(false);
-            log.info("Start transaction");
-            UserDao user = DaoFactory.getUserDao(connection);
-            listOfAllUsers = user.getAll();
-            connection.commit();
-            log.info("End transaction");
-        } catch (SQLException e) {
-            log.error("Transaction fail");
-            e.printStackTrace();
-        }
+        UserDao user = DaoFactory.getUserDao(connection);
+        listOfAllUsers = user.getAll();
         connectionManager.close(connection);
         for (User users : listOfAllUsers) {
             if (users.getEmail().equals(login) && users.getPassword().equals(password)) {
@@ -54,16 +45,7 @@ public class LoginService {
         User user = new User(lastName, firstName, patronymic, birthday, city, email, password,
                 roleDao.findIdByRoleName("Student"));
         UserDao userDao = DaoFactory.getUserDao(connection);
-        try {
-            connection.setAutoCommit(false);
-            log.info("Start transaction");
-            userDao.add(user);
-            connection.commit();
-            log.info("End transaction");
-        } catch (SQLException e) {
-            log.info("Transaction fail");
-            e.printStackTrace();
-        }
+        userDao.add(user);
         connectionManager.close(connection);
     }
 

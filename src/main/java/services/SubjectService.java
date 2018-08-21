@@ -6,9 +6,11 @@ import model.dao.dao_interfaces.SubjectDao;
 import model.enteties.Subject;
 import org.apache.log4j.Logger;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SubjectService {
 
@@ -17,19 +19,9 @@ public class SubjectService {
     public static Subject getSubjectIdByName(String name) {
         ConnectionManager connectionManager = new ConnectionManager();
         Connection connection = connectionManager.getConnection();
-        ArrayList<Subject> listOfSubjects = null;
-        try {
-            connection.setAutoCommit(false);
-            log.info("Start transaction");
-            SubjectDao subject = DaoFactory.getSubjectDao(connection);
-            listOfSubjects = subject.getAll();
-            log.debug("List of subjects: " + listOfSubjects);
-            connection.commit();
-            log.info("End transaction");
-        } catch (SQLException e) {
-            log.error("Transaction fail");
-            e.printStackTrace();
-        }
+        SubjectDao subject = DaoFactory.getSubjectDao(connection);
+        ArrayList<Subject> listOfSubjects = subject.getAll();
+        log.debug("List of subjects: " + listOfSubjects);
         connectionManager.close(connection);
         for (Subject sub : listOfSubjects) {
             if (sub.getName().equals(name)) {

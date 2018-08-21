@@ -15,12 +15,18 @@ public class RegistrationForSpecialtyCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) {
-        String page = "/WEB-INF/view/studentSpecialties.jsp:RegistratedSuccesfully";
+        String page;
         log.info("Start class RegistrationForSpecialtyCommand execute()");
         int specialtyId = Integer.parseInt(request.getParameter("specialtyToRegistrId"));
         User user = (User) request.getSession().getAttribute("loginedUser");
         Specialty specialty = SpecialtyService.findById(specialtyId);
-        UserService.addUserToSpecialty(user, specialty, false);
+        if (UserService.addUserToSpecialty(user, specialty, false)) {
+            page = "/WEB-INF/view/studentSpecialties.jsp:RegistratedSuccesfully";
+            log.debug(page);
+        } else {
+            page = "/WEB-INF/view/studentSpecialties.jsp:AlreadyRegistrated";
+            log.debug(page);
+        }
         return page;
     }
 }
