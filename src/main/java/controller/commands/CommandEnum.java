@@ -41,6 +41,11 @@ public enum CommandEnum {
         {
             this.command = new LogOutCommand();
         }
+    },
+    SETGRADE {
+        {
+            this.command = new SetGradeCommand();
+        }
     };
 
     ActionCommand command;

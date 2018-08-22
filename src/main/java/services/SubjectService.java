@@ -4,6 +4,7 @@ import model.connection.ConnectionManager;
 import model.dao.dao_implementations.DaoFactory;
 import model.dao.dao_interfaces.SubjectDao;
 import model.enteties.Subject;
+import model.enteties.User;
 import org.apache.log4j.Logger;
 
 import java.math.BigDecimal;
@@ -31,5 +32,31 @@ public class SubjectService {
         }
         log.debug("Subject didn`t found: " + null);
         return null;
+    }
+
+    public static ArrayList<User> getAllUsersWithUncheckedSubject(int id) {
+        ConnectionManager connectionManager = new ConnectionManager();
+        Connection connection = connectionManager.getConnection();
+        SubjectDao subjectDao = DaoFactory.getSubjectDao(connection);
+        ArrayList<User> listOfUsers = subjectDao.getAllUsersWithUncheckedSubject(id);
+        log.debug("List of users with unchecked subjects: " + listOfUsers);
+        connectionManager.close(connection);
+        return listOfUsers;
+    }
+
+    public static void updateSubjectToUser(int subjectId, int userId, BigDecimal grade) {
+        ConnectionManager connectionManager = new ConnectionManager();
+        Connection connection = connectionManager.getConnection();
+        SubjectDao subjectDao = DaoFactory.getSubjectDao(connection);
+        subjectDao.updateSubjectToUser(subjectId, userId, true, grade);
+    }
+
+    public static HashMap<Subject, ArrayList<User>> updateHashMapOfSubjectUsers(
+            ArrayList<Subject> listOfSubjects) {
+        HashMap<Subject, ArrayList<User>> subjectUserHashMap = new HashMap<>();
+        for (Subject subject : listOfSubjects) {
+            subjectUserHashMap.put(subject, SubjectService.getAllUsersWithUncheckedSubject(subject.getId()));
+        }
+        return subjectUserHashMap;
     }
 }

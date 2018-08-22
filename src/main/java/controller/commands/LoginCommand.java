@@ -4,12 +4,14 @@ import model.enteties.Subject;
 import model.enteties.User;
 import org.apache.log4j.Logger;
 import services.LoginService;
+import services.SubjectService;
 import services.UniversityService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Properties;
 
@@ -38,6 +40,8 @@ public class LoginCommand implements ActionCommand {
         String password = request.getParameter("password");
         log.debug("Password: " + password);
         User loginedUser = LoginService.checkLogin(login, password);
+        request.getSession().setAttribute("loginedUser", loginedUser);
+        log.info("Logined user is " + loginedUser);
         if (loginedUser != null) {
             log.info("Successfully login");
             if (LoginService.getRoleById(loginedUser.getRole()).toUpperCase().equals(ADMIN_ROLE)) {
@@ -47,16 +51,20 @@ public class LoginCommand implements ActionCommand {
             } else {
                 log.info("User is student");
                 request.getSession().setAttribute("admin", false);
-                ArrayList<Subject> listOfSubjects = LoginService.getAllSubjects();
-                log.info("List of subjects to display: " + listOfSubjects);
-                request.getSession().setAttribute("subjectsList", listOfSubjects);
                 ArrayList<String> listOfCities = new ArrayList<>(UniversityService.getAllCities());
                 log.info("List of cities to display: " + listOfCities);
                 request.getSession().setAttribute("citiesList", listOfCities);
                 page = "/jsp/student/studentMain.jsp";
             }
-            request.getSession().setAttribute("loginedUser", loginedUser);
-            log.info("Logined user is " + loginedUser);
+            ArrayList<Subject> listOfSubjects = LoginService.getAllSubjects();
+            log.info("List of subjects to display: " + listOfSubjects);
+            request.getSession().setAttribute("subjectsList", listOfSubjects);
+            HashMap<Subject, ArrayList<User>> subjectUserHashMap = new HashMap<>();
+            for (Subject subject : listOfSubjects) {
+                subjectUserHashMap.put(subject, SubjectService.getAllUsersWithUncheckedSubject(subject.getId()));
+            }
+            log.debug("HashMap of subjects and users: " + subjectUserHashMap);
+            request.getSession().setAttribute("subjectUserHashMap", subjectUserHashMap);
         } else {
             log.info("Login fail");
             page = "loginFail";
