@@ -7,18 +7,20 @@
     <html><head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
         <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script>
             $( function() {
-                $( "#tabs" ).tabs();
+                $("#tabs").tabs();
             } );
         </script>
     </head>
     <body>
+
+    <c:import url="/jsp/fragments/header.jsp" />
         <p> Name: ${ sessionScope.selectedUni.name }</p>
         <p> Address: ${ sessionScope.selectedUni.address }</p>
         <p> City: ${ sessionScope.selectedUni.city }</p>
@@ -33,7 +35,7 @@
             <c:forEach var="map" items="${ facultySpecialtyMap }" varStatus="status">
                     <div id="tabs-${ map.key.id }">
                         <c:forEach var="specialtyMap" items="${map.value}" varStatus="status">
-                            <form name="specialtyForm" method="GET" action="controller">
+                            <form name="specialtyForm" method="POST" action="controller">
                                 <input type="hidden" name="command" value="registrationForSpecialty"/>
                                 <input type="hidden" name="specialtyToRegistrId" value="${ specialtyMap.id }"/>
                                 <p> Name: ${ specialtyMap.name }</p>
@@ -52,16 +54,20 @@
                     </div>
             </c:forEach>
         </div>
-        <c:if test="${sessionScope.successful == 'yes'}">
-            <script>
-                swal('Success!', 'You are successfully registrated', 'success');
-            </script>
-        </c:if>
-        <c:if test="${sessionScope.successful == 'no'}">
-            <script>
-                swal('Error!', 'You have already registrated', 'error');
-            </script>
-        </c:if>
+        <c:choose>
+            <c:when test="${sessionScope.successfulSpecialty == 'yes'}">
+                <script>
+                    swal('Success!', 'You are successfully registrated', 'success');
+                </script>
+                <c:set var="successfulSpecialty" value="null" scope="session"/>
+            </c:when>
+            <c:when test="${sessionScope.successfulSpecialty == 'no'}">
+                <script>
+                    swal('Error!', 'You have already registrated', 'error');
+                </script>
+                <c:set var="successfulSpecialty" value="null" scope="session"/>
+            </c:when>
+        </c:choose>
     </body>
     </html>
 </fmt:bundle>

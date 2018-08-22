@@ -43,7 +43,7 @@ public class LoginCommand implements ActionCommand {
             if (LoginService.getRoleById(loginedUser.getRole()).toUpperCase().equals(ADMIN_ROLE)) {
                 log.info("User is admin");
                 request.getSession().setAttribute("admin", true);
-                page = "/WEB-INF/view/adminMain.jsp";
+                page = "/jsp/admin/adminMain.jsp";
             } else {
                 log.info("User is student");
                 request.getSession().setAttribute("admin", false);
@@ -53,7 +53,7 @@ public class LoginCommand implements ActionCommand {
                 ArrayList<String> listOfCities = new ArrayList<>(UniversityService.getAllCities());
                 log.info("List of cities to display: " + listOfCities);
                 request.getSession().setAttribute("citiesList", listOfCities);
-                page = "/WEB-INF/view/studentMain.jsp";
+                page = "/jsp/student/studentMain.jsp";
             }
             request.getSession().setAttribute("loginedUser", loginedUser);
             log.info("Logined user is " + loginedUser);

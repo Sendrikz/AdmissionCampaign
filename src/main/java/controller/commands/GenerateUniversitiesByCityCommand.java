@@ -27,7 +27,7 @@ public class GenerateUniversitiesByCityCommand implements ActionCommand {
         }
         log.debug("List of universities to display: " + listOfUniversitiesToDisplay);
         request.getSession().setAttribute("listOfUni", listOfUniversitiesToDisplay);
-        page = "/WEB-INF/view/studentUniByCity.jsp";
+        page = "/jsp/student/studentUniByCity.jsp";
         return page;
     }
 }

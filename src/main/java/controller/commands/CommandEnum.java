@@ -31,6 +31,16 @@ public enum CommandEnum {
         {
             this.command = new RegistrationForSpecialtyCommand();
         }
+    },
+    RETURNTOMAIN {
+        {
+            this.command = new ReturnToMainCommand();
+        }
+    },
+    LOGOUT {
+        {
+            this.command = new LogOutCommand();
+        }
     };
 
     ActionCommand command;

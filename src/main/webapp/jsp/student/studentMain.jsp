@@ -8,8 +8,13 @@
     <html><head>
         <meta charset="utf-8">
         <title><fmt:message key="title"/></title>
+
+        <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
     </head>
     <body>
+    <c:import url="/jsp/fragments/header.jsp"/>
     <h3><fmt:message key="account"/></h3>
     <hr/>
     <fmt:message key="lastName"/>: ${ sessionScope.loginedUser.lastName }
@@ -23,7 +28,7 @@
     <h3><fmt:message key="subjects"/></h3>
     <jsp:useBean id="subjectsList" scope="session" type="java.util.List"/>
     <c:forEach var="elem" items="${ subjectsList }" varStatus="status">
-        <form name="subjectForm" method="GET" action="controller">
+        <form name="subjectForm" method="POST" action="controller">
             <input type="hidden" name="command" value="registrateOnSubject" />
             <input type="hidden" name="subject" value="${ elem.name }" />
             <c:out value="${ elem.name }" />
@@ -49,7 +54,7 @@
                             <c:set var="correctCity" value="${city}"/>
                         </c:otherwise>
                     </c:choose>
-                    <form name="citiesForm" method="GET" action="controller">
+                    <form name="citiesForm" method="POST" action="controller">
                         <input type="hidden" name="command" value="generateUniversitiesByCity"/>
                         <input type="hidden" name="city" value=" ${ correctCity }"/>
                         <button class="custom-btn btn-light btn-sm text-bold" type="submit">${ correctCity }</button>
@@ -58,6 +63,22 @@
             </tr>
         </c:forEach>
     </table>
+
+    <c:choose>
+        <c:when test="${sessionScope.successfulSubject == 'yes'}">
+            <script>
+                swal('Success!', 'You are successfully registrated', 'success');
+            </script>
+            <c:set var="successfulSubject" value="null" scope="session"/>
+        </c:when>
+        <c:when test="${sessionScope.successfulSubject == 'no'}">
+            <script>
+                swal('Error!', 'You have already registrated', 'error');
+            </script>
+            <c:set var="successfulSubject" value="null" scope="session"/>
+        </c:when>
+    </c:choose>
+
     <script>
         function myFunction() {
             var x = document.getElementById('myCity');
@@ -68,5 +89,6 @@
             }
         }
     </script>
+
     </body></html>
 </fmt:bundle>

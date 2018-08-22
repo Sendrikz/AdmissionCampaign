@@ -20,7 +20,7 @@ public class GenerateSpecialtyByUniCommand implements ActionCommand {
     @Override
     public String execute(HttpServletRequest request) {
         log.info("Start class GenerateSpecialtyByUniCommand execute()");
-        String page = "/WEB-INF/view/studentSpecialties.jsp";
+        String page = "/jsp/student/studentSpecialties.jsp";
         int uniId = Integer.parseInt(request.getParameter("uniId").trim());
         log.debug("University id from jsp: " + uniId);
         ArrayList<Faculty> listOfFaculties = UniversityService.getAllFacultiesOfUniversity(

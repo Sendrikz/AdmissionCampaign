@@ -23,12 +23,14 @@ public class RegistrationForSubjectCommand implements ActionCommand {
         log.debug("Current user: " + user);
         Subject subject = SubjectService.getSubjectIdByName(selectedSubject);
         if (UserService.addUserToSubject(user, subject, false, new BigDecimal(0))) {
-            page = "/WEB-INF/view/studentMain.jsp:RegistratedSuccesfully";
-            log.debug(page);
+            request.getSession().setAttribute("successfulSubject", "yes");
+            log.debug("Successful = " + request.getSession().getAttribute("successfulSubject"));
         } else {
-            page = "/WEB-INF/view/studentMain.jsp:AlreadyRegistrated";
-            log.debug(page);
+            request.getSession().setAttribute("successfulSubject", "no");
+            log.debug("Successful = " + request.getSession().getAttribute("successfulSubject"));
         }
+        page = "/jsp/student/studentMain.jsp";
+        log.debug(page);
         return page;
     }
 }
