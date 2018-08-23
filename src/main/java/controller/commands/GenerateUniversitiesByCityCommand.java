@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class GenerateUniversitiesByCityCommand implements ActionCommand {
 
-    private static final Logger log = Logger.getLogger(String.valueOf(LoginCommand.class));
+    private static final Logger log = Logger.getLogger(GenerateUniversitiesByCityCommand.class);
 
     @Override
     public String execute(HttpServletRequest request) {

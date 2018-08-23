@@ -15,18 +15,17 @@ import java.util.HashMap;
 
 public class UserService {
 
-    private static final Logger log = Logger.getLogger(String.valueOf(UserService.class));
+    private static final Logger log = Logger.getLogger(UserService.class);
 
     public static boolean addUserToSubject(User user, Subject subject, boolean checked, BigDecimal grade) {
         log.info("Start class UserService method addUserToSubject()");
         ArrayList<Subject> allSubjectsByUser = allSubjectsByUser(user);
         if (!allSubjectsByUser.contains(subject)) {
             log.info("There is no user in table User_Subject");
-            ConnectionManager connectionManager = new ConnectionManager();
-            Connection connection = connectionManager.getConnection();
+            Connection connection = ConnectionManager.getInstance().getConnection();
             UserDao userDao = DaoFactory.getUserDao(connection);
             userDao.addUserToSubject(user, subject, checked, grade);
-            connectionManager.close(connection);
+            ConnectionManager.getInstance().close(connection);
             return true;
         }
         log.info("There is user in table User_Subject");
@@ -36,19 +35,17 @@ public class UserService {
     private static ArrayList<Subject> allSubjectsByUser(User user) {
         ArrayList<Subject> allSubjectsByUser;
         log.info("allSubjectsByUser()");
-        ConnectionManager connectionManager = new ConnectionManager();
-        Connection connection = connectionManager.getConnection();
+        Connection connection = ConnectionManager.getInstance().getConnection();
         UserDao userDao = DaoFactory.getUserDao(connection);
         allSubjectsByUser = userDao.getAllSubjectsByUser(user.getId());
         log.debug("List of subject by user id: " + allSubjectsByUser);
-        connectionManager.close(connection);
+        ConnectionManager.getInstance().close(connection);
         return allSubjectsByUser;
     }
 
     public static boolean addUserToSpecialty(User user, Specialty specialty, boolean checked) {
         log.info("addUserToSpecialty()");
-        ConnectionManager connectionManager = new ConnectionManager();
-        Connection connection = connectionManager.getConnection();
+        Connection connection = ConnectionManager.getInstance().getConnection();
         UserDao userDao = DaoFactory.getUserDao(connection);
         log.debug("User to add: " + user);
         log.debug("Specialty to add: " + specialty);
@@ -58,18 +55,17 @@ public class UserService {
             return true;
         }
         log.info("There is user in table user_specialty");
-        connectionManager.close(connection);
+        ConnectionManager.getInstance().close(connection);
         return false;
     }
 
     public static HashMap<Specialty, Boolean> getAllSpecialtiesByUser(User user) {
-        ConnectionManager connectionManager = new ConnectionManager();
-        Connection connection = connectionManager.getConnection();
+        Connection connection = ConnectionManager.getInstance().getConnection();
         UserDao userDao = DaoFactory.getUserDao(connection);
-        HashMap<Specialty, Boolean> specialtybooalenHashMap =
+        HashMap<Specialty, Boolean> specialtyBooalenHashMap =
                 userDao.getAllSpecialtiesByUser(user.getId());
-        log.debug("Map of specialties by user: " + specialtybooalenHashMap);
-        connectionManager.close(connection);
-        return specialtybooalenHashMap;
+        log.debug("Map of specialties by user: " + specialtyBooalenHashMap);
+        ConnectionManager.getInstance().close(connection);
+        return specialtyBooalenHashMap;
     }
 }

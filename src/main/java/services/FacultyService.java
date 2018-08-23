@@ -12,25 +12,23 @@ import java.util.ArrayList;
 
 public class FacultyService {
 
-    private static final Logger log = Logger.getLogger(String.valueOf(FacultyService.class));
+    private static final Logger log = Logger.getLogger(FacultyService.class);
 
     public static ArrayList<Faculty> getAll() {
         log.info("Start class FacultyService getAll()");
-        ConnectionManager connectionManager = new ConnectionManager();
-        Connection connection = connectionManager.getConnection();
+        Connection connection = ConnectionManager.getInstance().getConnection();
         FacultyDao facultyDao = DaoFactory.getFacultyDao(connection);
         ArrayList<Faculty> listOfFaculties = facultyDao.getAll();
-        connectionManager.close(connection);
+        ConnectionManager.getInstance().close(connection);
         return listOfFaculties;
     }
 
     public static ArrayList<Specialty> getAllSpecialtiesOfFaculty(int id) {
         log.info("Start class FacultyService getAllSpecialtiesOfFaculty()");
-        ConnectionManager connectionManager = new ConnectionManager();
-        Connection connection = connectionManager.getConnection();
+        Connection connection = ConnectionManager.getInstance().getConnection();
         FacultyDao facultyDao = DaoFactory.getFacultyDao(connection);
         ArrayList<Specialty> listOfSpecialties = facultyDao.getAllSpecialtiesOfFaculty(id);
-        connectionManager.close(connection);
+        ConnectionManager.getInstance().close(connection);
         return listOfSpecialties;
     }
 }

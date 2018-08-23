@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public class RegistrationForSpecialtyCommand implements ActionCommand {
 
-    private static final Logger log = Logger.getLogger(String.valueOf(RegistrationForSpecialtyCommand.class));
+    private static final Logger log = Logger.getLogger(RegistrationForSpecialtyCommand.class);
 
     @Override
     public String execute(HttpServletRequest request) {

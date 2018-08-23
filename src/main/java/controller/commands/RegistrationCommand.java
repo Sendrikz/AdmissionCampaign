@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public class RegistrationCommand implements ActionCommand {
 
-    private static final Logger log = Logger.getLogger(String.valueOf(LoginCommand.class));
+    private static final Logger log = Logger.getLogger(RegistrationCommand.class);
 
     @Override
     public String execute(HttpServletRequest request) {

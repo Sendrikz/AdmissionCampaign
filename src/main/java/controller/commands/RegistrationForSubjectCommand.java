@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 
 public class RegistrationForSubjectCommand implements ActionCommand {
 
-    private static final Logger log = Logger.getLogger(String.valueOf(RegistrationForSubjectCommand.class));
+    private static final Logger log = Logger.getLogger(RegistrationForSubjectCommand.class);
 
     @Override
     public String execute(HttpServletRequest request) {

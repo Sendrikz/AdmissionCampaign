@@ -13,29 +13,27 @@ import java.util.HashMap;
 
 public class SpecialtyService {
 
-    private static final Logger log = Logger.getLogger(String.valueOf(SpecialtyService.class));
+    private static final Logger log = Logger.getLogger(SpecialtyService.class);
 
     public static Specialty findById(int id) {
         log.info("Start class SpecialtyService findById()");
-        ConnectionManager connectionManager = new ConnectionManager();
-        Connection connection = connectionManager.getConnection();
+        Connection connection = ConnectionManager.getInstance().getConnection();
         SpecialtyDao specialtyDao = DaoFactory.getSpecialtyDao(connection);
         Specialty specialty = specialtyDao.findById(id);
         log.debug(specialty);
-        connectionManager.close(connection);
+        ConnectionManager.getInstance().close(connection);
         return specialty;
     }
 
 
     public static HashMap<Subject, BigDecimal> getAllSubjectsOfSpecialty(int id) {
         log.info("Start class SpecialtyService getAllSubjectsOfSpecialty()");
-        ConnectionManager connectionManager = new ConnectionManager();
-        Connection connection = connectionManager.getConnection();
+        Connection connection = ConnectionManager.getInstance().getConnection();
         SpecialtyDao specialtyDao = DaoFactory.getSpecialtyDao(connection);
         HashMap<Subject, BigDecimal> subjectBigDecimalHashMap =
                 specialtyDao.getAllSubjectsOfSpecialty(id);
         log.debug("HashMap of subjects by specialty: " + subjectBigDecimalHashMap);
-        connectionManager.close(connection);
+        ConnectionManager.getInstance().close(connection);
         return subjectBigDecimalHashMap;
     }
 }

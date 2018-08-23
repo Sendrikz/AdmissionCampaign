@@ -16,16 +16,15 @@ import java.util.ArrayList;
 
 public class LoginService {
 
-    private static final Logger log = Logger.getLogger(String.valueOf(LoginCommand.class));
+    private static final Logger log = Logger.getLogger(LoginCommand.class);
 
     public static User checkLogin(String login, String password) {
         log.info("Start class LoginLogic checkLogin()");
-        ArrayList<User> listOfAllUsers = null;
-        ConnectionManager connectionManager = new ConnectionManager();
-        Connection connection = connectionManager.getConnection();
+        ArrayList<User> listOfAllUsers;
+        Connection connection = ConnectionManager.getInstance().getConnection();
         UserDao user = DaoFactory.getUserDao(connection);
         listOfAllUsers = user.getAll();
-        connectionManager.close(connection);
+        ConnectionManager.getInstance().close(connection);
         for (User users : listOfAllUsers) {
             if (users.getEmail().equals(login) && users.getPassword().equals(password)) {
                 log.info("Find user");
@@ -39,31 +38,28 @@ public class LoginService {
     public static void addUser(String lastName, String firstName, String patronymic,
                                String birthday, String city, String email, String password) {
         log.info("Start class LoginLogic addUser()");
-        ConnectionManager connectionManager = new ConnectionManager();
-        Connection connection = connectionManager.getConnection();
+        Connection connection = ConnectionManager.getInstance().getConnection();
         RoleDao roleDao = DaoFactory.getRoleDao(connection);
         User user = new User(lastName, firstName, patronymic, birthday, city, email, password,
                 roleDao.findIdByRoleName("Student"));
         UserDao userDao = DaoFactory.getUserDao(connection);
         userDao.add(user);
-        connectionManager.close(connection);
+        ConnectionManager.getInstance().close(connection);
     }
 
     public static String getRoleById(int roleId) {
-        ConnectionManager connectionManager = new ConnectionManager();
-        Connection connection = connectionManager.getConnection();
+        Connection connection = ConnectionManager.getInstance().getConnection();
         RoleDao role = DaoFactory.getRoleDao(connection);
         String res = role.findById(roleId).getName();
-        connectionManager.close(connection);
+        ConnectionManager.getInstance().close(connection);
         return res;
     }
 
     public static ArrayList<Subject> getAllSubjects() {
-        ConnectionManager connectionManager = new ConnectionManager();
-        Connection connection = connectionManager.getConnection();
+        Connection connection = ConnectionManager.getInstance().getConnection();
         SubjectDao subject = DaoFactory.getSubjectDao(connection);
         ArrayList<Subject> listOfSubjects = subject.getAll();
-        connectionManager.close(connection);
+        ConnectionManager.getInstance().close(connection);
         return listOfSubjects;
     }
 }

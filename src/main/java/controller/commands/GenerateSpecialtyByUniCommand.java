@@ -15,7 +15,7 @@ import java.util.HashMap;
 
 public class GenerateSpecialtyByUniCommand implements ActionCommand {
 
-    private static final Logger log = Logger.getLogger(String.valueOf(GenerateSpecialtyByUniCommand.class));
+    private static final Logger log = Logger.getLogger(GenerateSpecialtyByUniCommand.class);
 
     @Override
     public String execute(HttpServletRequest request) {

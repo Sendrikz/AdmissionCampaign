@@ -17,7 +17,7 @@ import java.util.Properties;
 
 public class LoginCommand implements ActionCommand {
 
-    private static final Logger log = Logger.getLogger(String.valueOf(LoginCommand.class));
+    private static final Logger log = Logger.getLogger(LoginCommand.class);
     private static final String ADMIN_ROLE = "ADMINISTRATOR";
     private Properties property;
 

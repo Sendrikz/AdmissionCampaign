@@ -14,26 +14,15 @@ import java.util.HashSet;
 
 public class UniversityService {
 
-    private static final Logger log = Logger.getLogger(String.valueOf(UniversityService.class));
+    private static final Logger log = Logger.getLogger(UniversityService.class);
 
     public static ArrayList<University> getAllUniversities() {
         log.info("Start class UniversityService getAllUniversities()");
-        ConnectionManager connectionManager = new ConnectionManager();
-        Connection connection = connectionManager.getConnection();
-        ArrayList<University> listOfUniversities = null;
-        try {
-            connection.setAutoCommit(false);
-            log.info("Start transaction");
-            UniversityDao universityDao = DaoFactory.getUniversityDao(connection);
-            listOfUniversities = universityDao.getAll();
-            log.debug("List of universities: " + listOfUniversities);
-            connection.commit();
-            log.info("End transaction");
-        } catch (SQLException e) {
-            log.info("Transaction fail");
-            log.error(e.getMessage());
-        }
-        connectionManager.close(connection);
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        UniversityDao universityDao = DaoFactory.getUniversityDao(connection);
+        ArrayList<University> listOfUniversities = universityDao.getAll();
+        log.debug("List of universities: " + listOfUniversities);
+        ConnectionManager.getInstance().close(connection);
         return listOfUniversities;
     }
 
@@ -51,23 +40,21 @@ public class UniversityService {
 
     public static ArrayList<Faculty> getAllFacultiesOfUniversity(int uniId) {
         log.info("Start class UniversityService getAllFacultiesOfUniversity()");
-        ConnectionManager connectionManager = new ConnectionManager();
-        Connection connection = connectionManager.getConnection();
+        Connection connection = ConnectionManager.getInstance().getConnection();
         UniversityDao universityDao = DaoFactory.getUniversityDao(connection);
         ArrayList<Faculty> facultyArrayList = universityDao.getAllFacultiesOfUniversity(uniId);
         log.debug("List of all faculties by university: " + facultyArrayList);
-        connectionManager.close(connection);
+        ConnectionManager.getInstance().close(connection);
         return facultyArrayList;
     }
 
     public static University findById(int id) {
         log.info("Start class UniversityService getUniversityById()");
-        ConnectionManager connectionManager = new ConnectionManager();
-        Connection connection = connectionManager.getConnection();
+        Connection connection = ConnectionManager.getInstance().getConnection();
         UniversityDao universityDao = DaoFactory.getUniversityDao(connection);
         University result = universityDao.findById(id);
         log.debug("Finded university: " + result);
-        connectionManager.close(connection);
+        ConnectionManager.getInstance().close(connection);
         return result;
     }
 }

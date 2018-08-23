@@ -10,14 +10,14 @@ import java.sql.SQLException;
 
 public class ConnectionManager {
 
-//    private ConnectionManager() {}
-//
-//    private static class ConnectionPoolInstance {
-//        private final static ConnectionManager instance = new ConnectionManager();
-//    }
-//    public static ConnectionManager getInstance() {
-//        return ConnectionPoolInstance.instance;
-//    }
+    private ConnectionManager() {}
+
+    private static class ConnectionPoolInstance {
+        private final static ConnectionManager instance = new ConnectionManager();
+    }
+    public static ConnectionManager getInstance() {
+        return ConnectionPoolInstance.instance;
+    }
 
     public Connection getConnection() {
         Context envCtx;
