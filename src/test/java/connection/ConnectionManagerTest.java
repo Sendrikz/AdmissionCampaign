@@ -13,7 +13,7 @@ public class ConnectionManagerTest {
 
     @Ignore
     public void getConnectionTest() {
-        try (Connection connection = new ConnectionManager().getConnection()) {
+        try (Connection connection = ConnectionManager.getInstance().getConnection()) {
                 assertFalse(connection.isClosed());
         } catch (SQLException e) {
             e.printStackTrace();
@@ -22,7 +22,7 @@ public class ConnectionManagerTest {
 
     @Test
     public void getConnectionToTestBDTest() {
-        try (Connection connection = new ConnectionManager().getConnectionToTestBD()) {
+        try (Connection connection = ConnectionManager.getInstance().getConnectionToTestBD()) {
                 assertFalse(connection.isClosed());
         } catch (SQLException e) {
             e.printStackTrace();

@@ -68,4 +68,21 @@ public class UserService {
         ConnectionManager.getInstance().close(connection);
         return specialtyBooalenHashMap;
     }
+
+    public static HashMap<Subject, BigDecimal> getAllCheckedSubjectsByUser(int id) {
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        UserDao userDao = DaoFactory.getUserDao(connection);
+        HashMap<Subject, BigDecimal> subjectBigDecimalHashMap =
+                userDao.getAllCheckedSubjectsByUser(id);
+        ConnectionManager.getInstance().close(connection);
+        return subjectBigDecimalHashMap;
+    }
+
+    public static ArrayList<User> getAll() {
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        UserDao  userDao = DaoFactory.getUserDao(connection);
+        ArrayList<User> listOfAllUsers = userDao.getAll();
+        ConnectionManager.getInstance().close(connection);
+        return listOfAllUsers;
+    }
 }

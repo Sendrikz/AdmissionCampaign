@@ -1,5 +1,6 @@
 package services;
 
+import com.sun.deploy.panel.SpecialTreeListener;
 import model.connection.ConnectionManager;
 import model.dao.dao_implementations.DaoFactory;
 import model.dao.dao_interfaces.SpecialtyDao;
@@ -9,6 +10,7 @@ import org.apache.log4j.Logger;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SpecialtyService {
@@ -35,5 +37,15 @@ public class SpecialtyService {
         log.debug("HashMap of subjects by specialty: " + subjectBigDecimalHashMap);
         ConnectionManager.getInstance().close(connection);
         return subjectBigDecimalHashMap;
+    }
+
+    public static ArrayList<Specialty> getAll() {
+        log.info("Start class SpecialtyService getAll()");
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        SpecialtyDao specialtyDao = DaoFactory.getSpecialtyDao(connection);
+        ArrayList<Specialty> listOfSpecialties = specialtyDao.getAll();
+        log.debug("List of all specialties: " + listOfSpecialties);
+        ConnectionManager.getInstance().close(connection);
+        return listOfSpecialties;
     }
 }
