@@ -20,6 +20,9 @@
     <!-- Font-awesome -->
     <link rel="stylesheet" href="../../css/font-awesome.min.css">
 
+    <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
     <style type="text/css">
         .select-language {
             overflow: hidden;
@@ -71,6 +74,27 @@
     <!-- /login-content -->
 </div>
 <!-- /inner -->
+
+<c:choose>
+    <c:when test="${sessionScope.successfulRegistrated == 'yes'}">
+        <script>
+            swal('Good!', 'Your profile is created. Login to start', 'success');
+        </script>
+        <c:set var="successfulRegistrated" value="null" scope="session"/>
+    </c:when>
+    <c:when test="${sessionScope.successfulRegistrated == 'no'}">
+        <script>
+            swal('Try again!', 'Such user already created', 'error');
+        </script>
+        <c:set var="successfulRegistrated" value="null" scope="session"/>
+    </c:when>
+    <c:when test="${sessionScope.successfulLogin == 'no'}">
+        <script>
+            swal('Try again!', 'There is no such user', 'error');
+        </script>
+        <c:set var="successfulLogin" value="null" scope="session"/>
+    </c:when>
+</c:choose>
 
 <!-- Modal start -->
 <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">

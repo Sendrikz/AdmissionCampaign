@@ -25,6 +25,9 @@ public class RegistrationCommand implements ActionCommand {
             LoginService.addUser(firstName, lastName, patronymic, birthday, city, email, password);
             request.getSession().setAttribute("admin", false);
             page = "/jsp/login.jsp";
+            request.getSession().setAttribute("successfulRegistrated", "yes");
+        } else {
+            request.getSession().setAttribute("successfulRegistrated", "no");
         }
         return page;
     }

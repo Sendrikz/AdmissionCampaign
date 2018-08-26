@@ -45,9 +45,9 @@ public class LoginCommand implements ActionCommand {
         request.getSession().setAttribute("loginedUser", loginedUser);
         log.info("Logined user is " + loginedUser);
 
-        if (login == null || login.isEmpty() || password == null || password.isEmpty()) {
-            log.debug("Login or password is null");
-            return "index.jsp";
+        if (loginedUser == null) {
+            request.getSession().setAttribute("successfulLogin", "no");
+            return "/index.jsp";
         }
 
 //        if (request.getSession().getServletContext().getAttribute("userSession") != null){

@@ -62,13 +62,23 @@
         <div id="accordion">
             <jsp:useBean id="specialtyUserGradeHashMap" scope="session" type="java.util.HashMap"/>
             <c:forEach var="elem" items="${ specialtyUserGradeHashMap }" varStatus="status">
-            <h3> ${ elem.key.name }</h3>
+                <h3> ${ elem.key.name }
+                    <form>
+                        <button>Submit</button>
+                    </form>
+                </h3>
             <div>
                 <p>
-                    ${ elem.value }
+                    <c:forEach var="user" items="${ elem.value }" varStatus="status">
+                            ${user.value.lastName}
+                            ${user.value.firstName}
+                            ${user.value.patronymic}
+                            ${user.key}
+                    </c:forEach>
                 </p>
             </div>
             </c:forEach>
         </div>
+    <button>Send letters</button>
     </body></html>
 </fmt:bundle>
