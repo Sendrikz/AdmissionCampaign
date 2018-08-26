@@ -7,51 +7,44 @@ import services.SpecialtyService;
 import services.UserService;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class CountGeneralGrade {
 
     private static final Logger log = Logger.getLogger(CountGeneralGrade.class);
 
-    public static HashMap<Specialty, HashMap<BigDecimal, User>> fillListOfSpecialtiesAndUsers() {
+    public static HashMap<Specialty, TreeMap<BigDecimal, User>> fillListOfSpecialtiesAndUsers() {
         log.info("Start class CountGeneralGrade countGrade()");
-        HashMap<Specialty, HashMap<BigDecimal, User>> specialtyRatingList
-                = new HashMap<>();
-        HashMap<User, HashMap<Subject, BigDecimal>> listOfUsersAndTheirGrades
+        HashMap<Specialty, TreeMap<BigDecimal, User>> specialtyRatingList
                 = new HashMap<>();
 
-        ArrayList<User> listOfAllUsers = UserService.getAll();
-        for (User user : listOfAllUsers) {
-            listOfUsersAndTheirGrades.put(user,
-                    UserService.getAllCheckedSubjectsByUser(user.getId()));
-        }
-        log.debug("List of all users: " + listOfAllUsers);
+        ArrayList<Specialty> listOfSpecialty = SpecialtyService.getAll();
+        for (Specialty specialty : listOfSpecialty) {
+            HashMap<User, HashMap<Subject, BigDecimal>> listOfUsersAndTheirGrades
+                = new HashMap<>();
+            HashMap<Subject, BigDecimal> listOfSubjectsBySpecialty =
+                    SpecialtyService.getAllSubjectsOfSpecialty(specialty.getId());
 
-        ArrayList<Specialty> listOfAllSpecialties = SpecialtyService.getAll();
-        log.debug("List of all specialties: " + listOfAllSpecialties);
+            ArrayList<User> listOfUsersBySpecialty = UserService.getAllStudents(
+                    specialty.getId());
+            for (User user : listOfUsersBySpecialty) {
+                listOfUsersAndTheirGrades.put(user,
+                        UserService.getAllCheckedSubjectsByUser(user.getId()));
+            }
 
-        for (Specialty specialty : listOfAllSpecialties) {
+            specialtyRatingList.put(specialty, countGrade(listOfSubjectsBySpecialty,
+                        listOfUsersAndTheirGrades));
 
-            HashMap<Subject, BigDecimal> listOfSubjectsAndTheirCoef
-                    = SpecialtyService.getAllSubjectsOfSpecialty(specialty.getId());
-            log.debug("List of all subjects of specialty: " + listOfSubjectsAndTheirCoef);
-
-            specialtyRatingList.put(specialty, countGrade(listOfSubjectsAndTheirCoef,
-                    listOfUsersAndTheirGrades));
-            log.debug("SpecialtyRatingList: " + specialtyRatingList);
         }
 
         return specialtyRatingList;
     }
 
-    public static HashMap<BigDecimal, User> countGrade(HashMap<Subject, BigDecimal> listOfSubjectsAndTheirCoef,
+    static TreeMap<BigDecimal, User> countGrade(HashMap<Subject, BigDecimal> listOfSubjectsAndTheirCoef,
                                                        HashMap<User, HashMap<Subject, BigDecimal>> listOfUsersAndTheirGrades) {
 
         log.debug("List of all users and their grades: " + listOfUsersAndTheirGrades);
-        HashMap<BigDecimal, User> userGrade = new HashMap<>();
+        TreeMap<BigDecimal, User> userGrade = new TreeMap<>(new ComparatorDescend());
         for (Map.Entry<User, HashMap<Subject, BigDecimal>> entryUser :
                 listOfUsersAndTheirGrades.entrySet()) {
 
@@ -59,9 +52,11 @@ public class CountGeneralGrade {
             for (Map.Entry<Subject, BigDecimal> entrySubject :
                     listOfSubjectsAndTheirCoef.entrySet()) {
 
-                generalGrade = generalGrade.add(entrySubject.getValue().multiply(
-                        entryUser.getValue().get(entrySubject.getKey())));
-                log.debug("General grade: " + generalGrade);
+                if (entryUser.getValue().get(entrySubject.getKey()) != null) {
+                    generalGrade = generalGrade.add(entrySubject.getValue().multiply(
+                            entryUser.getValue().get(entrySubject.getKey())));
+                    log.debug("General grade: " + generalGrade);
+                }
             }
             userGrade.put(generalGrade, entryUser.getKey());
             log.debug("User grade TreeMap: " + userGrade);

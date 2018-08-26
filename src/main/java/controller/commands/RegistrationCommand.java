@@ -11,7 +11,7 @@ public class RegistrationCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) {
-        String page;
+        String page = null;
         log.info("start class RegistrationCommand execute()");
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
@@ -24,9 +24,7 @@ public class RegistrationCommand implements ActionCommand {
         if (LoginService.checkLogin (email, password) == null) {
             LoginService.addUser(firstName, lastName, patronymic, birthday, city, email, password);
             request.getSession().setAttribute("admin", false);
-            page = "/jsp/login.jsp:RegistrationSubmit";
-        } else {
-            page = "RegistrationFail";
+            page = "/jsp/login.jsp";
         }
         return page;
     }

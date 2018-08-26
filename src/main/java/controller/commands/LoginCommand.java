@@ -1,5 +1,6 @@
 package controller.commands;
 
+import controller.CountGeneralGrade;
 import model.enteties.Subject;
 import model.enteties.User;
 import org.apache.log4j.Logger;
@@ -45,14 +46,17 @@ public class LoginCommand implements ActionCommand {
         log.info("Logined user is " + loginedUser);
 
         if (login == null || login.isEmpty() || password == null || password.isEmpty()) {
+            log.debug("Login or password is null");
             return "index.jsp";
         }
 
-        if (request.getSession().getServletContext().getAttribute(login) != null){
-            ((HttpSession) request.getSession().getServletContext().getAttribute(login)).invalidate();
-        }
-
-        request.getSession().getServletContext().setAttribute(login, request.getSession());
+//        if (request.getSession().getServletContext().getAttribute("userSession") != null){
+//            log.debug("Attribute userSession != null");
+//            ((HttpSession) request.getSession().getServletContext().getAttribute("userSession")).invalidate();
+//        }
+//
+//        request.getSession().getServletContext().setAttribute("userSession", request.getSession());
+//        log.debug("User session: " + request.getSession().getServletContext().getAttribute("userSession"));
 
             log.info("Successfully login");
             if (LoginService.getRoleById(loginedUser.getRole()).toUpperCase().equals(ADMIN_ROLE)) {
@@ -79,7 +83,8 @@ public class LoginCommand implements ActionCommand {
             }
             log.debug("HashMap of subjects and users: " + subjectUserHashMap);
             request.getSession().setAttribute("subjectUserHashMap", subjectUserHashMap);
+            request.getSession().setAttribute("specialtyUserGradeHashMap", CountGeneralGrade.fillListOfSpecialtiesAndUsers());
 
-        return page;
+            return page;
     }
 }

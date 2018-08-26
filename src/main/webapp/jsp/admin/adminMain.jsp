@@ -15,6 +15,11 @@
                 $( "#tabsSubject" ).tabs();
             } );
         </script>
+        <script>
+            $( function() {
+                $( "#accordion" ).accordion();
+            } );
+        </script>
     </head>
     <body>
         <h3><fmt:message key="account"/></h3>
@@ -54,5 +59,16 @@
         </div>
     <h3> Get list of students who pass </h3>
 
+        <div id="accordion">
+            <jsp:useBean id="specialtyUserGradeHashMap" scope="session" type="java.util.HashMap"/>
+            <c:forEach var="elem" items="${ specialtyUserGradeHashMap }" varStatus="status">
+            <h3> ${ elem.key.name }</h3>
+            <div>
+                <p>
+                    ${ elem.value }
+                </p>
+            </div>
+            </c:forEach>
+        </div>
     </body></html>
 </fmt:bundle>

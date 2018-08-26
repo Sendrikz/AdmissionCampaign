@@ -11,6 +11,7 @@ import java.util.HashMap;
 public interface UserDao {
 
     ArrayList<User> getAll();
+    ArrayList<User> getAllStudents(int i);
 
     void add(User user);
     void addUserToSubject(User user, Subject subject, boolean checked, BigDecimal grade);

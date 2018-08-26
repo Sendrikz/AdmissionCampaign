@@ -85,4 +85,12 @@ public class UserService {
         ConnectionManager.getInstance().close(connection);
         return listOfAllUsers;
     }
+
+    public static ArrayList<User> getAllStudents(int id) {
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        UserDao userDao = DaoFactory.getUserDao(connection);
+        ArrayList<User> listOfAllStudents = userDao.getAllStudents(id);
+        ConnectionManager.getInstance().close(connection);
+        return listOfAllStudents;
+    }
 }

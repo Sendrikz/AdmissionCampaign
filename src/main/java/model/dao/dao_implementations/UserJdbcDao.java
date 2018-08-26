@@ -1,5 +1,6 @@
 package model.dao.dao_implementations;
 
+import model.connection.ConnectionManager;
 import model.dao.dao_interfaces.UserDao;
 import model.enteties.Specialty;
 import model.enteties.Subject;
@@ -56,6 +57,38 @@ public class UserJdbcDao implements UserDao {
             e.printStackTrace();
         }
         return listOfUsers;
+    }
+
+    @Override
+    public ArrayList<User> getAllStudents(int id) {
+        ArrayList<User> listOfStudents = new ArrayList<>();
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.getAllStudents"))) {
+
+            ps.setInt(1, id);
+
+            ResultSet resultSet = ps.executeQuery();
+
+            while (resultSet.next()) {
+                String lastName = resultSet.getString(2);
+                String firstName = resultSet.getString(3);
+                String patronymic = resultSet.getString(4);
+                String birthday = resultSet.getString(5);
+                String city = resultSet.getString(6);
+                String email = resultSet.getString(7);
+                String password = resultSet.getString(8);
+                int role = resultSet.getInt(9);
+                User user = new User(lastName, firstName, patronymic, birthday, city, email,
+                        password, role);
+                int userId = resultSet.getInt(1);
+                user.setId(userId);
+
+                listOfStudents.add(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listOfStudents;
     }
 
     @Override
