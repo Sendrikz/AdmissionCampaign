@@ -61,6 +61,12 @@
                 </script>
                 <c:set var="successfulSpecialty" value="null" scope="session"/>
             </c:when>
+            <c:when test="${sessionScope.notAllSubjects == 'yes'}">
+                <script>
+                    swal('Error!', 'You haven`t registrated on subject which is needed here', 'error');
+                </script>
+                <c:set var="notAllSubjects" value="null" scope="session"/>
+            </c:when>
             <c:when test="${sessionScope.successfulSpecialty == 'no'}">
                 <script>
                     swal('Error!', 'You have already registrated', 'error');

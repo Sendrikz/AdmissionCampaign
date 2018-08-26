@@ -7,6 +7,7 @@ import model.enteties.Specialty;
 import model.enteties.Subject;
 import model.enteties.User;
 import org.apache.log4j.Logger;
+import org.apache.velocity.tools.generic.ClassTool;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
@@ -92,5 +93,13 @@ public class UserService {
         ArrayList<User> listOfAllStudents = userDao.getAllStudents(id);
         ConnectionManager.getInstance().close(connection);
         return listOfAllStudents;
+    }
+
+    public static ArrayList<Subject> getAllSubjectsByUser(int id) {
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        UserDao userDao = DaoFactory.getUserDao(connection);
+        ArrayList<Subject> listOfSubjects = userDao.getAllSubjectsByUser(id);
+        ConnectionManager.getInstance().close(connection);
+        return listOfSubjects;
     }
 }

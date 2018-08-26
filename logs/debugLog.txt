@@ -3921,3 +3921,872 @@
 26/08/2018 7:15 [http-nio-8083-exec-9] DEBUG - <HashMap of subjects by specialty: {}>
 26/08/2018 7:15 [http-nio-8083-exec-9] DEBUG - <List of all users and their grades: {}>
 26/08/2018 7:15 [http-nio-8083-exec-9] DEBUG - <Page = /jsp/student/studentMain.jsp>
+26/08/2018 7:43 [http-nio-8083-exec-9] INFO - <Start class Controller processRequest()>
+26/08/2018 7:43 [http-nio-8083-exec-9] INFO - <start class RegistrationCommand execute()>
+26/08/2018 7:43 [http-nio-8083-exec-9] INFO - <Start class LoginLogic checkLogin()>
+26/08/2018 7:43 [http-nio-8083-exec-9] INFO - <No such user>
+26/08/2018 7:43 [http-nio-8083-exec-9] INFO - <Start class LoginLogic addUser()>
+26/08/2018 7:43 [http-nio-8083-exec-9] DEBUG - <Page = /jsp/login.jsp>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class Controller processRequest()>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <start class LoginCommand execute()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <Login: yuryeva.olga99@gmail.com>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <Password: Okok1919>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class LoginLogic checkLogin()>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Find user>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Logined user is User{id=102, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Successfully login>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <User is student>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class UniversityService getAllCities()>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class UniversityService getAllUniversities()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of universities: [University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}, University{id=17, name='Вищий навчальний заклад «Український католицький університет»', address=' Іларіона Свєнціцького, 17', city='Львів'}, University{id=18, name='Національний університет «Львівська політехніка»', address='Степана Бандери, 12', city='Львів'}, University{id=19, name='Ніжинський державний університет імені Миколи Гоголя', address='Графська, 2', city='Ніжин'}]>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <[University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}, University{id=17, name='Вищий навчальний заклад «Український католицький університет»', address=' Іларіона Свєнціцького, 17', city='Львів'}, University{id=18, name='Національний університет «Львівська політехніка»', address='Степана Бандери, 12', city='Львів'}, University{id=19, name='Ніжинський державний університет імені Миколи Гоголя', address='Графська, 2', city='Ніжин'}]>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <[Львів, Київ, Ніжин]>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <List of cities to display: [Львів, Київ, Ніжин]>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <List of subjects to display: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=3, name='Фізика', duration=140}, Subject{id=4, name='Географія', duration=80}, Subject{id=5, name='Українська мова та література', duration=110}, Subject{id=6, name='Хімія', duration=80}, Subject{id=7, name='Біологія', duration=90}, Subject{id=8, name='Історія', duration=110}]>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects and users: {Subject{id=7, name='Біологія', duration=90}=[], Subject{id=3, name='Фізика', duration=140}=[], Subject{id=1, name='Математика', duration=120}=[], Subject{id=8, name='Історія', duration=110}=[], Subject{id=5, name='Українська мова та література', duration=110}=[], Subject{id=6, name='Хімія', duration=80}=[], Subject{id=2, name='Іноземна мова', duration=90}=[], Subject{id=4, name='Географія', duration=80}=[]}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class CountGeneralGrade countGrade()>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAll()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all specialties: [Specialty{id=5, name='Інженерія програмного забезпечення', quantityOfStudents=60, facultyId=28}, Specialty{id=6, name='Комп`ютерні науки', quantityOfStudents=50, facultyId=28}, Specialty{id=7, name='Фізика та астрономія', quantityOfStudents=50, facultyId=27}, Specialty{id=8, name='Хімія', quantityOfStudents=50, facultyId=27}, Specialty{id=9, name='Маркетинг', quantityOfStudents=50, facultyId=26}, Specialty{id=10, name='Фінанси, банківська справа та страхування', quantityOfStudents=50, facultyId=26}, Specialty{id=11, name='Менеджмент', quantityOfStudents=50, facultyId=26}, Specialty{id=13, name='Кібербезпека', quantityOfStudents=65, facultyId=18}, Specialty{id=14, name='Прикладна математика', quantityOfStudents=85, facultyId=29}, Specialty{id=15, name='Кібербезпека', quantityOfStudents=180, facultyId=29}, Specialty{id=16, name='Прикладна фізика та наноматеріали', quantityOfStudents=60, facultyId=29}, Specialty{id=17, name=' Історія та археологія', quantityOfStudents=15, facultyId=25}, Specialty{id=18, name='Музеєзнавство, пам’яткознавство', quantityOfStudents=50, facultyId=25}, Specialty{id=19, name='Середня освіта', quantityOfStudents=100, facultyId=25}, Specialty{id=20, name='Геодезія та землеустрій', quantityOfStudents=10, facultyId=24}, Specialty{id=21, name='Туризм', quantityOfStudents=10, facultyId=24}, Specialty{id=22, name='Географія', quantityOfStudents=25, facultyId=24}, Specialty{id=23, name='Фізика та астрономія', quantityOfStudents=90, facultyId=23}, Specialty{id=24, name='Астрономія', quantityOfStudents=25, facultyId=23}, Specialty{id=25, name='Прикладна математика', quantityOfStudents=25, facultyId=22}, Specialty{id=26, name='Інженерія програмного забезпечення', quantityOfStudents=25, facultyId=22}, Specialty{id=27, name='Комп’ютерна інженерія', quantityOfStudents=120, facultyId=22}, Specialty{id=28, name='Фізика та астрономія', quantityOfStudents=60, facultyId=20}, Specialty{id=29, name='Математика', quantityOfStudents=60, facultyId=20}, Specialty{id=30, name='Облік і оподаткування', quantityOfStudents=140, facultyId=19}, Specialty{id=31, name='Фінанси, банківська справа та страхування', quantityOfStudents=190, facultyId=19}, Specialty{id=32, name='Менеджмент', quantityOfStudents=350, facultyId=19}, Specialty{id=33, name='Комп`ютерні науки', quantityOfStudents=75, facultyId=18}, Specialty{id=34, name='Системний аналіз', quantityOfStudents=18, facultyId=18}]>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {User{id=101, lastName='Rokky', firstName='Orange', patronymic='Rikki', birthday=2000-05-17, city='Kyiv', email='rokky@gmail.com', password='Rokky1818', role=93}={Subject{id=3, name='Фізика', duration=140}=120.0, Subject{id=1, name='Математика', duration=120}=180.0, Subject{id=5, name='Українська мова та література', duration=110}=179.0, Subject{id=2, name='Іноземна мова', duration=90}=190.0}, User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}={Subject{id=7, name='Біологія', duration=90}=57.0, Subject{id=3, name='Фізика', duration=140}=120.0, Subject{id=1, name='Математика', duration=120}=78.9, Subject{id=8, name='Історія', duration=110}=189.0, Subject{id=5, name='Українська мова та література', duration=110}=200.0, Subject{id=6, name='Хімія', duration=80}=111.0, Subject{id=2, name='Іноземна мова', duration=90}=50.0, Subject{id=4, name='Географія', duration=80}=99.0}}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <General grade: 24.00>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <General grade: 114.00>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <General grade: 149.80>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <User grade TreeMap: {149.80=User{id=101, lastName='Rokky', firstName='Orange', patronymic='Rikki', birthday=2000-05-17, city='Kyiv', email='rokky@gmail.com', password='Rokky1818', role=93}}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <General grade: 24.00>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <General grade: 63.45>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <General grade: 103.45>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <User grade TreeMap: {149.80=User{id=101, lastName='Rokky', firstName='Orange', patronymic='Rikki', birthday=2000-05-17, city='Kyiv', email='rokky@gmail.com', password='Rokky1818', role=93}, 103.45=User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {User{id=101, lastName='Rokky', firstName='Orange', patronymic='Rikki', birthday=2000-05-17, city='Kyiv', email='rokky@gmail.com', password='Rokky1818', role=93}={Subject{id=3, name='Фізика', duration=140}=120.0, Subject{id=1, name='Математика', duration=120}=180.0, Subject{id=5, name='Українська мова та література', duration=110}=179.0, Subject{id=2, name='Іноземна мова', duration=90}=190.0}}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <General grade: 90.00>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <General grade: 125.80>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <General grade: 163.80>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <User grade TreeMap: {163.80=User{id=101, lastName='Rokky', firstName='Orange', patronymic='Rikki', birthday=2000-05-17, city='Kyiv', email='rokky@gmail.com', password='Rokky1818', role=93}}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.2, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=6, name='Хімія', duration=80}=0.5}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}={Subject{id=7, name='Біологія', duration=90}=57.0, Subject{id=3, name='Фізика', duration=140}=120.0, Subject{id=1, name='Математика', duration=120}=78.9, Subject{id=8, name='Історія', duration=110}=189.0, Subject{id=5, name='Українська мова та література', duration=110}=200.0, Subject{id=6, name='Хімія', duration=80}=111.0, Subject{id=2, name='Іноземна мова', duration=90}=50.0, Subject{id=4, name='Географія', duration=80}=99.0}}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <General grade: 94.50>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <General grade: 134.50>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <General grade: 144.50>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <User grade TreeMap: {144.50=User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:44 [http-nio-8083-exec-1] DEBUG - <Page = /jsp/student/studentMain.jsp>
+26/08/2018 7:44 [http-nio-8083-exec-2] INFO - <Start class Controller processRequest()>
+26/08/2018 7:44 [http-nio-8083-exec-2] INFO - <Start class RegistrationForSubjectCommand execute()>
+26/08/2018 7:44 [http-nio-8083-exec-2] DEBUG - <Selected subject: Математика>
+26/08/2018 7:44 [http-nio-8083-exec-2] DEBUG - <Current user: User{id=102, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}>
+26/08/2018 7:44 [http-nio-8083-exec-2] DEBUG - <List of subjects: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=3, name='Фізика', duration=140}, Subject{id=4, name='Географія', duration=80}, Subject{id=5, name='Українська мова та література', duration=110}, Subject{id=6, name='Хімія', duration=80}, Subject{id=7, name='Біологія', duration=90}, Subject{id=8, name='Історія', duration=110}]>
+26/08/2018 7:44 [http-nio-8083-exec-2] DEBUG - <Find subject: Subject{id=1, name='Математика', duration=120}>
+26/08/2018 7:44 [http-nio-8083-exec-2] INFO - <Start class UserService method addUserToSubject()>
+26/08/2018 7:44 [http-nio-8083-exec-2] INFO - <allSubjectsByUser()>
+26/08/2018 7:44 [http-nio-8083-exec-2] DEBUG - <List of subject by user id: []>
+26/08/2018 7:44 [http-nio-8083-exec-2] INFO - <There is no user in table User_Subject>
+26/08/2018 7:44 [http-nio-8083-exec-2] DEBUG - <Successful = yes>
+26/08/2018 7:44 [http-nio-8083-exec-2] DEBUG - </jsp/student/studentMain.jsp>
+26/08/2018 7:44 [http-nio-8083-exec-2] DEBUG - <Page = /jsp/student/studentMain.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-3] INFO - <Start class Controller processRequest()>
+26/08/2018 7:45 [http-nio-8083-exec-3] INFO - <Start class RegistrationForSubjectCommand execute()>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <Selected subject: Іноземна мова>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <Current user: User{id=102, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <List of subjects: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=3, name='Фізика', duration=140}, Subject{id=4, name='Географія', duration=80}, Subject{id=5, name='Українська мова та література', duration=110}, Subject{id=6, name='Хімія', duration=80}, Subject{id=7, name='Біологія', duration=90}, Subject{id=8, name='Історія', duration=110}]>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <Find subject: Subject{id=2, name='Іноземна мова', duration=90}>
+26/08/2018 7:45 [http-nio-8083-exec-3] INFO - <Start class UserService method addUserToSubject()>
+26/08/2018 7:45 [http-nio-8083-exec-3] INFO - <allSubjectsByUser()>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <List of subject by user id: [Subject{id=1, name='Математика', duration=120}]>
+26/08/2018 7:45 [http-nio-8083-exec-3] INFO - <There is no user in table User_Subject>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <Successful = yes>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - </jsp/student/studentMain.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <Page = /jsp/student/studentMain.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <Start class Controller processRequest()>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <Start class RegistrationForSubjectCommand execute()>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <Selected subject: Українська мова та література>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <Current user: User{id=102, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <List of subjects: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=3, name='Фізика', duration=140}, Subject{id=4, name='Географія', duration=80}, Subject{id=5, name='Українська мова та література', duration=110}, Subject{id=6, name='Хімія', duration=80}, Subject{id=7, name='Біологія', duration=90}, Subject{id=8, name='Історія', duration=110}]>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <Find subject: Subject{id=5, name='Українська мова та література', duration=110}>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <Start class UserService method addUserToSubject()>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <allSubjectsByUser()>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <List of subject by user id: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}]>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <There is no user in table User_Subject>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <Successful = yes>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - </jsp/student/studentMain.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <Page = /jsp/student/studentMain.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-4] INFO - <Start class Controller processRequest()>
+26/08/2018 7:45 [http-nio-8083-exec-4] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+26/08/2018 7:45 [http-nio-8083-exec-4] INFO - <Start class UniversityService getAllUniversities()>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <List of universities: [University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}, University{id=17, name='Вищий навчальний заклад «Український католицький університет»', address=' Іларіона Свєнціцького, 17', city='Львів'}, University{id=18, name='Національний університет «Львівська політехніка»', address='Степана Бандери, 12', city='Львів'}, University{id=19, name='Ніжинський державний університет імені Миколи Гоголя', address='Графська, 2', city='Ніжин'}]>
+26/08/2018 7:45 [http-nio-8083-exec-4] INFO - <List of universities: [University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}, University{id=17, name='Вищий навчальний заклад «Український католицький університет»', address=' Іларіона Свєнціцького, 17', city='Львів'}, University{id=18, name='Національний університет «Львівська політехніка»', address='Степана Бандери, 12', city='Львів'}, University{id=19, name='Ніжинський державний університет імені Миколи Гоголя', address='Графська, 2', city='Ніжин'}]>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <Value of city from array: Київ>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <Value of city from array: Київ>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <Value of city from array: Київ>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <Value of city from array: Львів>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <Value of city from array: Львів>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <Value of city from array: Ніжин>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <List of universities to display: [University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}]>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <Page = /jsp/student/studentUniByCity.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-7] INFO - <Start class Controller processRequest()>
+26/08/2018 7:45 [http-nio-8083-exec-7] INFO - <Start class GenerateSpecialtyByUniCommand execute()>
+26/08/2018 7:45 [http-nio-8083-exec-7] DEBUG - <University id from jsp: 14>
+26/08/2018 7:45 [http-nio-8083-exec-7] INFO - <Start class UniversityService getAllFacultiesOfUniversity()>
+26/08/2018 7:45 [http-nio-8083-exec-7] DEBUG - <List of all faculties by university: [Faculty{id=26, name='Факультет економічних наук', university=14}, Faculty{id=27, name='Факультет природничих наук', university=14}, Faculty{id=28, name='Факультет інформатики', university=14}]>
+26/08/2018 7:45 [http-nio-8083-exec-7] INFO - <Start class UniversityService getUniversityById()>
+26/08/2018 7:45 [http-nio-8083-exec-7] DEBUG - <Finded university: University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}>
+26/08/2018 7:45 [http-nio-8083-exec-7] DEBUG - <List of faculties by university: [Faculty{id=26, name='Факультет економічних наук', university=14}, Faculty{id=27, name='Факультет природничих наук', university=14}, Faculty{id=28, name='Факультет інформатики', university=14}]>
+26/08/2018 7:45 [http-nio-8083-exec-7] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+26/08/2018 7:45 [http-nio-8083-exec-7] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:45 [http-nio-8083-exec-7] DEBUG - <HashMap of subjects by specialty: {Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:45 [http-nio-8083-exec-7] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:45 [http-nio-8083-exec-7] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:45 [http-nio-8083-exec-7] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:45 [http-nio-8083-exec-7] DEBUG - <HashMap of subjects by specialty: {Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:45 [http-nio-8083-exec-7] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+26/08/2018 7:45 [http-nio-8083-exec-7] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:45 [http-nio-8083-exec-7] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:45 [http-nio-8083-exec-7] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:45 [http-nio-8083-exec-7] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.2, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=6, name='Хімія', duration=80}=0.5}>
+26/08/2018 7:45 [http-nio-8083-exec-7] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+26/08/2018 7:45 [http-nio-8083-exec-7] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:45 [http-nio-8083-exec-7] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:45 [http-nio-8083-exec-7] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:45 [http-nio-8083-exec-7] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:45 [http-nio-8083-exec-7] DEBUG - <Faculty_specialty hash map: {Faculty{id=26, name='Факультет економічних наук', university=14}=[Specialty{id=9, name='Маркетинг', quantityOfStudents=50, facultyId=26}, Specialty{id=10, name='Фінанси, банківська справа та страхування', quantityOfStudents=50, facultyId=26}, Specialty{id=11, name='Менеджмент', quantityOfStudents=50, facultyId=26}], Faculty{id=27, name='Факультет природничих наук', university=14}=[Specialty{id=7, name='Фізика та астрономія', quantityOfStudents=50, facultyId=27}, Specialty{id=8, name='Хімія', quantityOfStudents=50, facultyId=27}], Faculty{id=28, name='Факультет інформатики', university=14}=[Specialty{id=5, name='Інженерія програмного забезпечення', quantityOfStudents=60, facultyId=28}, Specialty{id=6, name='Комп`ютерні науки', quantityOfStudents=50, facultyId=28}]}>
+26/08/2018 7:45 [http-nio-8083-exec-7] DEBUG - <Map of specialties and subjects: {Specialty{id=9, name='Маркетинг', quantityOfStudents=50, facultyId=26}={Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=11, name='Менеджмент', quantityOfStudents=50, facultyId=26}={Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=5, name='Інженерія програмного забезпечення', quantityOfStudents=60, facultyId=28}={Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}, Specialty{id=6, name='Комп`ютерні науки', quantityOfStudents=50, facultyId=28}={Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=8, name='Хімія', quantityOfStudents=50, facultyId=27}={Subject{id=1, name='Математика', duration=120}=0.2, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=6, name='Хімія', duration=80}=0.5}, Specialty{id=10, name='Фінанси, банківська справа та страхування', quantityOfStudents=50, facultyId=26}={Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=7, name='Фізика та астрономія', quantityOfStudents=50, facultyId=27}={Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}}>
+26/08/2018 7:45 [http-nio-8083-exec-7] DEBUG - <Page: /jsp/student/studentSpecialties.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-7] DEBUG - <Page = /jsp/student/studentSpecialties.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-8] INFO - <Start class Controller processRequest()>
+26/08/2018 7:45 [http-nio-8083-exec-8] INFO - <Start class RegistrationForSpecialtyCommand execute()>
+26/08/2018 7:45 [http-nio-8083-exec-8] INFO - <Start class SpecialtyService findById()>
+26/08/2018 7:45 [http-nio-8083-exec-8] DEBUG - <Specialty{id=9, name='Маркетинг', quantityOfStudents=50, facultyId=26}>
+26/08/2018 7:45 [http-nio-8083-exec-8] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:45 [http-nio-8083-exec-8] DEBUG - <HashMap of subjects by specialty: {Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:45 [http-nio-8083-exec-8] DEBUG - <Page = /jsp/student/studentSpecialties.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-5] INFO - <Start class Controller processRequest()>
+26/08/2018 7:45 [http-nio-8083-exec-5] DEBUG - <Page = /jsp/student/studentMain.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-9] INFO - <Start class Controller processRequest()>
+26/08/2018 7:45 [http-nio-8083-exec-9] INFO - <Start class RegistrationForSubjectCommand execute()>
+26/08/2018 7:45 [http-nio-8083-exec-9] DEBUG - <Selected subject: Математика>
+26/08/2018 7:45 [http-nio-8083-exec-9] DEBUG - <Current user: User{id=102, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}>
+26/08/2018 7:45 [http-nio-8083-exec-9] DEBUG - <List of subjects: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=3, name='Фізика', duration=140}, Subject{id=4, name='Географія', duration=80}, Subject{id=5, name='Українська мова та література', duration=110}, Subject{id=6, name='Хімія', duration=80}, Subject{id=7, name='Біологія', duration=90}, Subject{id=8, name='Історія', duration=110}]>
+26/08/2018 7:45 [http-nio-8083-exec-9] DEBUG - <Find subject: Subject{id=1, name='Математика', duration=120}>
+26/08/2018 7:45 [http-nio-8083-exec-9] INFO - <Start class UserService method addUserToSubject()>
+26/08/2018 7:45 [http-nio-8083-exec-9] INFO - <allSubjectsByUser()>
+26/08/2018 7:45 [http-nio-8083-exec-9] DEBUG - <List of subject by user id: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=5, name='Українська мова та література', duration=110}]>
+26/08/2018 7:45 [http-nio-8083-exec-9] INFO - <There is user in table User_Subject>
+26/08/2018 7:45 [http-nio-8083-exec-9] DEBUG - <Successful = no>
+26/08/2018 7:45 [http-nio-8083-exec-9] DEBUG - </jsp/student/studentMain.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-9] DEBUG - <Page = /jsp/student/studentMain.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-10] INFO - <Start class Controller processRequest()>
+26/08/2018 7:45 [http-nio-8083-exec-10] INFO - <Start class RegistrationForSubjectCommand execute()>
+26/08/2018 7:45 [http-nio-8083-exec-10] DEBUG - <Selected subject: Іноземна мова>
+26/08/2018 7:45 [http-nio-8083-exec-10] DEBUG - <Current user: User{id=102, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}>
+26/08/2018 7:45 [http-nio-8083-exec-10] DEBUG - <List of subjects: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=3, name='Фізика', duration=140}, Subject{id=4, name='Географія', duration=80}, Subject{id=5, name='Українська мова та література', duration=110}, Subject{id=6, name='Хімія', duration=80}, Subject{id=7, name='Біологія', duration=90}, Subject{id=8, name='Історія', duration=110}]>
+26/08/2018 7:45 [http-nio-8083-exec-10] DEBUG - <Find subject: Subject{id=2, name='Іноземна мова', duration=90}>
+26/08/2018 7:45 [http-nio-8083-exec-10] INFO - <Start class UserService method addUserToSubject()>
+26/08/2018 7:45 [http-nio-8083-exec-10] INFO - <allSubjectsByUser()>
+26/08/2018 7:45 [http-nio-8083-exec-10] DEBUG - <List of subject by user id: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=5, name='Українська мова та література', duration=110}]>
+26/08/2018 7:45 [http-nio-8083-exec-10] INFO - <There is user in table User_Subject>
+26/08/2018 7:45 [http-nio-8083-exec-10] DEBUG - <Successful = no>
+26/08/2018 7:45 [http-nio-8083-exec-10] DEBUG - </jsp/student/studentMain.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-10] DEBUG - <Page = /jsp/student/studentMain.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-1] INFO - <Start class Controller processRequest()>
+26/08/2018 7:45 [http-nio-8083-exec-1] INFO - <Start class RegistrationForSubjectCommand execute()>
+26/08/2018 7:45 [http-nio-8083-exec-1] DEBUG - <Selected subject: Фізика>
+26/08/2018 7:45 [http-nio-8083-exec-1] DEBUG - <Current user: User{id=102, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}>
+26/08/2018 7:45 [http-nio-8083-exec-1] DEBUG - <List of subjects: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=3, name='Фізика', duration=140}, Subject{id=4, name='Географія', duration=80}, Subject{id=5, name='Українська мова та література', duration=110}, Subject{id=6, name='Хімія', duration=80}, Subject{id=7, name='Біологія', duration=90}, Subject{id=8, name='Історія', duration=110}]>
+26/08/2018 7:45 [http-nio-8083-exec-1] DEBUG - <Find subject: Subject{id=3, name='Фізика', duration=140}>
+26/08/2018 7:45 [http-nio-8083-exec-1] INFO - <Start class UserService method addUserToSubject()>
+26/08/2018 7:45 [http-nio-8083-exec-1] INFO - <allSubjectsByUser()>
+26/08/2018 7:45 [http-nio-8083-exec-1] DEBUG - <List of subject by user id: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=5, name='Українська мова та література', duration=110}]>
+26/08/2018 7:45 [http-nio-8083-exec-1] INFO - <There is no user in table User_Subject>
+26/08/2018 7:45 [http-nio-8083-exec-1] DEBUG - <Successful = yes>
+26/08/2018 7:45 [http-nio-8083-exec-1] DEBUG - </jsp/student/studentMain.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-1] DEBUG - <Page = /jsp/student/studentMain.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-2] INFO - <Start class Controller processRequest()>
+26/08/2018 7:45 [http-nio-8083-exec-2] INFO - <Start class RegistrationForSubjectCommand execute()>
+26/08/2018 7:45 [http-nio-8083-exec-2] DEBUG - <Selected subject: Українська мова та література>
+26/08/2018 7:45 [http-nio-8083-exec-2] DEBUG - <Current user: User{id=102, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}>
+26/08/2018 7:45 [http-nio-8083-exec-2] DEBUG - <List of subjects: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=3, name='Фізика', duration=140}, Subject{id=4, name='Географія', duration=80}, Subject{id=5, name='Українська мова та література', duration=110}, Subject{id=6, name='Хімія', duration=80}, Subject{id=7, name='Біологія', duration=90}, Subject{id=8, name='Історія', duration=110}]>
+26/08/2018 7:45 [http-nio-8083-exec-2] DEBUG - <Find subject: Subject{id=5, name='Українська мова та література', duration=110}>
+26/08/2018 7:45 [http-nio-8083-exec-2] INFO - <Start class UserService method addUserToSubject()>
+26/08/2018 7:45 [http-nio-8083-exec-2] INFO - <allSubjectsByUser()>
+26/08/2018 7:45 [http-nio-8083-exec-2] DEBUG - <List of subject by user id: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=3, name='Фізика', duration=140}, Subject{id=5, name='Українська мова та література', duration=110}]>
+26/08/2018 7:45 [http-nio-8083-exec-2] INFO - <There is user in table User_Subject>
+26/08/2018 7:45 [http-nio-8083-exec-2] DEBUG - <Successful = no>
+26/08/2018 7:45 [http-nio-8083-exec-2] DEBUG - </jsp/student/studentMain.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-2] DEBUG - <Page = /jsp/student/studentMain.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-3] INFO - <Start class Controller processRequest()>
+26/08/2018 7:45 [http-nio-8083-exec-3] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+26/08/2018 7:45 [http-nio-8083-exec-3] INFO - <Start class UniversityService getAllUniversities()>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <List of universities: [University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}, University{id=17, name='Вищий навчальний заклад «Український католицький університет»', address=' Іларіона Свєнціцького, 17', city='Львів'}, University{id=18, name='Національний університет «Львівська політехніка»', address='Степана Бандери, 12', city='Львів'}, University{id=19, name='Ніжинський державний університет імені Миколи Гоголя', address='Графська, 2', city='Ніжин'}]>
+26/08/2018 7:45 [http-nio-8083-exec-3] INFO - <List of universities: [University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}, University{id=17, name='Вищий навчальний заклад «Український католицький університет»', address=' Іларіона Свєнціцького, 17', city='Львів'}, University{id=18, name='Національний університет «Львівська політехніка»', address='Степана Бандери, 12', city='Львів'}, University{id=19, name='Ніжинський державний університет імені Миколи Гоголя', address='Графська, 2', city='Ніжин'}]>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <Value of city from array: Київ>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <Value of city from array: Київ>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <Value of city from array: Київ>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <Value of city from array: Львів>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <Value of city from array: Львів>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <Value of city from array: Ніжин>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <List of universities to display: [University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}]>
+26/08/2018 7:45 [http-nio-8083-exec-3] DEBUG - <Page = /jsp/student/studentUniByCity.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <Start class Controller processRequest()>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <Start class GenerateSpecialtyByUniCommand execute()>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <University id from jsp: 14>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <Start class UniversityService getAllFacultiesOfUniversity()>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <List of all faculties by university: [Faculty{id=26, name='Факультет економічних наук', university=14}, Faculty{id=27, name='Факультет природничих наук', university=14}, Faculty{id=28, name='Факультет інформатики', university=14}]>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <Start class UniversityService getUniversityById()>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <Finded university: University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <List of faculties by university: [Faculty{id=26, name='Факультет економічних наук', university=14}, Faculty{id=27, name='Факультет природничих наук', university=14}, Faculty{id=28, name='Факультет інформатики', university=14}]>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.2, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=6, name='Хімія', duration=80}=0.5}>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:45 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <Faculty_specialty hash map: {Faculty{id=26, name='Факультет економічних наук', university=14}=[Specialty{id=9, name='Маркетинг', quantityOfStudents=50, facultyId=26}, Specialty{id=10, name='Фінанси, банківська справа та страхування', quantityOfStudents=50, facultyId=26}, Specialty{id=11, name='Менеджмент', quantityOfStudents=50, facultyId=26}], Faculty{id=27, name='Факультет природничих наук', university=14}=[Specialty{id=7, name='Фізика та астрономія', quantityOfStudents=50, facultyId=27}, Specialty{id=8, name='Хімія', quantityOfStudents=50, facultyId=27}], Faculty{id=28, name='Факультет інформатики', university=14}=[Specialty{id=5, name='Інженерія програмного забезпечення', quantityOfStudents=60, facultyId=28}, Specialty{id=6, name='Комп`ютерні науки', quantityOfStudents=50, facultyId=28}]}>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <Map of specialties and subjects: {Specialty{id=9, name='Маркетинг', quantityOfStudents=50, facultyId=26}={Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=11, name='Менеджмент', quantityOfStudents=50, facultyId=26}={Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=5, name='Інженерія програмного забезпечення', quantityOfStudents=60, facultyId=28}={Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}, Specialty{id=6, name='Комп`ютерні науки', quantityOfStudents=50, facultyId=28}={Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=8, name='Хімія', quantityOfStudents=50, facultyId=27}={Subject{id=1, name='Математика', duration=120}=0.2, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=6, name='Хімія', duration=80}=0.5}, Specialty{id=10, name='Фінанси, банківська справа та страхування', quantityOfStudents=50, facultyId=26}={Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=7, name='Фізика та астрономія', quantityOfStudents=50, facultyId=27}={Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}}>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <Page: /jsp/student/studentSpecialties.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-6] DEBUG - <Page = /jsp/student/studentSpecialties.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-4] INFO - <Start class Controller processRequest()>
+26/08/2018 7:45 [http-nio-8083-exec-4] INFO - <Start class RegistrationForSpecialtyCommand execute()>
+26/08/2018 7:45 [http-nio-8083-exec-4] INFO - <Start class SpecialtyService findById()>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <Specialty{id=5, name='Інженерія програмного забезпечення', quantityOfStudents=60, facultyId=28}>
+26/08/2018 7:45 [http-nio-8083-exec-4] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:45 [http-nio-8083-exec-4] INFO - <addUserToSpecialty()>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <User to add: User{id=102, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <Specialty to add: Specialty{id=5, name='Інженерія програмного забезпечення', quantityOfStudents=60, facultyId=28}>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <Map of specialties by user: {}>
+26/08/2018 7:45 [http-nio-8083-exec-4] INFO - <There is no such user in table user_specialty>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <Successful = yes>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - </jsp/student/studentSpecialties.jsp>
+26/08/2018 7:45 [http-nio-8083-exec-4] DEBUG - <Page = /jsp/student/studentSpecialties.jsp>
+26/08/2018 7:47 [http-nio-8083-exec-9] INFO - <Start class Controller processRequest()>
+26/08/2018 7:47 [http-nio-8083-exec-9] INFO - <start class RegistrationCommand execute()>
+26/08/2018 7:47 [http-nio-8083-exec-9] INFO - <Start class LoginLogic checkLogin()>
+26/08/2018 7:48 [http-nio-8083-exec-9] INFO - <No such user>
+26/08/2018 7:48 [http-nio-8083-exec-9] INFO - <Start class LoginLogic addUser()>
+26/08/2018 7:48 [http-nio-8083-exec-9] DEBUG - <Page = /jsp/login.jsp>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class Controller processRequest()>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <start class LoginCommand execute()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <Login: yuryeva.olga99@gmail.com>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <Password: Okok1919>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class LoginLogic checkLogin()>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Find user>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Logined user is User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Successfully login>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <User is student>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class UniversityService getAllCities()>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class UniversityService getAllUniversities()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of universities: [University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}, University{id=17, name='Вищий навчальний заклад «Український католицький університет»', address=' Іларіона Свєнціцького, 17', city='Львів'}, University{id=18, name='Національний університет «Львівська політехніка»', address='Степана Бандери, 12', city='Львів'}, University{id=19, name='Ніжинський державний університет імені Миколи Гоголя', address='Графська, 2', city='Ніжин'}]>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <[University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}, University{id=17, name='Вищий навчальний заклад «Український католицький університет»', address=' Іларіона Свєнціцького, 17', city='Львів'}, University{id=18, name='Національний університет «Львівська політехніка»', address='Степана Бандери, 12', city='Львів'}, University{id=19, name='Ніжинський державний університет імені Миколи Гоголя', address='Графська, 2', city='Ніжин'}]>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <[Львів, Київ, Ніжин]>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <List of cities to display: [Львів, Київ, Ніжин]>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <List of subjects to display: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=3, name='Фізика', duration=140}, Subject{id=4, name='Географія', duration=80}, Subject{id=5, name='Українська мова та література', duration=110}, Subject{id=6, name='Хімія', duration=80}, Subject{id=7, name='Біологія', duration=90}, Subject{id=8, name='Історія', duration=110}]>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects and users: {Subject{id=7, name='Біологія', duration=90}=[], Subject{id=3, name='Фізика', duration=140}=[], Subject{id=1, name='Математика', duration=120}=[], Subject{id=8, name='Історія', duration=110}=[], Subject{id=5, name='Українська мова та література', duration=110}=[], Subject{id=6, name='Хімія', duration=80}=[], Subject{id=2, name='Іноземна мова', duration=90}=[], Subject{id=4, name='Географія', duration=80}=[]}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class CountGeneralGrade countGrade()>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAll()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all specialties: [Specialty{id=5, name='Інженерія програмного забезпечення', quantityOfStudents=60, facultyId=28}, Specialty{id=6, name='Комп`ютерні науки', quantityOfStudents=50, facultyId=28}, Specialty{id=7, name='Фізика та астрономія', quantityOfStudents=50, facultyId=27}, Specialty{id=8, name='Хімія', quantityOfStudents=50, facultyId=27}, Specialty{id=9, name='Маркетинг', quantityOfStudents=50, facultyId=26}, Specialty{id=10, name='Фінанси, банківська справа та страхування', quantityOfStudents=50, facultyId=26}, Specialty{id=11, name='Менеджмент', quantityOfStudents=50, facultyId=26}, Specialty{id=13, name='Кібербезпека', quantityOfStudents=65, facultyId=18}, Specialty{id=14, name='Прикладна математика', quantityOfStudents=85, facultyId=29}, Specialty{id=15, name='Кібербезпека', quantityOfStudents=180, facultyId=29}, Specialty{id=16, name='Прикладна фізика та наноматеріали', quantityOfStudents=60, facultyId=29}, Specialty{id=17, name=' Історія та археологія', quantityOfStudents=15, facultyId=25}, Specialty{id=18, name='Музеєзнавство, пам’яткознавство', quantityOfStudents=50, facultyId=25}, Specialty{id=19, name='Середня освіта', quantityOfStudents=100, facultyId=25}, Specialty{id=20, name='Геодезія та землеустрій', quantityOfStudents=10, facultyId=24}, Specialty{id=21, name='Туризм', quantityOfStudents=10, facultyId=24}, Specialty{id=22, name='Географія', quantityOfStudents=25, facultyId=24}, Specialty{id=23, name='Фізика та астрономія', quantityOfStudents=90, facultyId=23}, Specialty{id=24, name='Астрономія', quantityOfStudents=25, facultyId=23}, Specialty{id=25, name='Прикладна математика', quantityOfStudents=25, facultyId=22}, Specialty{id=26, name='Інженерія програмного забезпечення', quantityOfStudents=25, facultyId=22}, Specialty{id=27, name='Комп’ютерна інженерія', quantityOfStudents=120, facultyId=22}, Specialty{id=28, name='Фізика та астрономія', quantityOfStudents=60, facultyId=20}, Specialty{id=29, name='Математика', quantityOfStudents=60, facultyId=20}, Specialty{id=30, name='Облік і оподаткування', quantityOfStudents=140, facultyId=19}, Specialty{id=31, name='Фінанси, банківська справа та страхування', quantityOfStudents=190, facultyId=19}, Specialty{id=32, name='Менеджмент', quantityOfStudents=350, facultyId=19}, Specialty{id=33, name='Комп`ютерні науки', quantityOfStudents=75, facultyId=18}, Specialty{id=34, name='Системний аналіз', quantityOfStudents=18, facultyId=18}]>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {User{id=101, lastName='Rokky', firstName='Orange', patronymic='Rikki', birthday=2000-05-17, city='Kyiv', email='rokky@gmail.com', password='Rokky1818', role=93}={Subject{id=3, name='Фізика', duration=140}=120.0, Subject{id=1, name='Математика', duration=120}=180.0, Subject{id=5, name='Українська мова та література', duration=110}=179.0, Subject{id=2, name='Іноземна мова', duration=90}=190.0}, User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}={Subject{id=7, name='Біологія', duration=90}=57.0, Subject{id=3, name='Фізика', duration=140}=120.0, Subject{id=1, name='Математика', duration=120}=78.9, Subject{id=8, name='Історія', duration=110}=189.0, Subject{id=5, name='Українська мова та література', duration=110}=200.0, Subject{id=6, name='Хімія', duration=80}=111.0, Subject{id=2, name='Іноземна мова', duration=90}=50.0, Subject{id=4, name='Географія', duration=80}=99.0}}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <General grade: 24.00>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <General grade: 114.00>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <General grade: 149.80>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <User grade TreeMap: {149.80=User{id=101, lastName='Rokky', firstName='Orange', patronymic='Rikki', birthday=2000-05-17, city='Kyiv', email='rokky@gmail.com', password='Rokky1818', role=93}}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <General grade: 24.00>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <General grade: 63.45>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <General grade: 103.45>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <User grade TreeMap: {149.80=User{id=101, lastName='Rokky', firstName='Orange', patronymic='Rikki', birthday=2000-05-17, city='Kyiv', email='rokky@gmail.com', password='Rokky1818', role=93}, 103.45=User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {User{id=101, lastName='Rokky', firstName='Orange', patronymic='Rikki', birthday=2000-05-17, city='Kyiv', email='rokky@gmail.com', password='Rokky1818', role=93}={Subject{id=3, name='Фізика', duration=140}=120.0, Subject{id=1, name='Математика', duration=120}=180.0, Subject{id=5, name='Українська мова та література', duration=110}=179.0, Subject{id=2, name='Іноземна мова', duration=90}=190.0}}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <General grade: 90.00>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <General grade: 125.80>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <General grade: 163.80>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <User grade TreeMap: {163.80=User{id=101, lastName='Rokky', firstName='Orange', patronymic='Rikki', birthday=2000-05-17, city='Kyiv', email='rokky@gmail.com', password='Rokky1818', role=93}}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.2, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=6, name='Хімія', duration=80}=0.5}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}={Subject{id=7, name='Біологія', duration=90}=57.0, Subject{id=3, name='Фізика', duration=140}=120.0, Subject{id=1, name='Математика', duration=120}=78.9, Subject{id=8, name='Історія', duration=110}=189.0, Subject{id=5, name='Українська мова та література', duration=110}=200.0, Subject{id=6, name='Хімія', duration=80}=111.0, Subject{id=2, name='Іноземна мова', duration=90}=50.0, Subject{id=4, name='Географія', duration=80}=99.0}}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <General grade: 94.50>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <General grade: 134.50>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <General grade: 144.50>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <User grade TreeMap: {144.50=User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:48 [http-nio-8083-exec-10] DEBUG - <Page = /jsp/student/studentMain.jsp>
+26/08/2018 7:48 [http-nio-8083-exec-2] INFO - <Start class Controller processRequest()>
+26/08/2018 7:48 [http-nio-8083-exec-2] INFO - <Start class RegistrationForSubjectCommand execute()>
+26/08/2018 7:48 [http-nio-8083-exec-2] DEBUG - <Selected subject: Математика>
+26/08/2018 7:48 [http-nio-8083-exec-2] DEBUG - <Current user: User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}>
+26/08/2018 7:48 [http-nio-8083-exec-2] DEBUG - <List of subjects: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=3, name='Фізика', duration=140}, Subject{id=4, name='Географія', duration=80}, Subject{id=5, name='Українська мова та література', duration=110}, Subject{id=6, name='Хімія', duration=80}, Subject{id=7, name='Біологія', duration=90}, Subject{id=8, name='Історія', duration=110}]>
+26/08/2018 7:48 [http-nio-8083-exec-2] DEBUG - <Find subject: Subject{id=1, name='Математика', duration=120}>
+26/08/2018 7:48 [http-nio-8083-exec-2] INFO - <Start class UserService method addUserToSubject()>
+26/08/2018 7:48 [http-nio-8083-exec-2] INFO - <allSubjectsByUser()>
+26/08/2018 7:48 [http-nio-8083-exec-2] DEBUG - <List of subject by user id: []>
+26/08/2018 7:48 [http-nio-8083-exec-2] INFO - <There is no user in table User_Subject>
+26/08/2018 7:48 [http-nio-8083-exec-2] DEBUG - <Successful = yes>
+26/08/2018 7:48 [http-nio-8083-exec-2] DEBUG - </jsp/student/studentMain.jsp>
+26/08/2018 7:48 [http-nio-8083-exec-2] DEBUG - <Page = /jsp/student/studentMain.jsp>
+26/08/2018 7:48 [http-nio-8083-exec-3] INFO - <Start class Controller processRequest()>
+26/08/2018 7:48 [http-nio-8083-exec-3] INFO - <Start class RegistrationForSubjectCommand execute()>
+26/08/2018 7:48 [http-nio-8083-exec-3] DEBUG - <Selected subject: Іноземна мова>
+26/08/2018 7:48 [http-nio-8083-exec-3] DEBUG - <Current user: User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}>
+26/08/2018 7:48 [http-nio-8083-exec-3] DEBUG - <List of subjects: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=3, name='Фізика', duration=140}, Subject{id=4, name='Географія', duration=80}, Subject{id=5, name='Українська мова та література', duration=110}, Subject{id=6, name='Хімія', duration=80}, Subject{id=7, name='Біологія', duration=90}, Subject{id=8, name='Історія', duration=110}]>
+26/08/2018 7:48 [http-nio-8083-exec-3] DEBUG - <Find subject: Subject{id=2, name='Іноземна мова', duration=90}>
+26/08/2018 7:48 [http-nio-8083-exec-3] INFO - <Start class UserService method addUserToSubject()>
+26/08/2018 7:48 [http-nio-8083-exec-3] INFO - <allSubjectsByUser()>
+26/08/2018 7:48 [http-nio-8083-exec-3] DEBUG - <List of subject by user id: [Subject{id=1, name='Математика', duration=120}]>
+26/08/2018 7:48 [http-nio-8083-exec-3] INFO - <There is no user in table User_Subject>
+26/08/2018 7:48 [http-nio-8083-exec-3] DEBUG - <Successful = yes>
+26/08/2018 7:48 [http-nio-8083-exec-3] DEBUG - </jsp/student/studentMain.jsp>
+26/08/2018 7:48 [http-nio-8083-exec-3] DEBUG - <Page = /jsp/student/studentMain.jsp>
+26/08/2018 7:48 [http-nio-8083-exec-4] INFO - <Start class Controller processRequest()>
+26/08/2018 7:48 [http-nio-8083-exec-4] INFO - <Start class RegistrationForSubjectCommand execute()>
+26/08/2018 7:48 [http-nio-8083-exec-4] DEBUG - <Selected subject: Українська мова та література>
+26/08/2018 7:48 [http-nio-8083-exec-4] DEBUG - <Current user: User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}>
+26/08/2018 7:48 [http-nio-8083-exec-4] DEBUG - <List of subjects: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=3, name='Фізика', duration=140}, Subject{id=4, name='Географія', duration=80}, Subject{id=5, name='Українська мова та література', duration=110}, Subject{id=6, name='Хімія', duration=80}, Subject{id=7, name='Біологія', duration=90}, Subject{id=8, name='Історія', duration=110}]>
+26/08/2018 7:48 [http-nio-8083-exec-4] DEBUG - <Find subject: Subject{id=5, name='Українська мова та література', duration=110}>
+26/08/2018 7:48 [http-nio-8083-exec-4] INFO - <Start class UserService method addUserToSubject()>
+26/08/2018 7:48 [http-nio-8083-exec-4] INFO - <allSubjectsByUser()>
+26/08/2018 7:48 [http-nio-8083-exec-4] DEBUG - <List of subject by user id: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}]>
+26/08/2018 7:48 [http-nio-8083-exec-4] INFO - <There is no user in table User_Subject>
+26/08/2018 7:48 [http-nio-8083-exec-4] DEBUG - <Successful = yes>
+26/08/2018 7:48 [http-nio-8083-exec-4] DEBUG - </jsp/student/studentMain.jsp>
+26/08/2018 7:48 [http-nio-8083-exec-4] DEBUG - <Page = /jsp/student/studentMain.jsp>
+26/08/2018 7:48 [http-nio-8083-exec-5] INFO - <Start class Controller processRequest()>
+26/08/2018 7:48 [http-nio-8083-exec-5] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+26/08/2018 7:48 [http-nio-8083-exec-5] INFO - <Start class UniversityService getAllUniversities()>
+26/08/2018 7:48 [http-nio-8083-exec-5] DEBUG - <List of universities: [University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}, University{id=17, name='Вищий навчальний заклад «Український католицький університет»', address=' Іларіона Свєнціцького, 17', city='Львів'}, University{id=18, name='Національний університет «Львівська політехніка»', address='Степана Бандери, 12', city='Львів'}, University{id=19, name='Ніжинський державний університет імені Миколи Гоголя', address='Графська, 2', city='Ніжин'}]>
+26/08/2018 7:48 [http-nio-8083-exec-5] INFO - <List of universities: [University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}, University{id=17, name='Вищий навчальний заклад «Український католицький університет»', address=' Іларіона Свєнціцького, 17', city='Львів'}, University{id=18, name='Національний університет «Львівська політехніка»', address='Степана Бандери, 12', city='Львів'}, University{id=19, name='Ніжинський державний університет імені Миколи Гоголя', address='Графська, 2', city='Ніжин'}]>
+26/08/2018 7:48 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:48 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Київ>
+26/08/2018 7:48 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:48 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Київ>
+26/08/2018 7:48 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:48 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Київ>
+26/08/2018 7:48 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:48 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Львів>
+26/08/2018 7:48 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:48 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Львів>
+26/08/2018 7:48 [http-nio-8083-exec-5] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:48 [http-nio-8083-exec-5] DEBUG - <Value of city from array: Ніжин>
+26/08/2018 7:48 [http-nio-8083-exec-5] DEBUG - <List of universities to display: [University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}]>
+26/08/2018 7:48 [http-nio-8083-exec-5] DEBUG - <Page = /jsp/student/studentUniByCity.jsp>
+26/08/2018 7:48 [http-nio-8083-exec-6] INFO - <Start class Controller processRequest()>
+26/08/2018 7:48 [http-nio-8083-exec-6] INFO - <Start class GenerateSpecialtyByUniCommand execute()>
+26/08/2018 7:48 [http-nio-8083-exec-6] DEBUG - <University id from jsp: 14>
+26/08/2018 7:48 [http-nio-8083-exec-6] INFO - <Start class UniversityService getAllFacultiesOfUniversity()>
+26/08/2018 7:48 [http-nio-8083-exec-6] DEBUG - <List of all faculties by university: [Faculty{id=26, name='Факультет економічних наук', university=14}, Faculty{id=27, name='Факультет природничих наук', university=14}, Faculty{id=28, name='Факультет інформатики', university=14}]>
+26/08/2018 7:48 [http-nio-8083-exec-6] INFO - <Start class UniversityService getUniversityById()>
+26/08/2018 7:48 [http-nio-8083-exec-6] DEBUG - <Finded university: University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}>
+26/08/2018 7:48 [http-nio-8083-exec-6] DEBUG - <List of faculties by university: [Faculty{id=26, name='Факультет економічних наук', university=14}, Faculty{id=27, name='Факультет природничих наук', university=14}, Faculty{id=28, name='Факультет інформатики', university=14}]>
+26/08/2018 7:48 [http-nio-8083-exec-6] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+26/08/2018 7:48 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:48 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:48 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:48 [http-nio-8083-exec-6] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+26/08/2018 7:48 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:48 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.2, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=6, name='Хімія', duration=80}=0.5}>
+26/08/2018 7:48 [http-nio-8083-exec-6] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+26/08/2018 7:48 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:48 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:48 [http-nio-8083-exec-6] DEBUG - <Faculty_specialty hash map: {Faculty{id=26, name='Факультет економічних наук', university=14}=[Specialty{id=9, name='Маркетинг', quantityOfStudents=50, facultyId=26}, Specialty{id=10, name='Фінанси, банківська справа та страхування', quantityOfStudents=50, facultyId=26}, Specialty{id=11, name='Менеджмент', quantityOfStudents=50, facultyId=26}], Faculty{id=27, name='Факультет природничих наук', university=14}=[Specialty{id=7, name='Фізика та астрономія', quantityOfStudents=50, facultyId=27}, Specialty{id=8, name='Хімія', quantityOfStudents=50, facultyId=27}], Faculty{id=28, name='Факультет інформатики', university=14}=[Specialty{id=5, name='Інженерія програмного забезпечення', quantityOfStudents=60, facultyId=28}, Specialty{id=6, name='Комп`ютерні науки', quantityOfStudents=50, facultyId=28}]}>
+26/08/2018 7:48 [http-nio-8083-exec-6] DEBUG - <Map of specialties and subjects: {Specialty{id=9, name='Маркетинг', quantityOfStudents=50, facultyId=26}={Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=11, name='Менеджмент', quantityOfStudents=50, facultyId=26}={Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=5, name='Інженерія програмного забезпечення', quantityOfStudents=60, facultyId=28}={Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}, Specialty{id=6, name='Комп`ютерні науки', quantityOfStudents=50, facultyId=28}={Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=8, name='Хімія', quantityOfStudents=50, facultyId=27}={Subject{id=1, name='Математика', duration=120}=0.2, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=6, name='Хімія', duration=80}=0.5}, Specialty{id=10, name='Фінанси, банківська справа та страхування', quantityOfStudents=50, facultyId=26}={Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=7, name='Фізика та астрономія', quantityOfStudents=50, facultyId=27}={Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}}>
+26/08/2018 7:48 [http-nio-8083-exec-6] DEBUG - <Page: /jsp/student/studentSpecialties.jsp>
+26/08/2018 7:48 [http-nio-8083-exec-6] DEBUG - <Page = /jsp/student/studentSpecialties.jsp>
+26/08/2018 7:48 [http-nio-8083-exec-7] INFO - <Start class Controller processRequest()>
+26/08/2018 7:48 [http-nio-8083-exec-7] INFO - <Start class RegistrationForSpecialtyCommand execute()>
+26/08/2018 7:48 [http-nio-8083-exec-7] INFO - <Start class SpecialtyService findById()>
+26/08/2018 7:48 [http-nio-8083-exec-7] DEBUG - <Specialty{id=7, name='Фізика та астрономія', quantityOfStudents=50, facultyId=27}>
+26/08/2018 7:48 [http-nio-8083-exec-7] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:48 [http-nio-8083-exec-7] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:48 [http-nio-8083-exec-7] DEBUG - <Page = /jsp/student/studentSpecialties.jsp>
+26/08/2018 7:49 [http-nio-8083-exec-10] INFO - <Start class Controller processRequest()>
+26/08/2018 7:49 [http-nio-8083-exec-10] INFO - <Start class RegistrationForSpecialtyCommand execute()>
+26/08/2018 7:49 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService findById()>
+26/08/2018 7:49 [http-nio-8083-exec-10] DEBUG - <Specialty{id=5, name='Інженерія програмного забезпечення', quantityOfStudents=60, facultyId=28}>
+26/08/2018 7:49 [http-nio-8083-exec-10] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-10] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:49 [http-nio-8083-exec-10] DEBUG - <Page = /jsp/student/studentSpecialties.jsp>
+26/08/2018 7:49 [http-nio-8083-exec-1] INFO - <Start class Controller processRequest()>
+26/08/2018 7:49 [http-nio-8083-exec-1] INFO - <Start class RegistrationForSpecialtyCommand execute()>
+26/08/2018 7:49 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService findById()>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <Specialty{id=6, name='Комп`ютерні науки', quantityOfStudents=50, facultyId=28}>
+26/08/2018 7:49 [http-nio-8083-exec-1] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:49 [http-nio-8083-exec-1] INFO - <addUserToSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <User to add: User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <Specialty to add: Specialty{id=6, name='Комп`ютерні науки', quantityOfStudents=50, facultyId=28}>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <Map of specialties by user: {}>
+26/08/2018 7:49 [http-nio-8083-exec-1] INFO - <There is no such user in table user_specialty>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <Successful = yes>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - </jsp/student/studentSpecialties.jsp>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <Page = /jsp/student/studentSpecialties.jsp>
+26/08/2018 7:49 [http-nio-8083-exec-2] INFO - <Start class Controller processRequest()>
+26/08/2018 7:49 [http-nio-8083-exec-2] DEBUG - <Page = /jsp/student/studentMain.jsp>
+26/08/2018 7:49 [http-nio-8083-exec-4] INFO - <Start class Controller processRequest()>
+26/08/2018 7:49 [http-nio-8083-exec-4] INFO - <Start class RegistrationForSubjectCommand execute()>
+26/08/2018 7:49 [http-nio-8083-exec-4] DEBUG - <Selected subject: Фізика>
+26/08/2018 7:49 [http-nio-8083-exec-4] DEBUG - <Current user: User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}>
+26/08/2018 7:49 [http-nio-8083-exec-4] DEBUG - <List of subjects: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=3, name='Фізика', duration=140}, Subject{id=4, name='Географія', duration=80}, Subject{id=5, name='Українська мова та література', duration=110}, Subject{id=6, name='Хімія', duration=80}, Subject{id=7, name='Біологія', duration=90}, Subject{id=8, name='Історія', duration=110}]>
+26/08/2018 7:49 [http-nio-8083-exec-4] DEBUG - <Find subject: Subject{id=3, name='Фізика', duration=140}>
+26/08/2018 7:49 [http-nio-8083-exec-4] INFO - <Start class UserService method addUserToSubject()>
+26/08/2018 7:49 [http-nio-8083-exec-4] INFO - <allSubjectsByUser()>
+26/08/2018 7:49 [http-nio-8083-exec-4] DEBUG - <List of subject by user id: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=5, name='Українська мова та література', duration=110}]>
+26/08/2018 7:49 [http-nio-8083-exec-4] INFO - <There is no user in table User_Subject>
+26/08/2018 7:49 [http-nio-8083-exec-4] DEBUG - <Successful = yes>
+26/08/2018 7:49 [http-nio-8083-exec-4] DEBUG - </jsp/student/studentMain.jsp>
+26/08/2018 7:49 [http-nio-8083-exec-4] DEBUG - <Page = /jsp/student/studentMain.jsp>
+26/08/2018 7:49 [http-nio-8083-exec-8] INFO - <Start class Controller processRequest()>
+26/08/2018 7:49 [http-nio-8083-exec-8] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+26/08/2018 7:49 [http-nio-8083-exec-8] INFO - <Start class UniversityService getAllUniversities()>
+26/08/2018 7:49 [http-nio-8083-exec-8] DEBUG - <List of universities: [University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}, University{id=17, name='Вищий навчальний заклад «Український католицький університет»', address=' Іларіона Свєнціцького, 17', city='Львів'}, University{id=18, name='Національний університет «Львівська політехніка»', address='Степана Бандери, 12', city='Львів'}, University{id=19, name='Ніжинський державний університет імені Миколи Гоголя', address='Графська, 2', city='Ніжин'}]>
+26/08/2018 7:49 [http-nio-8083-exec-8] INFO - <List of universities: [University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}, University{id=17, name='Вищий навчальний заклад «Український католицький університет»', address=' Іларіона Свєнціцького, 17', city='Львів'}, University{id=18, name='Національний університет «Львівська політехніка»', address='Степана Бандери, 12', city='Львів'}, University{id=19, name='Ніжинський державний університет імені Миколи Гоголя', address='Графська, 2', city='Ніжин'}]>
+26/08/2018 7:49 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:49 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Київ>
+26/08/2018 7:49 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:49 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Київ>
+26/08/2018 7:49 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:49 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Київ>
+26/08/2018 7:49 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:49 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Львів>
+26/08/2018 7:49 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:49 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Львів>
+26/08/2018 7:49 [http-nio-8083-exec-8] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:49 [http-nio-8083-exec-8] DEBUG - <Value of city from array: Ніжин>
+26/08/2018 7:49 [http-nio-8083-exec-8] DEBUG - <List of universities to display: [University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}]>
+26/08/2018 7:49 [http-nio-8083-exec-8] DEBUG - <Page = /jsp/student/studentUniByCity.jsp>
+26/08/2018 7:49 [http-nio-8083-exec-5] INFO - <Start class Controller processRequest()>
+26/08/2018 7:49 [http-nio-8083-exec-5] INFO - <Start class GenerateSpecialtyByUniCommand execute()>
+26/08/2018 7:49 [http-nio-8083-exec-5] DEBUG - <University id from jsp: 14>
+26/08/2018 7:49 [http-nio-8083-exec-5] INFO - <Start class UniversityService getAllFacultiesOfUniversity()>
+26/08/2018 7:49 [http-nio-8083-exec-5] DEBUG - <List of all faculties by university: [Faculty{id=26, name='Факультет економічних наук', university=14}, Faculty{id=27, name='Факультет природничих наук', university=14}, Faculty{id=28, name='Факультет інформатики', university=14}]>
+26/08/2018 7:49 [http-nio-8083-exec-5] INFO - <Start class UniversityService getUniversityById()>
+26/08/2018 7:49 [http-nio-8083-exec-5] DEBUG - <Finded university: University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}>
+26/08/2018 7:49 [http-nio-8083-exec-5] DEBUG - <List of faculties by university: [Faculty{id=26, name='Факультет економічних наук', university=14}, Faculty{id=27, name='Факультет природничих наук', university=14}, Faculty{id=28, name='Факультет інформатики', university=14}]>
+26/08/2018 7:49 [http-nio-8083-exec-5] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+26/08/2018 7:49 [http-nio-8083-exec-5] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-5] DEBUG - <HashMap of subjects by specialty: {Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:49 [http-nio-8083-exec-5] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-5] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:49 [http-nio-8083-exec-5] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-5] DEBUG - <HashMap of subjects by specialty: {Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:49 [http-nio-8083-exec-5] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+26/08/2018 7:49 [http-nio-8083-exec-5] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-5] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:49 [http-nio-8083-exec-5] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-5] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.2, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=6, name='Хімія', duration=80}=0.5}>
+26/08/2018 7:49 [http-nio-8083-exec-5] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+26/08/2018 7:49 [http-nio-8083-exec-5] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-5] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:49 [http-nio-8083-exec-5] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-5] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:49 [http-nio-8083-exec-5] DEBUG - <Faculty_specialty hash map: {Faculty{id=26, name='Факультет економічних наук', university=14}=[Specialty{id=9, name='Маркетинг', quantityOfStudents=50, facultyId=26}, Specialty{id=10, name='Фінанси, банківська справа та страхування', quantityOfStudents=50, facultyId=26}, Specialty{id=11, name='Менеджмент', quantityOfStudents=50, facultyId=26}], Faculty{id=27, name='Факультет природничих наук', university=14}=[Specialty{id=7, name='Фізика та астрономія', quantityOfStudents=50, facultyId=27}, Specialty{id=8, name='Хімія', quantityOfStudents=50, facultyId=27}], Faculty{id=28, name='Факультет інформатики', university=14}=[Specialty{id=5, name='Інженерія програмного забезпечення', quantityOfStudents=60, facultyId=28}, Specialty{id=6, name='Комп`ютерні науки', quantityOfStudents=50, facultyId=28}]}>
+26/08/2018 7:49 [http-nio-8083-exec-5] DEBUG - <Map of specialties and subjects: {Specialty{id=9, name='Маркетинг', quantityOfStudents=50, facultyId=26}={Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=11, name='Менеджмент', quantityOfStudents=50, facultyId=26}={Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=5, name='Інженерія програмного забезпечення', quantityOfStudents=60, facultyId=28}={Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}, Specialty{id=6, name='Комп`ютерні науки', quantityOfStudents=50, facultyId=28}={Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=8, name='Хімія', quantityOfStudents=50, facultyId=27}={Subject{id=1, name='Математика', duration=120}=0.2, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=6, name='Хімія', duration=80}=0.5}, Specialty{id=10, name='Фінанси, банківська справа та страхування', quantityOfStudents=50, facultyId=26}={Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=7, name='Фізика та астрономія', quantityOfStudents=50, facultyId=27}={Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}}>
+26/08/2018 7:49 [http-nio-8083-exec-5] DEBUG - <Page: /jsp/student/studentSpecialties.jsp>
+26/08/2018 7:49 [http-nio-8083-exec-5] DEBUG - <Page = /jsp/student/studentSpecialties.jsp>
+26/08/2018 7:49 [http-nio-8083-exec-6] INFO - <Start class Controller processRequest()>
+26/08/2018 7:49 [http-nio-8083-exec-6] INFO - <Start class RegistrationForSpecialtyCommand execute()>
+26/08/2018 7:49 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService findById()>
+26/08/2018 7:49 [http-nio-8083-exec-6] DEBUG - <Specialty{id=5, name='Інженерія програмного забезпечення', quantityOfStudents=60, facultyId=28}>
+26/08/2018 7:49 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:49 [http-nio-8083-exec-6] INFO - <addUserToSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-6] DEBUG - <User to add: User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}>
+26/08/2018 7:49 [http-nio-8083-exec-6] DEBUG - <Specialty to add: Specialty{id=5, name='Інженерія програмного забезпечення', quantityOfStudents=60, facultyId=28}>
+26/08/2018 7:49 [http-nio-8083-exec-6] DEBUG - <Map of specialties by user: {}>
+26/08/2018 7:49 [http-nio-8083-exec-6] INFO - <There is no such user in table user_specialty>
+26/08/2018 7:49 [http-nio-8083-exec-6] DEBUG - <Successful = yes>
+26/08/2018 7:49 [http-nio-8083-exec-6] DEBUG - </jsp/student/studentSpecialties.jsp>
+26/08/2018 7:49 [http-nio-8083-exec-6] DEBUG - <Page = /jsp/student/studentSpecialties.jsp>
+26/08/2018 7:49 [http-nio-8083-exec-7] INFO - <Start class Controller processRequest()>
+26/08/2018 7:49 [http-nio-8083-exec-7] INFO - <Start class RegistrationForSpecialtyCommand execute()>
+26/08/2018 7:49 [http-nio-8083-exec-7] INFO - <Start class SpecialtyService findById()>
+26/08/2018 7:49 [http-nio-8083-exec-7] DEBUG - <Specialty{id=9, name='Маркетинг', quantityOfStudents=50, facultyId=26}>
+26/08/2018 7:49 [http-nio-8083-exec-7] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-7] DEBUG - <HashMap of subjects by specialty: {Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:49 [http-nio-8083-exec-7] DEBUG - <Page = /jsp/student/studentSpecialties.jsp>
+26/08/2018 7:49 [http-nio-8083-exec-9] INFO - <Start class Controller processRequest()>
+26/08/2018 7:49 [http-nio-8083-exec-9] DEBUG - <Page = /jsp/student/studentMain.jsp>
+26/08/2018 7:49 [http-nio-8083-exec-1] INFO - <Start class Controller processRequest()>
+26/08/2018 7:49 [http-nio-8083-exec-1] INFO - <Start class GenerateUniversitiesByCityCommand execute()>
+26/08/2018 7:49 [http-nio-8083-exec-1] INFO - <Start class UniversityService getAllUniversities()>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <List of universities: [University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}, University{id=17, name='Вищий навчальний заклад «Український католицький університет»', address=' Іларіона Свєнціцького, 17', city='Львів'}, University{id=18, name='Національний університет «Львівська політехніка»', address='Степана Бандери, 12', city='Львів'}, University{id=19, name='Ніжинський державний університет імені Миколи Гоголя', address='Графська, 2', city='Ніжин'}]>
+26/08/2018 7:49 [http-nio-8083-exec-1] INFO - <List of universities: [University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}, University{id=17, name='Вищий навчальний заклад «Український католицький університет»', address=' Іларіона Свєнціцького, 17', city='Львів'}, University{id=18, name='Національний університет «Львівська політехніка»', address='Степана Бандери, 12', city='Львів'}, University{id=19, name='Ніжинський державний університет імені Миколи Гоголя', address='Графська, 2', city='Ніжин'}]>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <Value of city from array: Київ>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <Value of city from array: Київ>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <Value of city from array: Київ>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <Value of city from array: Львів>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <Value of city from array: Львів>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <Value of city from request: Київ>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <Value of city from array: Ніжин>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <List of universities to display: [University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}, University{id=15, name='Київський національний університет імені Тараса Шевченка', address='Володимирська, 60', city='Київ'}, University{id=16, name='Національний технічний університет України «Київський політехнічний інститут імені Ігоря Сікорського»', address='просп. Перемоги, 37', city='Київ'}]>
+26/08/2018 7:49 [http-nio-8083-exec-1] DEBUG - <Page = /jsp/student/studentUniByCity.jsp>
+26/08/2018 7:49 [http-nio-8083-exec-2] INFO - <Start class Controller processRequest()>
+26/08/2018 7:49 [http-nio-8083-exec-2] INFO - <Start class GenerateSpecialtyByUniCommand execute()>
+26/08/2018 7:49 [http-nio-8083-exec-2] DEBUG - <University id from jsp: 14>
+26/08/2018 7:49 [http-nio-8083-exec-2] INFO - <Start class UniversityService getAllFacultiesOfUniversity()>
+26/08/2018 7:49 [http-nio-8083-exec-2] DEBUG - <List of all faculties by university: [Faculty{id=26, name='Факультет економічних наук', university=14}, Faculty{id=27, name='Факультет природничих наук', university=14}, Faculty{id=28, name='Факультет інформатики', university=14}]>
+26/08/2018 7:49 [http-nio-8083-exec-2] INFO - <Start class UniversityService getUniversityById()>
+26/08/2018 7:49 [http-nio-8083-exec-2] DEBUG - <Finded university: University{id=14, name='Національний університет «Києво-Могилянська академія»', address='Григорія Сковороди, 2', city='Київ'}>
+26/08/2018 7:49 [http-nio-8083-exec-2] DEBUG - <List of faculties by university: [Faculty{id=26, name='Факультет економічних наук', university=14}, Faculty{id=27, name='Факультет природничих наук', university=14}, Faculty{id=28, name='Факультет інформатики', university=14}]>
+26/08/2018 7:49 [http-nio-8083-exec-2] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+26/08/2018 7:49 [http-nio-8083-exec-2] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-2] DEBUG - <HashMap of subjects by specialty: {Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:49 [http-nio-8083-exec-2] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-2] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:49 [http-nio-8083-exec-2] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-2] DEBUG - <HashMap of subjects by specialty: {Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:49 [http-nio-8083-exec-2] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+26/08/2018 7:49 [http-nio-8083-exec-2] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-2] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:49 [http-nio-8083-exec-2] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-2] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.2, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=6, name='Хімія', duration=80}=0.5}>
+26/08/2018 7:49 [http-nio-8083-exec-2] INFO - <Start class FacultyService getAllSpecialtiesOfFaculty()>
+26/08/2018 7:49 [http-nio-8083-exec-2] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-2] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:49 [http-nio-8083-exec-2] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:49 [http-nio-8083-exec-2] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:49 [http-nio-8083-exec-2] DEBUG - <Faculty_specialty hash map: {Faculty{id=26, name='Факультет економічних наук', university=14}=[Specialty{id=9, name='Маркетинг', quantityOfStudents=50, facultyId=26}, Specialty{id=10, name='Фінанси, банківська справа та страхування', quantityOfStudents=50, facultyId=26}, Specialty{id=11, name='Менеджмент', quantityOfStudents=50, facultyId=26}], Faculty{id=27, name='Факультет природничих наук', university=14}=[Specialty{id=7, name='Фізика та астрономія', quantityOfStudents=50, facultyId=27}, Specialty{id=8, name='Хімія', quantityOfStudents=50, facultyId=27}], Faculty{id=28, name='Факультет інформатики', university=14}=[Specialty{id=5, name='Інженерія програмного забезпечення', quantityOfStudents=60, facultyId=28}, Specialty{id=6, name='Комп`ютерні науки', quantityOfStudents=50, facultyId=28}]}>
+26/08/2018 7:49 [http-nio-8083-exec-2] DEBUG - <Map of specialties and subjects: {Specialty{id=9, name='Маркетинг', quantityOfStudents=50, facultyId=26}={Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=11, name='Менеджмент', quantityOfStudents=50, facultyId=26}={Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=5, name='Інженерія програмного забезпечення', quantityOfStudents=60, facultyId=28}={Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}, Specialty{id=6, name='Комп`ютерні науки', quantityOfStudents=50, facultyId=28}={Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=8, name='Хімія', quantityOfStudents=50, facultyId=27}={Subject{id=1, name='Математика', duration=120}=0.2, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=6, name='Хімія', duration=80}=0.5}, Specialty{id=10, name='Фінанси, банківська справа та страхування', quantityOfStudents=50, facultyId=26}={Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}, Specialty{id=7, name='Фізика та астрономія', quantityOfStudents=50, facultyId=27}={Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}}>
+26/08/2018 7:49 [http-nio-8083-exec-2] DEBUG - <Page: /jsp/student/studentSpecialties.jsp>
+26/08/2018 7:49 [http-nio-8083-exec-2] DEBUG - <Page = /jsp/student/studentSpecialties.jsp>
+26/08/2018 7:50 [http-nio-8083-exec-4] INFO - <Start class Controller processRequest()>
+26/08/2018 7:50 [http-nio-8083-exec-4] DEBUG - <Page = /jsp/student/studentMain.jsp>
+26/08/2018 7:50 [http-nio-8083-exec-8] INFO - <Start class Controller processRequest()>
+26/08/2018 7:50 [http-nio-8083-exec-8] DEBUG - <Page = /jsp/login.jsp>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class Controller processRequest()>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <start class LoginCommand execute()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <Login: yuryeva.olga99@gmail.com>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <Password: Okay1919>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class LoginLogic checkLogin()>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Find user>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Logined user is User{id=98, lastName='Olya', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okay1919', role=94}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Successfully login>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <User is admin>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <List of subjects to display: [Subject{id=1, name='Математика', duration=120}, Subject{id=2, name='Іноземна мова', duration=90}, Subject{id=3, name='Фізика', duration=140}, Subject{id=4, name='Географія', duration=80}, Subject{id=5, name='Українська мова та література', duration=110}, Subject{id=6, name='Хімія', duration=80}, Subject{id=7, name='Біологія', duration=90}, Subject{id=8, name='Історія', duration=110}]>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of users with unchecked subjects: [User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}]>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of users with unchecked subjects: [User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}]>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of users with unchecked subjects: [User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}]>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of users with unchecked subjects: [User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}]>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of users with unchecked subjects: []>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects and users: {Subject{id=7, name='Біологія', duration=90}=[], Subject{id=3, name='Фізика', duration=140}=[User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}], Subject{id=1, name='Математика', duration=120}=[User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}], Subject{id=8, name='Історія', duration=110}=[], Subject{id=5, name='Українська мова та література', duration=110}=[User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}], Subject{id=6, name='Хімія', duration=80}=[], Subject{id=2, name='Іноземна мова', duration=90}=[User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}], Subject{id=4, name='Географія', duration=80}=[]}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class CountGeneralGrade countGrade()>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAll()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all specialties: [Specialty{id=5, name='Інженерія програмного забезпечення', quantityOfStudents=60, facultyId=28}, Specialty{id=6, name='Комп`ютерні науки', quantityOfStudents=50, facultyId=28}, Specialty{id=7, name='Фізика та астрономія', quantityOfStudents=50, facultyId=27}, Specialty{id=8, name='Хімія', quantityOfStudents=50, facultyId=27}, Specialty{id=9, name='Маркетинг', quantityOfStudents=50, facultyId=26}, Specialty{id=10, name='Фінанси, банківська справа та страхування', quantityOfStudents=50, facultyId=26}, Specialty{id=11, name='Менеджмент', quantityOfStudents=50, facultyId=26}, Specialty{id=13, name='Кібербезпека', quantityOfStudents=65, facultyId=18}, Specialty{id=14, name='Прикладна математика', quantityOfStudents=85, facultyId=29}, Specialty{id=15, name='Кібербезпека', quantityOfStudents=180, facultyId=29}, Specialty{id=16, name='Прикладна фізика та наноматеріали', quantityOfStudents=60, facultyId=29}, Specialty{id=17, name=' Історія та археологія', quantityOfStudents=15, facultyId=25}, Specialty{id=18, name='Музеєзнавство, пам’яткознавство', quantityOfStudents=50, facultyId=25}, Specialty{id=19, name='Середня освіта', quantityOfStudents=100, facultyId=25}, Specialty{id=20, name='Геодезія та землеустрій', quantityOfStudents=10, facultyId=24}, Specialty{id=21, name='Туризм', quantityOfStudents=10, facultyId=24}, Specialty{id=22, name='Географія', quantityOfStudents=25, facultyId=24}, Specialty{id=23, name='Фізика та астрономія', quantityOfStudents=90, facultyId=23}, Specialty{id=24, name='Астрономія', quantityOfStudents=25, facultyId=23}, Specialty{id=25, name='Прикладна математика', quantityOfStudents=25, facultyId=22}, Specialty{id=26, name='Інженерія програмного забезпечення', quantityOfStudents=25, facultyId=22}, Specialty{id=27, name='Комп’ютерна інженерія', quantityOfStudents=120, facultyId=22}, Specialty{id=28, name='Фізика та астрономія', quantityOfStudents=60, facultyId=20}, Specialty{id=29, name='Математика', quantityOfStudents=60, facultyId=20}, Specialty{id=30, name='Облік і оподаткування', quantityOfStudents=140, facultyId=19}, Specialty{id=31, name='Фінанси, банківська справа та страхування', quantityOfStudents=190, facultyId=19}, Specialty{id=32, name='Менеджмент', quantityOfStudents=350, facultyId=19}, Specialty{id=33, name='Комп`ютерні науки', quantityOfStudents=75, facultyId=18}, Specialty{id=34, name='Системний аналіз', quantityOfStudents=18, facultyId=18}]>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {User{id=101, lastName='Rokky', firstName='Orange', patronymic='Rikki', birthday=2000-05-17, city='Kyiv', email='rokky@gmail.com', password='Rokky1818', role=93}={Subject{id=3, name='Фізика', duration=140}=120.0, Subject{id=1, name='Математика', duration=120}=180.0, Subject{id=5, name='Українська мова та література', duration=110}=179.0, Subject{id=2, name='Іноземна мова', duration=90}=190.0}, User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}={Subject{id=7, name='Біологія', duration=90}=57.0, Subject{id=3, name='Фізика', duration=140}=120.0, Subject{id=1, name='Математика', duration=120}=78.9, Subject{id=8, name='Історія', duration=110}=189.0, Subject{id=5, name='Українська мова та література', duration=110}=200.0, Subject{id=6, name='Хімія', duration=80}=111.0, Subject{id=2, name='Іноземна мова', duration=90}=50.0, Subject{id=4, name='Географія', duration=80}=99.0}, User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}={}}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <General grade: 24.00>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <General grade: 114.00>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <General grade: 149.80>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <User grade TreeMap: {149.80=User{id=101, lastName='Rokky', firstName='Orange', patronymic='Rikki', birthday=2000-05-17, city='Kyiv', email='rokky@gmail.com', password='Rokky1818', role=93}}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <General grade: 24.00>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <General grade: 63.45>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <General grade: 103.45>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <User grade TreeMap: {149.80=User{id=101, lastName='Rokky', firstName='Orange', patronymic='Rikki', birthday=2000-05-17, city='Kyiv', email='rokky@gmail.com', password='Rokky1818', role=93}, 103.45=User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <User grade TreeMap: {149.80=User{id=101, lastName='Rokky', firstName='Orange', patronymic='Rikki', birthday=2000-05-17, city='Kyiv', email='rokky@gmail.com', password='Rokky1818', role=93}, 103.45=User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}, 0=User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {User{id=101, lastName='Rokky', firstName='Orange', patronymic='Rikki', birthday=2000-05-17, city='Kyiv', email='rokky@gmail.com', password='Rokky1818', role=93}={Subject{id=3, name='Фізика', duration=140}=120.0, Subject{id=1, name='Математика', duration=120}=180.0, Subject{id=5, name='Українська мова та література', duration=110}=179.0, Subject{id=2, name='Іноземна мова', duration=90}=190.0}, User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}={}}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <General grade: 90.00>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <General grade: 125.80>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <General grade: 163.80>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <User grade TreeMap: {163.80=User{id=101, lastName='Rokky', firstName='Orange', patronymic='Rikki', birthday=2000-05-17, city='Kyiv', email='rokky@gmail.com', password='Rokky1818', role=93}}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <User grade TreeMap: {163.80=User{id=101, lastName='Rokky', firstName='Orange', patronymic='Rikki', birthday=2000-05-17, city='Kyiv', email='rokky@gmail.com', password='Rokky1818', role=93}, 0=User{id=103, lastName='Olha', firstName='Yuryeva', patronymic='Konstantynovna', birthday=1999-05-15, city='Kyiv', email='yuryeva.olga99@gmail.com', password='Okok1919', role=93}}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=3, name='Фізика', duration=140}=0.2, Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.2, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=6, name='Хімія', duration=80}=0.5}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=1, name='Математика', duration=120}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {Subject{id=8, name='Історія', duration=110}=0.5, Subject{id=5, name='Українська мова та література', duration=110}=0.2, Subject{id=2, name='Іноземна мова', duration=90}=0.2}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}={Subject{id=7, name='Біологія', duration=90}=57.0, Subject{id=3, name='Фізика', duration=140}=120.0, Subject{id=1, name='Математика', duration=120}=78.9, Subject{id=8, name='Історія', duration=110}=189.0, Subject{id=5, name='Українська мова та література', duration=110}=200.0, Subject{id=6, name='Хімія', duration=80}=111.0, Subject{id=2, name='Іноземна мова', duration=90}=50.0, Subject{id=4, name='Географія', duration=80}=99.0}}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <General grade: 94.50>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <General grade: 134.50>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <General grade: 144.50>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <User grade TreeMap: {144.50=User{id=92, lastName='Бойко', firstName='Андрій', patronymic='Петрович', birthday=1998-02-12, city='Київ', email='andriy@gmail.com', password='Password1', role=93}}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] INFO - <Start class SpecialtyService getAllSubjectsOfSpecialty()>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <HashMap of subjects by specialty: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <List of all users and their grades: {}>
+26/08/2018 7:50 [http-nio-8083-exec-6] DEBUG - <Page = /jsp/admin/adminMain.jsp>
+26/08/2018 7:51 [http-nio-8083-exec-9] INFO - <Start class Controller processRequest()>
+26/08/2018 7:51 [http-nio-8083-exec-9] DEBUG - <Page = /jsp/student/studentMain.jsp>
