@@ -14,7 +14,7 @@
 
     </head>
     <body>
-    <c:import url="/jsp/fragments/header.jsp"/>
+    <c:import url="/jsp/fragments/headerStudent.jsp"/>
     <h3><fmt:message key="account"/></h3>
     <hr/>
     <fmt:message key="lastName"/>: ${ sessionScope.loginedUser.lastName }
@@ -69,16 +69,15 @@
             <script>
                 swal('Success!', 'You are successfully registrated', 'success');
             </script>
-            <c:set var="successfulSubject" value="null" scope="session"/>
+            <c:set var="successfulSubject" value="off" scope="session"/>
         </c:when>
         <c:when test="${sessionScope.successfulSubject == 'no'}">
             <script>
                 swal('Error!', 'You have already registrated', 'error');
             </script>
-            <c:set var="successfulSubject" value="null" scope="session"/>
+            <c:set var="successfulSubject" value="off" scope="session"/>
         </c:when>
     </c:choose>
-
     <script>
         function myFunction() {
             var x = document.getElementById('myCity');

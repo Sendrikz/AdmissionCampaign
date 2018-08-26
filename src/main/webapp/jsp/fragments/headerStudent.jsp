@@ -16,5 +16,7 @@ It is header
         LogOut
     </button>
 </form>
+<%--<a href="controller?command=logOut">Logout</a>--%>
+<%--<a href="/index.jsp">LogOut</a>--%>
 <hr/>
 </body></html>

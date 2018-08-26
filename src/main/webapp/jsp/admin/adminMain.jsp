@@ -22,6 +22,7 @@
         </script>
     </head>
     <body>
+    <c:import url="/jsp/fragments/headerStudent.jsp" />
         <h3><fmt:message key="account"/></h3>
         <hr/>
         <fmt:message key="lastName"/>: ${ sessionScope.loginedUser.lastName }
@@ -62,18 +63,16 @@
         <div id="accordion">
             <jsp:useBean id="specialtyUserGradeHashMap" scope="session" type="java.util.HashMap"/>
             <c:forEach var="elem" items="${ specialtyUserGradeHashMap }" varStatus="status">
-                <h3> ${ elem.key.name }
-                    <form>
-                        <button>Submit</button>
-                    </form>
-                </h3>
+                <h3> ${ elem.key.name }</h3>
             <div>
                 <p>
                     <c:forEach var="user" items="${ elem.value }" varStatus="status">
+                        <div>
                             ${user.value.lastName}
                             ${user.value.firstName}
                             ${user.value.patronymic}
                             ${user.key}
+                        </div>
                     </c:forEach>
                 </p>
             </div>

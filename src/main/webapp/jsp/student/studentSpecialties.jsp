@@ -20,7 +20,7 @@
     </head>
     <body>
 
-    <c:import url="/jsp/fragments/header.jsp" />
+    <c:import url="/jsp/fragments/headerStudent.jsp" />
         <p> Name: ${ sessionScope.selectedUni.name }</p>
         <p> Address: ${ sessionScope.selectedUni.address }</p>
         <p> City: ${ sessionScope.selectedUni.city }</p>

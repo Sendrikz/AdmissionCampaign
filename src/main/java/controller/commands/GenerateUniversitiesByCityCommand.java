@@ -5,29 +5,39 @@ import org.apache.log4j.Logger;
 import services.UniversityService;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Properties;
 
 public class GenerateUniversitiesByCityCommand implements ActionCommand {
 
     private static final Logger log = Logger.getLogger(GenerateUniversitiesByCityCommand.class);
+    private Properties property;
+
+    GenerateUniversitiesByCityCommand() {
+        property = new Properties();
+        try (InputStream is = this.getClass().getClassLoader().
+                getResourceAsStream("config.properties")){
+            property.load(is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public String execute(HttpServletRequest request) {
-        String page;
         log.info("Start class GenerateUniversitiesByCityCommand execute()");
+        String page = property.getProperty("path.page.studentUniByCity");
         ArrayList<University> listOfUniversities = UniversityService.getAllUniversities();
-        log.info("List of universities: " + listOfUniversities);
         ArrayList<University> listOfUniversitiesToDisplay = new ArrayList<>();
+
         for (University uni : listOfUniversities) {
-            log.debug("Value of city from request: " + request.getParameter("city").trim());
-            log.debug("Value of city from array: " + uni.getCity().trim());
             if (uni.getCity().equals(request.getParameter("city").trim())) {
                 listOfUniversitiesToDisplay.add(uni);
             }
         }
-        log.debug("List of universities to display: " + listOfUniversitiesToDisplay);
         request.getSession().setAttribute("listOfUni", listOfUniversitiesToDisplay);
-        page = "/jsp/student/studentUniByCity.jsp";
         return page;
     }
 }

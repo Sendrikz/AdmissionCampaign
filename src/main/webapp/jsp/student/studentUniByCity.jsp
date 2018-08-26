@@ -9,7 +9,7 @@
     <title><fmt:message key="title"/></title>
     </head>
 <body>
-<c:import url="/jsp/fragments/header.jsp" />
+<c:import url="/jsp/fragments/headerStudent.jsp" />
 <table>
     <jsp:useBean id="listOfUni" scope="session" type="java.util.List"/>
     <c:forEach var="uni" items="${ listOfUni }" varStatus="status">

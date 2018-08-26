@@ -16,7 +16,7 @@
 //    private static final Logger log = Logger.getLogger(SecurityFilter.class);
 //
 //    @Override
-//    public void init(FilterConfig filterConfig) throws ServletException {
+//    public void init(FilterConfig filterConfig) {
 //
 //    }
 //

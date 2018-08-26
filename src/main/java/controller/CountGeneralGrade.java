@@ -1,4 +1,5 @@
 package controller;
+import controller.comparator.ComparatorDescend;
 import model.enteties.Specialty;
 import model.enteties.Subject;
 import model.enteties.User;
@@ -40,7 +41,7 @@ public class CountGeneralGrade {
         return specialtyRatingList;
     }
 
-    static TreeMap<BigDecimal, User> countGrade(HashMap<Subject, BigDecimal> listOfSubjectsAndTheirCoef,
+    private static TreeMap<BigDecimal, User> countGrade(HashMap<Subject, BigDecimal> listOfSubjectsAndTheirCoef,
                                                        HashMap<User, HashMap<Subject, BigDecimal>> listOfUsersAndTheirGrades) {
 
         log.debug("List of all users and their grades: " + listOfUsersAndTheirGrades);
