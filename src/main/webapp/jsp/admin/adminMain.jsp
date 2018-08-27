@@ -15,14 +15,9 @@
                 $( "#tabsSubject" ).tabs();
             } );
         </script>
-        <script>
-            $( function() {
-                $( "#accordion" ).accordion();
-            } );
-        </script>
     </head>
     <body>
-    <c:import url="/jsp/fragments/headerStudent.jsp" />
+    <c:import url="/jsp/fragments/headerAdmin.jsp" />
         <h3><fmt:message key="account"/></h3>
         <hr/>
         <fmt:message key="lastName"/>: ${ sessionScope.loginedUser.lastName }
@@ -58,26 +53,12 @@
                 </div>
             </c:forEach>
         </div>
-    <h3> Get list of students who pass </h3>
-
-        <div id="accordion">
-            <jsp:useBean id="specialtyUserGradeHashMap" scope="session" type="java.util.HashMap"/>
-            <c:forEach var="elem" items="${ specialtyUserGradeHashMap }" varStatus="status">
-                <h3> ${ elem.key.name }</h3>
-            <div>
-                <p>
-                    <c:forEach var="user" items="${ elem.value }" varStatus="status">
-                        <div>
-                            ${user.value.lastName}
-                            ${user.value.firstName}
-                            ${user.value.patronymic}
-                            ${user.key}
-                        </div>
-                    </c:forEach>
-                </p>
-            </div>
-            </c:forEach>
-        </div>
+    <form name="gradeListForm" method="POST" action="controller">
+        <button>
+            <input type="hidden" name="command" value="gradeListRedirect" />
+            Grade List
+        </button>
+    </form>
     <button>Send letters</button>
     </body></html>
 </fmt:bundle>

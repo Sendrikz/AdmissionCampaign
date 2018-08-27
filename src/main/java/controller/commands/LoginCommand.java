@@ -59,7 +59,6 @@ public class LoginCommand implements ActionCommand {
         if (LoginService.getRoleById(loginedUser.getRole()).toUpperCase().equals(ADMIN_ROLE)) {
             log.info("User is admin");
             request.getSession().setAttribute("role", "Administrator");
-            request.getSession().setAttribute("specialtyUserGradeHashMap", CountGeneralGrade.fillListOfSpecialtiesAndUsers());
             page = property.getProperty("path.page.adminMain");
         } else {
             log.info("User is student");
@@ -75,6 +74,7 @@ public class LoginCommand implements ActionCommand {
             subjectUserHashMap.put(subject, SubjectService.getAllUsersWithUncheckedSubject(subject.getId()));
         }
         request.getSession().setAttribute("subjectUserHashMap", subjectUserHashMap);
+        request.getSession().setAttribute("specialtyUserGradeHashMap", CountGeneralGrade.fillListOfSpecialtiesAndUsers());
         return page;
     }
 }

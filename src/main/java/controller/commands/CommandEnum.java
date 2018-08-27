@@ -46,6 +46,11 @@ public enum CommandEnum {
         {
             this.command = new SetGradeCommand();
         }
+    },
+    GRADELISTREDIRECT {
+        {
+            this.command = new GradeListRedirectCommand();
+        }
     };
 
     ActionCommand command;

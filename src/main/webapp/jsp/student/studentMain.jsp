@@ -64,6 +64,13 @@
         </c:forEach>
     </table>
 
+    <form name="gradeListForm" method="POST" action="controller">
+        <button>
+            <input type="hidden" name="command" value="gradeListRedirect" />
+            Grade List
+        </button>
+    </form>
+
     <c:choose>
         <c:when test="${sessionScope.successfulSubject == 'yes'}">
             <script>
