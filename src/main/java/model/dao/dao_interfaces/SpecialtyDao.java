@@ -12,6 +12,7 @@ import java.util.HashMap;
 public interface SpecialtyDao {
 
     ArrayList<Specialty> getAll();
+    ArrayList<Specialty> getAll(int currentPage, int recordsPerPage);
 
     void add(Specialty specialty);
     void addSpecialtyToSubject(Specialty specialty, Subject subject, BigDecimal coef);
@@ -29,4 +30,6 @@ public interface SpecialtyDao {
 
     HashMap<Subject, BigDecimal> getAllSubjectsOfSpecialty(int id);
     HashMap<User, Boolean> getAllUsersOfSpecialty(int id);
+
+    int getNumberOfRows();
 }

@@ -1,5 +1,7 @@
 package controller.commands;
 
+import controller.CountGeneralGrade;
+
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,6 +23,7 @@ public class GradeListRedirectCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) {
+        request.getSession().setAttribute("specialtyUserGradeHashMap", CountGeneralGrade.fillListOfSpecialtiesAndUsers());
         return property.getProperty("path.page.gradeList");
     }
 }

@@ -47,4 +47,24 @@ public class SpecialtyService {
         ConnectionManager.getInstance().close(connection);
         return listOfSpecialties;
     }
+
+    public static ArrayList<Specialty> getAll(int currentPage, int recordsPerPage) {
+        log.info("Start class SpecialtyService getAll(int currentPage, int recordsPerPage)");
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        SpecialtyDao specialtyDao = DaoFactory.getSpecialtyDao(connection);
+        ArrayList<Specialty> listOfSpecialties = specialtyDao.getAll(currentPage, recordsPerPage);
+        log.debug("List of specialties pagination: " + listOfSpecialties);
+        ConnectionManager.getInstance().close(connection);
+        return listOfSpecialties;
+    }
+
+    public static int getRows() {
+        log.info("Start class SpecialtyService  getRows()");
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        SpecialtyDao specialtyDao = DaoFactory.getSpecialtyDao(connection);
+        int rows = specialtyDao.getNumberOfRows();
+        log.debug("Rows in table Specialty: " + rows);
+        ConnectionManager.getInstance().close(connection);
+        return rows;
+    }
 }

@@ -39,7 +39,6 @@ public class SetGradeCommand implements ActionCommand {
         SubjectService.updateSubjectToUser(subjectId, userId, grade);
         request.getSession().setAttribute("subjectUserHashMap",
                 SubjectService.updateHashMapOfSubjectUsers(ArrayList.class.cast(request.getSession().getAttribute("subjectsList"))));
-        request.getSession().setAttribute("specialtyUserGradeHashMap", CountGeneralGrade.fillListOfSpecialtiesAndUsers());
         return page;
     }
 }

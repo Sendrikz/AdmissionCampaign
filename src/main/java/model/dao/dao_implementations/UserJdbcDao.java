@@ -282,6 +282,20 @@ public class UserJdbcDao implements UserDao {
     }
 
     @Override
+    public void deleteUserFromSpecialtiesExcept(int user_id, int specialty_id) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(
+                property.getProperty("sql.deleteUserFromSpecialtiesExcept"))) {
+
+            preparedStatement.setInt(1, user_id);
+            preparedStatement.setInt(2, specialty_id);
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public void clearAllUsers() {
         try (Statement statement = connection.createStatement()) {
 

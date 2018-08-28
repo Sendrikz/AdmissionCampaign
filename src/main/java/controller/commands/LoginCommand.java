@@ -1,15 +1,17 @@
 package controller.commands;
 
 import controller.CountGeneralGrade;
+import controller.pagination.Pagination;
+import model.enteties.Specialty;
 import model.enteties.Subject;
 import model.enteties.User;
 import org.apache.log4j.Logger;
 import services.LoginService;
+import services.SpecialtyService;
 import services.SubjectService;
 import services.UniversityService;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -59,6 +61,12 @@ public class LoginCommand implements ActionCommand {
         if (LoginService.getRoleById(loginedUser.getRole()).toUpperCase().equals(ADMIN_ROLE)) {
             log.info("User is admin");
             request.getSession().setAttribute("role", "Administrator");
+            ArrayList<Specialty> paginationSpecialties =
+                    SpecialtyService.getAll(Pagination.FIRST_PAGE, Pagination. FIVE_RECORDS_PER_PAGE);
+            request.getSession().setAttribute("paginationSpecialties", paginationSpecialties);
+            int rows = SpecialtyService.getRows();
+            int nOfPages = Pagination.countNumberOfPages(rows, Pagination.FIVE_RECORDS_PER_PAGE);
+            request.getSession().setAttribute("noOfPages", nOfPages);
             page = property.getProperty("path.page.adminMain");
         } else {
             log.info("User is student");
@@ -74,7 +82,7 @@ public class LoginCommand implements ActionCommand {
             subjectUserHashMap.put(subject, SubjectService.getAllUsersWithUncheckedSubject(subject.getId()));
         }
         request.getSession().setAttribute("subjectUserHashMap", subjectUserHashMap);
-        request.getSession().setAttribute("specialtyUserGradeHashMap", CountGeneralGrade.fillListOfSpecialtiesAndUsers());
+
         return page;
     }
 }

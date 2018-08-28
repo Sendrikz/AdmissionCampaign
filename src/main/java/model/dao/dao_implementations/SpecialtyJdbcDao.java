@@ -52,6 +52,32 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
     }
 
     @Override
+    public ArrayList<Specialty> getAll(int currentPage, int recordsPerPage) {
+        ArrayList<Specialty> listOfSpecialties = new ArrayList<>();
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.getAllSpecialtiesPagination"))) {
+
+            int start = currentPage * recordsPerPage - recordsPerPage;
+            ps.setInt(1, start);
+            ps.setInt(2, recordsPerPage);
+
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                String name = resultSet.getString(2);
+                int quantityOfStudents = resultSet.getInt(3);
+                int facultyId = resultSet.getInt(4);
+                Specialty specialty = new Specialty(name, quantityOfStudents, facultyId);
+                specialty.setId(resultSet.getInt(1));
+                listOfSpecialties.add(specialty);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listOfSpecialties;
+    }
+
+    @Override
     public void add(Specialty specialty) {
         try (PreparedStatement ps = connection.prepareStatement(
                 property.getProperty("sql.addSpecialty"), Statement.RETURN_GENERATED_KEYS)) {
@@ -256,5 +282,21 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
         }
 
         return listOfUsers;
+    }
+
+    @Override
+    public int getNumberOfRows() {
+        int rows = 0;
+        try (Statement statement = connection.createStatement()) {
+
+            ResultSet resultSet = statement.executeQuery(
+                    property.getProperty("sql.countSpecialtiesRows"));
+            if (resultSet.next()) {
+                rows = resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return rows;
     }
 }

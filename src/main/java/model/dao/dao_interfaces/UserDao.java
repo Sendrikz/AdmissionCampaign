@@ -27,6 +27,7 @@ public interface UserDao {
     void updateUserToSpecialty(int userId, int specialtyId, boolean passed);
 
     void deleteById(int id);
+    void deleteUserFromSpecialtiesExcept(int user_id, int specialty_id);
     void clearAllUsers();
 
     HashMap<Subject, BigDecimal> getAllCheckedSubjectsByUser(int id);

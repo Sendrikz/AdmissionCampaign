@@ -51,6 +51,16 @@ public enum CommandEnum {
         {
             this.command = new GradeListRedirectCommand();
         }
+    },
+    PAGINATIONSPECIALTY {
+        {
+            this.command = new PaginationSpecialtyCommand();
+        }
+    },
+    RATESPECIALTY {
+        {
+            this.command = new rateSpecialtyCommand();
+        }
     };
 
     ActionCommand command;
