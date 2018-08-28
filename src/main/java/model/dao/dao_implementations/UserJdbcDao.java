@@ -398,4 +398,22 @@ public class UserJdbcDao implements UserDao {
 
         return listOfSpecialties;
     }
+
+    @Override
+    public Specialty getPassedSpecialtyByUser(int id) {
+        Specialty specialty = null;
+        try (PreparedStatement ps = connection.prepareStatement(
+                property.getProperty("sql.getPassedSpecialtyByUser"))) {
+            ps.setInt(1, id);
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                specialty = new Specialty(resultSet.getString(2),
+                        resultSet.getInt(3), resultSet.getInt(4));
+                specialty.setId(resultSet.getInt(1));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return specialty;
+    }
 }

@@ -1,6 +1,6 @@
 package controller.commands;
 
-import controller.CountGeneralGrade;
+import controller.Util;
 import org.apache.log4j.Logger;
 import services.SubjectService;
 
@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Properties;
 
 public class SetGradeCommand implements ActionCommand {
@@ -37,8 +36,7 @@ public class SetGradeCommand implements ActionCommand {
         BigDecimal grade = BigDecimal.valueOf(Double.parseDouble(request.getParameter("grade")));
         log.debug("Grade: " + grade);
         SubjectService.updateSubjectToUser(subjectId, userId, grade);
-        request.getSession().setAttribute("subjectUserHashMap",
-                SubjectService.updateHashMapOfSubjectUsers(ArrayList.class.cast(request.getSession().getAttribute("subjectsList"))));
+        Util.generateListOfSubjectsForUserAndUsersWhichPassThem(request);
         return page;
     }
 }

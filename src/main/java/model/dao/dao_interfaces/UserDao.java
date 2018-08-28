@@ -35,4 +35,5 @@ public interface UserDao {
     ArrayList<Subject> getAllUncheckedSubjectsByUser(int id);
 
     HashMap<Specialty, Boolean> getAllSpecialtiesByUser(int id);
+    Specialty getPassedSpecialtyByUser(int id);
 }

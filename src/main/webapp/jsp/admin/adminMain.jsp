@@ -8,16 +8,19 @@
     <html><head>
         <meta charset="utf-8">
         <title><fmt:message key="title"/></title>
+
+        <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="/resources/demos/style.css">
-
         <script>
-            $( function() {
-                $( "#tabsSubject" ).tabs();
-            } );
+            $(function() {
+                $("#tabsSubject").tabs();
+            });
         </script>
     </head>
     <body>
@@ -102,9 +105,20 @@
         </ul>
     </nav>
 </div>
-    <form name="SendLetterForm" method="POST" action="controller">
-        <input type="hidden" name="command" value="sendLetter">
-        <button>Send letters</button>
-    </form>
+
+<c:choose>
+    <c:when test="${sessionScope.confirmRate == 'yes'}">
+        <script>
+            swal('Success!', 'You build a rating', 'success');
+        </script>
+        <c:set var="confirmRate" value="off" scope="session"/>
+    </c:when>
+    <c:when test="${sessionScope.confirmRate == 'no'}">
+        <script>
+            swal('Error!', 'You have already build a rating', 'error');
+        </script>
+        <c:set var="confirmRate" value="off" scope="session"/>
+    </c:when>
+</c:choose>
     </body></html>
 </fmt:bundle>

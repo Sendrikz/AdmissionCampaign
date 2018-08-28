@@ -29,7 +29,7 @@ public class SubjectService {
                 return sub;
             }
         }
-        log.debug("Subject didn`t found: " + null);
+        log.debug("There is no subject: " + null);
         return null;
     }
 
@@ -47,14 +47,5 @@ public class SubjectService {
         SubjectDao subjectDao = DaoFactory.getSubjectDao(connection);
         subjectDao.updateSubjectToUser(subjectId, userId, true, grade);
         ConnectionManager.getInstance().close(connection);
-    }
-
-    public static HashMap<Subject, ArrayList<User>> updateHashMapOfSubjectUsers(
-            ArrayList<Subject> listOfSubjects) {
-        HashMap<Subject, ArrayList<User>> subjectUserHashMap = new HashMap<>();
-        for (Subject subject : listOfSubjects) {
-            subjectUserHashMap.put(subject, SubjectService.getAllUsersWithUncheckedSubject(subject.getId()));
-        }
-        return subjectUserHashMap;
     }
 }

@@ -59,12 +59,7 @@ public enum CommandEnum {
     },
     RATESPECIALTY {
         {
-            this.command = new rateSpecialtyCommand();
-        }
-    },
-    SENDLETTER {
-        {
-            this.command = new SendLetterCommand();
+            this.command = new RateSpecialtyCommand();
         }
     };
 

@@ -1,14 +1,12 @@
 package controller.commands;
 
+import controller.Util;
 import controller.pagination.Pagination;
-import model.enteties.Specialty;
 import org.apache.log4j.Logger;
-import services.SpecialtyService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Properties;
 
 public class PaginationSpecialtyCommand implements ActionCommand {
@@ -33,13 +31,7 @@ public class PaginationSpecialtyCommand implements ActionCommand {
         log.debug("Current page: " + currentPage);
         int recordsPerPage = Pagination.FIVE_RECORDS_PER_PAGE;
 
-        ArrayList<Specialty> paginationSpecialties = SpecialtyService.getAll(currentPage,
-                recordsPerPage);
-        request.getSession().setAttribute("paginationSpecialties", paginationSpecialties);
-        log.debug("Pagination specialties: " + paginationSpecialties);
-        int rows = SpecialtyService.getRows();
-        int nOfPages = Pagination.countNumberOfPages(rows, recordsPerPage);
-        request.getSession().setAttribute("noOfPages", nOfPages);
+        Util.generatePaginationSpecialties(request, currentPage, recordsPerPage);
 
         return property.getProperty("path.page.adminMain");
     }

@@ -52,6 +52,7 @@ public class GenerateSpecialtyByUniCommand implements ActionCommand {
                         SpecialtyService.getAllSubjectsOfSpecialty(specialty.getId()));
             }
         }
+
         request.getSession().setAttribute("facultySpecialtyMap", facultySpecialtyHashMap);
         request.getSession().setAttribute("specialtySubjectMap", subjectBigDecimalHashMap);
         return page;

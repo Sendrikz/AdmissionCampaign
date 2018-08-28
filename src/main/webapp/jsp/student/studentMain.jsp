@@ -17,9 +17,6 @@
     </head>
     <body>
     <c:import url="/jsp/fragments/headerStudent.jsp"/>
-    <c:if test="${sessionScope.isChecked == 'yes'}">
-        <c:import url="/jsp/fragments/studentGrades.jsp"/>
-    </c:if>
     <h3><fmt:message key="account"/></h3>
     <hr/>
     <fmt:message key="lastName"/>: ${ sessionScope.loginedUser.lastName }
@@ -29,6 +26,13 @@
     <fmt:message key="city"/>: ${ sessionScope.loginedUser.city }
     <fmt:message key="email"/>: ${ sessionScope.loginedUser.email }
     <hr/>
+
+    <c:if test="${sessionScope.isPassed == 'yes'}">
+        <c:import url="/jsp/fragments/studentAdmission.jsp"/>
+    </c:if>
+    <c:if test="${sessionScope.isChecked == 'yes'}">
+        <c:import url="/jsp/fragments/studentGrades.jsp"/>
+    </c:if>
 
     <h3><fmt:message key="subjects"/></h3>
     <jsp:useBean id="subjectsList" scope="session" type="java.util.List"/>

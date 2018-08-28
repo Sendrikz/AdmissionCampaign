@@ -102,4 +102,13 @@ public class UserService {
         ConnectionManager.getInstance().close(connection);
         return listOfSubjects;
     }
+
+    public static Specialty getPassedSpecialtyByUser(int id) {
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        UserDao userDao = DaoFactory.getUserDao(connection);
+        Specialty specialty = userDao.getPassedSpecialtyByUser(id);
+        log.debug("Specialty: " + specialty);
+        ConnectionManager.getInstance().close(connection);
+        return specialty;
+    }
 }

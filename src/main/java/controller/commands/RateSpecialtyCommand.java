@@ -5,6 +5,7 @@ import model.enteties.Specialty;
 import model.enteties.User;
 import org.apache.log4j.Logger;
 import services.SpecialtyService;
+import services.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -14,11 +15,11 @@ import java.util.HashMap;
 import java.util.Properties;
 import java.util.TreeMap;
 
-public class rateSpecialtyCommand implements ActionCommand {
-    private static final Logger log = Logger.getLogger(rateSpecialtyCommand.class);
+public class RateSpecialtyCommand implements ActionCommand {
+    private static final Logger log = Logger.getLogger(RateSpecialtyCommand.class);
     private Properties property;
 
-    rateSpecialtyCommand() {
+    RateSpecialtyCommand() {
         property = new Properties();
         try (InputStream is = this.getClass().getClassLoader().
                 getResourceAsStream("config.properties")){
@@ -31,6 +32,7 @@ public class rateSpecialtyCommand implements ActionCommand {
     @Override
     public String execute(HttpServletRequest request) {
         log.info("Start class rateSpecialtyCommand execute()");
+        String page = property.getProperty("path.page.adminMain");
         int currentSpecialtyId = Integer.parseInt(request.getParameter("specialtyId"));
         HashMap<Specialty, TreeMap<BigDecimal, User>> specialtyTreeMapHashMap
                 = (HashMap<Specialty, TreeMap<BigDecimal, User>>)
@@ -41,6 +43,10 @@ public class rateSpecialtyCommand implements ActionCommand {
         TreeMap<BigDecimal, User> userTreeMap = specialtyTreeMapHashMap.get(selectedSpecialty);
         int count = 0;
         for (User user : userTreeMap.values()) {
+            if (UserService.getPassedSpecialtyByUser(user.getId()) != null) {
+                request.getSession().setAttribute("confirmRate", "no");
+                return page;
+            }
             if (count < availableQuantity) {
                 TransactionStudentSpecialty.updateUserSpecialty(user.getId(),
                         selectedSpecialty.getId());
@@ -48,6 +54,7 @@ public class rateSpecialtyCommand implements ActionCommand {
             count++;
         }
         log.debug("Count = " + count);
-        return property.getProperty("path.page.adminMain");
+        request.getSession().setAttribute("confirmRate", "yes");
+        return page;
     }
 }
