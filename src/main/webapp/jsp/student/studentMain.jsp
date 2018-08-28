@@ -17,6 +17,9 @@
     </head>
     <body>
     <c:import url="/jsp/fragments/headerStudent.jsp"/>
+    <c:if test="${sessionScope.isChecked == 'yes'}">
+        <c:import url="/jsp/fragments/studentGrades.jsp"/>
+    </c:if>
     <h3><fmt:message key="account"/></h3>
     <hr/>
     <fmt:message key="lastName"/>: ${ sessionScope.loginedUser.lastName }

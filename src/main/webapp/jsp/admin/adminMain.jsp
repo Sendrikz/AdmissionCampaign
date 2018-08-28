@@ -102,6 +102,9 @@
         </ul>
     </nav>
 </div>
-    <button>Send letters</button>
+    <form name="SendLetterForm" method="POST" action="controller">
+        <input type="hidden" name="command" value="sendLetter">
+        <button>Send letters</button>
+    </form>
     </body></html>
 </fmt:bundle>

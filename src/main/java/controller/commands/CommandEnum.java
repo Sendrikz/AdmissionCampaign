@@ -61,6 +61,11 @@ public enum CommandEnum {
         {
             this.command = new rateSpecialtyCommand();
         }
+    },
+    SENDLETTER {
+        {
+            this.command = new SendLetterCommand();
+        }
     };
 
     ActionCommand command;

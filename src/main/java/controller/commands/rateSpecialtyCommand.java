@@ -1,6 +1,6 @@
 package controller.commands;
 
-import controller.transaction.TranactionStudentSpecialty;
+import controller.transaction.TransactionStudentSpecialty;
 import model.enteties.Specialty;
 import model.enteties.User;
 import org.apache.log4j.Logger;
@@ -42,7 +42,7 @@ public class rateSpecialtyCommand implements ActionCommand {
         int count = 0;
         for (User user : userTreeMap.values()) {
             if (count < availableQuantity) {
-                TranactionStudentSpecialty.updateUserSpecialty(user.getId(),
+                TransactionStudentSpecialty.updateUserSpecialty(user.getId(),
                         selectedSpecialty.getId());
             }
             count++;

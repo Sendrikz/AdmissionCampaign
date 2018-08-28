@@ -2,18 +2,17 @@ package controller.commands;
 
 import controller.CountGeneralGrade;
 import controller.pagination.Pagination;
+import model.dao.dao_interfaces.UserDao;
 import model.enteties.Specialty;
 import model.enteties.Subject;
 import model.enteties.User;
 import org.apache.log4j.Logger;
-import services.LoginService;
-import services.SpecialtyService;
-import services.SubjectService;
-import services.UniversityService;
+import services.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Properties;
@@ -74,6 +73,15 @@ public class LoginCommand implements ActionCommand {
             ArrayList<String> listOfCities = new ArrayList<>(UniversityService.getAllCities());
             request.getSession().setAttribute("citiesList", listOfCities);
             page = property.getProperty("path.page.studentMain");
+
+            HashMap<Subject, BigDecimal> listOfSubjectsByUser =
+                    UserService.getAllCheckedSubjectsByUser(loginedUser.getId());
+            if (listOfSubjectsByUser.size() != 0) {
+                request.getSession().setAttribute("isChecked", "yes");
+                request.getSession().setAttribute("subjectGradeList", listOfSubjectsByUser);
+            } else {
+                request.getSession().setAttribute("isChecked", "no");
+            }
         }
         ArrayList<Subject> listOfSubjects = LoginService.getAllSubjects();
         request.getSession().setAttribute("subjectsList", listOfSubjects);
