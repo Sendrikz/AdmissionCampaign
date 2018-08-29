@@ -1,5 +1,6 @@
 package controller.commands;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.log4j.Logger;
 import services.LoginService;
 
@@ -33,8 +34,8 @@ public class RegistrationCommand implements ActionCommand {
         String birthday = request.getParameter("birthday");
         String city = request.getParameter("city");
         String email = request.getParameter("email");
-        String password = request.getParameter("password");
-
+        String password = DigestUtils.md5Hex(request.getParameter("password"));
+        log.debug("Password in md5: " + password);
         if (LoginService.checkLogin (email, password) == null) {
             LoginService.addUser(lastName, firstName, patronymic, birthday, city, email, password);
             request.getSession().setAttribute("successfulRegistrated", "yes");

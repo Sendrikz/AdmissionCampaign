@@ -26,7 +26,8 @@ public class LoginService {
         listOfAllUsers = user.getAll();
         ConnectionManager.getInstance().close(connection);
         for (User users : listOfAllUsers) {
-            if (users.getEmail().equals(login) && users.getPassword().equals(password)) {
+            if (users.getEmail().equals(login) || (users.getEmail().equals(login) &&
+                    users.getPassword().equals(password))) {
                 log.info("Find user");
                 return users;
             }

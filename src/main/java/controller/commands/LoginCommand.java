@@ -3,6 +3,7 @@ package controller.commands;
 import controller.Util;
 import controller.pagination.Pagination;
 import model.enteties.User;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.log4j.Logger;
 import services.*;
 
@@ -33,8 +34,7 @@ public class LoginCommand implements ActionCommand {
         log.info("start class LoginCommand execute()");
         String page;
         String login = request.getParameter("login");
-        String password = request.getParameter("password");
-
+        String password = DigestUtils.md5Hex(request.getParameter("password"));
         User loginedUser = LoginService.checkLogin(login, password);
         request.getSession().setAttribute("loginedUser", loginedUser);
         log.info("Logined user is " + loginedUser);
