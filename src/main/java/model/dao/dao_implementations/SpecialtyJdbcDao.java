@@ -5,6 +5,7 @@ import model.enteties.Specialty;
 import model.enteties.Subject;
 import model.enteties.University;
 import model.enteties.User;
+import org.apache.log4j.Logger;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -17,6 +18,7 @@ import java.util.Properties;
 
 public class SpecialtyJdbcDao implements SpecialtyDao {
 
+    private static final Logger log = Logger.getLogger(SpecialtyJdbcDao.class);
     private Connection connection;
     private Properties property;
 
@@ -26,7 +28,7 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
         try (InputStream is = this.getClass().getClassLoader().getResourceAsStream("sql.properties")){
             property.load(is);
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -46,7 +48,7 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
                 listOfSpecialties.add(specialty);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return listOfSpecialties;
     }
@@ -72,7 +74,7 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return listOfSpecialties;
     }
@@ -102,7 +104,7 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
             }
 
         }catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -117,7 +119,7 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -132,7 +134,7 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
 
     }
@@ -149,7 +151,7 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -164,7 +166,7 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -179,7 +181,7 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -199,7 +201,7 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
                 specialty.setId(id);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return specialty;
     }
@@ -213,7 +215,7 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -224,7 +226,7 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
             statement.executeUpdate(property.getProperty("sql.clearAllSpecialties"));
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -247,7 +249,7 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
                 }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return listOfSubject;
     }
@@ -278,7 +280,7 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
 
         return listOfUsers;
@@ -295,7 +297,7 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
                 rows = resultSet.getInt(1);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return rows;
     }

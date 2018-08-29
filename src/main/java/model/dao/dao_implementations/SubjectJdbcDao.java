@@ -4,6 +4,7 @@ import model.dao.dao_interfaces.SubjectDao;
 import model.enteties.Specialty;
 import model.enteties.Subject;
 import model.enteties.User;
+import org.apache.log4j.Logger;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -16,6 +17,7 @@ import java.util.Properties;
 
 public class SubjectJdbcDao implements SubjectDao {
 
+    private static final Logger log = Logger.getLogger(SubjectJdbcDao.class);
     private Connection connection;
     private Properties property;
 
@@ -26,7 +28,7 @@ public class SubjectJdbcDao implements SubjectDao {
         try (InputStream is = this.getClass().getClassLoader().getResourceAsStream("sql.properties")){
             property.load(is);
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -46,7 +48,7 @@ public class SubjectJdbcDao implements SubjectDao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return listOfSubjects;
     }
@@ -71,11 +73,11 @@ public class SubjectJdbcDao implements SubjectDao {
                     throw new SQLException("Creating user failed, no ID obtained.");
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                log.error(e.getMessage());
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -90,7 +92,7 @@ public class SubjectJdbcDao implements SubjectDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -106,7 +108,7 @@ public class SubjectJdbcDao implements SubjectDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -121,7 +123,7 @@ public class SubjectJdbcDao implements SubjectDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -136,7 +138,7 @@ public class SubjectJdbcDao implements SubjectDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -152,7 +154,7 @@ public class SubjectJdbcDao implements SubjectDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -172,7 +174,7 @@ public class SubjectJdbcDao implements SubjectDao {
                 subject.setId(id);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return subject;
     }
@@ -186,7 +188,7 @@ public class SubjectJdbcDao implements SubjectDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -197,7 +199,7 @@ public class SubjectJdbcDao implements SubjectDao {
             statement.executeUpdate(property.getProperty("sql.clearAllSubjects"));
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -216,7 +218,7 @@ public class SubjectJdbcDao implements SubjectDao {
                     listOfSpecialties.put(specialty, resultSet.getBigDecimal(5));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return listOfSpecialties;
     }
@@ -248,7 +250,7 @@ public class SubjectJdbcDao implements SubjectDao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return listOfUsers;
     }
@@ -279,7 +281,7 @@ public class SubjectJdbcDao implements SubjectDao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return listOfUsers;
     }
@@ -309,7 +311,7 @@ public class SubjectJdbcDao implements SubjectDao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return listOfUsers;
     }

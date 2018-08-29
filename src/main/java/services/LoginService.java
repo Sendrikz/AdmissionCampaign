@@ -26,8 +26,7 @@ public class LoginService {
         listOfAllUsers = user.getAll();
         ConnectionManager.getInstance().close(connection);
         for (User users : listOfAllUsers) {
-            if (users.getEmail().equals(login) || (users.getEmail().equals(login) &&
-                    users.getPassword().equals(password))) {
+            if (users.getEmail().equals(login) && users.getPassword().equals(password)) {
                 log.info("Find user");
                 return users;
             }
@@ -49,6 +48,7 @@ public class LoginService {
     }
 
     public static String getRoleById(int roleId) {
+        log.info("Start class LoginLogic getRoleById()");
         Connection connection = ConnectionManager.getInstance().getConnection();
         RoleDao role = DaoFactory.getRoleDao(connection);
         String res = role.findById(roleId).getName();
@@ -57,6 +57,7 @@ public class LoginService {
     }
 
     public static ArrayList<Subject> getAllSubjects() {
+        log.info("Start class LoginLogic getAllSubjects()");
         Connection connection = ConnectionManager.getInstance().getConnection();
         SubjectDao subject = DaoFactory.getSubjectDao(connection);
         ArrayList<Subject> listOfSubjects = subject.getAll();

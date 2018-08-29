@@ -5,6 +5,7 @@ import model.dao.dao_interfaces.UserDao;
 import model.enteties.Specialty;
 import model.enteties.Subject;
 import model.enteties.User;
+import org.apache.log4j.Logger;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -17,6 +18,7 @@ import java.util.Properties;
 
 public class UserJdbcDao implements UserDao {
 
+    private static final Logger log = Logger.getLogger(UserJdbcDao.class);
     private Properties property;
     private Connection connection;
 
@@ -26,7 +28,7 @@ public class UserJdbcDao implements UserDao {
         try (InputStream is = this.getClass().getClassLoader().getResourceAsStream("sql.properties")){
             property.load(is);
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -54,7 +56,7 @@ public class UserJdbcDao implements UserDao {
                 listOfUsers.add(user);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return listOfUsers;
     }
@@ -86,7 +88,7 @@ public class UserJdbcDao implements UserDao {
                 listOfStudents.add(user);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return listOfStudents;
     }
@@ -120,7 +122,7 @@ public class UserJdbcDao implements UserDao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -136,7 +138,7 @@ public class UserJdbcDao implements UserDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -151,7 +153,7 @@ public class UserJdbcDao implements UserDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -181,7 +183,7 @@ public class UserJdbcDao implements UserDao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return user;
     }
@@ -203,7 +205,7 @@ public class UserJdbcDao implements UserDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -218,7 +220,7 @@ public class UserJdbcDao implements UserDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -233,7 +235,7 @@ public class UserJdbcDao implements UserDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -249,7 +251,7 @@ public class UserJdbcDao implements UserDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -264,7 +266,7 @@ public class UserJdbcDao implements UserDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -277,7 +279,7 @@ public class UserJdbcDao implements UserDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -291,7 +293,7 @@ public class UserJdbcDao implements UserDao {
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -302,7 +304,7 @@ public class UserJdbcDao implements UserDao {
             statement.executeUpdate(property.getProperty("sql.deleteAllUsers"));
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -324,7 +326,7 @@ public class UserJdbcDao implements UserDao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
 
         return listOfSubjects;
@@ -346,7 +348,7 @@ public class UserJdbcDao implements UserDao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return listOfSubjects;
     }
@@ -367,7 +369,7 @@ public class UserJdbcDao implements UserDao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return listOfSubjects;
     }
@@ -393,7 +395,7 @@ public class UserJdbcDao implements UserDao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
 
         return listOfSpecialties;
@@ -412,7 +414,7 @@ public class UserJdbcDao implements UserDao {
                 specialty.setId(resultSet.getInt(1));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return specialty;
     }

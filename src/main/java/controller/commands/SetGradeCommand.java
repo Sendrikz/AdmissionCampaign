@@ -1,6 +1,6 @@
 package controller.commands;
 
-import controller.Util;
+import controller.util.Util;
 import org.apache.log4j.Logger;
 import services.SubjectService;
 

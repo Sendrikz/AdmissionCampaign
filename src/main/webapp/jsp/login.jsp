@@ -34,6 +34,7 @@
     </style>
 </head>
 <body>
+
 <div class="select-language">
     <form>
         <select id="language" name="language" onchange="submit()">
@@ -42,6 +43,8 @@
         </select>
     </form>
 </div>
+<!-- /select-language -->
+
 <div class="inner">
     <div class="login-content">
         <h4 class="login-title text-center"><fmt:message key="title"/></h4>
@@ -75,6 +78,7 @@
 </div>
 <!-- /inner -->
 
+<!-- Options for sweet alerts start -->
 <c:choose>
     <c:when test="${sessionScope.successfulRegistrated == 'yes'}">
         <script>
@@ -95,6 +99,7 @@
         <c:set var="successfulLogin" value="null" scope="session"/>
     </c:when>
 </c:choose>
+<!-- Options for sweet alerts end -->
 
 <!-- Modal start -->
 <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">

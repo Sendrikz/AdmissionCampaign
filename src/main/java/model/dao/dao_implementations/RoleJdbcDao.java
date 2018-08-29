@@ -3,6 +3,7 @@ package model.dao.dao_implementations;
 import model.dao.dao_interfaces.RoleDao;
 import model.enteties.Role;
 import model.enteties.User;
+import org.apache.log4j.Logger;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,6 +14,7 @@ import java.util.Properties;
 
 public class RoleJdbcDao implements RoleDao {
 
+    private static final Logger log = Logger.getLogger(RoleJdbcDao.class);
     private Connection connection;
     private Properties property;
 
@@ -41,7 +43,7 @@ public class RoleJdbcDao implements RoleDao {
                 listOfRoles.add(role);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return listOfRoles;
     }
@@ -68,7 +70,7 @@ public class RoleJdbcDao implements RoleDao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -82,7 +84,7 @@ public class RoleJdbcDao implements RoleDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -102,7 +104,7 @@ public class RoleJdbcDao implements RoleDao {
                role.setId(idRole);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return role;
     }
@@ -119,7 +121,7 @@ public class RoleJdbcDao implements RoleDao {
                 id = resultSet.getInt(1);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return id;
     }
@@ -133,7 +135,7 @@ public class RoleJdbcDao implements RoleDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
 
     }
@@ -145,7 +147,7 @@ public class RoleJdbcDao implements RoleDao {
             statement.executeUpdate(property.getProperty("sql.deleteAllRoles"));
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -175,7 +177,7 @@ public class RoleJdbcDao implements RoleDao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return listOfUsersByRole;
     }

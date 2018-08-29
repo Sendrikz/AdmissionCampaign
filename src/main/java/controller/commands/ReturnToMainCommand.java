@@ -1,6 +1,6 @@
 package controller.commands;
 
-import controller.Util;
+import controller.util.Util;
 import controller.pagination.Pagination;
 
 import javax.servlet.http.HttpServletRequest;

@@ -7,6 +7,7 @@ import model.dao.dao_interfaces.UniversityDao;
 import model.enteties.Faculty;
 import model.enteties.Specialty;
 import model.enteties.University;
+import org.apache.log4j.Logger;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -19,6 +20,7 @@ import java.util.Properties;
 
 public class UniversityJdbcDao implements UniversityDao {
 
+    private static final Logger log = Logger.getLogger(UniversityJdbcDao.class);
     private Connection connection;
     private Properties property;
 
@@ -28,27 +30,7 @@ public class UniversityJdbcDao implements UniversityDao {
         try (InputStream is = this.getClass().getClassLoader().getResourceAsStream("sql.properties")){
             property.load(is);
         } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void setPath(InputStream path) {
-        property = new Properties();
-        try {
-            property.load(path);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void setTestPath() {
-        property = new Properties();
-        String pathToFile = "src/main/resources/sql.properties";
-        try {
-            FileInputStream fis = new FileInputStream(pathToFile);
-            property.load(fis);
-        } catch (IOException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -68,7 +50,7 @@ public class UniversityJdbcDao implements UniversityDao {
                 listOfUniversities.add(uni);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return listOfUniversities;
     }
@@ -96,7 +78,7 @@ public class UniversityJdbcDao implements UniversityDao {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -112,7 +94,7 @@ public class UniversityJdbcDao implements UniversityDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -132,7 +114,7 @@ public class UniversityJdbcDao implements UniversityDao {
                 uni.setId(id);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return uni;
     }
@@ -146,7 +128,7 @@ public class UniversityJdbcDao implements UniversityDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -157,7 +139,7 @@ public class UniversityJdbcDao implements UniversityDao {
             statement.executeUpdate(property.getProperty("sql.clearAllUniversities"));
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -177,7 +159,7 @@ public class UniversityJdbcDao implements UniversityDao {
                 listOfFaculties.add(faculty);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return listOfFaculties;
     }

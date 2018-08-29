@@ -5,26 +5,38 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <fmt:setLocale value="${sessionScope.language}" />
 <fmt:bundle basename="pagecontent" prefix = "label." >
-    <html><head>
+    <html>
+    <head>
+        <!-- Required meta tags -->
         <meta charset="utf-8">
         <title><fmt:message key="title"/></title>
 
+        <!-- Sweet alert -->
         <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <!-- JQuery -->
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <!-- Custom style -->
+        <link rel = "stylesheet" type="text/css" href = "/css/style.css"/>
+
         <script>
             $(function() {
                 $("#tabsSubject").tabs();
             });
         </script>
+
     </head>
     <body>
     <c:import url="/jsp/fragments/headerAdmin.jsp" />
+    <div class="container">
         <h3><fmt:message key="account"/></h3>
         <hr/>
         <fmt:message key="lastName"/>: ${ sessionScope.loginedUser.lastName }
@@ -88,24 +100,23 @@
             </c:forEach>
         </table>
     </div>
-
     <nav aria-label="Navigation for countries">
         <ul class="pagination">
             <c:forEach begin="1" end="${sessionScope.noOfPages}" var="i">
-                        <li class="page-item">
-                            <form name="logOutFrom" method="POST" action="controller" class="page-link">
-                                <button>
-                                    <input type="hidden" name="command" value="paginationSpecialty"/>
-                                    <input type="hidden" name="currentPage" value="${i}">
-                                    ${i}
-                                </button>
-                            </form>
-                        </li>
+                <li class="page-item">
+                    <form name="logOutFrom" method="POST" action="controller">
+                        <button class="page-link">
+                            <input type="hidden" name="command" value="paginationSpecialty"/>
+                            <input type="hidden" name="currentPage" value="${i}">
+                                ${i}
+                        </button>
+                    </form>
+                </li>
             </c:forEach>
         </ul>
     </nav>
 </div>
-
+    </div>
 <c:choose>
     <c:when test="${sessionScope.confirmRate == 'yes'}">
         <script>

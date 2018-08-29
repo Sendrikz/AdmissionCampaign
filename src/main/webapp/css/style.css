@@ -19,6 +19,8 @@ a:hover, a:active{
 button {
     cursor: pointer;
     padding: 0;
+    background-color: inherit;
+    color: inherit;
 }
 input,
 textarea,
@@ -31,7 +33,45 @@ button.close {
     opacity: 1;
     border: none;
 }
+ul, ol{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 /* Reset end */
+
+/* Header start */
+.container-fluid {
+    padding: 0 15px;
+}
+.header {
+    overflow: hidden;
+    padding-top: 26px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    background-color: #313f47;
+}
+.logo {
+    float: left;
+}
+.header .container-fluid {
+    max-width: 1576px;
+    margin: auto;
+}
+.header-nav {
+    float: right;
+    color: rgba(255, 255, 255, 0.75);
+}
+.header .header-nav li {
+    float:left;
+    line-height: 22px;
+}
+.header .header-nav li + li {
+    margin-left: 35px;
+}
+/* Header end */
 
 /* Default start */
 .custom-btn {
@@ -60,6 +100,14 @@ button.close {
     right: 20px;
     top: 10px;
     z-index: 999;
+}
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: auto;
+}
+.container-fluid {
+    padding: 0 15px;
 }
 /* Default end */
 
@@ -173,5 +221,4 @@ button.close {
     background-color: #4b5860;
     color: #ffffff;
 }
-
 /* Registration modal end */

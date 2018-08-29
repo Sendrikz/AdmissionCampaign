@@ -3,6 +3,7 @@ package model.dao.dao_implementations;
 import model.dao.dao_interfaces.FacultyDao;
 import model.enteties.Faculty;
 import model.enteties.Specialty;
+import org.apache.log4j.Logger;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,6 +14,7 @@ import java.util.Properties;
 
 public class FacultyJdbcDao implements FacultyDao {
 
+    private static final Logger log = Logger.getLogger(FacultyJdbcDao.class);
     private Connection connection;
     private Properties property;
 
@@ -22,7 +24,7 @@ public class FacultyJdbcDao implements FacultyDao {
         try (InputStream is = this.getClass().getClassLoader().getResourceAsStream("sql.properties")){
             property.load(is);
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -41,7 +43,7 @@ public class FacultyJdbcDao implements FacultyDao {
                 listOfFaculties.add(faculty);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return listOfFaculties;
     }
@@ -67,7 +69,7 @@ public class FacultyJdbcDao implements FacultyDao {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -81,7 +83,7 @@ public class FacultyJdbcDao implements FacultyDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -98,7 +100,7 @@ public class FacultyJdbcDao implements FacultyDao {
                 faculty.setId(id);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return faculty;
     }
@@ -112,7 +114,7 @@ public class FacultyJdbcDao implements FacultyDao {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -123,7 +125,7 @@ public class FacultyJdbcDao implements FacultyDao {
             statement.executeUpdate(property.getProperty("sql.clearAllFaculties"));
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
@@ -144,7 +146,7 @@ public class FacultyJdbcDao implements FacultyDao {
                 listOfSpecialties.add(specialty);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
         return listOfSpecialties;
     }

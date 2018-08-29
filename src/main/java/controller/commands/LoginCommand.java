@@ -1,6 +1,6 @@
 package controller.commands;
 
-import controller.Util;
+import controller.util.Util;
 import controller.pagination.Pagination;
 import model.enteties.User;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -31,7 +31,7 @@ public class LoginCommand implements ActionCommand {
 
     @Override
     public String execute(HttpServletRequest request) {
-        log.info("start class LoginCommand execute()");
+        log.info("Start class LoginCommand execute()");
         String page;
         String login = request.getParameter("login");
         String password = DigestUtils.md5Hex(request.getParameter("password"));

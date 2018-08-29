@@ -34,6 +34,7 @@ public class UserService {
     }
 
     private static ArrayList<Subject> allSubjectsByUser(User user) {
+        log.info("Start class UserService method allSubjectsByUser()");
         ArrayList<Subject> allSubjectsByUser;
         log.info("allSubjectsByUser()");
         Connection connection = ConnectionManager.getInstance().getConnection();
@@ -45,7 +46,7 @@ public class UserService {
     }
 
     public static boolean addUserToSpecialty(User user, Specialty specialty, boolean checked) {
-        log.info("addUserToSpecialty()");
+        log.info("Start class UserService method addUserToSpecialty()");
         Connection connection = ConnectionManager.getInstance().getConnection();
         UserDao userDao = DaoFactory.getUserDao(connection);
         log.debug("User to add: " + user);
@@ -61,6 +62,7 @@ public class UserService {
     }
 
     public static HashMap<Specialty, Boolean> getAllSpecialtiesByUser(User user) {
+        log.info("Start class UserService method getAllSpecialtiesByUser()");
         Connection connection = ConnectionManager.getInstance().getConnection();
         UserDao userDao = DaoFactory.getUserDao(connection);
         HashMap<Specialty, Boolean> specialtyBooalenHashMap =
@@ -71,6 +73,7 @@ public class UserService {
     }
 
     public static HashMap<Subject, BigDecimal> getAllCheckedSubjectsByUser(int id) {
+        log.info("Start class UserService method getAllCheckedSubjectsByUser()");
         Connection connection = ConnectionManager.getInstance().getConnection();
         UserDao userDao = DaoFactory.getUserDao(connection);
         HashMap<Subject, BigDecimal> subjectBigDecimalHashMap =
@@ -80,6 +83,7 @@ public class UserService {
     }
 
     public static ArrayList<User> getAll() {
+        log.info("Start class UserService method getAll()");
         Connection connection = ConnectionManager.getInstance().getConnection();
         UserDao  userDao = DaoFactory.getUserDao(connection);
         ArrayList<User> listOfAllUsers = userDao.getAll();
@@ -88,6 +92,7 @@ public class UserService {
     }
 
     public static ArrayList<User> getAllStudents(int id) {
+        log.info("Start class UserService method getAllStudents()");
         Connection connection = ConnectionManager.getInstance().getConnection();
         UserDao userDao = DaoFactory.getUserDao(connection);
         ArrayList<User> listOfAllStudents = userDao.getAllStudents(id);
@@ -96,6 +101,7 @@ public class UserService {
     }
 
     public static ArrayList<Subject> getAllSubjectsByUser(int id) {
+        log.info("Start class UserService method getAllSubjectsByUser()");
         Connection connection = ConnectionManager.getInstance().getConnection();
         UserDao userDao = DaoFactory.getUserDao(connection);
         ArrayList<Subject> listOfSubjects = userDao.getAllSubjectsByUser(id);
@@ -104,6 +110,7 @@ public class UserService {
     }
 
     public static Specialty getPassedSpecialtyByUser(int id) {
+        log.info("Start class UserService method getPassedSpecialtyByUser()");
         Connection connection = ConnectionManager.getInstance().getConnection();
         UserDao userDao = DaoFactory.getUserDao(connection);
         Specialty specialty = userDao.getPassedSpecialtyByUser(id);

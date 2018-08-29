@@ -18,6 +18,7 @@ public class SubjectService {
     private static final Logger log = Logger.getLogger(SubjectService.class);
 
     public static Subject getSubjectIdByName(String name) {
+        log.info("Start class SubjectService getSubjectIdByName()");
         Connection connection = ConnectionManager.getInstance().getConnection();
         SubjectDao subject = DaoFactory.getSubjectDao(connection);
         ArrayList<Subject> listOfSubjects = subject.getAll();
@@ -34,6 +35,7 @@ public class SubjectService {
     }
 
     public static ArrayList<User> getAllUsersWithUncheckedSubject(int id) {
+        log.info("Start class SubjectService getAllUsersWithUncheckedSubject()");
         Connection connection = ConnectionManager.getInstance().getConnection();
         SubjectDao subjectDao = DaoFactory.getSubjectDao(connection);
         ArrayList<User> listOfUsers = subjectDao.getAllUsersWithUncheckedSubject(id);
@@ -43,6 +45,7 @@ public class SubjectService {
     }
 
     public static void updateSubjectToUser(int subjectId, int userId, BigDecimal grade) {
+        log.info("Start class SubjectService updateSubjectToUser()");
         Connection connection = ConnectionManager.getInstance().getConnection();
         SubjectDao subjectDao = DaoFactory.getSubjectDao(connection);
         subjectDao.updateSubjectToUser(subjectId, userId, true, grade);

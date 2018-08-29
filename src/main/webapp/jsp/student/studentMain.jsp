@@ -17,6 +17,7 @@
     </head>
     <body>
     <c:import url="/jsp/fragments/headerStudent.jsp"/>
+    <div class="container">
     <h3><fmt:message key="account"/></h3>
     <hr/>
     <fmt:message key="lastName"/>: ${ sessionScope.loginedUser.lastName }
@@ -79,7 +80,7 @@
             Grade List
         </button>
     </form>
-
+    </div>
     <c:choose>
         <c:when test="${sessionScope.successfulSubject == 'yes'}">
             <script>
