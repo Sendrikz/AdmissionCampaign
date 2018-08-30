@@ -27,6 +27,12 @@
         <!-- Custom style -->
         <link rel = "stylesheet" type="text/css" href = "/css/style.css"/>
 
+        <style>
+            .container {
+                margin-top: 95px;
+            }
+        </style>
+
         <script>
             $(function() {
                 $("#tabsSubject").tabs();

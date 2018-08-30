@@ -22,49 +22,40 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
         <!-- Custom style -->
-        <link rel = "stylesheet" type="text/css" href = "../../css/style.css"/>
+        <link rel = "stylesheet" type="text/css" href = "/css/style.css"/>
         <style>
-            .container-fluid {
-                padding: 0 15px;
+            /* ----- Inner ----- */
+            .inner-main {
+                background-image: url('/img/main.jpg');
+                height: 100vh;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                text-align: center;
             }
-            .header {
-                overflow: hidden;
-                padding-top: 26px;
-                position: fixed;
-                width: 100%;
-                top: 0;
-                z-index: 999;
-                background-color: #313f47;
+            .inner-main::before {
+                content:'';
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+                margin-left: -4px;
             }
-            .header .container-fluid {
-                max-width: 1576px;
-                margin: auto;
+            .inner-content-main {
+                vertical-align: middle;
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                left: 27%;
             }
-            .header-nav {
-                float: right;
-                color: rgba(255, 255, 255, 0.75);
+            .inner-main h1 {
+                color: #fff;
+                font-size: 30px;
+                font-family: 'Dosis', sans-serif;
+                font-weight: 400;
+                letter-spacing: 0.3em;
+                text-indent: 1.7em;
             }
-            .header .header-nav li {
-                float:left;
-                line-height: 22px;
-            }
-            .header .header-nav li + li {
-                margin-left: 35px;
-            }
-            /* Header end */
-            ul, ol{
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-            button {
-                outline: none;
-                border: none;
-                cursor: pointer;
-                padding: 0;
-                background-color: inherit;
-                color: inherit;
-            }
+            /* ----- Inner end ----- */
         </style>
     </head>
     <body>
@@ -94,6 +85,13 @@
         <!-- /header-nav -->
     </div>
     <!-- HEADER END -->
+    <div class="inner-main">
+        <%--<div class="inner-content-main">--%>
+            <%--<h1 class="text-uppercase" style="color: black;"> Admission campaign 2018 </h1>--%>
+        <%--</div>--%>
+        <!-- /inner-content-main -->
+    </div>
+    <!-- /inner-main -->
     </body>
     </html>
 </fmt:bundle>

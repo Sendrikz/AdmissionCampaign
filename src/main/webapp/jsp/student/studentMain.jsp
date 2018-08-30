@@ -17,17 +17,35 @@
     </head>
     <body>
     <c:import url="/jsp/fragments/headerStudent.jsp"/>
-    <div class="container">
-    <h3><fmt:message key="account"/></h3>
-    <hr/>
-    <fmt:message key="lastName"/>: ${ sessionScope.loginedUser.lastName }
-    <fmt:message key="firstName"/>: ${ sessionScope.loginedUser.firstName }
-    <fmt:message key="patronymic"/>: ${ sessionScope.loginedUser.patronymic }
-    <fmt:message key="birthday"/>: ${ sessionScope.loginedUser.birthday }
-    <fmt:message key="city"/>: ${ sessionScope.loginedUser.city }
-    <fmt:message key="email"/>: ${ sessionScope.loginedUser.email }
-    <hr/>
 
+    <div class="container">
+        <div class="account-info-section">
+            <h3><fmt:message key="account"/></h3>
+            <div class="account-info">
+                <hr/>
+                <dl class="row account-info-role">
+                    <dd class="col-sm-6 account-info-elem>">
+                        <fmt:message key="lastName"/>: ${ sessionScope.loginedUser.lastName }
+                    </dd>
+                    <dd class="col-sm-6 account-info-elem>">
+                        <fmt:message key="birthday"/>: ${ sessionScope.loginedUser.birthday }
+                    </dd>
+                    <dd class="col-sm-6 account-info-elem>">
+                        <fmt:message key="firstName"/>: ${ sessionScope.loginedUser.firstName }
+                    </dd>
+                    <dd class="col-sm-6 account-info-elem>">
+                        <fmt:message key="city"/> ${ sessionScope.loginedUser.city }
+                    </dd>
+                    <dd class="col-sm-6 account-info-elem>">
+                        <fmt:message key="patronymic"/>: ${ sessionScope.loginedUser.patronymic }
+                    </dd>
+                    <dd class="col-sm-6 account-info-elem>">
+                        <fmt:message key="email"/>: ${ sessionScope.loginedUser.email }
+                    </dd>
+                </dl>
+                <hr/>
+            </div>
+        </div>
     <c:if test="${sessionScope.isPassed == 'yes'}">
         <c:import url="/jsp/fragments/studentAdmission.jsp"/>
     </c:if>

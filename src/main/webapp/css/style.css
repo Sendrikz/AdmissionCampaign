@@ -38,9 +38,15 @@ ul, ol{
     padding: 0;
     margin: 0;
 }
+img {
+    max-width: 100%;
+}
 /* Reset end */
 
 /* Header start */
+.container {
+    margin-top: 95px;
+}
 .container-fluid {
     padding: 0 15px;
 }
@@ -72,7 +78,38 @@ ul, ol{
     margin-left: 35px;
 }
 /* Header end */
-
+/* ----- Inner ----- */
+.inner-main {
+    background-image: url('/img/main.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+.inner-main::before {
+    content:'';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-left: -4px;
+}
+.inner-content-main {
+    vertical-align: middle;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 27%;
+}
+.inner-main h1 {
+    color: #fff;
+    font-size: 30px;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-indent: 1.7em;
+}
+/* ----- Inner end ----- */
 /* Default start */
 .custom-btn {
     display: inline-block;
