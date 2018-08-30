@@ -44,7 +44,7 @@
                 vertical-align: middle;
                 display: inline-block;
                 position: absolute;
-                top: 50%;
+                top: 18%;
                 left: 27%;
             }
             .inner-main h1 {
@@ -86,9 +86,9 @@
     </div>
     <!-- HEADER END -->
     <div class="inner-main">
-        <%--<div class="inner-content-main">--%>
-            <%--<h1 class="text-uppercase" style="color: black;"> Admission campaign 2018 </h1>--%>
-        <%--</div>--%>
+        <div class="inner-content-main">
+            <h1 class="text-uppercase" style="color: black;"> Admission campaign 2018 </h1>
+        </div>
         <!-- /inner-content-main -->
     </div>
     <!-- /inner-main -->

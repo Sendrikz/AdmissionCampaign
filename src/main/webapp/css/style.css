@@ -44,8 +44,8 @@ img {
 /* Reset end */
 
 /* Header start */
-.container {
-    margin-top: 95px;
+.account-info-section {
+    margin-top: 40px;
 }
 .container-fluid {
     padding: 0 15px;
@@ -98,7 +98,7 @@ img {
     vertical-align: middle;
     display: inline-block;
     position: absolute;
-    top: 50%;
+    top: 18%;
     left: 27%;
 }
 .inner-main h1 {
@@ -259,3 +259,9 @@ img {
     color: #ffffff;
 }
 /* Registration modal end */
+/* Subject section start */
+.subject-item img{
+    width: 500px;
+    height: 500px;
+}
+/* Subject section end */

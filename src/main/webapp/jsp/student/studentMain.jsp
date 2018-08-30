@@ -14,12 +14,19 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="/resources/demos/style.css">
+
+        <style>
+            .subject-item img{
+                width: 500px;
+                height: 500px;
+            }
+        </style>
     </head>
     <body>
     <c:import url="/jsp/fragments/headerStudent.jsp"/>
 
     <div class="container">
-        <div class="account-info-section">
+        <div class="account-info-section" style="margin-top: 40px">
             <h3><fmt:message key="account"/></h3>
             <div class="account-info">
                 <hr/>
@@ -43,61 +50,86 @@
                         <fmt:message key="email"/>: ${ sessionScope.loginedUser.email }
                     </dd>
                 </dl>
-                <hr/>
+                <!-- /account-info-role -->
             </div>
+            <!-- /account-info -->
         </div>
-    <c:if test="${sessionScope.isPassed == 'yes'}">
-        <c:import url="/jsp/fragments/studentAdmission.jsp"/>
-    </c:if>
-    <c:if test="${sessionScope.isChecked == 'yes'}">
-        <c:import url="/jsp/fragments/studentGrades.jsp"/>
-    </c:if>
+        <!-- /account-info-section -->
 
-    <h3><fmt:message key="subjects"/></h3>
-    <jsp:useBean id="subjectsList" scope="session" type="java.util.List"/>
-    <c:forEach var="elem" items="${ subjectsList }" varStatus="status">
-        <form name="subjectForm" method="POST" action="controller">
-            <input type="hidden" name="command" value="registrateOnSubject" />
-            <input type="hidden" name="subject" value="${ elem.name }" />
-            <c:out value="${ elem.name }" />
-            <button class="custom-btn btn-light btn-sm text-bold" type="submit"><fmt:message key="submit"/></button>
-        </form>
-    </c:forEach>
+        <c:if test="${sessionScope.isPassed == 'yes'}">
+            <c:import url="/jsp/fragments/studentAdmission.jsp"/>
+        </c:if>
+        <c:if test="${sessionScope.isChecked == 'yes'}">
+            <c:import url="/jsp/fragments/studentGrades.jsp"/>
+        </c:if>
 
-    <h3><fmt:message key="universities"/></h3>
-    <button class="custom-btn btn-light btn-sm text-bold" type="submit" onclick="myFunction()"><fmt:message key="city"/></button>
-    <table id="myCity" style="display: none">
-        <jsp:useBean id="citiesList" scope="session" type="java.util.List"/>
-        <c:forEach var="city" items=" ${ citiesList }" varStatus="status">
-            <tr>
-                <td>
-                    <c:choose>
-                        <c:when test="${fn:contains(city, '[')}" >
-                            <c:set var="correctCity" value="${fn:substringAfter(city, '[')}"/>
-                        </c:when>
-                        <c:when test="${fn:contains(city, ']')}" >
-                            <c:set var="correctCity" value="${fn:substringBefore(city, ']')}"/>
-                        </c:when>
-                        <c:otherwise>
-                            <c:set var="correctCity" value="${city}"/>
-                        </c:otherwise>
-                    </c:choose>
-                    <form name="citiesForm" method="POST" action="controller">
-                        <input type="hidden" name="command" value="generateUniversitiesByCity"/>
-                        <input type="hidden" name="city" value=" ${ correctCity }"/>
-                        <button class="custom-btn btn-light btn-sm text-bold" type="submit">${ correctCity }</button>
-                    </form>
-                </td>
-            </tr>
-        </c:forEach>
-    </table>
+        <div class="subject-section">
+            <h3><fmt:message key="subjects"/></h3>
+            <hr/>
+            <div class="subject-content">
+                <dl class="row subject-content-row">
+                    <jsp:useBean id="subjectsList" scope="session" type="java.util.List"/>
+                    <c:forEach var="elem" items="${ subjectsList }" varStatus="status">
+                    <dd class="col-sm-6">
+                        <div class="subject-item">
+                            <img alt="" src="/img/${elem.id}.jpg" style="width: 500px; height: 500px"/>
+                        </div>
+                        <form name="subjectForm" method="POST" action="controller" style="text-align: center">
+                            <input type="hidden" name="command" value="registrateOnSubject" />
+                            <input type="hidden" name="subject" value="${ elem.name }" />
+                            <c:out value="${ elem.name }" />
+                            <button class="custom-btn btn-light btn-sm text-bold" type="submit"><fmt:message key="submit"/></button>
+                        </form>
+                    </dd>
+                    </c:forEach>
+                </dl>
+            </div>
+            <!-- /subject-content -->
+        </div>
+        <!-- /subject-section -->
 
-    <form name="gradeListForm" method="POST" action="controller">
-        <button>
-            <input type="hidden" name="command" value="gradeListRedirect" />
-            Grade List
-        </button>
-    </form>
+        <div class="university-section">
+            <h3><fmt:message key="universities"/></h3>
+            <hr/>
+            <button class="custom-btn btn-light btn-sm text-bold" type="submit" onclick="myFunction()"><fmt:message key="city"/></button>
+            <div class="university-content" style="margin-left: 50px; margin-top: 15px;">
+                <dl class="row" id="myCity" style="display: none;">
+                    <jsp:useBean id="citiesList" scope="session" type="java.util.List"/>
+                    <c:forEach var="city" items=" ${ citiesList }" varStatus="status">
+                        <dd class="col-sm-3">
+                            <c:choose>
+                                <c:when test="${fn:contains(city, '[')}" >
+                                    <c:set var="correctCity" value="${fn:substringAfter(city, '[')}"/>
+                                </c:when>
+                                <c:when test="${fn:contains(city, ']')}" >
+                                    <c:set var="correctCity" value="${fn:substringBefore(city, ']')}"/>
+                                </c:when>
+                                <c:otherwise>
+                                    <c:set var="correctCity" value="${city}"/>
+                                </c:otherwise>
+                            </c:choose>
+                            <form name="citiesForm" method="POST" action="controller">
+                                <input type="hidden" name="command" value="generateUniversitiesByCity"/>
+                                <input type="hidden" name="city" value=" ${ correctCity }"/>
+                                <button class="custom-btn btn-light btn-sm text-bold" type="submit">${ correctCity }</button>
+                            </form>
+                        </dd>
+                    </c:forEach>
+                </dl>
+            </div>
+            <!-- /university-content -->
+        </div>
+        <!-- /university-section -->
+
+        <div class="grade-list-section">
+            <form name="gradeListForm" method="POST" action="controller">
+                <button class="custom-btn btn-light btn-sm text-bold" type="submit">
+                    <input type="hidden" name="command" value="gradeListRedirect" />
+                    Grade List
+                </button>
+            </form>
+        </div>
+        <!-- /grade-list-section -->
     </div>
     <c:choose>
         <c:when test="${sessionScope.successfulSubject == 'yes'}">
@@ -117,7 +149,7 @@
         function myFunction() {
             var x = document.getElementById('myCity');
             if (x.style.display === 'none') {
-                x.style.display = 'block';
+                x.style.display = '';
             } else {
                 x.style.display = 'none';
             }
