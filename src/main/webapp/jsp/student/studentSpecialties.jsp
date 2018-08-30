@@ -5,16 +5,25 @@
 <fmt:setLocale value="${sessionScope.language}" />
 <fmt:bundle basename="pagecontent" prefix = "label." >
     <html><head>
+        <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Sweet alert -->
         <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 
+        <!-- JQuery -->
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="/resources/demos/style.css">
+
+        <!-- Custom style -->
+        <link rel = "stylesheet" type="text/css" href = "/css/style.css"/>
+
         <script>
             $( function() {
                 $("#tabs").tabs();
@@ -22,41 +31,63 @@
         </script>
     </head>
     <body>
-
     <c:import url="/jsp/fragments/headerStudent.jsp" />
-        <p> Name: ${ sessionScope.selectedUni.name }</p>
-        <p> Address: ${ sessionScope.selectedUni.address }</p>
-        <p> City: ${ sessionScope.selectedUni.city }</p>
-        <jsp:useBean id="facultySpecialtyMap" scope="session" type="java.util.HashMap"/>
-        <jsp:useBean id="specialtySubjectMap" scope="session" type="java.util.HashMap"/>
-        <div id="tabs">
-            <ul>
-                <c:forEach var="map" items="${ facultySpecialtyMap }" varStatus="status">
-                    <li><a href="#tabs-${ map.key.id }">${ map.key.name }</a></li>
-                </c:forEach>
-            </ul>
-            <c:forEach var="map" items="${ facultySpecialtyMap }" varStatus="status">
-                    <div id="tabs-${ map.key.id }">
-                        <c:forEach var="specialtyMap" items="${map.value}" varStatus="status">
-                            <form name="specialtyForm" method="POST" action="controller">
-                                <input type="hidden" name="command" value="registrationForSpecialty"/>
-                                <input type="hidden" name="specialtyToRegistrId" value="${ specialtyMap.id }"/>
-                                <p> Name: ${ specialtyMap.name }</p>
-                                <p> Quantity of students: ${ specialtyMap.quantityOfStudents }</p>
-                                <c:if test="${specialtySubjectMap.containsKey(specialtyMap)}">
-                                    <p> Subjects: </p>
-                                    <c:forEach var="subjects" items="${specialtySubjectMap.get(specialtyMap)}">
-                                        <p> Name of subject: ${subjects.key.name} </p>
-                                        <p> Duration of test: ${subjects.key.duration}</p>
-                                        <p> Coef: ${subjects.value}</p>
-                                    </c:forEach>
-                                </c:if>
-                                <button><fmt:message key="submit"/></button>
-                            </form>
+
+    <div class="container">
+        <div class="university-section" style="margin-top: 40px">
+            <div class="university-info">
+                <h3> University </h3>
+                <hr/>
+                <p> Name: ${ sessionScope.selectedUni.name }</p>
+                <p> Address: ${ sessionScope.selectedUni.address }</p>
+                <p> City: ${ sessionScope.selectedUni.city }</p>
+                <h3> Faculties </h3>
+                <hr/>
+            </div>
+            <!-- /university-info -->
+            <div class="university-content">
+                <jsp:useBean id="facultySpecialtyMap" scope="session" type="java.util.HashMap"/>
+                <jsp:useBean id="specialtySubjectMap" scope="session" type="java.util.HashMap"/>
+                <div id="tabs">
+                    <ul>
+                        <c:forEach var="map" items="${ facultySpecialtyMap }" varStatus="status">
+                            <li><a href="#tabs-${ map.key.id }">${ map.key.name }</a></li>
                         </c:forEach>
-                    </div>
-            </c:forEach>
+                    </ul>
+                    <c:forEach var="map" items="${ facultySpecialtyMap }" varStatus="status">
+                            <div id="tabs-${ map.key.id }">
+                                <c:forEach var="specialtyMap" items="${map.value}" varStatus="status">
+                                    <form name="specialtyForm" method="POST" action="controller">
+                                        <input type="hidden" name="command" value="registrationForSpecialty"/>
+                                        <input type="hidden" name="specialtyToRegistrId" value="${ specialtyMap.id }"/>
+                                        <h3>${ specialtyMap.name }</h3>
+                                        <p> Quantity of students: ${ specialtyMap.quantityOfStudents }</p>
+                                        <c:if test="${specialtySubjectMap.containsKey(specialtyMap)}">
+                                            <h5> Subjects: </h5>
+                                            <dl class="row">
+                                            <c:forEach var="subjects" items="${specialtySubjectMap.get(specialtyMap)}">
+                                                <dd class="col-sm-4">
+                                                <p> Name of subject: ${subjects.key.name} </p>
+                                                <p> Duration of test: ${subjects.key.duration}</p>
+                                                <p> Coef: ${subjects.value}</p>
+                                                </dd>
+                                            </c:forEach>
+                                            </dl>
+                                        </c:if>
+                                        <button class="custom-btn btn-light btn-sm text-bold" type="submit"><fmt:message key="submit"/></button>
+                                        <hr/>
+                                    </form>
+                                </c:forEach>
+                            </div>
+                    </c:forEach>
+                </div>
+                <!-- /tabs -->
+            </div>
+            <!-- /university-content -->
         </div>
+        <!-- /university-section -->
+    </div>
+    <!-- /container -->
         <c:choose>
             <c:when test="${sessionScope.successfulSpecialty == 'yes'}">
                 <script>

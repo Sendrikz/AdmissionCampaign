@@ -4,29 +4,17 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-    <!--<servlet>-->
-        <!--<servlet-name>Controller</servlet-name>-->
-        <!--<servlet-class>controller.Controller</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>Controller</servlet-name>-->
-        <!--<url-pattern>/controller</url-pattern>-->
-    <!--</servlet-mapping>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>default</servlet-name>-->
-        <!--<url-pattern>*.css</url-pattern>-->
-    <!--</servlet-mapping>-->
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
-  <error-page>
-      <error-code>404</error-code>
-      <location>/jsp/error/error.jsp</location>
-  </error-page>
-    <error-page>
-        <exception-type>java.lang.RuntimeException</exception-type>
-        <location>/jsp/error/error.jsp</location>
-    </error-page>
+  <!--<error-page>-->
+      <!--<error-code>404</error-code>-->
+      <!--<location>/jsp/error/error.jsp</location>-->
+  <!--</error-page>-->
+    <!--<error-page>-->
+        <!--<exception-type>java.lang.RuntimeException</exception-type>-->
+        <!--<location>/jsp/error/error.jsp</location>-->
+    <!--</error-page>-->
     <resource-ref>
         <description>MySQL DB Connection Pool</description>
         <res-ref-name>jdbc/mydatabase</res-ref-name>

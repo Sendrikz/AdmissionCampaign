@@ -6,14 +6,20 @@
 <fmt:setLocale value="${sessionScope.language}" />
 <fmt:bundle basename="pagecontent" prefix = "label." >
     <html><head>
+        <!-- Required meta tags -->
         <meta charset="utf-8">
         <title><fmt:message key="title"/></title>
 
+        <!-- Sweet alert -->
         <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+        <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="/resources/demos/style.css">
+
+        <!-- Custom style -->
+        <link rel = "stylesheet" type="text/css" href = "/css/style.css"/>
 
         <style>
             .subject-item img{
@@ -122,6 +128,8 @@
         <!-- /university-section -->
 
         <div class="grade-list-section">
+            <h3> Show grade list </h3>
+            <hr/>
             <form name="gradeListForm" method="POST" action="controller">
                 <button class="custom-btn btn-light btn-sm text-bold" type="submit">
                     <input type="hidden" name="command" value="gradeListRedirect" />
@@ -131,6 +139,8 @@
         </div>
         <!-- /grade-list-section -->
     </div>
+    <!-- /container -->
+
     <c:choose>
         <c:when test="${sessionScope.successfulSubject == 'yes'}">
             <script>
@@ -145,6 +155,7 @@
             <c:set var="successfulSubject" value="off" scope="session"/>
         </c:when>
     </c:choose>
+
     <script>
         function myFunction() {
             var x = document.getElementById('myCity');
