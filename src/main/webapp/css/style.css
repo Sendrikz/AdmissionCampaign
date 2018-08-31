@@ -265,3 +265,36 @@ img {
     height: 500px;
 }
 /* Subject section end */
+/* Grade list section start */
+.grade-list-section {
+    margin-bottom: 70px;
+}
+/* Grade list section end */
+/* Footer start */
+.footer {
+    background-color: #313f47;
+}
+.footer-title {
+    padding-top: 115px;
+}
+.footer-title h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+.footer-line img {
+    margin-left: 646px;
+    margin-bottom: 28px;
+}
+.footer-line img + img {
+    margin-left: 8px;
+}
+.footer-content {
+    margin: 10px 0;
+}
+.footer-text {
+    margin-top: 112px;
+}
+.footer-text span {
+    color: #ffffff;
+}
+/* Footer end */

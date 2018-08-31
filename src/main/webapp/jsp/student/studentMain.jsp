@@ -26,13 +26,19 @@
                 width: 500px;
                 height: 500px;
             }
+            .grade-list-section {
+                margin-bottom: 70px;
+            }
+            .section + .section {
+                margin-top: 70px;
+            }
         </style>
     </head>
     <body>
     <c:import url="/jsp/fragments/headerStudent.jsp"/>
 
     <div class="container">
-        <div class="account-info-section" style="margin-top: 40px">
+        <div class="section account-info-section" style="margin-top: 40px">
             <h3><fmt:message key="account"/></h3>
             <div class="account-info">
                 <hr/>
@@ -69,7 +75,7 @@
             <c:import url="/jsp/fragments/studentGrades.jsp"/>
         </c:if>
 
-        <div class="subject-section">
+        <div class="section subject-section">
             <h3><fmt:message key="subjects"/></h3>
             <hr/>
             <div class="subject-content">
@@ -94,7 +100,7 @@
         </div>
         <!-- /subject-section -->
 
-        <div class="university-section">
+        <div class="section university-section">
             <h3><fmt:message key="universities"/></h3>
             <hr/>
             <button class="custom-btn btn-light btn-sm text-bold" type="submit" onclick="myFunction()"><fmt:message key="city"/></button>
@@ -127,7 +133,7 @@
         </div>
         <!-- /university-section -->
 
-        <div class="grade-list-section">
+        <div class="section grade-list-section">
             <h3> Show grade list </h3>
             <hr/>
             <form name="gradeListForm" method="POST" action="controller">
@@ -140,6 +146,8 @@
         <!-- /grade-list-section -->
     </div>
     <!-- /container -->
+
+    <c:import url="/jsp/fragments/footer.jsp"/>
 
     <c:choose>
         <c:when test="${sessionScope.successfulSubject == 'yes'}">

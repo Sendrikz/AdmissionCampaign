@@ -88,6 +88,9 @@
         <!-- /university-section -->
     </div>
     <!-- /container -->
+
+    <c:import url="/jsp/fragments/footer.jsp"/>
+
         <c:choose>
             <c:when test="${sessionScope.successfulSpecialty == 'yes'}">
                 <script>

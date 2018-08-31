@@ -20,7 +20,7 @@
 <body>
     <c:import url="/jsp/fragments/headerStudent.jsp" />
     <div class="container-fluid">
-        <div class="universities-section" style="padding-left: 100px;margin-top: 40px">
+        <div class="section universities-section" style="padding-left: 100px;margin-top: 40px">
             <dl class="row">
                 <jsp:useBean id="listOfUni" scope="session" type="java.util.List"/>
                 <c:forEach var="uni" items="${ listOfUni }" varStatus="status">
@@ -37,6 +37,7 @@
         <!-- /universities section -->
     </div>
     <!-- /container -->
+    <c:import url="/jsp/fragments/footer.jsp"/>
 </body>
 </html>
 </fmt:bundle>
