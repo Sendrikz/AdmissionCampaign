@@ -1,5 +1,6 @@
 package enteties;
 
+import model.builder.UserBuilder;
 import model.enteties_enum.Users;
 import model.enteties.User;
 import org.junit.Before;
@@ -13,9 +14,7 @@ public class UserTest {
 
     @Before
     public void setUp() {
-        user = new User(Users.KOSTYA.getLastName(), Users.KOSTYA.getFirstName(),
-                Users.KOSTYA.getPatronymic(), Users.KOSTYA.getBirthday(), Users.KOSTYA.getCity(),
-                Users.KOSTYA.getEmail(), Users.KOSTYA.getPassword(), 2);
+        user = new UserBuilder().setLastName(Users.KOSTYA.getLastName()).setFirstName(Users.KOSTYA.getFirstName()).setPatronymic(Users.KOSTYA.getPatronymic()).setBirthday(Users.KOSTYA.getBirthday()).setCity(Users.KOSTYA.getCity()).setEmail(Users.KOSTYA.getEmail()).setPassword(Users.KOSTYA.getPassword()).setRole(2).createUser();
     }
 
     @Test
@@ -74,25 +73,19 @@ public class UserTest {
 
     @Test
     public void equalsTest() {
-        User userCopy = new User(Users.KOSTYA.getLastName(), Users.KOSTYA.getFirstName(),
-                Users.KOSTYA.getPatronymic(), Users.KOSTYA.getBirthday(), Users.KOSTYA.getCity(),
-                Users.KOSTYA.getEmail(), Users.KOSTYA.getPassword(), 2);
+        User userCopy = new UserBuilder().setLastName(Users.KOSTYA.getLastName()).setFirstName(Users.KOSTYA.getFirstName()).setPatronymic(Users.KOSTYA.getPatronymic()).setBirthday(Users.KOSTYA.getBirthday()).setCity(Users.KOSTYA.getCity()).setEmail(Users.KOSTYA.getEmail()).setPassword(Users.KOSTYA.getPassword()).setRole(2).createUser();
         assertEquals(true, user.equals(userCopy));
     }
 
     @Test
     public void hashCodeTest() {
-        User userCopy = new User(Users.KOSTYA.getLastName(), Users.KOSTYA.getFirstName(),
-                Users.KOSTYA.getPatronymic(), Users.KOSTYA.getBirthday(), Users.KOSTYA.getCity(),
-                Users.KOSTYA.getEmail(), Users.KOSTYA.getPassword(), 2);
+        User userCopy = new UserBuilder().setLastName(Users.KOSTYA.getLastName()).setFirstName(Users.KOSTYA.getFirstName()).setPatronymic(Users.KOSTYA.getPatronymic()).setBirthday(Users.KOSTYA.getBirthday()).setCity(Users.KOSTYA.getCity()).setEmail(Users.KOSTYA.getEmail()).setPassword(Users.KOSTYA.getPassword()).setRole(2).createUser();
         assertEquals(user.hashCode(), userCopy.hashCode());
     }
 
     @Test
     public void notEqualsTest() {
-        User userCopy = new User(Users.ANDRIY.getLastName(), Users.ANDRIY.getFirstName(),
-                Users.ANDRIY.getPatronymic(), Users.ANDRIY.getBirthday(), Users.ANDRIY.getCity(),
-                Users.ANDRIY.getEmail(), Users.ANDRIY.getPassword(), 1);
+        User userCopy = new UserBuilder().setLastName(Users.ANDRIY.getLastName()).setFirstName(Users.ANDRIY.getFirstName()).setPatronymic(Users.ANDRIY.getPatronymic()).setBirthday(Users.ANDRIY.getBirthday()).setCity(Users.ANDRIY.getCity()).setEmail(Users.ANDRIY.getEmail()).setPassword(Users.ANDRIY.getPassword()).setRole(1).createUser();
         assertEquals(false, user.equals(userCopy));
     }
 

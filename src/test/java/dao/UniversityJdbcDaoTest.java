@@ -1,15 +1,14 @@
 package dao;
 
+import model.builder.UniversityBuilder;
 import model.enteties_enum.Universities;
 import model.connection.ConnectionManager;
-import model.dao.dao_implementations.FacultyJdbcDao;
-import model.dao.dao_implementations.SpecialtyJdbcDao;
-import model.dao.dao_implementations.UniversityJdbcDao;
-import model.dao.dao_interfaces.FacultyDao;
-import model.dao.dao_interfaces.SpecialtyDao;
-import model.dao.dao_interfaces.UniversityDao;
-import model.enteties.Faculty;
-import model.enteties.Specialty;
+import model.dao.impl.FacultyJdbcDao;
+import model.dao.impl.SpecialtyJdbcDao;
+import model.dao.impl.UniversityJdbcDao;
+import model.dao.FacultyDao;
+import model.dao.SpecialtyDao;
+import model.dao.UniversityDao;
 import model.enteties.University;
 import org.junit.After;
 import org.junit.Before;
@@ -47,13 +46,11 @@ public class UniversityJdbcDaoTest {
     }
 
     private University setUpNewNaUKMA() {
-        return new University(Universities.NaUKMA.getName(), Universities.NaUKMA.getAddress(),
-                Universities.NaUKMA.getCity());
+        return new UniversityBuilder().setName(Universities.NaUKMA.getName()).setAddress(Universities.NaUKMA.getAddress()).setCity(Universities.NaUKMA.getCity()).createUniversity();
     }
 
     private University setUpNewKPI() {
-        return new University(Universities.KPI.getName(), Universities.KPI.getAddress(),
-                Universities.KPI.getCity());
+        return new UniversityBuilder().setName(Universities.KPI.getName()).setAddress(Universities.KPI.getAddress()).setCity(Universities.KPI.getCity()).createUniversity();
     }
 
     @Test
@@ -68,8 +65,10 @@ public class UniversityJdbcDaoTest {
     public void findByIdTest() {
         University academy = setUpNewNaUKMA();
         universityDao.add(academy);
-        University uniTest = universityDao.findById(academy.getId());
-        assertEquals(uniTest, academy);
+        if (universityDao.findById(academy.getId()).isPresent()) {
+            University uniTest = universityDao.findById(academy.getId()).get();
+            assertEquals(uniTest, academy);
+        }
     }
 
     @Test

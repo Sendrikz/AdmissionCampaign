@@ -1,5 +1,6 @@
 package enteties;
 
+import model.builder.SubjectBuilder;
 import model.enteties_enum.Subjects;
 import model.enteties.Subject;
 import org.junit.Before;
@@ -13,7 +14,7 @@ public class SubjectTest {
 
     @Before
     public void setUp() {
-        subject = new Subject(Subjects.MATH.getName(), Subjects.MATH.getDuration());
+        subject = new SubjectBuilder().setName(Subjects.MATH.getName()).setDuration(Subjects.MATH.getDuration()).createSubject();
     }
 
     @Test
@@ -36,20 +37,19 @@ public class SubjectTest {
 
     @Test
     public void notEqualsTest() {
-        Subject subjectToTest = new Subject(Subjects.MATH.getName(), Subjects.MATH.getDuration());
+        Subject subjectToTest = new SubjectBuilder().setName(Subjects.MATH.getName()).setDuration(Subjects.MATH.getDuration()).createSubject();
         assertEquals(true, subject.equals(subjectToTest));
     }
 
     @Test
     public void equalsTest() {
-        Subject subjectToTest = new Subject(Subjects.UA_LANGUAGE.getName(),
-                Subjects.UA_LANGUAGE.getDuration());
+        Subject subjectToTest = new SubjectBuilder().setName(Subjects.UA_LANGUAGE.getName()).setDuration(Subjects.UA_LANGUAGE.getDuration()).createSubject();
         assertEquals(false, subject.equals(subjectToTest));
     }
 
     @Test
     public void hashCodeTest() {
-        Subject subjectToTest = new Subject(Subjects.MATH.getName(), Subjects.MATH.getDuration());
+        Subject subjectToTest = new SubjectBuilder().setName(Subjects.MATH.getName()).setDuration(Subjects.MATH.getDuration()).createSubject();
         assertEquals(subjectToTest.hashCode(), subject.hashCode());
     }
 

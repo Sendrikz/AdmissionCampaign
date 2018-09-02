@@ -1,9 +1,10 @@
 package dao;
 
+import model.builder.*;
+import model.dao.*;
 import model.enteties_enum.*;
 import model.connection.ConnectionManager;
-import model.dao.dao_implementations.*;
-import model.dao.dao_interfaces.*;
+import model.dao.impl.*;
 import model.enteties.*;
 import org.junit.After;
 import org.junit.Before;
@@ -37,10 +38,9 @@ public class SpecialtyJdbcDaoTest {
         userDao = new UserJdbcDao(connection);
         roleDao = new RoleJdbcDao(connection);
         universityDao = new UniversityJdbcDao(connection);
-        university = new University(Universities.NaUKMA.getName(), Universities.NaUKMA.getAddress(),
-                Universities.NaUKMA.getCity());
+        university = new UniversityBuilder().setName(Universities.NaUKMA.getName()).setAddress(Universities.NaUKMA.getAddress()).setCity(Universities.NaUKMA.getCity()).createUniversity();
         universityDao.add(university);
-        faculty = new Faculty(Faculties.IT.getName(), university.getId());
+        faculty = new FacultyBuilder().setName(Faculties.IT.getName()).setUniversityId(university.getId()).createFaculty();
         facultyDao.add(faculty);
     }
 
@@ -54,13 +54,11 @@ public class SpecialtyJdbcDaoTest {
     }
 
     private Specialty setUpNewEngineeringSpecialty() {
-        return new Specialty(Specialties.ENGINEERING.getName(),
-                Specialties.ENGINEERING.getQuantityOfStudents(), faculty.getId());
+        return new SpecialtyBuilder().setName(Specialties.ENGINEERING.getName()).setQuantityOfStudents(Specialties.ENGINEERING.getQuantityOfStudents()).setFacultyId(faculty.getId()).createSpecialty();
     }
 
     private Specialty setUpNewCompSpecialty() {
-        return new Specialty(Specialties.COMPUTER_SCIENCE.getName(),
-                Specialties.COMPUTER_SCIENCE.getQuantityOfStudents(), faculty.getId());
+        return new SpecialtyBuilder().setName(Specialties.COMPUTER_SCIENCE.getName()).setQuantityOfStudents(Specialties.COMPUTER_SCIENCE.getQuantityOfStudents()).setFacultyId(faculty.getId()).createSpecialty();
     }
 
     @Test
@@ -103,9 +101,8 @@ public class SpecialtyJdbcDaoTest {
     public void addSpecialtyToSubjectTest() {
         Specialty specialty = setUpNewEngineeringSpecialty();
         specialtyDao.add(specialty);
-        Subject math = new Subject(Subjects.MATH.getName(), Subjects.MATH.getDuration());
-        Subject language = new Subject(Subjects.UA_LANGUAGE.getName(),
-                Subjects.UA_LANGUAGE.getDuration());
+        Subject math = new SubjectBuilder().setName(Subjects.MATH.getName()).setDuration(Subjects.MATH.getDuration()).createSubject();
+        Subject language = new SubjectBuilder().setName(Subjects.UA_LANGUAGE.getName()).setDuration(Subjects.UA_LANGUAGE.getDuration()).createSubject();
         subjectDao.add(math);
         subjectDao.add(language);
         specialtyDao.addSpecialtyToSubject(specialty, math, new BigDecimal(0.5));
@@ -119,14 +116,10 @@ public class SpecialtyJdbcDaoTest {
 
     @Test
     public void addSpecialtyToUser() {
-        Role role = new Role(Roles.STUDENT.getName());
+        Role role = new RoleBuilder().setName(Roles.STUDENT.getName()).createRole();
         roleDao.add(role);
-        User user = new User(Users.ANDRIY.getLastName(), Users.ANDRIY.getFirstName(),
-                Users.ANDRIY.getPatronymic(), Users.ANDRIY.getBirthday(), Users.ANDRIY.getCity(),
-                Users.ANDRIY.getEmail(), Users.ANDRIY.getPassword(), role.getId());
-        User user2 = new User(Users.KOSTYA.getLastName(), Users.KOSTYA.getFirstName(),
-                Users.KOSTYA.getPatronymic(), Users.KOSTYA.getBirthday(), Users.KOSTYA.getCity(),
-                Users.KOSTYA.getEmail(), Users.KOSTYA.getPassword(), role.getId());
+        User user = new UserBuilder().setLastName(Users.ANDRIY.getLastName()).setFirstName(Users.ANDRIY.getFirstName()).setPatronymic(Users.ANDRIY.getPatronymic()).setBirthday(Users.ANDRIY.getBirthday()).setCity(Users.ANDRIY.getCity()).setEmail(Users.ANDRIY.getEmail()).setPassword(Users.ANDRIY.getPassword()).setRole(role.getId()).createUser();
+        User user2 = new UserBuilder().setLastName(Users.KOSTYA.getLastName()).setFirstName(Users.KOSTYA.getFirstName()).setPatronymic(Users.KOSTYA.getPatronymic()).setBirthday(Users.KOSTYA.getBirthday()).setCity(Users.KOSTYA.getCity()).setEmail(Users.KOSTYA.getEmail()).setPassword(Users.KOSTYA.getPassword()).setRole(role.getId()).createUser();
         userDao.add(user);
         userDao.add(user2);
         Specialty specialty = setUpNewEngineeringSpecialty();

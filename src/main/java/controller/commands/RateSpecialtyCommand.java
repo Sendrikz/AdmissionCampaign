@@ -1,6 +1,9 @@
 package controller.commands;
 
-import controller.transaction.TransactionStudentSpecialty;
+import services.exceptions.NoSuchSpecialtyException;
+import services.transaction.TransactionStudentSpecialty;
+import utils.property_loaders.LoadConfigProperty;
+import utils.Strings;
 import model.enteties.Specialty;
 import model.enteties.User;
 import org.apache.log4j.Logger;
@@ -8,53 +11,56 @@ import services.SpecialtyService;
 import services.UserService;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
-import java.io.InputStream;
 import java.math.BigDecimal;
 import java.util.HashMap;
-import java.util.Properties;
 import java.util.TreeMap;
 
 public class RateSpecialtyCommand implements ActionCommand {
     private static final Logger log = Logger.getLogger(RateSpecialtyCommand.class);
-    private Properties property;
-
-    RateSpecialtyCommand() {
-        property = new Properties();
-        try (InputStream is = this.getClass().getClassLoader().
-                getResourceAsStream("config.properties")){
-            property.load(is);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     @Override
     public String execute(HttpServletRequest request) {
         log.info("Start class rateSpecialtyCommand execute()");
-        String page = property.getProperty("path.page.adminMain");
-        int currentSpecialtyId = Integer.parseInt(request.getParameter("specialtyId"));
+        String page;
+
+        page = makeRatingListOfStudentsWhoHasPassedOnSpecialty(request);
+
+        return page;
+    }
+
+    private String makeRatingListOfStudentsWhoHasPassedOnSpecialty(HttpServletRequest request) {
+        String page = LoadConfigProperty.getInstance().getConfigProperty(Strings.PATH_PAGE_ADMIN_MAIN);
+        int currentSpecialtyId = Integer.parseInt(request.getParameter(Strings.SPECIALTY_ID));
         HashMap<Specialty, TreeMap<BigDecimal, User>> specialtyTreeMapHashMap
                 = (HashMap<Specialty, TreeMap<BigDecimal, User>>)
                 request.getSession().getAttribute("specialtyUserGradeHashMap");
-        Specialty selectedSpecialty = SpecialtyService.findById(currentSpecialtyId);
-        log.debug("Selected specialty: " + selectedSpecialty);
-        int availableQuantity = selectedSpecialty.getQuantityOfStudents();
-        TreeMap<BigDecimal, User> userTreeMap = specialtyTreeMapHashMap.get(selectedSpecialty);
-        int count = 0;
-        for (User user : userTreeMap.values()) {
-            if (UserService.getPassedSpecialtyByUser(user.getId()) != null) {
-                request.getSession().setAttribute("confirmRate", "no");
-                return page;
+
+        try (SpecialtyService specialtyService = new SpecialtyService();
+             UserService userService = new UserService()) {
+
+            Specialty selectedSpecialty = specialtyService.findById(currentSpecialtyId);
+            log.debug("Selected specialty: " + selectedSpecialty);
+            int availableQuantity = selectedSpecialty.getQuantityOfStudents();
+            TreeMap<BigDecimal, User> userTreeMap = specialtyTreeMapHashMap.get(selectedSpecialty);
+            int count = 0;
+            for (User user : userTreeMap.values()) {
+                if (userService.getPassedSpecialtyByUser(user.getId()) != null) {
+                    request.getSession().setAttribute(Strings.CONFIRM_RATE, Strings.NO);
+                    return page;
+                }
+                if (count < availableQuantity) {
+                    TransactionStudentSpecialty.updateUserSpecialty(user.getId(),
+                            selectedSpecialty.getId());
+                }
+                count++;
             }
-            if (count < availableQuantity) {
-                TransactionStudentSpecialty.updateUserSpecialty(user.getId(),
-                        selectedSpecialty.getId());
-            }
-            count++;
+            log.debug("Count = " + count);
+
+        } catch (NoSuchSpecialtyException e) {
+            log.error(e.getMessage());
         }
-        log.debug("Count = " + count);
-        request.getSession().setAttribute("confirmRate", "yes");
+        request.getSession().setAttribute(Strings.CONFIRM_RATE, Strings.YES);
         return page;
     }
+
 }

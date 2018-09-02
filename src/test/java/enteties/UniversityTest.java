@@ -1,5 +1,6 @@
 package enteties;
 
+import model.builder.UniversityBuilder;
 import model.enteties_enum.Universities;
 import model.enteties.University;
 import org.junit.Before;
@@ -13,8 +14,7 @@ public class UniversityTest {
 
     @Before
     public void setUp() {
-        uni = new University(Universities.NaUKMA.getName(), Universities.NaUKMA.getAddress(),
-                Universities.NaUKMA.getCity());
+        uni = new UniversityBuilder().setName(Universities.NaUKMA.getName()).setAddress(Universities.NaUKMA.getAddress()).setCity(Universities.NaUKMA.getCity()).createUniversity();
     }
 
     @Test
@@ -37,22 +37,19 @@ public class UniversityTest {
 
     @Test
     public void hashCodeTest() {
-        University uniTest = new University(Universities.NaUKMA.getName(),
-                Universities.NaUKMA.getAddress(), Universities.NaUKMA.getCity());
+        University uniTest = new UniversityBuilder().setName(Universities.NaUKMA.getName()).setAddress(Universities.NaUKMA.getAddress()).setCity(Universities.NaUKMA.getCity()).createUniversity();
         assertEquals(uniTest.hashCode(), uni.hashCode());
     }
 
     @Test
     public void equalsTest() {
-        University uniTest = new University(Universities.NaUKMA.getName(),
-                Universities.NaUKMA.getAddress(), Universities.NaUKMA.getCity());
+        University uniTest = new UniversityBuilder().setName(Universities.NaUKMA.getName()).setAddress(Universities.NaUKMA.getAddress()).setCity(Universities.NaUKMA.getCity()).createUniversity();
         assertEquals(true, uni.equals(uniTest));
     }
 
     @Test
     public void notEqualsTest() {
-        University uniTest = new University(Universities.KPI.getName(),
-                Universities.KPI.getAddress(), Universities.KPI.getCity());
+        University uniTest = new UniversityBuilder().setName(Universities.KPI.getName()).setAddress(Universities.KPI.getAddress()).setCity(Universities.KPI.getCity()).createUniversity();
         assertEquals(false, uni.equals(uniTest));
     }
 

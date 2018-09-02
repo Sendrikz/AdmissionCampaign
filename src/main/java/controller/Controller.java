@@ -1,8 +1,10 @@
 package controller;
 
 import controller.commands.ActionCommand;
-import controller.commands.ActionFactory;
+import controller.commands.factory.ActionFactory;
 import controller.commands.LoginCommand;
+import utils.property_loaders.LoadConfigProperty;
+import utils.Strings;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -22,6 +24,7 @@ public class Controller extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processRequest(req, resp);
+
     }
 
     @Override
@@ -32,12 +35,15 @@ public class Controller extends HttpServlet {
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         log.info("Start class Controller processRequest()");
         String page;
+        //req.getRequestURI()
         ActionFactory actionFactory = new ActionFactory();
         ActionCommand command = actionFactory.defineCommand(req);
         page = command.execute(req);
         log.debug("Page = " + page);
 
-        if (page != null) {
+        if (page != null && page.contains(":LogOut")) {
+            resp.sendRedirect(LoadConfigProperty.getInstance().getConfigProperty(Strings.PATH_PAGE_INDEX));
+        } else if (page != null) {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);
             dispatcher.forward(req, resp);
         }

@@ -1,19 +1,20 @@
 package dao;
 
-import model.dao.dao_implementations.UniversityJdbcDao;
-import model.dao.dao_implementations.UserJdbcDao;
-import model.dao.dao_interfaces.UniversityDao;
-import model.dao.dao_interfaces.UserDao;
-import model.enteties.University;
+import model.builder.FacultyBuilder;
+import model.builder.SpecialtyBuilder;
+import model.dao.impl.UniversityJdbcDao;
+import model.dao.impl.UserJdbcDao;
+import model.dao.UniversityDao;
+import model.dao.UserDao;
+import model.enteties.*;
+import model.builder.UniversityBuilder;
 import model.enteties_enum.Faculties;
 import model.enteties_enum.Specialties;
 import model.connection.ConnectionManager;
-import model.dao.dao_interfaces.FacultyDao;
-import model.dao.dao_implementations.FacultyJdbcDao;
-import model.dao.dao_interfaces.SpecialtyDao;
-import model.dao.dao_implementations.SpecialtyJdbcDao;
-import model.enteties.Faculty;
-import model.enteties.Specialty;
+import model.dao.FacultyDao;
+import model.dao.impl.FacultyJdbcDao;
+import model.dao.SpecialtyDao;
+import model.dao.impl.SpecialtyJdbcDao;
 import model.enteties_enum.Universities;
 import org.junit.After;
 import org.junit.Assert;
@@ -42,8 +43,7 @@ public class FacultyJdbcDaoTest {
         connection = ConnectionManager.getInstance().getConnectionToTestBD();
         facultyDao = new FacultyJdbcDao(connection);
         specialtyDao = new SpecialtyJdbcDao(connection);
-        university = new University(Universities.NaUKMA.getName(),
-                Universities.NaUKMA.getAddress(), Universities.NaUKMA.getCity());
+        university = new UniversityBuilder().setName(Universities.NaUKMA.getName()).setAddress(Universities.NaUKMA.getAddress()).setCity(Universities.NaUKMA.getCity()).createUniversity();
         UniversityDao universityDao = new UniversityJdbcDao(connection);
         universityDao.add(university);
         userDao = new UserJdbcDao(connection);
@@ -59,12 +59,11 @@ public class FacultyJdbcDaoTest {
     }
 
     private Faculty setUpNewITFaculty() {
-        return new Faculty(Faculties.IT.getName(), university.getId());
+        return new FacultyBuilder().setName(Faculties.IT.getName()).setUniversityId(university.getId()).createFaculty();
     }
 
     private Faculty setUpNewEconomicFaculty() {
-        return new Faculty(Faculties.ECONOMIC.getName(),
-                university.getId());
+        return new FacultyBuilder().setName(Faculties.ECONOMIC.getName()).setUniversityId(university.getId()).createFaculty();
     }
 
     @Test
@@ -110,14 +109,11 @@ public class FacultyJdbcDaoTest {
         facultyDao.add(faculty);
         Faculty facultyEconomy = setUpNewEconomicFaculty();
         facultyDao.add(facultyEconomy);
-        Specialty specialty = new Specialty(Specialties.ENGINEERING.getName(),
-                Specialties.ENGINEERING.getQuantityOfStudents(), faculty.getId());
+        Specialty specialty = new SpecialtyBuilder().setName(Specialties.ENGINEERING.getName()).setQuantityOfStudents(Specialties.ENGINEERING.getQuantityOfStudents()).setFacultyId(faculty.getId()).createSpecialty();
         specialtyDao.add(specialty);
-        Specialty specialtyComp = new Specialty(Specialties.COMPUTER_SCIENCE.getName(),
-                Specialties.COMPUTER_SCIENCE.getQuantityOfStudents(), faculty.getId());
+        Specialty specialtyComp = new SpecialtyBuilder().setName(Specialties.COMPUTER_SCIENCE.getName()).setQuantityOfStudents(Specialties.COMPUTER_SCIENCE.getQuantityOfStudents()).setFacultyId(faculty.getId()).createSpecialty();
         specialtyDao.add(specialtyComp);
-        Specialty market = new Specialty(Specialties.MARKETING.getName(),
-                Specialties.MARKETING.getQuantityOfStudents(), facultyEconomy.getId());
+        Specialty market = new SpecialtyBuilder().setName(Specialties.MARKETING.getName()).setQuantityOfStudents(Specialties.MARKETING.getQuantityOfStudents()).setFacultyId(facultyEconomy.getId()).createSpecialty();
         specialtyDao.add(market);
         Assert.assertEquals(2, facultyDao.getAllSpecialtiesOfFaculty(faculty.getId()).size());
         assertTrue(facultyDao.getAllSpecialtiesOfFaculty(faculty.getId()).contains(specialty));

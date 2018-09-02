@@ -1,12 +1,14 @@
 package dao;
 
+import model.builder.UserBuilder;
+import model.builder.RoleBuilder;
 import model.enteties_enum.Roles;
 import model.enteties_enum.Users;
 import model.connection.ConnectionManager;
-import model.dao.dao_interfaces.RoleDao;
-import model.dao.dao_implementations.RoleJdbcDao;
-import model.dao.dao_interfaces.UserDao;
-import model.dao.dao_implementations.UserJdbcDao;
+import model.dao.RoleDao;
+import model.dao.impl.RoleJdbcDao;
+import model.dao.UserDao;
+import model.dao.impl.UserJdbcDao;
 import model.enteties.Role;
 import model.enteties.User;
 import org.junit.After;
@@ -45,11 +47,11 @@ public class RoleJdbcDaoTest {
     }
 
     private Role setUpNewAdminRole() {
-        return new Role(Roles.ADMINISTRATOR.getName());
+        return new RoleBuilder().setName(Roles.ADMINISTRATOR.getName()).createRole();
     }
 
     private Role setUpNewStudentRole() {
-        return new Role(Roles.STUDENT.getName());
+        return new RoleBuilder().setName(Roles.STUDENT.getName()).createRole();
     }
 
     @Test
@@ -73,7 +75,9 @@ public class RoleJdbcDaoTest {
         Role role = setUpNewStudentRole();
         roleDao.add(role);
         roleDao.deleteById(role.getId());
-        assertNull(roleDao.findById(role.getId()));
+        if (roleDao.findById(role.getId()).isPresent()) {
+            assertNull(roleDao.findById(role.getId()));
+        }
     }
 
     @Test
@@ -92,22 +96,18 @@ public class RoleJdbcDaoTest {
         Role role = setUpNewStudentRole();
         int originalId = role.getId();
         roleDao.add(role);
-        assertNotEquals(originalId, roleDao.findById(role.getId()).getId());
+        if (roleDao.findById(role.getId()).isPresent()) {
+            assertNotEquals(originalId, roleDao.findById(role.getId()).get().getId());
+        }
     }
 
     @Test
     public void getAllUsersByRoleTest() {
         Role role = setUpNewStudentRole();
         roleDao.add(role);
-        User user = new User(Users.ANDRIY.getLastName(), Users.ANDRIY.getFirstName(),
-                Users.ANDRIY.getPatronymic(), Users.ANDRIY.getBirthday(), Users.ANDRIY.getCity(),
-                Users.ANDRIY.getEmail(), Users.ANDRIY.getPassword(), role.getId());
-        User user2 = new User(Users.KOSTYA.getLastName(), Users.KOSTYA.getFirstName(),
-                Users.KOSTYA.getPatronymic(), Users.KOSTYA.getBirthday(), Users.KOSTYA.getCity(),
-                Users.KOSTYA.getEmail(), Users.KOSTYA.getPassword(), role.getId());
-        User user3 = new User(Users.MUHAYLO.getLastName(), Users.MUHAYLO.getFirstName(),
-                Users.MUHAYLO.getPatronymic(), Users.MUHAYLO.getBirthday(), Users.MUHAYLO.getCity(),
-                Users.MUHAYLO.getEmail(), Users.MUHAYLO.getPassword(), role.getId());
+        User user = new UserBuilder().setLastName(Users.ANDRIY.getLastName()).setFirstName(Users.ANDRIY.getFirstName()).setPatronymic(Users.ANDRIY.getPatronymic()).setBirthday(Users.ANDRIY.getBirthday()).setCity(Users.ANDRIY.getCity()).setEmail(Users.ANDRIY.getEmail()).setPassword(Users.ANDRIY.getPassword()).setRole(role.getId()).createUser();
+        User user2 = new UserBuilder().setLastName(Users.KOSTYA.getLastName()).setFirstName(Users.KOSTYA.getFirstName()).setPatronymic(Users.KOSTYA.getPatronymic()).setBirthday(Users.KOSTYA.getBirthday()).setCity(Users.KOSTYA.getCity()).setEmail(Users.KOSTYA.getEmail()).setPassword(Users.KOSTYA.getPassword()).setRole(role.getId()).createUser();
+        User user3 = new UserBuilder().setLastName(Users.MUHAYLO.getLastName()).setFirstName(Users.MUHAYLO.getFirstName()).setPatronymic(Users.MUHAYLO.getPatronymic()).setBirthday(Users.MUHAYLO.getBirthday()).setCity(Users.MUHAYLO.getCity()).setEmail(Users.MUHAYLO.getEmail()).setPassword(Users.MUHAYLO.getPassword()).setRole(role.getId()).createUser();
         userDao.clearAllUsers();
         userDao.add(user);
         userDao.add(user2);

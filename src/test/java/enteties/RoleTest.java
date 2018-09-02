@@ -1,5 +1,6 @@
 package enteties;
 
+import model.builder.RoleBuilder;
 import model.enteties_enum.Roles;
 import model.enteties.Role;
 import org.junit.Before;
@@ -13,7 +14,7 @@ public class RoleTest {
 
     @Before
     public void setUp() {
-        role = new Role(Roles.ADMINISTRATOR.getName());
+        role = new RoleBuilder().setName(Roles.ADMINISTRATOR.getName()).createRole();
     }
 
     @Test
@@ -30,19 +31,19 @@ public class RoleTest {
 
     @Test
     public void hashCodeTest() {
-        Role roleTest = new Role(Roles.ADMINISTRATOR.getName());
+        Role roleTest = new RoleBuilder().setName(Roles.ADMINISTRATOR.getName()).createRole();
         assertEquals(roleTest.hashCode(), role.hashCode());
     }
 
     @Test
     public void equalsTest() {
-        Role roleTest = new Role(Roles.ADMINISTRATOR.getName());
+        Role roleTest = new RoleBuilder().setName(Roles.ADMINISTRATOR.getName()).createRole();
         assertEquals(true, role.equals(roleTest));
     }
 
     @Test
     public void notEqualsTest() {
-        Role roleTest = new Role(Roles.STUDENT.getName());
+        Role roleTest = new RoleBuilder().setName(Roles.STUDENT.getName()).createRole();
         assertEquals(false, role.equals(roleTest));
     }
 

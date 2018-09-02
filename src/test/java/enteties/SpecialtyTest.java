@@ -1,5 +1,6 @@
 package enteties;
 
+import model.builder.SpecialtyBuilder;
 import model.enteties_enum.Specialties;
 import model.enteties.Specialty;
 import org.junit.Before;
@@ -13,8 +14,7 @@ public class SpecialtyTest {
 
     @Before
     public void setUp() {
-        specialty = new Specialty(Specialties.COMPUTER_SCIENCE.getName(),
-                Specialties.COMPUTER_SCIENCE.getQuantityOfStudents(), 1);
+        specialty = new SpecialtyBuilder().setName(Specialties.COMPUTER_SCIENCE.getName()).setQuantityOfStudents(Specialties.COMPUTER_SCIENCE.getQuantityOfStudents()).setFacultyId(1).createSpecialty();
     }
 
     @Test
@@ -43,22 +43,19 @@ public class SpecialtyTest {
 
     @Test
     public void hashCodeTest() {
-        Specialty specialtyTest = new Specialty(Specialties.COMPUTER_SCIENCE.getName(),
-                Specialties.COMPUTER_SCIENCE.getQuantityOfStudents(), 1);
+        Specialty specialtyTest = new SpecialtyBuilder().setName(Specialties.COMPUTER_SCIENCE.getName()).setQuantityOfStudents(Specialties.COMPUTER_SCIENCE.getQuantityOfStudents()).setFacultyId(1).createSpecialty();
         assertEquals(specialtyTest.hashCode(), specialty.hashCode());
     }
 
     @Test
     public void equalsTest() {
-        Specialty specialtyTest = new Specialty(Specialties.COMPUTER_SCIENCE.getName(),
-                Specialties.COMPUTER_SCIENCE.getQuantityOfStudents(), 1);
+        Specialty specialtyTest = new SpecialtyBuilder().setName(Specialties.COMPUTER_SCIENCE.getName()).setQuantityOfStudents(Specialties.COMPUTER_SCIENCE.getQuantityOfStudents()).setFacultyId(1).createSpecialty();
         assertEquals(true, specialty.equals(specialtyTest));
     }
 
     @Test
     public void notEqualsTest() {
-        Specialty specialtyTest = new Specialty(Specialties.ENGINEERING.getName(),
-                Specialties.ENGINEERING.getQuantityOfStudents(), 1);
+        Specialty specialtyTest = new SpecialtyBuilder().setName(Specialties.ENGINEERING.getName()).setQuantityOfStudents(Specialties.ENGINEERING.getQuantityOfStudents()).setFacultyId(1).createSpecialty();
         assertEquals(false, specialty.equals(specialtyTest));
     }
 

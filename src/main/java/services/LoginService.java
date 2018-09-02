@@ -1,67 +1,79 @@
 package services;
 
-import controller.commands.LoginCommand;
+import services.exceptions.NoSuchRoleException;
+import utils.Strings;
+import model.builder.UserBuilder;
 import model.connection.ConnectionManager;
-import model.dao.dao_implementations.DaoFactory;
-import model.dao.dao_interfaces.RoleDao;
-import model.dao.dao_interfaces.SubjectDao;
-import model.dao.dao_interfaces.UserDao;
+import model.dao.factory.DaoFactory;
+import model.dao.RoleDao;
+import model.dao.SubjectDao;
+import model.dao.UserDao;
 import model.enteties.Subject;
 import model.enteties.User;
 import org.apache.log4j.Logger;
+import services.exceptions.NoSuchUserException;
 
+import java.io.Closeable;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Optional;
 
-public class LoginService {
+public class LoginService implements Closeable {
 
-    private static final Logger log = Logger.getLogger(LoginCommand.class);
+    private Connection connection;
+    private UserDao userDao;
+    private RoleDao roleDao;
+    private static final Logger log = Logger.getLogger(LoginService.class);
 
-    public static User checkLogin(String login, String password) {
-        log.info("Start class LoginLogic checkLogin()");
-        ArrayList<User> listOfAllUsers;
-        Connection connection = ConnectionManager.getInstance().getConnection();
-        UserDao user = DaoFactory.getUserDao(connection);
-        listOfAllUsers = user.getAll();
-        ConnectionManager.getInstance().close(connection);
-        for (User users : listOfAllUsers) {
-            if (users.getEmail().equals(login) && users.getPassword().equals(password)) {
-                log.info("Find user");
-                return users;
-            }
-        }
-        log.info("No such user");
-        return null;
+    public LoginService() {
+        connection = ConnectionManager.getInstance().getConnection();
+        userDao = DaoFactory.getUserDao(connection);
+        roleDao = DaoFactory.getRoleDao(connection);
     }
 
-    public static void addUser(String lastName, String firstName, String patronymic,
+    public User checkLogin(String login, String password) throws NoSuchUserException {
+        log.info("Start class LoginLogic checkLogin()");
+
+        Optional<User> user = userDao.getUserByEmailAndPassword(login, password);
+        if (user.isPresent()) {
+            log.info("Find user");
+            return user.get();
+        }
+
+        log.info("No such user");
+        throw new NoSuchUserException();
+    }
+
+    public void addUser(String lastName, String firstName, String patronymic,
                                String birthday, String city, String email, String password) {
         log.info("Start class LoginLogic addUser()");
-        Connection connection = ConnectionManager.getInstance().getConnection();
-        RoleDao roleDao = DaoFactory.getRoleDao(connection);
-        User user = new User(lastName, firstName, patronymic, birthday, city, email, password,
-                roleDao.findIdByRoleName("Student"));
-        UserDao userDao = DaoFactory.getUserDao(connection);
+
+        User user = new UserBuilder().setLastName(lastName).setFirstName(firstName)
+                .setPatronymic(patronymic).setBirthday(birthday).setCity(city)
+                .setEmail(email).setPassword(password).setRole(roleDao.findIdByRoleName(Strings.STUDENT))
+                .createUser();
+
         userDao.add(user);
-        ConnectionManager.getInstance().close(connection);
     }
 
-    public static String getRoleById(int roleId) {
+    public String getRoleById(int roleId) throws NoSuchRoleException {
         log.info("Start class LoginLogic getRoleById()");
-        Connection connection = ConnectionManager.getInstance().getConnection();
-        RoleDao role = DaoFactory.getRoleDao(connection);
-        String res = role.findById(roleId).getName();
-        ConnectionManager.getInstance().close(connection);
-        return res;
+        if (roleDao.findById(roleId).isPresent()) {
+            return roleDao.findById(roleId).get().getName();
+        }
+        throw new NoSuchRoleException();
     }
 
-    public static ArrayList<Subject> getAllSubjects() {
+    public ArrayList<Subject> getAllSubjects() {
         log.info("Start class LoginLogic getAllSubjects()");
-        Connection connection = ConnectionManager.getInstance().getConnection();
         SubjectDao subject = DaoFactory.getSubjectDao(connection);
-        ArrayList<Subject> listOfSubjects = subject.getAll();
-        ConnectionManager.getInstance().close(connection);
-        return listOfSubjects;
+
+        return subject.getAll();
     }
+
+    @Override
+    public void close() {
+        ConnectionManager.getInstance().close(connection);
+    }
+
 }

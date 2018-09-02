@@ -1,6 +1,8 @@
 package enteties;
 
+import model.builder.FacultyBuilder;
 import model.enteties.University;
+import model.builder.UniversityBuilder;
 import model.enteties_enum.Faculties;
 import model.enteties.Faculty;
 import model.enteties_enum.Universities;
@@ -16,9 +18,8 @@ public class FacultyTest {
 
     @Before
     public void setUp() {
-        university = new University(Universities.NaUKMA.getName(),
-                Universities.NaUKMA.getAddress(), Universities.NaUKMA.getCity());
-        faculty = new Faculty(Faculties.IT.getName(), university.getId());
+        university = new UniversityBuilder().setName(Universities.NaUKMA.getName()).setAddress(Universities.NaUKMA.getAddress()).setCity(Universities.NaUKMA.getCity()).createUniversity();
+        faculty = new FacultyBuilder().setName(Faculties.IT.getName()).setUniversityId(university.getId()).createFaculty();
     }
 
     @Test
@@ -35,19 +36,19 @@ public class FacultyTest {
 
     @Test
     public void hashCodeTest() {
-        Faculty facultyTest = new Faculty(Faculties.IT.getName(), university.getId());
+        Faculty facultyTest = new FacultyBuilder().setName(Faculties.IT.getName()).setUniversityId(university.getId()).createFaculty();
         assertEquals(facultyTest.hashCode(), faculty.hashCode());
     }
 
     @Test
     public void equalsTest() {
-        Faculty facultyTest = new Faculty(Faculties.IT.getName(), university.getId());
+        Faculty facultyTest = new FacultyBuilder().setName(Faculties.IT.getName()).setUniversityId(university.getId()).createFaculty();
         assertEquals(true, faculty.equals(facultyTest));
     }
 
     @Test
     public void notEqualsTest() {
-        Faculty facultyTest = new Faculty(Faculties.ECONOMIC.getName(), university.getId());
+        Faculty facultyTest = new FacultyBuilder().setName(Faculties.ECONOMIC.getName()).setUniversityId(university.getId()).createFaculty();
         assertEquals(false, faculty.equals(facultyTest));
     }
 

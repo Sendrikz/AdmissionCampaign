@@ -1,68 +1,101 @@
 package controller.commands;
 
-import controller.util.Util;
-import controller.pagination.Pagination;
+import services.exceptions.NoSuchRoleException;
+import utils.pagination.Pagination;
+import utils.property_loaders.LoadConfigProperty;
+import utils.Strings;
+import utils.Util;
 import model.enteties.User;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.log4j.Logger;
-import services.*;
+import services.LoginService;
+import services.UniversityService;
+import services.exceptions.NoSuchUserException;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Properties;
 
 public class LoginCommand implements ActionCommand {
 
     private static final Logger log = Logger.getLogger(LoginCommand.class);
-    private static final String ADMIN_ROLE = "ADMINISTRATOR";
-    private Properties property;
-
-    LoginCommand() {
-        property = new Properties();
-        try (InputStream is = this.getClass().getClassLoader().
-                getResourceAsStream("config.properties")){
-            property.load(is);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     @Override
     public String execute(HttpServletRequest request) {
         log.info("Start class LoginCommand execute()");
+
         String page;
-        String login = request.getParameter("login");
-        String password = DigestUtils.md5Hex(request.getParameter("password"));
-        User loginedUser = LoginService.checkLogin(login, password);
-        request.getSession().setAttribute("loginedUser", loginedUser);
-        log.info("Logined user is " + loginedUser);
+        User loginedUser;
 
-        if (loginedUser == null) {
-            request.getSession().setAttribute("successfulLogin", "no");
-            return property.getProperty("path.page.index");
+        try {
+            loginedUser = checkLogin(request);
+        } catch (NoSuchUserException e) {
+            log.error(e.getMessage());
+            return loginFailRedirect(request);
         }
 
-        log.info("Successfully login");
-        if (LoginService.getRoleById(loginedUser.getRole()).toUpperCase().equals(ADMIN_ROLE)) {
-            log.info("User is admin");
-            request.getSession().setAttribute("role", "Administrator");
-            Util.generatePaginationSpecialties(request, Pagination.FIRST_PAGE,
-                    Pagination. FIVE_RECORDS_PER_PAGE);
-            page = property.getProperty("path.page.adminMain");
-        } else {
-            log.info("User is student");
-            request.getSession().setAttribute("role", "Student");
-            ArrayList<String> listOfCities = new ArrayList<>(UniversityService.getAllCities());
-            request.getSession().setAttribute("citiesList", listOfCities);
-            Util.checkIfDisplayUserSubjectsAndGrade(request);
-            Util.checkIfDisplayCongratulationOnSpecialty(request);
-            page = property.getProperty("path.page.studentMain");
-        }
+        page = authorizeUser(request, loginedUser);
 
-        Util.generateListOfSubjectsForUserAndUsersWhichPassThem(request);
-        Util.generateListOfUsersAndTheirRateBySpecialties(request);
+        Util util = new Util();
+        util.generateListOfSubjectsForUserAndUsersWhichPassThem(request);
+        util.generateListOfUsersAndTheirRateBySpecialties(request);
+
         return page;
     }
+
+    private String loginFailRedirect(HttpServletRequest request) {
+        request.getSession().setAttribute(Strings.SUCCESSFUL_LOGIN, Strings.NO);
+        return LoadConfigProperty.getInstance().getConfigProperty(Strings.PATH_PAGE_INDEX);
+    }
+
+    private User checkLogin(HttpServletRequest request) throws NoSuchUserException {
+        try (LoginService loginService = new LoginService()) {
+            String login = request.getParameter(Strings.LOGIN);
+            String password = DigestUtils.md5Hex(request.getParameter(Strings.PASSWORD));
+            User loginedUser = loginService.checkLogin(login, password);
+
+            request.getSession().setAttribute(Strings.LOGINED_USER, loginedUser);
+            log.info("Logined user is " + loginedUser);
+
+//            if (request.getSession().getServletContext().getAttribute(login) != null) {
+//                ((HttpSession) request.getSession().getServletContext().getAttribute(login)).invalidate();
+//            }
+//            request.getSession().getServletContext().setAttribute(login, request.getSession());
+
+            return loginedUser;
+        }
+    }
+
+    private String authorizeUser(HttpServletRequest request, User loginedUser) {
+        log.info("Successfully login");
+
+        try (LoginService loginService = new LoginService()) {
+
+            if (loginService.getRoleById(loginedUser.getRole()).toUpperCase()
+                    .equals(Strings.ADMIN_ROLE)) {
+                log.info("User is admin");
+                request.getSession().setAttribute(Strings.ROLE, Strings.ADMIN_ROLE);
+                new Util().generatePaginationSpecialties(request, Pagination.FIRST_PAGE,
+                        Pagination.FIVE_RECORDS_PER_PAGE);
+
+                return LoadConfigProperty.getInstance().getConfigProperty(Strings.PATH_PAGE_ADMIN_MAIN);
+            }
+
+        } catch (NoSuchRoleException e) {
+            log.error(e.getMessage());
+        }
+
+        log.info("User is student");
+        request.getSession().setAttribute(Strings.ROLE, Strings.STUDENT);
+        try (UniversityService universityService = new UniversityService()) {
+            ArrayList<String> listOfCities = new ArrayList<>(universityService.getAllCities());
+            request.getSession().setAttribute(Strings.CITIES_LIST, listOfCities);
+        }
+
+        Util util = new Util();
+        util.checkIfDisplayUserSubjectsAndGrade(request);
+        util.checkIfDisplayCongratulationOnSpecialty(request);
+
+        return LoadConfigProperty.getInstance().getConfigProperty(Strings.PATH_PAGE_STUDENT_MAIN);
+    }
+
 }

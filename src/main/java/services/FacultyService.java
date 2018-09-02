@@ -1,34 +1,42 @@
 package services;
 
 import model.connection.ConnectionManager;
-import model.dao.dao_implementations.DaoFactory;
-import model.dao.dao_interfaces.FacultyDao;
+import model.dao.factory.DaoFactory;
+import model.dao.FacultyDao;
 import model.enteties.Faculty;
 import model.enteties.Specialty;
 import org.apache.log4j.Logger;
 
+import java.io.Closeable;
 import java.sql.Connection;
 import java.util.ArrayList;
 
-public class FacultyService {
+public class FacultyService implements Closeable {
 
+    private Connection connection;
+    private FacultyDao facultyDao;
     private static final Logger log = Logger.getLogger(FacultyService.class);
 
-    public static ArrayList<Faculty> getAll() {
-        log.info("Start class FacultyService getAll()");
-        Connection connection = ConnectionManager.getInstance().getConnection();
-        FacultyDao facultyDao = DaoFactory.getFacultyDao(connection);
-        ArrayList<Faculty> listOfFaculties = facultyDao.getAll();
-        ConnectionManager.getInstance().close(connection);
-        return listOfFaculties;
+    public FacultyService() {
+        connection = ConnectionManager.getInstance().getConnection();
+        facultyDao = DaoFactory.getFacultyDao(connection);
     }
 
-    public static ArrayList<Specialty> getAllSpecialtiesOfFaculty(int id) {
-        log.info("Start class FacultyService getAllSpecialtiesOfFaculty()");
-        Connection connection = ConnectionManager.getInstance().getConnection();
-        FacultyDao facultyDao = DaoFactory.getFacultyDao(connection);
-        ArrayList<Specialty> listOfSpecialties = facultyDao.getAllSpecialtiesOfFaculty(id);
-        ConnectionManager.getInstance().close(connection);
-        return listOfSpecialties;
+    public ArrayList<Faculty> getAll() {
+        log.info("Start class FacultyService getAll()");
+
+        return facultyDao.getAll();
     }
+
+    public ArrayList<Specialty> getAllSpecialtiesOfFaculty(int id) {
+        log.info("Start class FacultyService getAllSpecialtiesOfFaculty()");
+
+        return facultyDao.getAllSpecialtiesOfFaculty(id);
+    }
+
+    @Override
+    public void close() {
+        ConnectionManager.getInstance().close(connection);
+    }
+
 }
