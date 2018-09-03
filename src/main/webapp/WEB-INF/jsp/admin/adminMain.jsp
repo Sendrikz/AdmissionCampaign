@@ -27,12 +27,6 @@
         <!-- Custom style -->
         <link rel = "stylesheet" type="text/css" href = "/css/style.css"/>
 
-        <style>
-            .container {
-                margin-top: 95px;
-            }
-        </style>
-
         <script>
             $(function() {
                 $("#tabsSubject").tabs();
@@ -41,98 +35,114 @@
 
     </head>
     <body>
-    <c:import url="/WEB-INF/jsp/fragments/headerAdmin.jsp" />
+
+    <c:import url="/WEB-INF/jsp/fragments/headerAdmin.jsp"/>
+
+    <c:import url="/WEB-INF/jsp/fragments/infoSection.jsp"/>
+
     <div class="container">
-        <h3><fmt:message key="account"/></h3>
-        <hr/>
-        <fmt:message key="lastName"/>: ${ sessionScope.loginedUser.lastName }
-        <fmt:message key="firstName"/>: ${ sessionScope.loginedUser.firstName }
-        <fmt:message key="patronymic"/>: ${ sessionScope.loginedUser.patronymic }
-        <fmt:message key="birthday"/>: ${ sessionScope.loginedUser.birthday }
-        <fmt:message key="city"/>: ${ sessionScope.loginedUser.city }
-        <fmt:message key="email"/>: ${ sessionScope.loginedUser.email }
-        <hr/>
-        <h3> Put grades to students </h3>
-        <div id="tabsSubject">
-            <ul>
-                <jsp:useBean id="subjectUserHashMap" scope="session" type="java.util.HashMap"/>
-                <c:forEach var="elem" items="${ subjectUserHashMap }" varStatus="status">
-                    <li><a href="#tabsSubject-${ elem.key.id }">${ elem.key.name }</a></li>
-                </c:forEach>
-            </ul>
-            <c:forEach var="subject" items="${ subjectUserHashMap}" varStatus="status">
-                <div id="tabsSubject-${subject.key.id}">
-                    <c:forEach var="user" items="${subject.value}" varStatus="status">
-                        <form name="userSubjectForm" method="POST" action="controller">
-                            <input type="hidden" name="command" value="setGrade">
-                            <input type="hidden" name="userId" value="${user.id}">
-                            <input type="hidden" name="subjectId" value="${subject.key.id}">
-                            ${ user.lastName }
-                            ${ user.firstName }
-                            ${ user.patronymic }
-                            Grade: <input type="number" name="grade" placeholder=""
-                                          min="0" max="200" step="0.1">
-                            <button><fmt:message key="submit"/></button>
-                        </form>
+        <div class="section students-grade-section">
+            <h3> <fmt:message key="putGradesToStudents"/> </h3>
+            <hr/>
+            <div id="tabsSubject">
+                <ul>
+                    <jsp:useBean id="subjectUserHashMap" scope="session" type="java.util.HashMap"/>
+                    <c:forEach var="elem" items="${ subjectUserHashMap }" varStatus="status">
+                        <li><a href="#tabsSubject-${ elem.key.id }">${ elem.key.name }</a></li>
                     </c:forEach>
-                </div>
-            </c:forEach>
+                </ul>
+                <c:forEach var="subject" items="${ subjectUserHashMap}" varStatus="status">
+                    <div id="tabsSubject-${subject.key.id}">
+                        <c:forEach var="user" items="${subject.value}" varStatus="status">
+                            <form name="userSubjectForm" method="POST" action="vstup">
+                                <input type="hidden" name="command" value="setGrade">
+                                <input type="hidden" name="userId" value="${user.id}">
+                                <input type="hidden" name="subjectId" value="${subject.key.id}">
+                                ${ user.lastName }
+                                ${ user.firstName }
+                                ${ user.patronymic }
+                                Grade: <input class="custom-btn btn-light btn-sm text-bold" type="number" name="grade" placeholder=""
+                                              min="0" max="200" step="0.1">
+                                <button class="custom-btn btn-light btn-sm text-bold" type="submit">
+                                    <fmt:message key="submit"/>
+                                </button>
+                            </form>
+                        </c:forEach>
+                    </div>
+                </c:forEach>
+            </div>
         </div>
-    <form name="gradeListForm" method="POST" action="controller">
-        <button>
-            <input type="hidden" name="command" value="gradeListRedirect" />
-            Grade List
-        </button>
-    </form>
-<div class="m-3">
-    <div class="row col-md-6">
-        <table class="table table-striped table-bordered table-sm">
-            <tr>
-                <th>Name</th>
-                <th>Pass</th>
-            </tr>
-            <jsp:useBean id="paginationSpecialties" scope="session" type="java.util.ArrayList"/>
-            <c:forEach items="${paginationSpecialties}" var="specialty">
-                <tr>
-                    <td>${specialty.name}</td>
-                    <td>
-                        <form name="RateForm" method="POST" action="controller">
-                            <input type="hidden" name="command" value="rateSpecialty">
-                            <input type="hidden" name="specialtyId" value="${specialty.id}"/>
-                            <button>Count</button>
-                        </form>
-                    </td>
-                </tr>
-            </c:forEach>
-        </table>
+        <!-- /students-grade-section -->
+
+        <div class="section grade-list-section">
+            <h3> <fmt:message key="showGradeList"/> </h3>
+            <hr/>
+            <form name="gradeListForm" method="POST" action="vstup">
+                <button class="custom-btn btn-light btn-sm text-bold" type="submit">
+                    <input type="hidden" name="command" value="gradeListRedirect" />
+                    <fmt:message key="gradeList"/>
+                </button>
+            </form>
+        </div>
+        <!-- /grade-list-section -->
+
+        <div class="section rating-specialties-table">
+            <h3> <fmt:message key="ratingTable"/> </h3>
+            <hr/>
+            <div class="m-3">
+                <div class="row col-md-6">
+                    <table class="table table-striped table-bordered table-sm">
+                        <tr>
+                            <th><fmt:message key="name"/> </th>
+                            <th><fmt:message key="pass"/> </th>
+                        </tr>
+                        <jsp:useBean id="paginationSpecialties" scope="session" type="java.util.ArrayList"/>
+                        <c:forEach items="${paginationSpecialties}" var="specialty">
+                            <tr>
+                                <td>${specialty.name}</td>
+                                <td>
+                                    <form name="RateForm" method="POST" action="vstup">
+                                        <input type="hidden" name="command" value="rateSpecialty">
+                                        <input type="hidden" name="specialtyId" value="${specialty.id}"/>
+                                        <button class="custom-btn btn-light btn-sm text-bold"><fmt:message key="count"/> </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </div>
+                <nav aria-label="Navigation for specialties">
+                    <ul class="pagination">
+                        <c:forEach begin="1" end="${sessionScope.noOfPages}" var="i">
+                            <li class="page-item">
+                                <form name="logOutFrom" method="POST" action="vstup">
+                                    <button class="page-link">
+                                        <input type="hidden" name="command" value="paginationSpecialty"/>
+                                        <input type="hidden" name="currentPage" value="${i}">
+                                            ${i}
+                                    </button>
+                                </form>
+                            </li>
+                        </c:forEach>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- /rating-specialties-table -->
     </div>
-    <nav aria-label="Navigation for countries">
-        <ul class="pagination">
-            <c:forEach begin="1" end="${sessionScope.noOfPages}" var="i">
-                <li class="page-item">
-                    <form name="logOutFrom" method="POST" action="controller">
-                        <button class="page-link">
-                            <input type="hidden" name="command" value="paginationSpecialty"/>
-                            <input type="hidden" name="currentPage" value="${i}">
-                                ${i}
-                        </button>
-                    </form>
-                </li>
-            </c:forEach>
-        </ul>
-    </nav>
-</div>
-    </div>
+
+    <c:import url="/WEB-INF/jsp/fragments/footer.jsp"/>
+
 <c:choose>
     <c:when test="${sessionScope.confirmRate == 'yes'}">
         <script>
-            swal('Success!', 'You build a rating', 'success');
+            swal('<fmt:message key="success"/>', '<fmt:message key="buildRating"/>', 'success');
         </script>
         <c:set var="confirmRate" value="off" scope="session"/>
     </c:when>
     <c:when test="${sessionScope.confirmRate == 'no'}">
         <script>
-            swal('Error!', 'You have already build a rating', 'error');
+            swal('<fmt:message key="error"/>', '<fmt:message key="alreadyBuildRating"/>', 'error');
         </script>
         <c:set var="confirmRate" value="off" scope="session"/>
     </c:when>

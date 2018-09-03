@@ -21,7 +21,7 @@
     </script>
     </head>
     <body>
-    <h3> Get list of students </h3>
+    <h3> <fmt:message key="listOfSpecialties"/> </h3>
 
     <div id="accordion">
         <jsp:useBean id="specialtyUserGradeHashMap" scope="session" type="java.util.HashMap"/>

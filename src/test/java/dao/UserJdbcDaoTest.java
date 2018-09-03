@@ -13,6 +13,7 @@ import org.junit.Test;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Optional;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
@@ -124,7 +125,7 @@ public class UserJdbcDaoTest {
 
     @Test
     public void NoSuchUserTest() {
-        assertNull(userDao.findById(0));
+        assertEquals(Optional.empty(), userDao.findById(0));
     }
 
     @Test
@@ -133,7 +134,9 @@ public class UserJdbcDaoTest {
          User user = setUpNewAndriy();
          userDao.add(user);
         userDao.deleteById(user.getId());
-        assertNull(userDao.findById(user.getId()));
+        if (userDao.findById(user.getId()).isPresent()) {
+            assertNull(userDao.findById(user.getId()));
+        }
     }
 
     @Test

@@ -25,7 +25,7 @@
                 <jsp:useBean id="listOfUni" scope="session" type="java.util.List"/>
                 <c:forEach var="uni" items="${ listOfUni }" varStatus="status">
                 <dd class="col-sm-3 account-info-elem>">
-                    <form name="uniForm" method="POST" action="controller">
+                    <form name="uniForm" method="POST" action="vstup">
                         <input type="hidden" name="command" value="generateSpecialtiesByUni"/>
                         <input type="hidden" name="uniId" value=" ${ uni.id }"/>
                         <button class="custom-btn btn-light btn-lg text-bold" type="submit">${ uni.name }</button>

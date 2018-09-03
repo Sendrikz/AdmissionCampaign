@@ -6,6 +6,8 @@ import model.dao.SubjectDao;
 import model.enteties.*;
 import model.builder.UserBuilder;
 import org.apache.log4j.Logger;
+import utils.Strings;
+import utils.property_loaders.LoadSQLProperties;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,17 +22,9 @@ public class SubjectJdbcDao implements SubjectDao {
 
     private static final Logger log = Logger.getLogger(SubjectJdbcDao.class);
     private Connection connection;
-    private Properties property;
 
     public SubjectJdbcDao(Connection connection) {
         this.connection = connection;
-        property = new Properties();
-        this.property = new Properties();
-        try (InputStream is = this.getClass().getClassLoader().getResourceAsStream("sql.properties")){
-            property.load(is);
-        } catch (IOException e) {
-            log.error(e.getMessage());
-        }
     }
 
     @Override
@@ -38,7 +32,9 @@ public class SubjectJdbcDao implements SubjectDao {
         ArrayList<Subject> listOfSubjects = new ArrayList<>();
         try (Statement statement = connection.createStatement()) {
 
-            ResultSet resultSet = statement.executeQuery(property.getProperty("sql.getAllSubjects"));
+            ResultSet resultSet = statement.executeQuery(
+                    LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SUBJECT_PROPERTIES,
+                            "sql.getAllSubjects"));
             while (resultSet.next()) {
                 int id = resultSet.getInt(1);
                 String name = resultSet.getString(2);
@@ -57,7 +53,8 @@ public class SubjectJdbcDao implements SubjectDao {
     @Override
     public void add(Subject subject) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.addSubject"), Statement.RETURN_GENERATED_KEYS)) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SUBJECT_PROPERTIES,
+                        "sql.addSubject"), Statement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, subject.getName());
             ps.setInt(2, subject.getDuration());
 
@@ -85,7 +82,8 @@ public class SubjectJdbcDao implements SubjectDao {
     @Override
     public void addSubjectToSpecialty(Subject subject, Specialty specialty, BigDecimal coef) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.addSpecialtyToSubject"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SPECIALTY_SUBJECT_PROPERTIES,
+                        "sql.addSpecialtyToSubject"))) {
 
             ps.setInt(2, subject.getId());
             ps.setInt(1, specialty.getId());
@@ -100,7 +98,8 @@ public class SubjectJdbcDao implements SubjectDao {
     @Override
     public void addSubjectToUser(Subject subject, User user, boolean checked, BigDecimal grade) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.addUserToSubject"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_SUBJECT_PROPERTIES,
+                        "sql.addUserToSubject"))) {
 
             ps.setInt(2, subject.getId());
             ps.setInt(1, user.getId());
@@ -116,7 +115,8 @@ public class SubjectJdbcDao implements SubjectDao {
     @Override
     public void update(int id, String name, int duration) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.updateSubject"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SUBJECT_PROPERTIES,
+                        "sql.updateSubject"))) {
 
             ps.setString(1, name);
             ps.setInt(2, duration);
@@ -131,7 +131,8 @@ public class SubjectJdbcDao implements SubjectDao {
     @Override
     public void updateSubjectToSpecialty(int subjectId, int specialtyId, BigDecimal coef) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.updateSpecialtyToSubject"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SPECIALTY_SUBJECT_PROPERTIES,
+                        "sql.updateSpecialtyToSubject"))) {
 
             ps.setBigDecimal(1, coef);
             ps.setInt(3, subjectId);
@@ -146,7 +147,8 @@ public class SubjectJdbcDao implements SubjectDao {
     @Override
     public void updateSubjectToUser(int subjectId, int userId, boolean checked, BigDecimal grade) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.updateUserToSubject"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_SUBJECT_PROPERTIES,
+                        "sql.updateUserToSubject"))) {
 
             ps.setBoolean(1, checked);
             ps.setBigDecimal(2, grade);
@@ -163,7 +165,8 @@ public class SubjectJdbcDao implements SubjectDao {
     public Optional<Subject> findById(int id) {
         Subject subject = null;
         try (PreparedStatement ps =connection.prepareStatement(
-                property.getProperty("sql.findByIdSubject"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SUBJECT_PROPERTIES,
+                        "sql.findByIdSubject"))) {
 
             ps.setInt(1, id);
             ResultSet resultSet = ps.executeQuery();
@@ -183,7 +186,8 @@ public class SubjectJdbcDao implements SubjectDao {
     @Override
     public void deleteById(int id) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.deleteByIdSubject"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SUBJECT_PROPERTIES,
+                        "sql.deleteByIdSubject"))) {
 
             ps.setInt(1, id);
             ps.executeUpdate();
@@ -197,7 +201,8 @@ public class SubjectJdbcDao implements SubjectDao {
     public void clearAllSubjects() {
         try (Statement statement = connection.createStatement()) {
 
-            statement.executeUpdate(property.getProperty("sql.clearAllSubjects"));
+            statement.executeUpdate(LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SUBJECT_PROPERTIES,
+                    "sql.clearAllSubjects"));
 
         } catch (SQLException e) {
             log.error(e.getMessage());
@@ -208,7 +213,8 @@ public class SubjectJdbcDao implements SubjectDao {
     public HashMap<Specialty, BigDecimal> getAllSpecialtiesBySubject(int subjectId) {
         HashMap<Specialty, BigDecimal> listOfSpecialties = new HashMap<>();
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.getAllSpecialtiesBySubject"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SPECIALTY_SUBJECT_PROPERTIES,
+                        "sql.getAllSpecialtiesBySubject"))) {
 
             ps.setInt(1, subjectId);
             ResultSet resultSet = ps.executeQuery();
@@ -228,7 +234,8 @@ public class SubjectJdbcDao implements SubjectDao {
         HashMap<User, BigDecimal> listOfUsers = new HashMap<>();
 
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.getAllUsersWithCheckedSubjects"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_SUBJECT_PROPERTIES,
+                        "sql.getAllUsersWithCheckedSubjects"))) {
 
             ps.setInt(1, id);
             ResultSet resultSet = ps.executeQuery();
@@ -259,7 +266,8 @@ public class SubjectJdbcDao implements SubjectDao {
         ArrayList<User> listOfUsers = new ArrayList<>();
 
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.getAllUsersBySubject"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_SUBJECT_PROPERTIES,
+                        "sql.getAllUsersBySubject"))) {
 
             ps.setInt(1, id);
             ResultSet resultSet = ps.executeQuery();
@@ -289,7 +297,8 @@ public class SubjectJdbcDao implements SubjectDao {
         ArrayList<User> listOfUsers = new ArrayList<>();
 
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.getAllUsersWithUncheckedSubject"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_SUBJECT_PROPERTIES,
+                        "sql.getAllUsersWithUncheckedSubject"))) {
 
             ps.setInt(1, id);
             ResultSet resultSet = ps.executeQuery();

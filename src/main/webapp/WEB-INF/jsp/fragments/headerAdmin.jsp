@@ -30,7 +30,7 @@
 <div class="header">
     <div class="container-fluid">
         <ul class="header-nav text-uppercase">
-                <form name="logOutFrom" method="POST" action="controller">
+                <form name="logOutFrom" method="POST" action="vstup">
                     <button>
                         <input type="hidden" name="command" value="logOut" />
                         LOGOUT

@@ -1,5 +1,8 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page pageEncoding="UTF-8" %>
+<%@ page isELIgnored ="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <fmt:setLocale value="${sessionScope.language}" />
 <fmt:bundle basename="pagecontent" prefix = "label." >
     <html>
@@ -13,41 +16,12 @@
 
         <!-- Custom style -->
         <link rel = "stylesheet" type="text/css" href = "/css/style.css"/>
-        <style>
-            .footer {
-                background-color: #313f47;
-            }
-            .footer-title {
-                 padding-top: 115px;
-             }
-            .footer-title h3 {
-                color: #ffffff;
-                margin-bottom: 15px;
-            }
-            .footer-line img {
-                margin-left: 646px;
-                margin-bottom: 28px;
-            }
-            .footer-line img + img {
-                margin-left: 8px;
-            }
-            .footer-content {
-                margin: 22px 0;
-            }
-            .footer-text {
-                margin-top: 112px;
-                padding-bottom: 30px;
-            }
-            .footer-text span {
-                color: #ffffff;
-            }
-        </style>
 </head>
 <body>
     <div class="footer container-fluid">
         <div class="footer-title text-center">
             <h3>
-                Follow Us On
+                <fmt:message key="followUs"/>
             </h3>
         </div>
         <div class="footer-line">

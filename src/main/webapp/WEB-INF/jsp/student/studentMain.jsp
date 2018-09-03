@@ -36,37 +36,8 @@
     </head>
     <body>
     <c:import url="/WEB-INF/jsp/fragments/headerStudent.jsp"/>
-
+    <c:import url="/WEB-INF/jsp/fragments/infoSection.jsp"/>
     <div class="container">
-        <div class="section account-info-section" style="margin-top: 40px">
-            <h3><fmt:message key="account"/></h3>
-            <div class="account-info">
-                <hr/>
-                <dl class="row account-info-role">
-                    <dd class="col-sm-6 account-info-elem>">
-                        <fmt:message key="lastName"/>: ${ sessionScope.loginedUser.lastName }
-                    </dd>
-                    <dd class="col-sm-6 account-info-elem>">
-                        <fmt:message key="birthday"/>: ${ sessionScope.loginedUser.birthday }
-                    </dd>
-                    <dd class="col-sm-6 account-info-elem>">
-                        <fmt:message key="firstName"/>: ${ sessionScope.loginedUser.firstName }
-                    </dd>
-                    <dd class="col-sm-6 account-info-elem>">
-                        <fmt:message key="city"/> ${ sessionScope.loginedUser.city }
-                    </dd>
-                    <dd class="col-sm-6 account-info-elem>">
-                        <fmt:message key="patronymic"/>: ${ sessionScope.loginedUser.patronymic }
-                    </dd>
-                    <dd class="col-sm-6 account-info-elem>">
-                        <fmt:message key="email"/>: ${ sessionScope.loginedUser.email }
-                    </dd>
-                </dl>
-                <!-- /account-info-role -->
-            </div>
-            <!-- /account-info -->
-        </div>
-        <!-- /account-info-section -->
 
         <c:if test="${sessionScope.isPassed == 'yes'}">
             <c:import url="/WEB-INF/jsp/fragments/studentAdmission.jsp"/>
@@ -86,7 +57,7 @@
                         <div class="subject-item">
                             <img alt="" src="/img/${elem.id}.jpg" style="width: 500px; height: 500px"/>
                         </div>
-                        <form name="subjectForm" method="POST" action="controller" style="text-align: center">
+                        <form name="subjectForm" method="POST" action="vstup" style="text-align: center">
                             <input type="hidden" name="command" value="registrateOnSubject" />
                             <input type="hidden" name="subject" value="${ elem.name }" />
                             <c:out value="${ elem.name }" />
@@ -120,7 +91,7 @@
                                     <c:set var="correctCity" value="${city}"/>
                                 </c:otherwise>
                             </c:choose>
-                            <form name="citiesForm" method="POST" action="controller">
+                            <form name="citiesForm" method="POST" action="vstup">
                                 <input type="hidden" name="command" value="generateUniversitiesByCity"/>
                                 <input type="hidden" name="city" value=" ${ correctCity }"/>
                                 <button class="custom-btn btn-light btn-sm text-bold" type="submit">${ correctCity }</button>
@@ -134,12 +105,12 @@
         <!-- /university-section -->
 
         <div class="section grade-list-section">
-            <h3> Show grade list </h3>
+            <h3> <fmt:message key="showGradeList"/> </h3>
             <hr/>
-            <form name="gradeListForm" method="POST" action="controller">
+            <form name="gradeListForm" method="POST" action="vstup">
                 <button class="custom-btn btn-light btn-sm text-bold" type="submit">
                     <input type="hidden" name="command" value="gradeListRedirect" />
-                    Grade List
+                    <fmt:message key="gradeList"/>
                 </button>
             </form>
         </div>
@@ -152,13 +123,13 @@
     <c:choose>
         <c:when test="${sessionScope.successfulSubject == 'yes'}">
             <script>
-                swal('Success!', 'You are successfully registrated', 'success');
+                swal('<fmt:message key="success"/>', '<fmt:message key="successfulRegistration"/>' , 'success');
             </script>
             <c:set var="successfulSubject" value="off" scope="session"/>
         </c:when>
         <c:when test="${sessionScope.successfulSubject == 'no'}">
             <script>
-                swal('Error!', 'You have already registrated', 'error');
+                swal('<fmt:message key="error"/>', '<fmt:message key="alreadyRegistrated"/>', 'error');
             </script>
             <c:set var="successfulSubject" value="off" scope="session"/>
         </c:when>

@@ -16,10 +16,7 @@ import model.dao.impl.FacultyJdbcDao;
 import model.dao.SpecialtyDao;
 import model.dao.impl.SpecialtyJdbcDao;
 import model.enteties_enum.Universities;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -99,7 +96,9 @@ public class FacultyJdbcDaoTest {
         Faculty faculty = setUpNewEconomicFaculty();
         facultyDao.add(faculty);
         facultyDao.deleteById(faculty.getId());
-        assertNull(facultyDao.findById(faculty.getId()));
+        if (facultyDao.findById(faculty.getId()).isPresent()) {
+            assertNull(facultyDao.findById(faculty.getId()));
+        }
     }
 
     @Test

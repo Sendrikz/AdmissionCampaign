@@ -56,11 +56,6 @@ public class LoginCommand implements ActionCommand {
             request.getSession().setAttribute(Strings.LOGINED_USER, loginedUser);
             log.info("Logined user is " + loginedUser);
 
-//            if (request.getSession().getServletContext().getAttribute(login) != null) {
-//                ((HttpSession) request.getSession().getServletContext().getAttribute(login)).invalidate();
-//            }
-//            request.getSession().getServletContext().setAttribute(login, request.getSession());
-
             return loginedUser;
         }
     }

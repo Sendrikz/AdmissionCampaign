@@ -8,9 +8,18 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        .congratulation-title {
+            border: 1px solid;
+            background-color: lightgreen;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-   Congratulation!!! You pass on ${sessionScope.userSpecialty.name}
+<div class="congratulation-title">
+   <fmt:message key="congratulations"/> ${sessionScope.userSpecialty.name}
+</div>
 </body>
 </html>
 </fmt:bundle>

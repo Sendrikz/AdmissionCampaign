@@ -1,5 +1,8 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page pageEncoding="UTF-8" %>
+<%@ page isELIgnored ="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <fmt:setLocale value="${sessionScope.language}" />
 <fmt:bundle basename="pagecontent" prefix = "label." >
     <html>
@@ -23,40 +26,6 @@
 
         <!-- Custom style -->
         <link rel = "stylesheet" type="text/css" href = "/css/style.css"/>
-        <style>
-            /* ----- Inner ----- */
-            .inner-main {
-                background-image: url('/img/main.jpg');
-                height: 100vh;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: cover;
-                text-align: center;
-            }
-            .inner-main::before {
-                content:'';
-                display: inline-block;
-                height: 100%;
-                vertical-align: middle;
-                margin-left: -4px;
-            }
-            .inner-content-main {
-                vertical-align: middle;
-                display: inline-block;
-                position: absolute;
-                top: 18%;
-                left: 27%;
-            }
-            .inner-main h1 {
-                color: #fff;
-                font-size: 30px;
-                font-family: 'Dosis', sans-serif;
-                font-weight: 400;
-                letter-spacing: 0.3em;
-                text-indent: 1.7em;
-            }
-            /* ----- Inner end ----- */
-        </style>
     </head>
     <body>
     <!-- HEADER START -->
@@ -64,18 +33,18 @@
         <div class="container-fluid">
             <ul class="header-nav text-uppercase">
                 <li>
-                <form name="redirectForm" method="POST" action="controller">
+                <form name="redirectForm" method="POST" action="vstup">
                     <button>
                         <input type="hidden" name="command" value="returnToMain" />
-                        HOME
+                        <fmt:message key="home"/>
                     </button>
                 </form>
                 </li>
                 <li>
-                    <form name="logOutFrom" method="POST" action="controller">
+                    <form name="logOutFrom" method="POST" action="vstup">
                         <button>
                             <input type="hidden" name="command" value="logOut" />
-                            LOGOUT
+                            <fmt:message key="logOut"/>
                         </button>
                     </form>
                     <!-- /logOutFrom -->
@@ -87,7 +56,7 @@
     <!-- HEADER END -->
     <div class="inner-main">
         <div class="inner-content-main">
-            <h1 class="text-uppercase" style="color: black;"> Admission campaign 2018 </h1>
+            <h1 class="text-uppercase" style="color: black;"> <fmt:message key="admissionCampaign"/> </h1>
         </div>
         <!-- /inner-content-main -->
     </div>

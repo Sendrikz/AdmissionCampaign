@@ -9,6 +9,8 @@ import model.builder.FacultyBuilder;
 import model.enteties.University;
 import model.builder.UniversityBuilder;
 import org.apache.log4j.Logger;
+import utils.Strings;
+import utils.property_loaders.LoadSQLProperties;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -23,23 +25,18 @@ public class UniversityJdbcDao implements UniversityDao {
 
     private static final Logger log = Logger.getLogger(UniversityJdbcDao.class);
     private Connection connection;
-    private Properties property;
 
     public UniversityJdbcDao(Connection connection) {
         this.connection = connection;
-        this.property = new Properties();
-        try (InputStream is = this.getClass().getClassLoader().getResourceAsStream("sql.properties")){
-            property.load(is);
-        } catch (IOException e) {
-            log.error(e.getMessage());
-        }
     }
 
     @Override
     public ArrayList<University> getAll() {
         ArrayList<University> listOfUniversities = new ArrayList<>();
         try (Statement statement = connection.createStatement()) {
-            ResultSet resultSet = statement.executeQuery(property.getProperty("sql.getAllUniversities"));
+            ResultSet resultSet = statement.executeQuery(
+                    LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_UNIVERSITY_PROPERTIES,
+                    "sql.getAllUniversities"));
 
             while (resultSet.next()) {
                 int id = resultSet.getInt(1);
@@ -63,7 +60,8 @@ public class UniversityJdbcDao implements UniversityDao {
     @Override
     public void add(University university) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.addUniversity"), Statement.RETURN_GENERATED_KEYS)) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_UNIVERSITY_PROPERTIES,
+                        "sql.addUniversity"), Statement.RETURN_GENERATED_KEYS)) {
 
             ps.setString(1, university.getName());
             ps.setString(2, university.getAddress());
@@ -90,7 +88,8 @@ public class UniversityJdbcDao implements UniversityDao {
     @Override
     public void update(int id, String name, String address, String city) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.updateUniversity"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_UNIVERSITY_PROPERTIES,
+                        "sql.updateUniversity"))) {
 
             ps.setString(1, name);
             ps.setString(2, address);
@@ -107,7 +106,8 @@ public class UniversityJdbcDao implements UniversityDao {
     public Optional<University> findById(int id) {
         University uni = null;
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.findByIdUniversity"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_UNIVERSITY_PROPERTIES,
+                        "sql.findByIdUniversity"))) {
             ps.setInt(1, id);
 
             ResultSet resultSet = ps.executeQuery();
@@ -131,7 +131,8 @@ public class UniversityJdbcDao implements UniversityDao {
     @Override
     public void deleteById(int id) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.deleteByIdUniversity"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_UNIVERSITY_PROPERTIES,
+                        "sql.deleteByIdUniversity"))) {
 
             ps.setInt(1, id);
             ps.executeUpdate();
@@ -145,7 +146,8 @@ public class UniversityJdbcDao implements UniversityDao {
     public void clearAllUniversities() {
         try (Statement statement = connection.createStatement()) {
 
-            statement.executeUpdate(property.getProperty("sql.clearAllUniversities"));
+            statement.executeUpdate(LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_UNIVERSITY_PROPERTIES,
+                    "sql.clearAllUniversities"));
 
         } catch (SQLException e) {
             log.error(e.getMessage());
@@ -156,7 +158,8 @@ public class UniversityJdbcDao implements UniversityDao {
     public ArrayList<Faculty> getAllFacultiesOfUniversity(int uniId) {
         ArrayList<Faculty> listOfFaculties = new ArrayList<>();
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.getAllFacultiesOfUniversity"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_UNIVERSITY_PROPERTIES,
+                        "sql.getAllFacultiesOfUniversity"))) {
 
             ps.setInt(1, uniId);
             ResultSet resultSet = ps.executeQuery();

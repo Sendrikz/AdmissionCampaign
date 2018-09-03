@@ -85,7 +85,9 @@ public class UniversityJdbcDaoTest {
         University academy = setUpNewNaUKMA();
         universityDao.add(academy);
         universityDao.deleteById(academy.getId());
-        assertNull(universityDao.findById(academy.getId()));
+        if (universityDao.findById(academy.getId()).isPresent()) {
+            assertNull(universityDao.findById(academy.getId()));
+        }
     }
 
     @Test

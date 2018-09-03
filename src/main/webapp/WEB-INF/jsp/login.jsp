@@ -38,7 +38,7 @@
 <div class="inner">
     <div class="login-content">
         <h4 class="login-title text-center"><fmt:message key="title"/></h4>
-        <form name="loginForm" method="POST" action="controller">
+        <form name="loginForm" method="POST" action="vstup">
             <input type="hidden" name="command" value="login" />
             <div class="login-form-group">
                 <i class="fa fa-user"></i>
@@ -72,19 +72,19 @@
 <c:choose>
     <c:when test="${sessionScope.successfulRegistrated == 'yes'}">
         <script>
-            swal('Good!', 'Your profile is created. Login to start', 'success');
+            swal('<fmt:message key="good"/>', '<fmt:message key="profileCreated"/>', 'success');
         </script>
         <c:set var="successfulRegistrated" value="null" scope="session"/>
     </c:when>
     <c:when test="${sessionScope.successfulRegistrated == 'no'}">
         <script>
-            swal('Try again!', 'Such user already created', 'error');
+            swal('<fmt:message key="tryAgain"/>', '<fmt:message key="alreadyCreated"/>', 'error');
         </script>
         <c:set var="successfulRegistrated" value="null" scope="session"/>
     </c:when>
     <c:when test="${sessionScope.successfulLogin == 'no'}">
         <script>
-            swal('Try again!', 'There is no such user', 'error');
+            swal('<fmt:message key="tryAgain"/>', '<fmt:message key="noSuchUser"/>', 'error');
         </script>
         <c:set var="successfulLogin" value="null" scope="session"/>
     </c:when>
@@ -102,7 +102,7 @@
                 </button>
             </div>
             <!-- /modal-header -->
-            <form name="registerForm" method="POST" action="controller">
+            <form name="registerForm" method="POST" action="vstup">
                 <input type="hidden" name="command" value="registration" />
                 <div class="modal-body">
                     <div class="row registration-form-group text-white">

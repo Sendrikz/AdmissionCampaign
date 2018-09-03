@@ -36,15 +36,16 @@
     <div class="container">
         <div class="university-section" style="margin-top: 40px">
             <div class="university-info">
-                <h3> University </h3>
+                <h3> <fmt:message key="university"/> </h3>
                 <hr/>
-                <p> Name: ${ sessionScope.selectedUni.name }</p>
-                <p> Address: ${ sessionScope.selectedUni.address }</p>
-                <p> City: ${ sessionScope.selectedUni.city }</p>
-                <h3> Faculties </h3>
+                <p> <fmt:message key="name"/>: ${ sessionScope.selectedUni.name }</p>
+                <p> <fmt:message key="address"/>: ${ sessionScope.selectedUni.address }</p>
+                <p> <fmt:message key="city"/>: ${ sessionScope.selectedUni.city }</p>
+                <h3> <fmt:message key="faculties"/> </h3>
                 <hr/>
             </div>
             <!-- /university-info -->
+
             <div class="university-content">
                 <jsp:useBean id="facultySpecialtyMap" scope="session" type="java.util.HashMap"/>
                 <jsp:useBean id="specialtySubjectMap" scope="session" type="java.util.HashMap"/>
@@ -57,19 +58,19 @@
                     <c:forEach var="map" items="${ facultySpecialtyMap }" varStatus="status">
                             <div id="tabs-${ map.key.id }">
                                 <c:forEach var="specialtyMap" items="${map.value}" varStatus="status">
-                                    <form name="specialtyForm" method="POST" action="controller">
+                                    <form name="specialtyForm" method="POST" action="vstup">
                                         <input type="hidden" name="command" value="registrationForSpecialty"/>
                                         <input type="hidden" name="specialtyToRegistrId" value="${ specialtyMap.id }"/>
                                         <h3>${ specialtyMap.name }</h3>
-                                        <p> Quantity of students: ${ specialtyMap.quantityOfStudents }</p>
+                                        <p> <fmt:message key="quantityOfStudents"/>: ${ specialtyMap.quantityOfStudents }</p>
                                         <c:if test="${specialtySubjectMap.containsKey(specialtyMap)}">
-                                            <h5> Subjects: </h5>
+                                            <h5> <fmt:message key="subjects"/>: </h5>
                                             <dl class="row">
                                             <c:forEach var="subjects" items="${specialtySubjectMap.get(specialtyMap)}">
                                                 <dd class="col-sm-4">
-                                                <p> Name of subject: ${subjects.key.name} </p>
-                                                <p> Duration of test: ${subjects.key.duration}</p>
-                                                <p> Coef: ${subjects.value}</p>
+                                                <p> <fmt:message key="nameOfSubject"/>: ${subjects.key.name} </p>
+                                                <p> <fmt:message key="durationOfTest"/>: ${subjects.key.duration}</p>
+                                                <p> <fmt:message key="coef"/>: ${subjects.value}</p>
                                                 </dd>
                                             </c:forEach>
                                             </dl>

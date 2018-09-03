@@ -5,8 +5,11 @@ public interface Strings {
     String SQL_FACULTY_PROPERTIES = "sql_faculty.properties";
     String SQL_ROLE_PROPERTIES = "sql_role.properties";
     String SQL_SPECIALTY_PROPERTIES = "sql_specialty.properties";
+    String SQL_SPECIALTY_SUBJECT_PROPERTIES = "sql_specialty_subject.properties";
+    String SQL_USER_SUBJECT_PROPERTIES = "sql_user_subject.properties";
+    String SQL_USER_SPECIALTY_PROPERTIES = "sql_user_specialty.properties";
     String SQL_SUBJECT_PROPERTIES = "sql_subject.properties";
-    String SQL_UNIVERSITY = "sql_university.properties";
+    String SQL_UNIVERSITY_PROPERTIES = "sql_university.properties";
     String SQL_USER_PROPERTIES = "sql_user.properties";
     String GET_ALL_FACULTIES = "sql.getAllFaculties";
     String ADD_FACULTY = "sql.addFaculty";
@@ -24,6 +27,20 @@ public interface Strings {
     String ALL_USERS_BY_ROLE = "sql.allUsersByRole";
     String GET_ALL_SPECIALTIES_BY_FACULTY = "sql.getAllSpecialtiesByFaculty";
     String FIND_USER_BY_EMAIL_AND_PASSWORD = "sql.findUserByEmailAndPassword";
+    String GET_ALL_SPECIALTIES = "sql.getAllSpecialties";
+    String GET_ALL_SPECIALTIES_PAGINATION = "sql.getAllSpecialtiesPagination";
+    String ADD_SPECIALTY = "sql.addSpecialty";
+    String ADD_SPECIALTY_TO_SUBJECT = "sql.addSpecialtyToSubject";
+    String ADD_USER_TO_SPECIALTY = "sql.addUserToSpecialty";
+    String UPDATE_SPECIALTY = "sql.updateSpecialty";
+    String UPDATE_SPECIALTY_TO_SUBJECT = "sql.updateSpecialtyToSubject";
+    String UPDATE_USER_TO_SPECIALTY = "sql.updateUserToSpecialty";
+    String FIND_BY_ID_SPECIALTY = "sql.findByIdSpecialty";
+    String DELETE_BY_ID_SPECIALTY = "sql.deleteByIdSpecialty";
+    String CLEAR_ALL_SPECIALTIES = "sql.clearAllSpecialties";
+    String GET_ALL_SUBJECTS_OF_SPECILATY = "sql.getAllSubjectsOfSpecialty";
+    String GET_ALL_USERS_OF_SPECIALTY = "sql.getAllUsersOfSpecialty";
+    String COUNT_SPECIALTIES_ROWS= "sql.countSpecialtiesRows";
     String ADMIN_ROLE = "ADMINISTRATOR";
     String PATH_PAGE_INDEX = "path.page.index";
     String PATH_PAGE_LOGIN = "path.page.login";
@@ -75,4 +92,5 @@ public interface Strings {
     String USER_ID = "userId";
     String GRADE = "grade";
     String LOG_OUT = ":LogOut";
+    String GUEST = "guest";
 }

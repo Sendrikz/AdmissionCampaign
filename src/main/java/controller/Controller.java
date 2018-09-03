@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet("/controller")
+@WebServlet("/vstup")
 public class Controller extends HttpServlet {
 
     private static final Logger log = Logger.getLogger(String.valueOf(LoginCommand.class));

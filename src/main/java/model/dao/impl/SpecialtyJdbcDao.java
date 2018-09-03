@@ -6,6 +6,8 @@ import model.builder.UserBuilder;
 import model.dao.SpecialtyDao;
 import model.enteties.*;
 import org.apache.log4j.Logger;
+import utils.Strings;
+import utils.property_loaders.LoadSQLProperties;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,16 +22,9 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
 
     private static final Logger log = Logger.getLogger(SpecialtyJdbcDao.class);
     private Connection connection;
-    private Properties property;
 
     public SpecialtyJdbcDao(Connection connection) {
         this.connection = connection;
-        this.property = new Properties();
-        try (InputStream is = this.getClass().getClassLoader().getResourceAsStream("sql.properties")){
-            property.load(is);
-        } catch (IOException e) {
-            log.error(e.getMessage());
-        }
     }
 
     @Override
@@ -37,7 +32,8 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
         ArrayList<Specialty> listOfSpecialties = new ArrayList<>();
         try (Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery(
-                    property.getProperty("sql.getAllSpecialties"));
+                    LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SPECIALTY_PROPERTIES,
+                    Strings.GET_ALL_SPECIALTIES));
             while (resultSet.next()) {
                 int id = resultSet.getInt(1);
                 String name = resultSet.getString(2);
@@ -57,7 +53,8 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
     public ArrayList<Specialty> getAll(int currentPage, int recordsPerPage) {
         ArrayList<Specialty> listOfSpecialties = new ArrayList<>();
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.getAllSpecialtiesPagination"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SPECIALTY_PROPERTIES,
+                Strings.GET_ALL_SPECIALTIES_PAGINATION))) {
 
             int start = currentPage * recordsPerPage - recordsPerPage;
             ps.setInt(1, start);
@@ -82,7 +79,8 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
     @Override
     public void add(Specialty specialty) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.addSpecialty"), Statement.RETURN_GENERATED_KEYS)) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SPECIALTY_PROPERTIES,
+                Strings.ADD_SPECIALTY), Statement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, specialty.getName());
             ps.setInt(2, specialty.getQuantityOfStudents());
             ps.setInt(3, specialty.getFacultyId());
@@ -111,7 +109,8 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
     @Override
     public void addSpecialtyToSubject(Specialty specialty, Subject subject, BigDecimal coef) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.addSpecialtyToSubject"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SPECIALTY_SUBJECT_PROPERTIES,
+                Strings.ADD_SPECIALTY_TO_SUBJECT))) {
 
             ps.setInt(1, specialty.getId());
             ps.setInt(2, subject.getId());
@@ -126,7 +125,8 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
     @Override
     public void addSpecialtyToUser(Specialty specialty, User user, boolean passed) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.addUserToSpecialty"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_SUBJECT_PROPERTIES,
+                        Strings.ADD_USER_TO_SPECIALTY))) {
 
             ps.setInt(2, specialty.getId());
             ps.setInt(1, user.getId());
@@ -142,7 +142,8 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
     @Override
     public void update(int id, String name, int quantityOfStudents, int facultyId) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.updateSpecialty"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SPECIALTY_PROPERTIES,
+                Strings.UPDATE_SPECIALTY))) {
 
             ps.setString(1, name);
             ps.setInt(2, quantityOfStudents);
@@ -158,7 +159,8 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
     @Override
     public void updateSpecialtyToSubject(int specialtyId, int subjectId, BigDecimal coef) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.updateSpecialtyToSubject"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SPECIALTY_SUBJECT_PROPERTIES,
+                Strings.UPDATE_SPECIALTY_TO_SUBJECT))) {
 
             ps.setBigDecimal(1, coef);
             ps.setInt(2, specialtyId);
@@ -173,7 +175,8 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
     @Override
     public void updateSpecialtyToUser(int specialtyId, int userId, boolean passed) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.updateUserToSpecialty"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_SPECIALTY_PROPERTIES,
+                        Strings.UPDATE_USER_TO_SPECIALTY))) {
 
             ps.setBoolean(1, passed);
             ps.setInt(3, specialtyId);
@@ -189,7 +192,8 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
     public Optional<Specialty> findById(int id) {
         Specialty specialty = null;
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.findByIdSpecialty"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SPECIALTY_PROPERTIES,
+                Strings.FIND_BY_ID_SPECIALTY))) {
             ps.setInt(1, id);
             ResultSet resultSet = ps.executeQuery();
 
@@ -211,7 +215,8 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
     @Override
     public void deleteById(int id) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.deleteByIdSpecialty"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SPECIALTY_PROPERTIES,
+                        Strings.DELETE_BY_ID_SPECIALTY))) {
 
             ps.setInt(1, id);
             ps.executeUpdate();
@@ -225,7 +230,9 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
     public void clearAllSpecialties() {
         try (Statement statement = connection.createStatement()) {
 
-            statement.executeUpdate(property.getProperty("sql.clearAllSpecialties"));
+            statement.executeUpdate(
+                    LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SPECIALTY_PROPERTIES,
+                            Strings.CLEAR_ALL_SPECIALTIES));
 
         } catch (SQLException e) {
             log.error(e.getMessage());
@@ -237,7 +244,8 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
     public HashMap<Subject, BigDecimal> getAllSubjectsOfSpecialty(int id) {
         HashMap<Subject, BigDecimal> listOfSubject = new HashMap<>();
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.getAllSubjectsOfSpecialty"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SPECIALTY_SUBJECT_PROPERTIES,
+                        Strings.GET_ALL_SUBJECTS_OF_SPECILATY))) {
 
             ps.setInt(1, id);
             ResultSet resultSet = ps.executeQuery();
@@ -260,7 +268,8 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
     public HashMap<User, Boolean> getAllUsersOfSpecialty(int id) {
         HashMap<User, Boolean> listOfUsers = new HashMap<>();
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.getAllUsersOfSpecialty"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_SPECIALTY_PROPERTIES,
+                        Strings.GET_ALL_USERS_OF_SPECIALTY))) {
 
             ps.setInt(1, id);
             ResultSet resultSet = ps.executeQuery();
@@ -293,7 +302,8 @@ public class SpecialtyJdbcDao implements SpecialtyDao {
         try (Statement statement = connection.createStatement()) {
 
             ResultSet resultSet = statement.executeQuery(
-                    property.getProperty("sql.countSpecialtiesRows"));
+                    LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_SPECIALTY_PROPERTIES,
+                            Strings.COUNT_SPECIALTIES_ROWS));
             if (resultSet.next()) {
                 rows = resultSet.getInt(1);
             }

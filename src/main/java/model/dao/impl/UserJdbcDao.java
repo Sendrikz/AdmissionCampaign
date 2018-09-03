@@ -21,17 +21,10 @@ import java.util.Properties;
 public class UserJdbcDao implements UserDao {
 
     private static final Logger log = Logger.getLogger(UserJdbcDao.class);
-    private Properties property;
     private Connection connection;
 
     public UserJdbcDao(Connection connection) {
         this.connection = connection;
-        this.property = new Properties();
-        try (InputStream is = this.getClass().getClassLoader().getResourceAsStream("sql.properties")){
-            property.load(is);
-        } catch (IOException e) {
-            log.error(e.getMessage());
-        }
     }
 
     @Override
@@ -39,7 +32,9 @@ public class UserJdbcDao implements UserDao {
         ArrayList<User> listOfUsers = new ArrayList<>();
 
         try (Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery(property.getProperty("sql.findAllUsers"))) {
+        ResultSet resultSet = statement.executeQuery(
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_PROPERTIES,
+                        "sql.findAllUsers"))) {
 
             while (resultSet.next()) {
                 int userId = resultSet.getInt(1);
@@ -66,7 +61,8 @@ public class UserJdbcDao implements UserDao {
     public ArrayList<User> getAllStudents(int id) {
         ArrayList<User> listOfStudents = new ArrayList<>();
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.getAllStudents"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_PROPERTIES,
+                        "sql.getAllStudents"))) {
 
             ps.setInt(1, id);
 
@@ -95,7 +91,9 @@ public class UserJdbcDao implements UserDao {
 
     @Override
     public void add(User user) {
-        try (PreparedStatement ps = connection.prepareStatement(property.getProperty("sql.addUser"),
+        try (PreparedStatement ps = connection.prepareStatement(
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_PROPERTIES,
+                        "sql.addUser"),
                      Statement.RETURN_GENERATED_KEYS)) {
 
             ps.setString(1, user.getLastName());
@@ -129,7 +127,8 @@ public class UserJdbcDao implements UserDao {
     @Override
     public void addUserToSubject(User user, Subject subject, boolean checked, BigDecimal grade) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.addUserToSubject"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_SUBJECT_PROPERTIES,
+                        "sql.addUserToSubject"))) {
 
             ps.setInt(1, user.getId());
             ps.setInt(2, subject.getId());
@@ -145,7 +144,8 @@ public class UserJdbcDao implements UserDao {
     @Override
     public void addUserToSpecialty(User user, Specialty specialty, boolean passed) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.addUserToSpecialty"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_SPECIALTY_PROPERTIES,
+                        "sql.addUserToSpecialty"))) {
 
             ps.setInt(1, user.getId());
             ps.setInt(2, specialty.getId());
@@ -161,7 +161,8 @@ public class UserJdbcDao implements UserDao {
     public Optional<User> findById(int id) {
         User user = null;
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.findUserById"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_PROPERTIES,
+                        "sql.findUserById"))) {
 
             ps.setInt(1, id);
 
@@ -200,7 +201,8 @@ public class UserJdbcDao implements UserDao {
     public void update(int id, String lastName, String firstName, String patronymic, String birthday,
                        String city, int role) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.updateAFullUser"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_PROPERTIES,
+                        "sql.updateAFullUser"))) {
 
             ps.setString(1, lastName);
             ps.setString(2, firstName);
@@ -220,7 +222,8 @@ public class UserJdbcDao implements UserDao {
     @Override
     public void updateEmail(int id, String value) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.updateUserEmail"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_PROPERTIES,
+                        "sql.updateUserEmail"))) {
 
             ps.setString(1, value);
             ps.setInt(2, id);
@@ -235,7 +238,8 @@ public class UserJdbcDao implements UserDao {
     @Override
     public void updatePassword(int id, String value) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.updateUserPassword"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_PROPERTIES,
+                        "sql.updateUserPassword"))) {
 
             ps.setString(1, value);
             ps.setInt(2, id);
@@ -250,7 +254,8 @@ public class UserJdbcDao implements UserDao {
     @Override
     public void updateUserToSubject(int userId, int subjectId, boolean checked, BigDecimal grade) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.updateUserToSubject"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_SUBJECT_PROPERTIES,
+                        "sql.updateUserToSubject"))) {
 
             ps.setBoolean(1, checked);
             ps.setBigDecimal(2, grade);
@@ -266,7 +271,8 @@ public class UserJdbcDao implements UserDao {
     @Override
     public void updateUserToSpecialty(int userId, int specialtyId, boolean passed) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.updateUserToSpecialty"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_SPECIALTY_PROPERTIES,
+                        "sql.updateUserToSpecialty"))) {
 
             ps.setBoolean(1, passed);
             ps.setInt(2, userId);
@@ -281,7 +287,8 @@ public class UserJdbcDao implements UserDao {
     @Override
     public void deleteById(int id) {
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.deleteUserById"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_PROPERTIES,
+                        "sql.deleteUserById"))) {
 
             ps.setInt(1, id);
             ps.executeUpdate();
@@ -294,7 +301,8 @@ public class UserJdbcDao implements UserDao {
     @Override
     public void deleteUserFromSpecialtiesExcept(int user_id, int specialty_id) {
         try (PreparedStatement preparedStatement = connection.prepareStatement(
-                property.getProperty("sql.deleteUserFromSpecialtiesExcept"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_SPECIALTY_PROPERTIES,
+                        "sql.deleteUserFromSpecialtiesExcept"))) {
 
             preparedStatement.setInt(1, user_id);
             preparedStatement.setInt(2, specialty_id);
@@ -309,7 +317,8 @@ public class UserJdbcDao implements UserDao {
     public void clearAllUsers() {
         try (Statement statement = connection.createStatement()) {
 
-            statement.executeUpdate(property.getProperty("sql.deleteAllUsers"));
+            statement.executeUpdate(LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_PROPERTIES,
+                    "sql.deleteAllUsers"));
 
         } catch (SQLException e) {
             log.error(e.getMessage());
@@ -347,7 +356,8 @@ public class UserJdbcDao implements UserDao {
         HashMap<Subject, BigDecimal> listOfSubjects = new HashMap<>();
 
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.getAllCheckedSubjectsByUser"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_SUBJECT_PROPERTIES,
+                        "sql.getAllCheckedSubjectsByUser"))) {
 
             ps.setInt(1, id);
             ResultSet resultSet = ps.executeQuery();
@@ -369,7 +379,8 @@ public class UserJdbcDao implements UserDao {
     public ArrayList<Subject> getAllSubjectsByUser(int id) {
         ArrayList<Subject> listOfSubjects = new ArrayList<>();
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.getAllSubjectsByUser"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_SUBJECT_PROPERTIES,
+                        "sql.getAllSubjectsByUser"))) {
 
             ps.setInt(1, id);
             ResultSet resultSet = ps.executeQuery();
@@ -390,7 +401,8 @@ public class UserJdbcDao implements UserDao {
     public ArrayList<Subject> getAllUncheckedSubjectsByUser(int id) {
         ArrayList<Subject> listOfSubjects = new ArrayList<>();
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.getAllUncheckedSubjectsByUser"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_SUBJECT_PROPERTIES,
+                        "sql.getAllUncheckedSubjectsByUser"))) {
 
             ps.setInt(1, id);
             ResultSet resultSet = ps.executeQuery();
@@ -413,7 +425,8 @@ public class UserJdbcDao implements UserDao {
         HashMap<Specialty, Boolean> listOfSpecialties = new HashMap<>();
 
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.getAllSpecialtiesByUser"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_SPECIALTY_PROPERTIES,
+                        "sql.getAllSpecialtiesByUser"))) {
 
             ps.setInt(1, id);
             ResultSet resultSet = ps.executeQuery();
@@ -438,7 +451,8 @@ public class UserJdbcDao implements UserDao {
     public Optional<Specialty> getPassedSpecialtyByUser(int id) {
         Specialty specialty = null;
         try (PreparedStatement ps = connection.prepareStatement(
-                property.getProperty("sql.getPassedSpecialtyByUser"))) {
+                LoadSQLProperties.getInstance().getConfigProperty(Strings.SQL_USER_SPECIALTY_PROPERTIES,
+                        "sql.getPassedSpecialtyByUser"))) {
             ps.setInt(1, id);
             ResultSet resultSet = ps.executeQuery();
             while (resultSet.next()) {
