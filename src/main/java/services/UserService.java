@@ -26,7 +26,8 @@ public class UserService implements Closeable {
         userDao = DaoFactory.getUserDao(connection);
     }
 
-    public boolean addUserToSubject(User user, Subject subject, boolean checked, BigDecimal grade) {
+    public boolean addUserToSubject(User user, Subject subject, boolean checked,
+                                    BigDecimal grade) {
         log.info("Start class UserService method addUserToSubject()");
 
         ArrayList<Subject> allSubjectsByUser = allSubjectsByUser(user);

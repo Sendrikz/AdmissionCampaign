@@ -24,6 +24,11 @@ public class UniversityService implements Closeable {
         universityDao = DaoFactory.getUniversityDao(connection);
     }
 
+    UniversityService(Connection connection) {
+        this.connection = connection;
+        universityDao = DaoFactory.getUniversityDao(connection);
+    }
+
     public ArrayList<University> getAllUniversities() {
         log.info("Start class UniversityService getAllUniversities()");
 

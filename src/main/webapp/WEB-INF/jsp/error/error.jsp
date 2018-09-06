@@ -1,10 +1,13 @@
-<html><head><title>Error Page</title></head>
+<html><head><title>Error Page</title>
+<style>
+    body .error-section {
+        width: 100%;
+        height: 100%;
+        background: url('/img/error.jpeg') center no-repeat;
+        background-size: cover;
+    }
+</style></head>
 <body>
-Request from ${pageContext.errorData.requestURI} is failed
-<br/>
-Servlet name or type: ${pageContext.errorData.servletName}
-<br/>
-Status code: ${pageContext.errorData.statusCode}
-<br/>
-Exception: ${pageContext.errorData.throwable}
+<div class="error-section">
+</div>
 </body></html>

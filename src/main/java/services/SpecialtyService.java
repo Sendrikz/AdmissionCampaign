@@ -25,6 +25,11 @@ public class SpecialtyService implements Closeable {
         specialtyDao = DaoFactory.getSpecialtyDao(connection);
     }
 
+    public SpecialtyService(Connection connection) {
+        this.connection = connection;
+        specialtyDao = DaoFactory.getSpecialtyDao(connection);
+    }
+
     public Specialty findById(int id) throws NoSuchSpecialtyException {
         log.info("Start class SpecialtyService findById()");
 

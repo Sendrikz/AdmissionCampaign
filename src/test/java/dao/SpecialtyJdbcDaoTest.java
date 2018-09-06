@@ -39,9 +39,14 @@ public class SpecialtyJdbcDaoTest {
         userDao = new UserJdbcDao(connection);
         roleDao = new RoleJdbcDao(connection);
         universityDao = new UniversityJdbcDao(connection);
-        university = new UniversityBuilder().setName(Universities.NaUKMA.getName()).setAddress(Universities.NaUKMA.getAddress()).setCity(Universities.NaUKMA.getCity()).createUniversity();
+        university = new UniversityBuilder().setName(Universities.NaUKMA.getName())
+                .setAddress(Universities.NaUKMA.getAddress())
+                .setCity(Universities.NaUKMA.getCity())
+                .createUniversity();
         universityDao.add(university);
-        faculty = new FacultyBuilder().setName(Faculties.IT.getName()).setUniversityId(university.getId()).createFaculty();
+        faculty = new FacultyBuilder().setName(Faculties.IT.getName())
+                .setUniversityId(university.getId())
+                .createFaculty();
         facultyDao.add(faculty);
     }
 

@@ -109,7 +109,7 @@
                         <label class="col-2"><fmt:message key="firstName"/></label>
                         <div class="col-6">
                             <input type="text" class="registration-form-control" name="firstName" placeholder=""
-                                   required pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+                                   required pattern="^[а-яА-ЯёЁa-zA-Z\`]+$">
                         </div>
                         <!-- /col-6 -->
                     </div>
@@ -118,7 +118,7 @@
                         <label class="col-2"><fmt:message key="lastName"/></label>
                         <div class="col-6">
                             <input type="text" class="registration-form-control" name="lastName" placeholder=""
-                                   required pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+                                   required pattern="^[а-яА-ЯёЁa-zA-Z\`]+$">
                         </div>
                         <!-- /col-6 -->
                     </div>
@@ -127,7 +127,7 @@
                         <label class="col-2"><fmt:message key="patronymic"/></label>
                         <div class="col-6">
                             <input type="text" class="registration-form-control" name="patronymic" placeholder=""
-                                   required pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+                                   required pattern="^[а-яА-ЯёЁa-zA-Z\`]+$">
                         </div>
                         <!-- /col-6 -->
                     </div>
@@ -145,7 +145,7 @@
                         <label class="col-2"><fmt:message key="city"/></label>
                         <div class="col-6">
                             <input type="text" class="registration-form-control" name="city" placeholder=""
-                                   required pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+                                   required pattern="^[а-яА-ЯёЁa-zA-Z\`]+$">
                         </div>
                         <!-- /col-6 -->
                     </div>

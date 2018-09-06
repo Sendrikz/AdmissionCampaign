@@ -13,6 +13,7 @@ import services.UniversityService;
 import services.exceptions.NoSuchUserException;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 
 public class LoginCommand implements ActionCommand {
@@ -28,6 +29,7 @@ public class LoginCommand implements ActionCommand {
 
         try {
             loginedUser = checkLogin(request);
+
         } catch (NoSuchUserException e) {
             log.error(e.getMessage());
             return loginFailRedirect(request);

@@ -62,7 +62,7 @@
                                 ${ user.firstName }
                                 ${ user.patronymic }
                                 Grade: <input class="custom-btn btn-light btn-sm text-bold" type="number" name="grade" placeholder=""
-                                              min="0" max="200" step="0.1">
+                                              min="0" max="200" step="0.1" required >
                                 <button class="custom-btn btn-light btn-sm text-bold" type="submit">
                                     <fmt:message key="submit"/>
                                 </button>

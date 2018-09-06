@@ -31,6 +31,12 @@ public class LoginService implements Closeable {
         roleDao = DaoFactory.getRoleDao(connection);
     }
 
+    LoginService(Connection connection) {
+        this.connection = connection;
+        userDao = DaoFactory.getUserDao(connection);
+        roleDao = DaoFactory.getRoleDao(connection);
+    }
+
     public User checkLogin(String login, String password) throws NoSuchUserException {
         log.info("Start class LoginLogic checkLogin()");
 
@@ -38,10 +44,10 @@ public class LoginService implements Closeable {
         if (user.isPresent()) {
             log.info("Find user");
             return user.get();
+        } else {
+            log.info("No such user");
+            throw new NoSuchUserException();
         }
-
-        log.info("No such user");
-        throw new NoSuchUserException();
     }
 
     public void addUser(String lastName, String firstName, String patronymic,

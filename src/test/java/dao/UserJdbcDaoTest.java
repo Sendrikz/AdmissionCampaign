@@ -130,7 +130,6 @@ public class UserJdbcDaoTest {
 
     @Test
     public void deleteByIdTest() {
-        // TODO Generate different users
          User user = setUpNewAndriy();
          userDao.add(user);
         userDao.deleteById(user.getId());

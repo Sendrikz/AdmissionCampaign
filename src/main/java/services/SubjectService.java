@@ -24,6 +24,11 @@ public class SubjectService implements Closeable {
         subjectDao = DaoFactory.getSubjectDao(connection);
     }
 
+    public SubjectService(Connection connection) {
+        this.connection = connection;
+        subjectDao = DaoFactory.getSubjectDao(connection);
+    }
+
     public Subject getSubjectIdByName(String name) throws NoSuchSubjectException {
         log.info("Start class SubjectService getSubjectIdByName()");
         ArrayList<Subject> listOfSubjects = subjectDao.getAll();
