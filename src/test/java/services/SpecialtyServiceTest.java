@@ -49,7 +49,7 @@ public class SpecialtyServiceTest {
         Specialty specialty = setUpNewCompSpecialty();
         SpecialtyDao specialtyDao = DaoFactory.getSpecialtyDao(connection);
         specialtyDao.clearAllSpecialties();
-        try (SpecialtyService specialtyService = new SpecialtyService(connection)) {
+        try (SpecialtyService specialtyService = new SpecialtyService(true)) {
             specialtyService.findById(specialty.getId());
         }
     }

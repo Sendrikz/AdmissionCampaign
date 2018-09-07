@@ -71,23 +71,4 @@ public class LoginCommandTest extends Mockito {
                 loginCommand.execute(request));
 
     }
-
-//    @Test(expected = NoSuchSpecialtyException.class)
-//    public void executeAuthorizeUserTest() {
-//        HttpServletRequest request = mock(HttpServletRequest.class);
-//        HttpSession session = mock(HttpSession.class);
-//        User user = setUpNewKostya();
-//        user.setPassword("677589babd592d8efdd32c2b0e05a2e9");
-//        UserDao userDao = DaoFactory.getUserDao(connection);
-//        userDao.clearAllUsers();
-//        userDao.add(user);
-//        user.setPassword("Okay1919");
-//        LoginCommand loginCommand = new LoginCommand(connection);
-//        when(request.getParameter(Strings.LOGIN)).thenReturn(user.getEmail());
-//        when(request.getParameter(Strings.PASSWORD)).thenReturn(user.getPassword());
-//        when(request.getSession()).thenReturn(session);
-//        when(request.getSession().getAttribute(Strings.LOGINED_USER)).thenReturn(user);
-//        loginCommand.execute(request);
-//    }
-
 }

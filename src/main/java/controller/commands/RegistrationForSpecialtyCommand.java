@@ -25,19 +25,19 @@ public class RegistrationForSpecialtyCommand implements ActionCommand {
         log.info("Start class RegistrationForSpecialtyCommand execute()");
         String page;
 
-        page = registrateStudentOnSubject(request);
+        page = registrateStudentOnSpecialty(request);
 
         return page;
     }
 
-    private String registrateStudentOnSubject(HttpServletRequest request) {
+    private String registrateStudentOnSpecialty(HttpServletRequest request) {
         String page = LoadConfigProperty.getInstance()
                 .getConfigProperty(Strings.PATH_PAGE_STUDENT_SPECIALTIES);
         int specialtyId = Integer.parseInt(request.getParameter(Strings.SPECILATY_TO_REGISTR_ID));
         User user = (User) request.getSession().getAttribute(Strings.LOGINED_USER);
 
-        try (SpecialtyService specialtyService = new SpecialtyService();
-             UserService userService = new UserService()) {
+        try (SpecialtyService specialtyService = new SpecialtyService(true);
+             UserService userService = new UserService(true)) {
             Specialty specialty = specialtyService.findById(specialtyId);
 
             HashMap<Subject, BigDecimal> mapOfSubjectsBySpecialty =
