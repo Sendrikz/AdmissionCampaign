@@ -1,6 +1,5 @@
 package utils;
 
-import services.exceptions.NoSuchSpecialtyException;
 import utils.grade_counter.CountGeneralGrade;
 import utils.pagination.Pagination;
 import model.enteties.Specialty;
@@ -14,12 +13,15 @@ import services.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Util {
 
     private static final Logger log = Logger.getLogger(Util.class);
+
+    public Util() {}
 
     public void checkIfDisplayUserSubjectsAndGrade(HttpServletRequest request) {
         log.info("Start class Util checkIfDisplayUserSubjectsAndGrade()");
@@ -42,15 +44,14 @@ public class Util {
 
         User user = (User) request.getSession().getAttribute(Strings.LOGINED_USER);
         try (UserService userService = new UserService()) {
-            Specialty userSpecialty = userService.getPassedSpecialtyByUser(user.getId());
-            if (userSpecialty != null) {
+            Specialty userSpecialty;
+            if (userService.getPassedSpecialtyByUser(user.getId()).isPresent()) {
+                userSpecialty = userService.getPassedSpecialtyByUser(user.getId()).get();
                 request.getSession().setAttribute(Strings.USER_SPECIALTY, userSpecialty);
                 request.getSession().setAttribute(Strings.IS_PASSED, Strings.YES);
             } else {
                 request.getSession().setAttribute(Strings.IS_PASSED, Strings.NO);
             }
-        } catch (NoSuchSpecialtyException e) {
-            e.printStackTrace();
         }
     }
 

@@ -50,7 +50,7 @@ public class LoginServiceTest {
         UserDao userDao = DaoFactory.getUserDao(connection);
         userDao.clearAllUsers();
         User user = setUpNewKostya();
-        try (LoginService loginService = new LoginService(connection)) {
+        try (LoginService loginService = new LoginService(true)) {
             loginService.checkLogin(user.getEmail(), user.getPassword());
         }
     }
@@ -59,7 +59,7 @@ public class LoginServiceTest {
     public void getRoleByIdTest() throws NoSuchRoleException {
         RoleDao roleDao = DaoFactory.getRoleDao(connection);
         roleDao.clearAllRoles();
-        try (LoginService loginService = new LoginService(connection)) {
+        try (LoginService loginService = new LoginService(true)) {
             loginService.getRoleById(role.getId());
         }
     }

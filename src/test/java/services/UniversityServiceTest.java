@@ -36,7 +36,7 @@ public class UniversityServiceTest {
         University uni = setUpNewNaUKMA();
         UniversityDao universityDao = DaoFactory.getUniversityDao(connection);
         universityDao.clearAllUniversities();
-        try (UniversityService universityService = new UniversityService(connection)) {
+        try (UniversityService universityService = new UniversityService(true)) {
             universityService.findById(uni.getId());
         }
     }

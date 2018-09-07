@@ -44,7 +44,7 @@ public class RateSpecialtyCommand implements ActionCommand {
             TreeMap<BigDecimal, User> userTreeMap = specialtyTreeMapHashMap.get(selectedSpecialty);
             int count = 0;
             for (User user : userTreeMap.values()) {
-                if (userService.getPassedSpecialtyByUser(user.getId()) != null) {
+                if (userService.getPassedSpecialtyByUser(user.getId()).isPresent()) {
                     request.getSession().setAttribute(Strings.CONFIRM_RATE, Strings.NO);
                     return page;
                 }

@@ -14,6 +14,7 @@ import java.math.BigDecimal;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Optional;
 
 public class UserService implements Closeable {
 
@@ -24,6 +25,16 @@ public class UserService implements Closeable {
     public UserService() {
         connection = ConnectionManager.getInstance().getConnection();
         userDao = DaoFactory.getUserDao(connection);
+    }
+
+    public UserService(Boolean isTest) {
+        if (isTest) {
+            this.connection = ConnectionManager.getInstance().getConnectionToTestBD();
+            userDao = DaoFactory.getUserDao(connection);
+        } else {
+            connection = ConnectionManager.getInstance().getConnection();
+            userDao = DaoFactory.getUserDao(connection);
+        }
     }
 
     public boolean addUserToSubject(User user, Subject subject, boolean checked,
@@ -101,15 +112,14 @@ public class UserService implements Closeable {
         return userDao.getAllSubjectsByUser(id);
     }
 
-    public Specialty getPassedSpecialtyByUser(int id) throws NoSuchSpecialtyException {
+    public Optional<Specialty> getPassedSpecialtyByUser(int id) {
         log.info("Start class UserService method getPassedSpecialtyByUser()");
-
+        Specialty specialty = null;
         if (userDao.getPassedSpecialtyByUser(id).isPresent()) {
-            Specialty specialty = userDao.getPassedSpecialtyByUser(id).get();
+            specialty = userDao.getPassedSpecialtyByUser(id).get();
             log.debug("Specialty: " + specialty);
-            return specialty;
         }
-        throw new NoSuchSpecialtyException();
+        return Optional.ofNullable(specialty);
     }
 
     @Override

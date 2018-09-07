@@ -31,10 +31,16 @@ public class LoginService implements Closeable {
         roleDao = DaoFactory.getRoleDao(connection);
     }
 
-    LoginService(Connection connection) {
-        this.connection = connection;
-        userDao = DaoFactory.getUserDao(connection);
-        roleDao = DaoFactory.getRoleDao(connection);
+    public LoginService(Boolean isTest) {
+        if (isTest) {
+            this.connection = ConnectionManager.getInstance().getConnectionToTestBD();
+            userDao = DaoFactory.getUserDao(connection);
+            roleDao = DaoFactory.getRoleDao(connection);
+        } else {
+            connection = ConnectionManager.getInstance().getConnection();
+            userDao = DaoFactory.getUserDao(connection);
+            roleDao = DaoFactory.getRoleDao(connection);
+        }
     }
 
     public User checkLogin(String login, String password) throws NoSuchUserException {

@@ -14,11 +14,25 @@ import services.exceptions.NoSuchUserException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.sql.Connection;
 import java.util.ArrayList;
 
 public class LoginCommand implements ActionCommand {
 
     private static final Logger log = Logger.getLogger(LoginCommand.class);
+    private Boolean isTest;
+
+    public LoginCommand() {
+        this.isTest = false;
+    }
+
+    public LoginCommand(Boolean isTest) {
+        if (isTest) {
+            this.isTest = true;
+        } else {
+            this.isTest = false;
+        }
+    }
 
     @Override
     public String execute(HttpServletRequest request) {
@@ -28,6 +42,7 @@ public class LoginCommand implements ActionCommand {
         User loginedUser;
 
         try {
+
             loginedUser = checkLogin(request);
 
         } catch (NoSuchUserException e) {
@@ -50,7 +65,7 @@ public class LoginCommand implements ActionCommand {
     }
 
     private User checkLogin(HttpServletRequest request) throws NoSuchUserException {
-        try (LoginService loginService = new LoginService()) {
+        try (LoginService loginService = new LoginService(isTest)) {
             String login = request.getParameter(Strings.LOGIN);
             String password = DigestUtils.md5Hex(request.getParameter(Strings.PASSWORD));
             User loginedUser = loginService.checkLogin(login, password);
@@ -65,7 +80,7 @@ public class LoginCommand implements ActionCommand {
     private String authorizeUser(HttpServletRequest request, User loginedUser) {
         log.info("Successfully login");
 
-        try (LoginService loginService = new LoginService()) {
+        try (LoginService loginService = new LoginService(isTest)) {
 
             if (loginService.getRoleById(loginedUser.getRole()).toUpperCase()
                     .equals(Strings.ADMIN_ROLE)) {
@@ -83,7 +98,7 @@ public class LoginCommand implements ActionCommand {
 
         log.info("User is student");
         request.getSession().setAttribute(Strings.ROLE, Strings.STUDENT);
-        try (UniversityService universityService = new UniversityService()) {
+        try (UniversityService universityService = new UniversityService(isTest)) {
             ArrayList<String> listOfCities = new ArrayList<>(universityService.getAllCities());
             request.getSession().setAttribute(Strings.CITIES_LIST, listOfCities);
         }
