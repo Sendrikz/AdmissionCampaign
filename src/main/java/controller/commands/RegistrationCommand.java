@@ -1,5 +1,8 @@
 package controller.commands;
 
+import utils.exceptions.PatternCheckFailException;
+import utils.patterns.PatternConstructor;
+import utils.patterns.Patterns;
 import utils.property_loaders.LoadConfigProperty;
 import utils.Strings;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -8,6 +11,7 @@ import services.LoginService;
 import services.exceptions.NoSuchUserException;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 
 public class RegistrationCommand implements ActionCommand {
 
@@ -18,10 +22,37 @@ public class RegistrationCommand implements ActionCommand {
         log.info("Start class RegistrationCommand execute()");
 
         String page = LoadConfigProperty.getInstance().getConfigProperty(Strings.PATH_PAGE_LOGIN);
-
+        try {
+            patternCheck(request);
+        } catch (PatternCheckFailException e) {
+            log.error(e.getMessage());
+            failRedirect();
+        }
         checkIfSuchUserExistsAndRegistrateHim(request);
 
         return page;
+    }
+
+    private void patternCheck(HttpServletRequest request) throws PatternCheckFailException {
+        PatternConstructor constructor = new PatternConstructor();
+        ArrayList<String> userInfo = new ArrayList<>();
+        userInfo.add(request.getParameter(Strings.FIRST_NAME));
+        userInfo.add(request.getParameter(Strings.PATRONYMIC));
+        userInfo.add(request.getParameter(Strings.BIRTHDAY));
+        userInfo.add(request.getParameter(Strings.CITY));
+        for (String str : userInfo) {
+            if (!constructor.checkWithPattern(Patterns.NAME_FIELDS, str)) {
+
+                throw new PatternCheckFailException();
+
+            }
+        }
+        if (!(constructor.checkWithPattern(Patterns.LOGIN, request.getParameter(Strings.EMAIL)) &&
+                constructor.checkWithPattern(Patterns.PASSWORD, request.getParameter(Strings.PASSWORD)))) {
+
+            throw new PatternCheckFailException();
+
+        }
     }
 
     private void checkIfSuchUserExistsAndRegistrateHim(HttpServletRequest request) {
@@ -45,6 +76,10 @@ public class RegistrationCommand implements ActionCommand {
 
             request.getSession().setAttribute(Strings.SUCCESSFUL_REGISTRATED, Strings.YES);
         }
+    }
+
+    private String failRedirect() {
+        return LoadConfigProperty.getInstance().getConfigProperty(Strings.PATH_PAGE_INDEX);
     }
 
 }

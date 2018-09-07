@@ -1,7 +1,10 @@
 package controller.commands;
 
+import utils.exceptions.PatternCheckFailException;
 import services.exceptions.NoSuchRoleException;
 import utils.pagination.Pagination;
+import utils.patterns.PatternConstructor;
+import utils.patterns.Patterns;
 import utils.property_loaders.LoadConfigProperty;
 import utils.Strings;
 import utils.Util;
@@ -13,8 +16,6 @@ import services.UniversityService;
 import services.exceptions.NoSuchUserException;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.sql.Connection;
 import java.util.ArrayList;
 
 public class LoginCommand implements ActionCommand {
@@ -27,11 +28,7 @@ public class LoginCommand implements ActionCommand {
     }
 
     public LoginCommand(Boolean isTest) {
-        if (isTest) {
-            this.isTest = true;
-        } else {
-            this.isTest = false;
-        }
+        this.isTest = isTest;
     }
 
     @Override
@@ -45,7 +42,7 @@ public class LoginCommand implements ActionCommand {
 
             loginedUser = checkLogin(request);
 
-        } catch (NoSuchUserException e) {
+        } catch (NoSuchUserException | PatternCheckFailException e) {
             log.error(e.getMessage());
             return loginFailRedirect(request);
         }
@@ -64,16 +61,24 @@ public class LoginCommand implements ActionCommand {
         return LoadConfigProperty.getInstance().getConfigProperty(Strings.PATH_PAGE_INDEX);
     }
 
-    private User checkLogin(HttpServletRequest request) throws NoSuchUserException {
+    private User checkLogin(HttpServletRequest request) throws NoSuchUserException, PatternCheckFailException {
         try (LoginService loginService = new LoginService(isTest)) {
             String login = request.getParameter(Strings.LOGIN);
             String password = DigestUtils.md5Hex(request.getParameter(Strings.PASSWORD));
-            User loginedUser = loginService.checkLogin(login, password);
+            PatternConstructor patternConstructor = new PatternConstructor();
 
-            request.getSession().setAttribute(Strings.LOGINED_USER, loginedUser);
-            log.info("Logined user is " + loginedUser);
+            if (patternConstructor.checkWithPattern(Patterns.LOGIN, login)
+                    && patternConstructor.checkWithPattern(Patterns.PASSWORD,
+                    request.getParameter(Strings.PASSWORD))) {
 
-            return loginedUser;
+                User loginedUser = loginService.checkLogin(login, password);
+
+                request.getSession().setAttribute(Strings.LOGINED_USER, loginedUser);
+                log.info("Logined user is " + loginedUser);
+
+                return loginedUser;
+            }
+            throw new PatternCheckFailException();
         }
     }
 
