@@ -32,10 +32,9 @@ public class Controller extends HttpServlet {
         processRequest(req, resp);
     }
 
-    private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         log.info("Start class Controller processRequest()");
         String page;
-        //req.getRequestURI()
         ActionFactory actionFactory = new ActionFactory();
         ActionCommand command = actionFactory.defineCommand(req);
         page = command.execute(req);
