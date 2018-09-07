@@ -24,22 +24,33 @@
     <h3> <fmt:message key="listOfSpecialties"/> </h3>
 
     <div id="accordion">
-        <jsp:useBean id="specialtyUserGradeHashMap" scope="session" type="java.util.HashMap"/>
-        <c:forEach var="elem" items="${ specialtyUserGradeHashMap }" varStatus="status">
-            <h3> ${ elem.key.name }</h3>
-            <div>
-                <p>
-                    <c:forEach var="user" items="${ elem.value }" varStatus="status">
+            <jsp:useBean id="specialtyUserGradeHashMap" scope="session" type="java.util.HashMap"/>
+            <c:forEach var="elem" items="${ specialtyUserGradeHashMap }" varStatus="status">
+                <h3> ${ elem.key.name }</h3>
                 <div>
-                        ${user.value.lastName}
-                        ${user.value.firstName}
-                        ${user.value.patronymic}
-                        ${user.key}
+                    <table class="table table-striped table-bordered table-sm">
+                        <tr>
+                            <th><fmt:message key="name"/> </th>
+                            <th><fmt:message key="grade"/> </th>
+                        </tr>
+                    <p>
+                        <c:forEach var="user" items="${ elem.value }" varStatus="status">
+
+                            <tr>
+                                <td>
+                                        ${user.value.lastName}
+                                        ${user.value.firstName}
+                                        ${user.value.patronymic}
+                                </td>
+                                <td>
+                                        ${user.key}
+                                </td>
+                            </tr>
+                    </c:forEach>
+                    </p>
+                    </table>
                 </div>
-                </c:forEach>
-                </p>
-            </div>
-        </c:forEach>
+            </c:forEach>
     </div>
 </body>
 </html>

@@ -33,7 +33,7 @@
                 <form name="logOutFrom" method="POST" action="vstup">
                     <button>
                         <input type="hidden" name="command" value="logOut" />
-                        LOGOUT
+                        <fmt:message key="logOut"/>
                     </button>
                 </form>
                 <!-- /logOutFrom -->

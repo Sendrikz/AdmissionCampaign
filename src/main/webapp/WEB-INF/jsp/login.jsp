@@ -3,7 +3,7 @@
 <%@ page isELIgnored ="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<c:set var="language" value="${not empty param.language ? param.language : 'en_US'}" scope="session"/>
+<c:set var="language" value="${not empty param.language ? param.language : 'uk_UA'}" scope="session"/>
 <fmt:setLocale value="${language}" />
 <fmt:bundle basename="pagecontent" prefix = "label." >
     <html lang="${language}">
