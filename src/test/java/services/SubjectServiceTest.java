@@ -38,7 +38,7 @@ public class SubjectServiceTest {
         Subject subject = setUpNewMathSubject();
         SubjectDao subjectDao = DaoFactory.getSubjectDao(connection);
         subjectDao.clearAllSubjects();
-        try (SubjectService subjectService = new SubjectService(connection)) {
+        try (SubjectService subjectService = new SubjectService(true)) {
             subjectService.getSubjectIdByName(subject.getName());
         }
     }

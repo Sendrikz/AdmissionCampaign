@@ -16,10 +16,22 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Class to generate list of specialties depending on selected university
+ * and prepare all needed information to be able to go to next page
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class GenerateSpecialtyByUniCommand implements ActionCommand {
 
     private static final Logger log = Logger.getLogger(GenerateSpecialtyByUniCommand.class);
 
+    /**
+     *
+     * @param request HttpServletRequest
+     * @return String path of page
+     */
     @Override
     public String execute(HttpServletRequest request) {
         log.info("Start class GenerateSpecialtyByUniCommand execute()");
@@ -32,6 +44,10 @@ public class GenerateSpecialtyByUniCommand implements ActionCommand {
         return page;
     }
 
+    /**
+     *
+     * @param request HttpServletRequest
+     */
     private void generateSpecialtiesByUniversityAndItsCoef(HttpServletRequest request) {
         int uniId = Integer.parseInt(request.getParameter(Strings.UNI_ID).trim());
         log.debug("University id from jsp: " + uniId);

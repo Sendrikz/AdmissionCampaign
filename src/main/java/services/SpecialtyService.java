@@ -37,10 +37,8 @@ public class SpecialtyService implements Closeable {
 
     public Specialty findById(int id) throws NoSuchSpecialtyException {
         log.info("Start class SpecialtyService findById()");
-
         if (specialtyDao.findById(id).isPresent()) {
             Specialty specialty = specialtyDao.findById(id).get();
-            log.debug(specialty);
             return specialty;
         }
         throw new NoSuchSpecialtyException();

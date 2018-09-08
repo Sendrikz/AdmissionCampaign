@@ -11,6 +11,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ *
+ */
 public class ConnectionManager {
 
     private ConnectionManager() {}
@@ -35,6 +38,10 @@ public class ConnectionManager {
         return connection;
     }
 
+    /**
+     *
+     * @return Connection
+     */
     public Connection getConnectionToTestBD() {
         Connection connection = null;
         try {

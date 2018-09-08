@@ -2,6 +2,12 @@ package controller.commands.command_enum;
 
 import controller.commands.*;
 
+/**
+ * Returns an instance of the class depending on received command
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public enum CommandEnum {
 
     LOGIN {
@@ -66,6 +72,11 @@ public enum CommandEnum {
     };
 
     ActionCommand command;
+
+    /**
+     * Getter of command
+     * @return ActionCommand
+     */
     public ActionCommand getCommand() {
         return command;
     }

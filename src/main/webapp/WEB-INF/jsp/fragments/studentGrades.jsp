@@ -19,11 +19,23 @@
 </head>
 <body>
     <div class="student-grade-title">
+        <table class="table table-striped table-bordered table-sm">
+            <tr>
+                <th><fmt:message key="name"/> </th>
+                <th><fmt:message key="grade"/> </th>
+            </tr>
         <jsp:useBean id="subjectGradeList" scope="session" type="java.util.HashMap"/>
         <c:forEach var="subject" items="${subjectGradeList}" varStatus="status">
-            <fmt:message key="name"/>: ${subject.key.name}
-            <fmt:message key="grade"/>: ${subject.value}
+            <tr>
+                <td>
+                ${subject.key.name}
+                </td>
+                <td>
+                ${subject.value}
+                </td>
+            </tr>
         </c:forEach>
+        </table>
     </div>
 </body>
 </html>

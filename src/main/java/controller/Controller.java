@@ -16,22 +16,46 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
 @WebServlet("/vstup")
 public class Controller extends HttpServlet {
 
     private static final Logger log = Logger.getLogger(String.valueOf(LoginCommand.class));
 
+    /**
+     * @param req HttpServletRequest
+     * @param resp HttpServletResponse
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processRequest(req, resp);
 
     }
 
+    /**
+     * @param req HttpServletRequest
+     * @param resp HttpServletResponse
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processRequest(req, resp);
     }
 
+    /**
+     * @param req HttpServletRequest
+     * @param resp HttpServletResponse
+     * @throws ServletException
+     * @throws IOException
+     * @see ActionFactory
+     * @see ActionCommand
+     */
     public void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         log.info("Start class Controller processRequest()");
         String page;

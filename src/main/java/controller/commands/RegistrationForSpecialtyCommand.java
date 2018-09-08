@@ -36,8 +36,8 @@ public class RegistrationForSpecialtyCommand implements ActionCommand {
         int specialtyId = Integer.parseInt(request.getParameter(Strings.SPECILATY_TO_REGISTR_ID));
         User user = (User) request.getSession().getAttribute(Strings.LOGINED_USER);
 
-        try (SpecialtyService specialtyService = new SpecialtyService(true);
-             UserService userService = new UserService(true)) {
+        try (SpecialtyService specialtyService = new SpecialtyService();
+             UserService userService = new UserService()) {
             Specialty specialty = specialtyService.findById(specialtyId);
 
             HashMap<Subject, BigDecimal> mapOfSubjectsBySpecialty =
