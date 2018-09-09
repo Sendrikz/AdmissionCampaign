@@ -2,11 +2,7 @@ package model.builder;
 
 import model.enteties.Faculty;
 
-/**
- * Faculty builder
- * @author Olha Yuryeva
- * @version 1.0
- */
+
 public class FacultyBuilder {
     private String name;
     private int universityId;
