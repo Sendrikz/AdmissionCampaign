@@ -24,6 +24,11 @@ import java.sql.Connection;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class LoginCommandTest extends Mockito {
 
     private Connection connection;

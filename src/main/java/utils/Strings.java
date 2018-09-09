@@ -1,5 +1,10 @@
 package utils;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public interface Strings {
     String CONFIG_PROPERTIES = "config.properties";
     String SQL_FACULTY_PROPERTIES = "sql_faculty.properties";

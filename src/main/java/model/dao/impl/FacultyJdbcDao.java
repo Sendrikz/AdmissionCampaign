@@ -13,6 +13,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Optional;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class FacultyJdbcDao implements FacultyDao {
 
     private static final Logger log = Logger.getLogger(FacultyJdbcDao.class);

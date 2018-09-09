@@ -17,12 +17,21 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class Util {
 
     private static final Logger log = Logger.getLogger(Util.class);
 
     public Util() {}
 
+    /**
+     * Check if user already have a grade for subject and if he is - show table of grades
+     * @param request HttpServletRequest
+     */
     public void checkIfDisplayUserSubjectsAndGrade(HttpServletRequest request) {
         log.info("Start class Util checkIfDisplayUserSubjectsAndGrade()");
 
@@ -39,6 +48,10 @@ public class Util {
         }
     }
 
+    /**
+     * If user passed on specialty - system show corresponding message
+     * @param request HttpServletRequest
+     */
     public void checkIfDisplayCongratulationOnSpecialty(HttpServletRequest request) {
         log.info("Start class Util checkIfDisplayCongratulationOnSpecialty()");
 
@@ -55,6 +68,12 @@ public class Util {
         }
     }
 
+    /**
+     * Get from database limited information to generate pagination
+     * @param request HttpServletRequest
+     * @param currentPage int
+     * @param recordsPerPage int
+     */
     public void generatePaginationSpecialties(HttpServletRequest request, int currentPage,
                                                      int recordsPerPage) {
         log.info("Start class Util generatePaginationSpecialties()");
@@ -69,6 +88,9 @@ public class Util {
         }
     }
 
+    /**
+     * @param request HttpServletRequest
+     */
     public void generateListOfSubjectsForUserAndUsersWhichPassThem(HttpServletRequest request) {
         log.info("Start class Util generateListOfSubjectsForUserAndUsersWhichPassThem()");
 
@@ -85,6 +107,9 @@ public class Util {
         }
     }
 
+    /**
+     * @param request HttpServletRequest
+     */
     public void generateListOfUsersAndTheirRateBySpecialties(HttpServletRequest request) {
         log.info("Start class Util generateListOfUsersAndTheirRateBySpecialties()");
         request.getSession().setAttribute(Strings.USER_GRADE_HASH_MAP,

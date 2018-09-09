@@ -3,7 +3,7 @@ package controller.commands.command_enum;
 import controller.commands.*;
 
 /**
- * Returns an instance of the class depending on received command
+ * Returns an instance of class depending on received command
  * @author Olha Yuryeva
  * @version 1.0
  */

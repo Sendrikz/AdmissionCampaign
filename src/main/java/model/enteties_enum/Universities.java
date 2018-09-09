@@ -1,5 +1,10 @@
 package model.enteties_enum;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public enum Universities {
     NaUKMA("Національний університет «Києво-Могилянська академія»",
             "Григорія Сковороди, 2", "Київ"),

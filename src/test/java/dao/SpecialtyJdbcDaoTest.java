@@ -19,6 +19,11 @@ import static junit.framework.TestCase.assertNull;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class SpecialtyJdbcDaoTest {
 
     private SpecialtyDao specialtyDao;

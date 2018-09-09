@@ -9,10 +9,21 @@ import services.UniversityService;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 
+/**
+ * Class to generate list of universities depending on selected city
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class GenerateUniversitiesByCityCommand implements ActionCommand {
 
     private static final Logger log = Logger.getLogger(GenerateUniversitiesByCityCommand.class);
 
+    /**
+     *
+     * @param request HttpServletRequest
+     * @return String path to page
+     */
     @Override
     public String execute(HttpServletRequest request) {
         log.info("Start class GenerateUniversitiesByCityCommand execute()");
@@ -25,6 +36,10 @@ public class GenerateUniversitiesByCityCommand implements ActionCommand {
         return page;
     }
 
+    /**
+     *
+     * @param request HttpServletRequest
+     */
     private void generateUniversitiesBySelectedCity(HttpServletRequest request) {
         ArrayList<University> listOfUniversitiesToDisplay = new ArrayList<>();
 

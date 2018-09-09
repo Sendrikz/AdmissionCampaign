@@ -9,10 +9,19 @@ import services.SubjectService;
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 
+/**
+ * Class for setting grade to students
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
 public class SetGradeCommand implements ActionCommand {
 
     private static final Logger log = Logger.getLogger(SetGradeCommand.class);
 
+    /**
+     * @param request HttpServletRequest
+     * @return String path to page
+     */
     @Override
     public String execute(HttpServletRequest request) {
         log.info("Start class SetGradeCommand execute()");
@@ -24,6 +33,9 @@ public class SetGradeCommand implements ActionCommand {
         return page;
     }
 
+    /**
+     * @param request HttpServletRequest
+     */
     private void setGradeToStudent(HttpServletRequest request) {
         int subjectId = Integer.parseInt(request.getParameter(Strings.SUBJECT_ID));
         log.debug("Subject id: " + subjectId);

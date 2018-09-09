@@ -9,6 +9,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public interface UserDao {
 
     ArrayList<User> getAll();

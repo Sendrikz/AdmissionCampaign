@@ -10,6 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class PageRedirectSecurityFilterTest extends Mockito {
 
     @Test

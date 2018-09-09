@@ -16,6 +16,11 @@ import services.exceptions.NoSuchUserException;
 
 import java.sql.Connection;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class LoginServiceTest {
 
     private Connection connection;

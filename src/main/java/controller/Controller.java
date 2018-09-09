@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
+ * Connects view part with model part for teamwork
  * @author Olha Yuryeva
  * @version 1.0
  */

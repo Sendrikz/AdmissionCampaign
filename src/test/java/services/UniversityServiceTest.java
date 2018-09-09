@@ -13,6 +13,11 @@ import services.exceptions.NoSuchUniversityException;
 
 import java.sql.Connection;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class UniversityServiceTest {
 
     private Connection connection;

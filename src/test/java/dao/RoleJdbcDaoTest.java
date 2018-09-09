@@ -24,6 +24,11 @@ import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class RoleJdbcDaoTest {
 
     private RoleDao roleDao;

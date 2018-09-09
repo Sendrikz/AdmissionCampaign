@@ -18,19 +18,35 @@ import services.exceptions.NoSuchUserException;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 
+/**
+ * Class is implemented by the Authorization system
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class LoginCommand implements ActionCommand {
 
     private static final Logger log = Logger.getLogger(LoginCommand.class);
     private Boolean isTest;
 
+
     public LoginCommand() {
         this.isTest = false;
     }
 
+    /**
+     * Constructor for tests. It helps to get connection exactly to test database
+     * @param isTest Boolean
+     */
     public LoginCommand(Boolean isTest) {
         this.isTest = isTest;
     }
 
+    /**
+     *
+     * @param request HttpServletRequest
+     * @return String path to page
+     */
     @Override
     public String execute(HttpServletRequest request) {
         log.info("Start class LoginCommand execute()");
@@ -56,11 +72,26 @@ public class LoginCommand implements ActionCommand {
         return page;
     }
 
+
+    /**
+     * If there is no user in database, system redirect to index page with corresponding
+     * message
+     * @param request HttpServletRequest
+     * @return String path to page
+     */
     private String loginFailRedirect(HttpServletRequest request) {
         request.getSession().setAttribute(Strings.SUCCESSFUL_LOGIN, Strings.NO);
         return LoadConfigProperty.getInstance().getConfigProperty(Strings.PATH_PAGE_INDEX);
     }
 
+    /**
+     * Method check if there is such user in database and if it is return it
+     * otherwise throw exception
+     * @param request HttpServletRequest
+     * @return User already registrated user
+     * @throws NoSuchUserException
+     * @throws PatternCheckFailException
+     */
     private User checkLogin(HttpServletRequest request) throws NoSuchUserException, PatternCheckFailException {
         try (LoginService loginService = new LoginService(isTest)) {
             String login = request.getParameter(Strings.LOGIN);
@@ -82,6 +113,16 @@ public class LoginCommand implements ActionCommand {
         }
     }
 
+    /**
+     * Method to define user role and generate corresponding page. Also
+     * here is used Util which prepare all needed information to be able to
+     * go to next page
+     * @param request HttpServletRequest
+     * @param loginedUser User
+     * @return String path to page
+     * @see User
+     * @see Util
+     */
     private String authorizeUser(HttpServletRequest request, User loginedUser) {
         log.info("Successfully login");
 

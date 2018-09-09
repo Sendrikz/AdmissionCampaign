@@ -13,6 +13,11 @@ import java.math.BigDecimal;
 import java.sql.Connection;
 import java.util.ArrayList;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class SubjectService implements Closeable {
 
     private Connection connection;
@@ -24,7 +29,7 @@ public class SubjectService implements Closeable {
         subjectDao = DaoFactory.getSubjectDao(connection);
     }
 
-    public SubjectService(Boolean isTest) {
+    SubjectService(Boolean isTest) {
         if (isTest) {
             this.connection = ConnectionManager.getInstance().getConnectionToTestBD();
             subjectDao = DaoFactory.getSubjectDao(connection);

@@ -16,10 +16,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Class helps to registrate student for selected specialty
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
 public class RegistrationForSpecialtyCommand implements ActionCommand {
 
     private static final Logger log = Logger.getLogger(RegistrationForSpecialtyCommand.class);
 
+    /**
+     * @param request HttpServletRequest
+     * @return String path to page
+     */
     @Override
     public String execute(HttpServletRequest request) {
         log.info("Start class RegistrationForSpecialtyCommand execute()");
@@ -30,6 +39,13 @@ public class RegistrationForSpecialtyCommand implements ActionCommand {
         return page;
     }
 
+    /**
+     * Try to registrate user on specialty. Also check is it enough
+     * subjects and in case of fail return to the same page with
+     * corresponding message
+     * @param request HttpServletRequest
+     * @return String path to page
+     */
     private String registrateStudentOnSpecialty(HttpServletRequest request) {
         String page = LoadConfigProperty.getInstance()
                 .getConfigProperty(Strings.PATH_PAGE_STUDENT_SPECIALTIES);

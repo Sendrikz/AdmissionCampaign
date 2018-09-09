@@ -6,6 +6,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * Load config property file, use singleton
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class LoadConfigProperty {
 
     private LoadConfigProperty() {}
@@ -18,6 +24,10 @@ public class LoadConfigProperty {
         return LoadConfigPropertyHolder.instance;
     }
 
+    /**
+     * @param value String
+     * @return String property
+     */
     public String getConfigProperty(String value) {
         Properties property = new Properties();
         try (InputStream is = this.getClass().getClassLoader().

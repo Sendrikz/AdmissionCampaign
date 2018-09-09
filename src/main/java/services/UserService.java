@@ -16,6 +16,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class UserService implements Closeable {
 
     private Connection connection;
@@ -25,16 +30,6 @@ public class UserService implements Closeable {
     public UserService() {
         connection = ConnectionManager.getInstance().getConnection();
         userDao = DaoFactory.getUserDao(connection);
-    }
-
-    public UserService(Boolean isTest) {
-        if (isTest) {
-            this.connection = ConnectionManager.getInstance().getConnectionToTestBD();
-            userDao = DaoFactory.getUserDao(connection);
-        } else {
-            connection = ConnectionManager.getInstance().getConnection();
-            userDao = DaoFactory.getUserDao(connection);
-        }
     }
 
     public boolean addUserToSubject(User user, Subject subject, boolean checked,

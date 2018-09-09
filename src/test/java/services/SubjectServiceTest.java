@@ -13,6 +13,11 @@ import services.exceptions.NoSuchSubjectException;
 
 import java.sql.Connection;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class SubjectServiceTest {
 
     private Connection connection;

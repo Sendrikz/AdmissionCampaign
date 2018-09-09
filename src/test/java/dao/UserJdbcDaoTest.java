@@ -20,6 +20,11 @@ import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class UserJdbcDaoTest {
 
     private UserDao userDao;

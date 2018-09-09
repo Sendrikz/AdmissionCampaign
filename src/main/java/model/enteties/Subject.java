@@ -2,6 +2,11 @@ package model.enteties;
 
 import java.util.Objects;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class Subject {
 
     private int id;

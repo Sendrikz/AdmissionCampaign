@@ -6,6 +6,11 @@ import model.enteties.University;
 import java.util.ArrayList;
 import java.util.Optional;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public interface UniversityDao {
 
     ArrayList<University> getAll();

@@ -18,6 +18,11 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Optional;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class LoginService implements Closeable {
 
     private Connection connection;

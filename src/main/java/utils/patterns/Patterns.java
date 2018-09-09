@@ -1,5 +1,10 @@
 package utils.patterns;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public interface Patterns {
     String LOGIN = "^[_A-Za-zа-яА-ЯёЁ0-9-\\+]+([.][_A-Za-zа-яА-ЯёЁ0-9-]+)*@[A-Za-zа-яА-ЯёЁ0-9-]+([.][A-Za-zа-яА-ЯёЁ0-9]+)*([.][A-Za-zа-яА-ЯёЁ]{2,})$";
     String PASSWORD = "(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$";

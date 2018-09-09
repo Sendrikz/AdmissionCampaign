@@ -2,7 +2,14 @@ package model.builder;
 
 import model.enteties.University;
 
+/**
+ * University builder
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class UniversityBuilder {
+
     private String name;
     private String address;
     private String city;

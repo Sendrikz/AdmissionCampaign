@@ -13,10 +13,19 @@ import services.exceptions.NoSuchUserException;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 
+/**
+ * Class is implemented by the Authentication system
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
 public class RegistrationCommand implements ActionCommand {
 
     private static final Logger log = Logger.getLogger(RegistrationCommand.class);
 
+    /**
+     * @param request HttpServletRequest
+     * @return String path to page
+     */
     @Override
     public String execute(HttpServletRequest request) {
         log.info("Start class RegistrationCommand execute()");
@@ -26,13 +35,18 @@ public class RegistrationCommand implements ActionCommand {
             patternCheck(request);
         } catch (PatternCheckFailException e) {
             log.error(e.getMessage());
-            failRedirect();
+            return failRedirect();
         }
         checkIfSuchUserExistsAndRegistrateHim(request);
 
         return page;
     }
 
+    /**
+     * Check is it received a valid information
+     * @param request HttpServletRequest
+     * @throws PatternCheckFailException
+     */
     private void patternCheck(HttpServletRequest request) throws PatternCheckFailException {
         PatternConstructor constructor = new PatternConstructor();
         ArrayList<String> userInfo = new ArrayList<>();
@@ -55,6 +69,9 @@ public class RegistrationCommand implements ActionCommand {
         }
     }
 
+    /**
+     * @param request HttpServletRequest
+     */
     private void checkIfSuchUserExistsAndRegistrateHim(HttpServletRequest request) {
         try (LoginService loginService = new LoginService()) {
             loginService.checkLogin(request.getParameter(Strings.EMAIL),
@@ -66,6 +83,9 @@ public class RegistrationCommand implements ActionCommand {
         }
     }
 
+    /**
+     * @param request HttpServletRequest
+     */
     private void registrateUser(HttpServletRequest request) {
         try (LoginService loginService = new LoginService()) {
             loginService.addUser(request.getParameter(Strings.LAST_NAME),
@@ -78,6 +98,9 @@ public class RegistrationCommand implements ActionCommand {
         }
     }
 
+    /**
+     * @return String path to page
+     */
     private String failRedirect() {
         return LoadConfigProperty.getInstance().getConfigProperty(Strings.PATH_PAGE_INDEX);
     }

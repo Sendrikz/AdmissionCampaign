@@ -9,6 +9,11 @@ import java.sql.SQLException;
 
 import static org.junit.Assert.assertFalse;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class ConnectionManagerTest {
 
     @Ignore

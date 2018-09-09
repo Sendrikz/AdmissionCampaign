@@ -11,6 +11,11 @@ import java.io.Closeable;
 import java.sql.Connection;
 import java.util.ArrayList;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class FacultyService implements Closeable {
 
     private Connection connection;

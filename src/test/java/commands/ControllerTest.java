@@ -10,13 +10,20 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
 
 public class ControllerTest extends Mockito {
 
+    /**
+     * @throws ServletException
+     * @throws IOException
+     */
     @Test
-    public void processRequestTest() throws ServletException, IOException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public void processRequestTest() throws ServletException, IOException {
         HttpServletRequest request = mock(HttpServletRequest.class);
         HttpServletResponse response = mock(HttpServletResponse.class);
         Controller controller = new Controller();

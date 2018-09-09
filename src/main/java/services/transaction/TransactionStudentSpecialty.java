@@ -8,10 +8,21 @@ import org.apache.log4j.Logger;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+/**
+ * When administrator build a rate and if student pass on this specialty transaction
+ * change student status in database and delete him from all others specialties
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class TransactionStudentSpecialty {
 
     private static final Logger log = Logger.getLogger(TransactionStudentSpecialty.class);
 
+    /**
+     * @param user_id int
+     * @param specialty_id int
+     */
     public static void updateUserSpecialty(int user_id, int specialty_id) {
         log.info("Start class TransactionStudentSpecialty updateUserSpecialty()");
         Connection connection = ConnectionManager.getInstance().getConnection();

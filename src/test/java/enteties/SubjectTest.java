@@ -8,6 +8,11 @@ import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class SubjectTest {
 
     private Subject subject;

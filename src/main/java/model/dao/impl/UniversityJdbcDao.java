@@ -1,6 +1,5 @@
 package model.dao.impl;
 
-import java.io.InputStream;
 import java.sql.*;
 
 import model.dao.UniversityDao;
@@ -12,14 +11,17 @@ import org.apache.log4j.Logger;
 import utils.Strings;
 import utils.property_loaders.LoadSQLProperties;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Optional;
-import java.util.Properties;
+
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
 
 public class UniversityJdbcDao implements UniversityDao {
 

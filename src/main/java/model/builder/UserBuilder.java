@@ -2,7 +2,14 @@ package model.builder;
 
 import model.enteties.User;
 
+/**
+ * User builder
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class UserBuilder {
+
     private String lastName;
     private String firstName;
     private String patronymic;

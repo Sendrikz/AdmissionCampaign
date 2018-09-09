@@ -15,9 +15,19 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.TreeMap;
 
+/**
+ * Class to generate rating lists by specialty. Should use after checking all subjects
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class RateSpecialtyCommand implements ActionCommand {
     private static final Logger log = Logger.getLogger(RateSpecialtyCommand.class);
 
+    /**
+     * @param request HttpServletRequest
+     * @return String path to page
+     */
     @Override
     public String execute(HttpServletRequest request) {
         log.info("Start class rateSpecialtyCommand execute()");
@@ -28,6 +38,12 @@ public class RateSpecialtyCommand implements ActionCommand {
         return page;
     }
 
+    /**
+     * Method to make rating list. Also here we using transaction
+     * @param request HttpServletRequest
+     * @return String path to page
+     * @see TransactionStudentSpecialty
+     */
     private String makeRatingListOfStudentsWhoHasPassedOnSpecialty(HttpServletRequest request) {
         String page = LoadConfigProperty.getInstance().getConfigProperty(Strings.PATH_PAGE_ADMIN_MAIN);
         int currentSpecialtyId = Integer.parseInt(request.getParameter(Strings.SPECIALTY_ID));

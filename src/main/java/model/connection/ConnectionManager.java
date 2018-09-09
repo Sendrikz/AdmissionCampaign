@@ -1,8 +1,5 @@
 package model.connection;
 
-import utils.property_loaders.LoadConfigProperty;
-import utils.Strings;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -12,8 +9,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- *
+ * Helps to get connection to databases. Also use singleton
  */
+
 public class ConnectionManager {
 
     private ConnectionManager() {}
@@ -21,10 +19,15 @@ public class ConnectionManager {
     private static class ConnectionPoolInstance {
         private final static ConnectionManager instance = new ConnectionManager();
     }
+
     public static ConnectionManager getInstance() {
         return ConnectionPoolInstance.instance;
     }
 
+    /**
+     * Get connection to main working database
+     * @return Connection
+     */
     public Connection getConnection() {
         Context envCtx;
         Connection connection = null;
@@ -39,7 +42,7 @@ public class ConnectionManager {
     }
 
     /**
-     *
+     * Get connection to test database
      * @return Connection
      */
     public Connection getConnectionToTestBD() {
@@ -55,6 +58,10 @@ public class ConnectionManager {
         return connection;
     }
 
+    /**
+     * Close connection
+     * @param connection Connection
+     */
     public void close(Connection connection) {
         try {
             connection.close();

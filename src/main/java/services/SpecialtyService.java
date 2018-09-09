@@ -14,6 +14,11 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class SpecialtyService implements Closeable {
 
     private Connection connection;
@@ -25,7 +30,7 @@ public class SpecialtyService implements Closeable {
         specialtyDao = DaoFactory.getSpecialtyDao(connection);
     }
 
-    public SpecialtyService(Boolean isTest) {
+    SpecialtyService(Boolean isTest) {
         if (isTest) {
             this.connection = ConnectionManager.getInstance().getConnectionToTestBD();
             specialtyDao = DaoFactory.getSpecialtyDao(connection);

@@ -8,10 +8,22 @@ import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * Class get number of current page and generate specified amount of information
+ * for pagination. Also uses help class Pagination
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class PaginationSpecialtyCommand implements ActionCommand {
 
     private static final Logger log = Logger.getLogger(PaginationSpecialtyCommand.class);
 
+    /**
+     * @param request HttpServletRequest
+     * @return String path to page
+     * @see Pagination
+     */
     @Override
     public String execute(HttpServletRequest request) {
         log.info("Start class PaginationSpecialtyCommand execute()");

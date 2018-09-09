@@ -16,6 +16,11 @@ import java.util.ArrayList;
 import java.util.Optional;
 import java.util.Properties;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class RoleJdbcDao implements RoleDao {
 
     private static final Logger log = Logger.getLogger(RoleJdbcDao.class);

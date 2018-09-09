@@ -9,10 +9,19 @@ import services.UserService;
 import java.math.BigDecimal;
 import java.util.*;
 
+/**
+ * Count rate grade for all students
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class CountGeneralGrade {
 
     private static final Logger log = Logger.getLogger(CountGeneralGrade.class);
 
+    /**
+     * @return HashMap
+     */
     public HashMap<Specialty, TreeMap<BigDecimal, User>> fillListOfSpecialtiesAndUsers() {
         log.info("Start class CountGeneralGrade fillListOfSpecialtiesAndUsers()");
 
@@ -45,6 +54,12 @@ public class CountGeneralGrade {
         return specialtyRatingList;
     }
 
+    /**
+     *
+     * @param listOfSubjectsAndTheirCoef HashMap<Subject, BigDecimal>
+     * @param listOfUsersAndTheirGrades HashMap<User, HashMap<Subject, BigDecimal>>
+     * @return TreeMap
+     */
     private TreeMap<BigDecimal, User> countGrade(HashMap<Subject, BigDecimal> listOfSubjectsAndTheirCoef,
                                                        HashMap<User, HashMap<Subject, BigDecimal>> listOfUsersAndTheirGrades) {
 

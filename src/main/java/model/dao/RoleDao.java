@@ -6,6 +6,11 @@ import model.enteties.User;
 import java.util.ArrayList;
 import java.util.Optional;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public interface RoleDao {
 
     ArrayList<Role> getAll();

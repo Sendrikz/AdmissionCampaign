@@ -13,6 +13,11 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class UniversityService implements Closeable {
 
     private Connection connection;

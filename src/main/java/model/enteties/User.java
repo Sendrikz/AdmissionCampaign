@@ -3,6 +3,11 @@ package model.enteties;
 import java.time.LocalDate;
 import java.util.Objects;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class User {
 
     private int id;

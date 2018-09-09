@@ -18,6 +18,11 @@ import java.util.HashMap;
 import java.util.Optional;
 import java.util.Properties;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class SubjectJdbcDao implements SubjectDao {
 
     private static final Logger log = Logger.getLogger(SubjectJdbcDao.class);

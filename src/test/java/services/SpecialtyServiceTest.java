@@ -19,6 +19,11 @@ import services.exceptions.NoSuchSpecialtyException;
 
 import java.sql.Connection;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class SpecialtyServiceTest {
 
     Connection connection;

@@ -2,7 +2,14 @@ package model.builder;
 
 import model.enteties.Specialty;
 
+/**
+ * Specialty builder
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
+
 public class SpecialtyBuilder {
+
     private String name;
     private int quantityOfStudents;
     private int facultyId;

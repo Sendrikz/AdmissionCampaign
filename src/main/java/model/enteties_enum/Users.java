@@ -1,5 +1,9 @@
 package model.enteties_enum;
 
+/**
+ * @author Olha Yuryeva
+ * @version 1.0
+ */
 
 public enum Users {
     ANDRIY("Бойко", "Андрій", "Петрович", "1998-02-12", "Київ", "andriy@gmail.com", "123"),
